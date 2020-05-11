@@ -4,7 +4,7 @@ const mongoose = require("mongoose");
 const db = require("./config/keys").mongoURI;
 const users = require("./routes/api/users")
 
-const port = process.env.PORT || 5004;
+const port = process.env.PORT || 5005;
 app.listen(port, () => console.log(`Server is running on port ${port}`));
 
 
