@@ -47,7 +47,7 @@ class LoginForm extends React.Component {
       }, (email.length * Speed) + j * Speed);
     }
     setTimeout(() => {
-      this.props.login(this.state).then(() => this.props.history.push("/"));
+      this.props.login(this.state).then(() => this.props.history.push("/trips"));
     }, (email.length * Speed) + (password.length * Speed) + Speed);
   }
 
