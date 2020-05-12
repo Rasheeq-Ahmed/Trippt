@@ -34,4 +34,4 @@ router.post("/:location",
         newTrip.save.then(trip => res.json(trip))
 }); 
 
-module.export = router;
+module.exports = router;
