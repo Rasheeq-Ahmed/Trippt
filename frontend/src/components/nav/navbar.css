@@ -20,15 +20,28 @@
     justify-content: space-between;
 } */
 
+a {
+    text-decoration: none;
+}
 
+a, a:visited, a:hover, a:active {
+	color: inherit;
+}
 
-html{
+body{
+    margin: 0;
+}
+
+.main-background{
     background: linear-gradient(45deg, black, transparent); 
+    height: 100vh;
+    width: 100%;
 }
 
 .homepage-header{
     display: flex;
     flex-direction: column;
+    /* border: 2px solid blue; */
 }
 
 .app-name{
@@ -37,12 +50,15 @@ html{
     justify-content: center;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     color: white;
+
 }
 
 .user-login-signup{
     display: flex;
     justify-content: flex-end;
     margin-top: -50px;
+    /* border: 2px solid red; */
+
 }
 
 .user-login-signup > a{
@@ -68,12 +84,15 @@ html{
     padding-bottom: 20px;
     color: white;
     font-family: cursive;;
+    /* border: 2px solid pink; */
+
 }
 
 .dubai{
-    height: 200px;
+    height: 270px;
     display: flex;
     margin: 0 auto;
+    /* border: 2px solid rebeccapurple; */
 }
 
 .city{
@@ -81,6 +100,7 @@ html{
     justify-content: center;
     color: bisque;
     margin-top: 50px;
+    /* border: 2px solid green; */
 }
 
 .footer{
@@ -90,4 +110,9 @@ html{
     position: absolute;
     bottom: 10px;
     width: 99%;
+    /* border: 2px solid black; */
+}
+
+.cities{
+    height: 620px;
 }
