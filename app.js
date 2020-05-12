@@ -2,12 +2,11 @@ const express = require("express");
 const app = express();
 const db = require('./config/keys').mongoURI;
 const mongoose = require('mongoose');
-const users = require("./routes/api/users");
-// const User = require('./models/User');
 const bodyParser = require('body-parser');
 const passport = require('passport');
 
-// const tweets = require("./routes/api/tweets");
+const users = require("./routes/api/users");
+const trips = require("./routes/api/trips");
 
 mongoose
     .connect(db, { useNewUrlParser: true })
@@ -23,7 +22,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 app.use("/api/users", users);
-// app.use("/api/tweets", tweets);
+app.use("/api/trips", trips);
 
 const port = process.env.PORT || 5005;
 app.listen(port, () => console.log(`Server is running on port ${port}`));

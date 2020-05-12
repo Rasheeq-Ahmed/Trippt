@@ -7,15 +7,11 @@ const TripSchema = new Schema({
         ref: 'users'
     },
 
-    itinerary: {
-        type: Schema.Types.ObjectId,
-        ref: 'itinerary'
-    },
-
     location: {
         type: String,
         required: true
     },
+
 
     date: {
         type: Date,
