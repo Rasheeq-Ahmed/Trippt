@@ -1,4 +1,4 @@
-.NavBar {
+/* .NavBar {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -18,4 +18,76 @@
     width: 400px;
     display: flex;
     justify-content: space-between;
+} */
+
+
+
+html{
+    background: linear-gradient(45deg, black, transparent); 
+}
+
+.homepage-header{
+    display: flex;
+    flex-direction: column;
+}
+
+.app-name{
+    font-size: 70px;
+    display: flex;
+    justify-content: center;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    color: white;
+}
+
+.user-login-signup{
+    display: flex;
+    justify-content: flex-end;
+    margin-top: -50px;
+}
+
+.user-login-signup > a{
+    margin-right: 30px;
+    font-size: 20px;
+    border: 2px solid white;
+    padding: 10px 25px 10px;
+    border-radius: 5px;
+}
+
+.user-login-signup > a:hover{
+    border: 2px solid;
+    background: white;
+    cursor: pointer;
+    color: black
+}
+
+.destination{
+    justify-content: center;
+    display: flex;
+    margin-top: 100px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    color: white;
+    font-family: cursive;;
+}
+
+.dubai{
+    height: 200px;
+    display: flex;
+    margin: 0 auto;
+}
+
+.city{
+    display: flex;
+    justify-content: center;
+    color: bisque;
+    margin-top: 50px;
+}
+
+.footer{
+    display: flex;
+    justify-content: center;
+    color: white;
+    position: absolute;
+    bottom: 10px;
+    width: 99%;
 }
