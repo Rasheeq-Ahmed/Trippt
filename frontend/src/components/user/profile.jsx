@@ -33,13 +33,6 @@ class ProfilePage extends React.Component {
                         </div>
                     </div>
 
-
-
-
-
-
-
-
                     <div className="prof-right">
                         <div className="prof-right-header">
                             <div className="prof-tabs">
