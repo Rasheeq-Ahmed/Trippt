@@ -10,8 +10,8 @@ import MainPage from './main/main_page';
 import LoginFormContainer from './session/login_form_container';
 import SignupFormContainer from './session/signup_form_container';
 
-
-
+console.log('Hello World')
+console.log(`${process.env.REACT_APP_TRIPADVISOR_API_KEY}`)
 
 const App = () => (
   <div>
