@@ -14,7 +14,7 @@ const receiveTrip = (trip) => ({
     trip
 });
 
-const removeTrip = (id) => ({
+const deleteTrip = (id) => ({
     type: REMOVE_TRIP,
     id
 });
@@ -41,5 +41,5 @@ export const updateTrip = (data) => dispatch => (
 
 export const removeTrip = (id) => dispatch => (
     tripAPIUtils.removeTrip(id)
-        .then(() => dispatch(removeTrip(id)))
+        .then(() => dispatch(deleteTrip(id)))
 )
