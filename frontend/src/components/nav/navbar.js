@@ -36,7 +36,7 @@ class NavBar extends React.Component {
   render() {
       return (
         <div className="homepage-header">
-            <div className="app-name">Trippt</div>
+            <div className="app-name"><Link to="/">Trippt</Link></div>
             { this.getLinks() }
         </div>
       );
