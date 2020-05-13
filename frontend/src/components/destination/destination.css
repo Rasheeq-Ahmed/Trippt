@@ -1,0 +1,63 @@
+.headline{
+  display: flex; 
+  justify-content: center; 
+  margin-top: 50px; 
+  font-size: 30px; 
+}
+
+.categories{
+  display: flex;
+  justify-content: space-around;
+  margin-top: 20px;
+}
+
+.restaurants{
+  margin-top: 50px;
+  display: flex;
+  border: 2px solid grey;
+  width: 30%;
+  height: 200px;
+  align-items: center;
+  justify-content: center;
+  background-image: url(https://www.telegraph.co.uk/content/dam/Travel/Destinations/Middle%20East/Dubai/ruya-bar-and-lounge-dubai-top-xlarge.jpg);
+  color: white;
+  font-family: cursive;
+  background-size: cover;
+  font-size: 23px;
+}
+
+.attractions{
+  margin-top: 50px;
+  background-image: url(https://miro.medium.com/max/791/1*DYk1EgJkBzRtbtAAtAsFuw.jpeg);
+  display: flex;
+  border: 2px solid grey;
+  width: 30%;
+  height: 200px;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-family: cursive;
+  background-size: cover;
+}
+
+.restaurants:hover, .attractions:hover, .nightlife:hover{
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 25px;
+}
+
+.nightlife{
+  margin-top: 50px;
+  background-image: url(https://www.carhirejavea.com/wp-content/uploads/2017/11/Nightlife-Javea-624x401.jpg);
+  display: flex;
+  border: 2px solid grey;
+  width: 30%;
+  height: 200px;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-family: cursive;
+  background-size: cover;
+}
+
+
