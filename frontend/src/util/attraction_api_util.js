@@ -4,7 +4,6 @@ import axios from 'axios'
 
 
 export const getAttractions = (locationId) => {
-    debugger
     return axios({
         "method": "GET",
         "url": "https://tripadvisor1.p.rapidapi.com/attractions/list",
@@ -22,11 +21,11 @@ export const getAttractions = (locationId) => {
             "location_id": `${locationId}`
             }
         })
-        .then((response) => {
-            console.log(response)
-        })
-        .catch((error) => {
-            console.log(error)
-    })
+        // .then((response) => {
+        //     console.log(response)
+        // })
+        // .catch((error) => {
+        //     console.log(error)
+    // })
 
 };
