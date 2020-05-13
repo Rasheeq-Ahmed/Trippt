@@ -7,6 +7,12 @@ import jwt_decode from 'jwt-decode';
 import { setAuthToken } from './util/session_api_util';
 import { logout } from './actions/session_actions';
 
+//Window Testing Only//
+import * as AttAPIUtil from './util/attraction_api_util'
+
+//Window Testing Only//
+
+
 document.addEventListener('DOMContentLoaded', () => {
   let store;
 
@@ -28,6 +34,12 @@ document.addEventListener('DOMContentLoaded', () => {
     store = configureStore({});
   }
   const root = document.getElementById('root');
+
+
+  //Window Testing Only//
+  window.getAttractions = AttAPIUtil.getAttractions
+
+  //Window Testing Only//
 
   ReactDOM.render(<Root store={store} />, root);
 });
