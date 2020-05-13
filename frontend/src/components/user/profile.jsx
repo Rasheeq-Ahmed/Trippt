@@ -15,6 +15,9 @@ class ProfilePage extends React.Component {
         return (
 
             <div className="prof-all">
+                <div className="prof-banner">
+                    <img src="https://i.imgur.com/67Lhwke.jpg" alt=""/>
+                </div>
                 <div className="prof-body">
                     <div className="prof-left">
                         <div className="prof-pic">
@@ -47,18 +50,38 @@ class ProfilePage extends React.Component {
                             
                         </div>
                         <div className="prof-right-body">
-                            <div id='trip' className="tabcontent">
-                                <h3>Trip 1</h3>
-                                <p> Details of Trip 1</p>
+                            <div className="trips">
+                                <ul>
+                                <h2>Trip 1</h2>
+                                <div id='trip' className="tabcontent">
+                                    <li>Food:  🍔🍜🍱</li>
+                                    <li>Things To Do: 🗺️🏝️🌆</li>
+                                </div>
+                                <h2>Trip 2</h2>
+
+                                <div id='trip' className="tabcontent">
+                                        <li>Food:  🍔🍜🍱</li>
+                                        <li>Things To Do: 🗺️🏝️🌆</li>
+                                </div>
+                                <h2>Trip 3</h2>
+
+                                <div id='trip' className="tabcontent">
+                                        <li>Food:  🍔🍜🍱</li>
+                                        <li>Things To Do: 🗺️🏝️🌆</li>
+                                </div>
+                                </ul>
                             </div>
-                            <div id="destination" className="tabcontent">
+
+
+
+                            {/* <div id="destination" className="tabcontent">
                                 <h3>Destination 1</h3>
                                 <p> Details of Destination 1</p>
                             </div>
                             <div id='other' className="tabcontent">
                                 <h3>Other 1</h3>
                                 <p> Details of Other 1</p>
-                            </div>
+                            </div> */}
                         </div>
                     </div>
                 </div>
