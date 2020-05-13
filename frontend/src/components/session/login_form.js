@@ -1,5 +1,6 @@
 import React from 'react';
-import { withRouter } from 'react-router-dom';
+import { withRouter, Link } from 'react-router-dom';
+import './login_session.css'
 
 class LoginForm extends React.Component {
   constructor(props) {
@@ -87,8 +88,11 @@ class LoginForm extends React.Component {
   render() {
     return (
       <div>
-        <form onSubmit={this.handleSubmit}>
-          <div>
+        <div className="header"><Link to="/">Trippt</Link></div>
+        <div className="login-form-container">
+        <form className="login-form" onSubmit={this.handleSubmit}>
+          <span id="welcome-back">Welcome Back!</span>
+          <div className="login-inner-form">
               <input type="text"
                 value={this.state.email}
                 onChange={this.update('email')}
@@ -100,14 +104,21 @@ class LoginForm extends React.Component {
                 onChange={this.update('password')}
                 placeholder="Password"
               />
+            <span id="sign-up">Don't have an account, <span id="sign-up-link"><Link to="/signup">Sign up!</Link></span></span>
             <br/>
-            <input type="submit" value="Submit" />
+
+            <input id="submit" type="submit" value="Submit" />
             {this.renderErrors()}
           </div>
-          <button onSubmit={this.handleSubmit} id="demo-button" className="demo-btn" onClick={this.demoLogin}>
+          <button id="demo-submit" onSubmit={this.handleSubmit} id="demo-button" className="demo-btn" onClick={this.demoLogin}>
               Demo Login
             </button>
         </form>
+        
+        <div className="travel-pic">
+              <img src="https://www.itl.cat/pngfile/big/209-2095289_laguna-beach-california-wallpaper-high-resolution-travel-images.jpg" />
+        </div>
+        </div>
       </div>
     );
   }

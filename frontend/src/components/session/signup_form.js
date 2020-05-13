@@ -1,5 +1,6 @@
 import React from 'react';
-import { withRouter } from 'react-router-dom';
+import { withRouter, Link } from 'react-router-dom';
+import "./signup_session.css"
 
 class SignupForm extends React.Component {
   constructor(props) {
@@ -57,8 +58,16 @@ class SignupForm extends React.Component {
 
   render() {
     return (
+      <div>
+      <div className="header"><Link to="/">Trippt</Link></div>
       <div className="signup-form-container">
         <form onSubmit={this.handleSubmit}>
+          <span className="signup-trippt">
+            Sign up for Trippt!
+          </span>
+          <span className="terms">
+            By signing up, you agree to Trippt's Terms and Conditions.
+          </span>
           <div className="signup-form">
             <br/>
               <input type="text"
@@ -84,11 +93,16 @@ class SignupForm extends React.Component {
                 onChange={this.update('password2')}
                 placeholder="Confirm Password"
               />
+            <span id="sign-up">Already on Trippt, <span id="sign-up-link"><Link to="/login">Login!</Link></span></span>
             <br/>
-            <input type="submit" value="Submit" />
+            <input id="submit" type="submit" value="Submit" />
             {this.renderErrors()}
           </div>
         </form>
+            <div className="travel-pic">
+              <img src="https://www.itl.cat/pngfile/big/209-2095289_laguna-beach-california-wallpaper-high-resolution-travel-images.jpg" />
+            </div>
+      </div>
       </div>
     );
   }
