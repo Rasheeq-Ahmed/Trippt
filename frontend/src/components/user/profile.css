@@ -131,11 +131,12 @@
 }
 
 #trip {
-    padding-left: 20px;
+    padding: 20px;
     display: flex;
     flex-direction: column;
     font-size: 20px;
     list-style: none;
+
 }
 
 
