@@ -8,7 +8,6 @@ class Trip extends React.Component {
             <div>
                 <h1>My Trips</h1>
                 <Navbar/>
-
                 <div>
                     <ul>Food</ul>
                     <ul>Attractions</ul>
