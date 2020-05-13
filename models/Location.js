@@ -6,16 +6,8 @@ const LocationSchema = new Schema({
         type: String
     },
 
-    latitude: {
-        type: Number
-    },
-    
-    longitude: {
-        type: Number
-    },
-
-    detail: {
-        type: Text
+    location_id: {
+        type: String
     }
 
 });
