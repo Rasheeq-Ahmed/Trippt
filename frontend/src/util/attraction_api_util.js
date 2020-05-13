@@ -1,5 +1,7 @@
-const axios = require("axios");
-// const keys = require('../../../config/keys')
+
+import axios from 'axios'
+
+
 
 export const getAttractions = (locationId) => {
 
@@ -9,7 +11,7 @@ export const getAttractions = (locationId) => {
         "headers": {
             "content-type": "application/octet-stream",
             "x-rapidapi-host": "tripadvisor1.p.rapidapi.com",
-            "x-rapidapi-key": `process.env.REACT_APP_TRIPADVISOR_API_KEY`,
+            "x-rapidapi-key": `${process.env.REACT_APP_TRIPADVISOR_API_KEY}`,
             "useQueryString": true
             }, 
         "params": {

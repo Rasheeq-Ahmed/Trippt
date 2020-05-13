@@ -8,7 +8,7 @@ import { setAuthToken } from './util/session_api_util';
 import { logout } from './actions/session_actions';
 
 //Window Testing Only//
-  import * as AttAPIUtil from './util/attraction_api_util'
+import * as AttAPIUtil from './util/attraction_api_util'
 
 //Window Testing Only//
 
