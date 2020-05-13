@@ -6,7 +6,7 @@ const AttractionReducer = (state = {}, action) => {
     switch (action.type) {
         case RECEIVE_ATTRACTIONS:
             
-            return Object.assign({}, state, {[action.name]: action.attractions});
+            return Object.assign({}, state, {[action.city]: action.attractions});
     
         default:
             return state;

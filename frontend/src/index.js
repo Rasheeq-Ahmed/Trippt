@@ -9,7 +9,7 @@ import { logout } from './actions/session_actions';
 
 //Window Testing Only//
 import * as AttAPIUtil from './util/attraction_api_util'
-
+// import { getAttractions } from './actions/attraction_actions'
 //Window Testing Only//
 
 
@@ -38,7 +38,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
   //Window Testing Only//
   window.getAttractions = AttAPIUtil.getAttractions
-
+  // window.getAttractions = getAttractions
+  window.dispatch = store.dispatch
+  window.getState = store.getState
   //Window Testing Only//
 
   ReactDOM.render(<Root store={store} />, root);

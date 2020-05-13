@@ -15,7 +15,8 @@ class CreateTrip extends React.Component {
     handleSubmit(e) {
         e.preventDefault();
         this.props.createTrip(this.state)
-    } 
+    }
+    
 
     render() {
         return (
@@ -23,6 +24,7 @@ class CreateTrip extends React.Component {
                 <form onSubmit={this.handleSubmit}>
 
                     <button onClick={() => this.setState({location: 'Dubai'})}>Dubai</button>
+                    <button onClick={() => this.props.getAttractions(295424, 'Dubai')}>Get</button>
                 </form>
             </div>
         )
