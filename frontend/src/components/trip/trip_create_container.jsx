@@ -3,10 +3,11 @@ import { createTrip, getUserTrips, removeTrip} from '../../actions/trip_actions'
 import { getAttractions } from '../../actions/attraction_actions'
 import CreateTrip from './trip_create';
 
-const mapStateToProps = (state) => {
+const mapStateToProps = (state, ownProps) => {
     return {
        user: state.session.user,
-       trips: Object.values(state.trips)
+       trips: Object.values(state.trips),
+       attractions: state.attractions[ownProps.match.params.location] || []
     };
 };
 

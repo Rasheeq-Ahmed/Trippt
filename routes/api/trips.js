@@ -25,12 +25,12 @@ router.delete("/:id", (req, res) => {
         .catch(err => res.status(400).json(err))
 }); 
 
-router.post("/", 
+router.post("/:location", 
     passport.authenticate("jwt", { session: false }),
     (req, res) => {
         const newTrip = new Trip({
             user: req.user.id,
-            location: req.body.location
+            location: req.params.location
         });
 
         newTrip.save().then(trip => res.json(trip))
