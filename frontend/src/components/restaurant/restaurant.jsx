@@ -6,9 +6,9 @@ class Restaurant extends React.Component{
     super(props);
   }
 
-  componentDidMount(){
-    this.props.getRestaurants(295424, 'Dubai')
-  }
+  // componentDidMount(){
+  //   this.props.getRestaurants(295424, 'Dubai')
+  // }
 
   render(){
     if (!this.props.restaurants) {
