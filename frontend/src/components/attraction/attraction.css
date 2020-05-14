@@ -1,3 +1,39 @@
 .picture{
   height: 200px;
+  margin-bottom: 20px;
+}
+
+.gallery{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  /* grid-template-rows: repeat(8, 5vw); */
+  grid-gap: 15px;
+}
+
+.gallery-image{
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+  margin-bottom: 10px;
+  font-family: fantasy;
+}
+
+.picture:hover{
+  cursor: pointer;
+  box-shadow: 0px 0px 20px cadetblue;
+}
+
+.headline{
+  display: flex;
+  justify-content: center;
+  font-size: 30px;
+  margin-bottom: 20px;
+  text-decoration: underline;
+  margin-top: 9px;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.gallery-grid{
+  display: flex;
+  justify-content: center;
 }
