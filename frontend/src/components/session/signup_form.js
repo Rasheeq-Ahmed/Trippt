@@ -58,51 +58,69 @@ class SignupForm extends React.Component {
 
   render() {
     return (
-      <div>
-      <div className="header"><Link to="/">Trippt</Link></div>
-      <div className="signup-form-container">
-        <form onSubmit={this.handleSubmit}>
-          <span className="signup-trippt">
-            Sign up for Trippt!
-          </span>
-          <span className="terms">
-            By signing up, you agree to Trippt's Terms and Conditions.
-          </span>
-          <div className="signup-form">
-            <br/>
-              <input type="text"
-                value={this.state.email}
-                onChange={this.update('email')}
-                placeholder="Email"
-              />
-            <br/>
-              <input type="text"
-                value={this.state.handle}
-                onChange={this.update('handle')}
-                placeholder="Handle"
-              />
-            <br/>
-              <input type="password"
-                value={this.state.password}
-                onChange={this.update('password')}
-                placeholder="Password"
-              />
-            <br/>
-              <input type="password"
-                value={this.state.password2}
-                onChange={this.update('password2')}
-                placeholder="Confirm Password"
-              />
-            <span id="sign-up">Already on Trippt, <span id="sign-up-link"><Link to="/login">Login!</Link></span></span>
-            <br/>
-            <input id="submit" type="submit" value="Submit" />
-            {this.renderErrors()}
+      <div className="signup-all">
+        {/* < img src='https://images.pexels.com/photos/347141/pexels-photo-347141.jpeg'
+        className="background-img"/> */}
+
+        <div className="signup-header">
+          <h1>Trippt</h1>
+        </div>
+        <div className="signup-body">
+          <div className="signup-inner-body">
+            <form className="signup-form">
+              <label>
+                <input
+                  className="signup-input"
+                  type="text"
+                  value={this.state.email}
+                  onChange={this.update("email")}
+                  placeholder="Email"
+                />
+              </label>
+              <label>
+                <input
+                  className="signup-input"
+                  type="text"
+                  value={this.state.handle}
+                  onChange={this.update("handle")}
+                  placeholder="Handle"
+                />
+              </label>
+              <label>
+                <input
+                  className="signup-input"
+                  type="password"
+                  value={this.state.password}
+                  onChange={this.update("password")}
+                  placeholder="Password"
+                />
+              </label>
+              <label>
+                <input
+                  className="signup-input"
+                  type="password"
+                  value={this.state.password2}
+                  onChange={this.update("password2")}
+                  placeholder="Confirm Password"
+                />
+              </label>
+              {this.renderErrors()}
+              <span id="log-in">
+                Already on Trippt,{" "}
+                <span id="login-link">
+                  <Link to="/login">Login!</Link>
+                </span>
+              </span>
+              <div className="signup-btn">
+                <button type="submit" onClick={this.handleSubmit}>
+                  Register Account
+                </button>
+              </div>
+            </form>
           </div>
-        </form>
-            <div className="travel-pic">
-              <img src="https://www.itl.cat/pngfile/big/209-2095289_laguna-beach-california-wallpaper-high-resolution-travel-images.jpg" />
-            </div>
-      </div>
+        </div>
+
+        <div className="signup-footer"></div>
       </div>
     );
   }
