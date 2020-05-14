@@ -9,6 +9,7 @@ import { logout } from './actions/session_actions';
 
 //Window Testing Only//
 import * as AttAPIUtil from './util/attraction_api_util'
+import * as TripAPIUtil from './util/trip_api_util'
 // import { getAttractions } from './actions/attraction_actions'
 //Window Testing Only//
 
@@ -37,10 +38,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
   //Window Testing Only//
-  window.getAttractions = AttAPIUtil.getAttractions
-  // window.getAttractions = getAttractions
   window.dispatch = store.dispatch
   window.getState = store.getState
+  window.getAttractions = AttAPIUtil.getAttractions
+  window.getUserTrips = TripAPIUtil.getUserTrips
+  // window.getAttractions = getAttractions
   //Window Testing Only//
 
   ReactDOM.render(<Root store={store} />, root);

@@ -10,22 +10,42 @@ class CreateTrip extends React.Component {
             location: ''
         }
         this.handleSubmit = this.handleSubmit.bind(this)
-    }
+        this.handleGetAttraction = this.handleGetAttraction.bind(this)
+        // this.handleGetUserTrips = this.handleGetUserTrips.bind(this)
+    };
+
+    // componentDidMount() {
+    //     this.props.getUserTrips(this.props.user.id)
+    // }
 
     handleSubmit(e) {
         e.preventDefault();
         this.props.createTrip(this.state)
-    }
+    };
     
+    handleGetAttraction(e) {
+        e.preventDefault();
+        this.props.getAttractions(295424, 'Dubai')
+    };
+
+
+
+    // handleGetUserTrips(e) {
+    //     e.preventDefault();
+    //     this.props.getUserTrips("5ebb148fc8bb6da76244a817")
+    // };
 
     render() {
         return (
             <div>
-                <form onSubmit={this.handleSubmit}>
 
+                <form onSubmit={this.handleSubmit}>
                     <button onClick={() => this.setState({location: 'Dubai'})}>Dubai</button>
-                    <button onClick={() => this.props.getAttractions(295424, 'Dubai')}>Get</button>
                 </form>
+                <button onClick={this.handleGetAttraction}>Get Attractions</button>
+                {this.props.attractions.map((attr, idx) => (
+                    <li key={idx}>{attr.name}</li>
+                ))}
             </div>
         )
     }
