@@ -51,7 +51,9 @@ class Attraction extends React.Component{
         {this.props.attractions.map((place, idx) => (
           <div key={idx}>
             <span>{place.name}</span>
-            {oneMore((another(result(place.photo)))) !== undefined} ? <img className="picture" src={`${oneMore((another(result(place.photo))))}`} alt=""/> : {""}
+            {oneMore((another(result(place.photo)))) !== undefined ?
+             <img className="picture" src={`${oneMore((another(result(place.photo))))}`} alt=""/> 
+             : "" } 
             
             {/* {console.log(result(place.photo))} */}
             {console.log(another(result(place.photo)))}
