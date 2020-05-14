@@ -4,7 +4,7 @@ import Restaurant from './restaurant';
 
 const mapStateToProps = (state) => {
     return {
-      restaurants: state.restaurants || []
+      restaurants: state.restaurants || {}
     };
 };
 
