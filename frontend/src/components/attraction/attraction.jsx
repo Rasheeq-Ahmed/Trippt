@@ -28,9 +28,6 @@ class Attraction extends React.Component{
           </div>
         ))}
       </div> */}
-      <div>
-        {this.props.attractions[0].photo.images[0].large}
-      </div>
       </div>
       )
   }

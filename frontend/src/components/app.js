@@ -24,7 +24,7 @@ const App = () => (
       <ProtectedRoute exact path={`/create/:location`} component={CreateTrip}/>
       <AuthRoute exact path="/destination" component={Destination}/>
       <Route path="/profile" component={ProfilePage}/>
-      <Route path="/attraction" component={Attraction}/>
+      <Route path="/attractions/:location" component={Attraction}/>
     </Switch>
   </div>
 );

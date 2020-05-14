@@ -38,6 +38,7 @@
   color: white;
   font-family: cursive;
   background-size: cover;
+  /* border-radius: 50%; */
 }
 
 .restaurants:hover, .attractions:hover, .nightlife:hover{

@@ -1,5 +1,6 @@
 import React from 'react';
 import NavBar from '../nav/navbar_container';
+import { Link } from 'react-router-dom';
 import "./destination.css"
 
 
@@ -14,7 +15,7 @@ class Destination extends React.Component{
         </div>
         <div className="categories">
           <span className="restaurants">Restaurants</span>
-          <span className="attractions">Attractions</span>
+          <span className="attractions"><Link to="/attractions/dubai">Attractions</Link></span>
         </div>
         <div className="categories">
           <span className="nightlife">NightLife</span>
