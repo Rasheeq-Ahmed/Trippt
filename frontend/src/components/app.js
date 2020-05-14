@@ -12,6 +12,7 @@ import LoginFormContainer from './session/login_form_container';
 import SignupFormContainer from './session/signup_form_container';
 import Destination from './destination/destination'
 import Attraction from './attraction/attraction_container';
+import Restaurant from './restaurant/restaurant_container';
 
 const App = () => (
   <div>
@@ -25,6 +26,7 @@ const App = () => (
       <AuthRoute exact path="/destination" component={Destination}/>
       <Route path="/profile" component={ProfilePage}/>
       <Route path="/attractions/:location" component={Attraction}/>
+      <Route path="/restaurants/:location" component={Restaurant}/>
     </Switch>
   </div>
 );
