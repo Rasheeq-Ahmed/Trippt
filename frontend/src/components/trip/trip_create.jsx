@@ -43,7 +43,9 @@ class CreateTrip extends React.Component {
                     <button onClick={() => this.setState({location: 'Dubai'})}>Dubai</button>
                 </form>
                 <button onClick={this.handleGetAttraction}>Get Attractions</button>
-
+                {this.props.attractions.map((attr, idx) => (
+                    <li key={idx}>{attr.name}</li>
+                ))}
             </div>
         )
     }

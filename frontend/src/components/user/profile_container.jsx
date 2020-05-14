@@ -4,7 +4,7 @@ import { getUserTrips, removeTrip} from '../../actions/trip_actions'
 
 const mSTP = state => ({
     user: state.session.user,
-    trips: Object.values(state.trips)
+    trips: Object.values(state.trips) || []
 });
 
 const mDTP = dispatch => ({
