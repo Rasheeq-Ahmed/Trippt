@@ -11,7 +11,7 @@ import MainPage from './main/main_page';
 import LoginFormContainer from './session/login_form_container';
 import SignupFormContainer from './session/signup_form_container';
 import Destination from './destination/destination'
-
+import Attraction from './attraction/attraction_container';
 
 const App = () => (
   <div>
@@ -24,6 +24,7 @@ const App = () => (
       <ProtectedRoute exact path={`/create`} component={CreateTrip}/>
       <AuthRoute exact path="/destination" component={Destination}/>
       <Route path="/profile" component={ProfilePage}/>
+      <Route path="/attraction" component={Attraction}/>
     </Switch>
   </div>
 );
