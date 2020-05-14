@@ -6,7 +6,9 @@ const Trip = require("../../models/Trip");
 router.get("/user/:user_id", (req, res) => {
     Trip
         .find({user: req.params.user_id})
+        .sort({date: -1})
         .then(trips => res.json(trips))
+        // .then(trips => console.log(trips))
         .catch(err => res.status(400).json(err));
 });
 
@@ -17,9 +19,9 @@ router.get("/:id", (req, res) => {
         .catch(err => res.status(400).json(err))
 });
 
-router.delete("/", (req, res) => {
+router.delete("/:id", (req, res) => {
     Trip
-        .remove(res.json({message: 'DELETED TRIP'}))
+        .findByIdAndDelete(req.params.id)
         .catch(err => res.status(400).json(err))
 }); 
 

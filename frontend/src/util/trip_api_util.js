@@ -8,6 +8,11 @@ export const getTrip = (id) => {
     return axios.get(`/api/trips/${id}`)
 };
 
+export const getUserTrips = (user_id) => {
+    return axios.get(`/api/trips/user/${user_id}`)
+    // .then(trips => console.log(trips))
+};
+
 export const createTrip = (data) => {
     return axios.post(`/api/trips/`, data)
 };
