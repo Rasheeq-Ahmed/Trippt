@@ -6,6 +6,10 @@ class ProfilePage extends React.Component {
         super(props)
     }
 
+    componentDidMount() {
+        this.props.getUserTrips(this.props.user.id)
+    }
+
     tabClick() {
 
     }
@@ -45,7 +49,17 @@ class ProfilePage extends React.Component {
                         <div className="prof-right-body">
                             <div className="trips">
                                 <ul>
-                                <h2>Trip 1</h2>
+                                    {this.props.trips.map((trip, idx) => (
+                                        <div key={idx}>
+                                            <h2>Trip {idx+1}</h2>
+                                            <h3>{trip.location}</h3>
+                                            <div id='trip' className="tabcontent">
+                                                <li>Food:  🍔🍜🍱</li>
+                                                <li>Things To Do: 🗺️🏝️🌆</li>
+                                            </div>
+                                        </div>
+                                    ))}
+                                {/* <h2>Trip 1</h2>
                                 <div id='trip' className="tabcontent">
                                     <li>Food:  🍔🍜🍱</li>
                                     <li>Things To Do: 🗺️🏝️🌆</li>
@@ -61,7 +75,7 @@ class ProfilePage extends React.Component {
                                 <div id='trip' className="tabcontent">
                                         <li>Food:  🍔🍜🍱</li>
                                         <li>Things To Do: 🗺️🏝️🌆</li>
-                                </div>
+                                </div> */}
                                 </ul>
                             </div>
 
