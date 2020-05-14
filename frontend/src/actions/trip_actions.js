@@ -1,11 +1,17 @@
 import * as tripAPIUtils from '../util/trip_api_util';
 
 export const RECEIVE_TRIPS = 'RECEIVE_TRIPS';
+export const RECEIVE_USER_TRIPS = 'RECEIVE_USER_TRIPS'
 export const RECEIVE_TRIP = 'RECEIVE_TRIP';
 export const REMOVE_TRIP = 'REMOVE_TRIP';
 
 const receiveTrips = (trips) => ({
     type: RECEIVE_TRIPS,
+    trips
+});
+
+const receiveUserTrips = (trips) => ({
+    type: RECEIVE_USER_TRIPS,
     trips
 });
 
@@ -27,6 +33,11 @@ export const getTrips = () => dispatch => (
 export const getTrip = (id) => dispatch => (
     tripAPIUtils.getTrip(id)
         .then((trip) => dispatch(receiveTrip(trip)))
+);
+
+export const getUserTrips = (user_id) => dispatch => (
+    tripAPIUtils.getUserTrips(user_id)
+        .then((trips) => dispatch(receiveUserTrips(trips)))
 );
 
 export const createTrip = (data) => dispatch => (
