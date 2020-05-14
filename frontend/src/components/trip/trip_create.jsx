@@ -28,6 +28,8 @@ class CreateTrip extends React.Component {
         this.props.getAttractions(295424, 'Dubai')
     };
 
+
+
     // handleGetUserTrips(e) {
     //     e.preventDefault();
     //     this.props.getUserTrips("5ebb148fc8bb6da76244a817")
@@ -37,9 +39,13 @@ class CreateTrip extends React.Component {
         return (
             <div>
                 <div>
-                    {this.props.trips.map((trip, idx) => (
-                        <li key={idx}>{trip.location + " " + trip.date} </li>
-                    ))}
+                    {this.props.trips.map((trip, idx) => {
+                       return  (
+                            <li key={idx}>{trip.location + " " + trip.date + " " + trip._id} 
+                            
+                                <button onClick={ () => this.props.removeTrip(trip._id)}>Delete</button>
+                            </li>
+                    )})}
                 </div>
                 <form onSubmit={this.handleSubmit}>
                     <button onClick={() => this.setState({location: 'Dubai'})}>Dubai</button>

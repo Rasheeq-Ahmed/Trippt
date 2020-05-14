@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { createTrip, getUserTrips } from '../../actions/trip_actions';
+import { createTrip, getUserTrips, removeTrip} from '../../actions/trip_actions';
 import { getAttractions } from '../../actions/attraction_actions'
 import CreateTrip from './trip_create';
 
@@ -14,7 +14,8 @@ const mapDispatchToProps = dispatch => {
     return {
         createTrip: (data) => dispatch(createTrip(data)),
         getAttractions: (locationId, city) => dispatch(getAttractions(locationId,city)),
-        getUserTrips: (user_id) => dispatch(getUserTrips(user_id))
+        getUserTrips: (user_id) => dispatch(getUserTrips(user_id)),
+        removeTrip: (id) => dispatch(removeTrip(id))
     };
 };
 
