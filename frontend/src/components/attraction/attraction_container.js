@@ -5,7 +5,7 @@ import Attraction from './attraction';
 const mapStateToProps = (state, ownProps) => {
     return {
       //  user: state.session.user
-      attractions: state.attractions[ownProps.match.params.location] || []
+      attractions: state.attractions.Dubai || []
     };
 };
 
