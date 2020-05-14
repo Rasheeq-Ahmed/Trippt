@@ -10,9 +10,9 @@ class ProfilePage extends React.Component {
         this.props.getUserTrips(this.props.user.id)
     };
 
-    componentWillUnmount() {
-        this.props.getUserTrips(this.props.user.id)
-    };
+    // componentWillUnmount() {
+    //     this.props.getUserTrips(this.props.user.id)
+    // };
 
     tabClick() {
 
@@ -44,9 +44,9 @@ class ProfilePage extends React.Component {
                     <div className="prof-right">
                         <div className="prof-right-header">
                             <div className="prof-tabs">
-                                <button className="tablinks" onClick=''>Trips</button>
-                                <button className="tablinks" onClick=''>Destinations</button>
-                                <button className="tablinks" onClick=''>Other</button>
+                                <button className="tablinks" >Trips</button>
+                                <button className="tablinks" >Destinations</button>
+                                <button className="tablinks" >Other</button>
                             </div>
                             
                         </div>
@@ -54,7 +54,7 @@ class ProfilePage extends React.Component {
                             <div className="trips">
                                 <ul>
                                     {this.props.trips.map((trip, idx) => (
-                                        <div key={idx}>
+                                        <div key={trip._id}>
                                             <h2>Trip {idx+1}</h2>
                                             <h3>{trip.location}</h3>
                                             <ul id='trip' className="tabcontent">
