@@ -14,9 +14,9 @@ class CreateTrip extends React.Component {
         // this.handleGetUserTrips = this.handleGetUserTrips.bind(this)
     };
 
-    componentDidMount() {
-        this.props.getUserTrips(this.props.user.id)
-    }
+    // componentDidMount() {
+    //     this.props.getUserTrips(this.props.user.id)
+    // }
 
     handleSubmit(e) {
         e.preventDefault();
@@ -38,15 +38,7 @@ class CreateTrip extends React.Component {
     render() {
         return (
             <div>
-                <div>
-                    {this.props.trips.map((trip, idx) => {
-                       return  (
-                            <li key={idx}>{trip.location + " " + trip.date + " " + trip._id} 
-                            
-                                <button onClick={ () => this.props.removeTrip(trip._id)}>Delete</button>
-                            </li>
-                    )})}
-                </div>
+
                 <form onSubmit={this.handleSubmit}>
                     <button onClick={() => this.setState({location: 'Dubai'})}>Dubai</button>
                 </form>

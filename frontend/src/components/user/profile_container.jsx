@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import ProfilePage from './profile';
-import { getUserTrips } from '../../actions/trip_actions'
+import { getUserTrips, removeTrip} from '../../actions/trip_actions'
 
 const mSTP = state => ({
     user: state.session.user,
@@ -8,7 +8,8 @@ const mSTP = state => ({
 });
 
 const mDTP = dispatch => ({
-    getUserTrips: (user_id) => dispatch(getUserTrips(user_id))
+    getUserTrips: (user_id) => dispatch(getUserTrips(user_id)),
+    removeTrip: (id) => dispatch(removeTrip(id))
 });
 
 export default connect(mSTP, mDTP)(ProfilePage)

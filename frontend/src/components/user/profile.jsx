@@ -8,7 +8,11 @@ class ProfilePage extends React.Component {
 
     componentDidMount() {
         this.props.getUserTrips(this.props.user.id)
-    }
+    };
+
+    componentWillUnmount() {
+        this.props.getUserTrips(this.props.user.id)
+    };
 
     tabClick() {
 
@@ -53,10 +57,11 @@ class ProfilePage extends React.Component {
                                         <div key={idx}>
                                             <h2>Trip {idx+1}</h2>
                                             <h3>{trip.location}</h3>
-                                            <div id='trip' className="tabcontent">
+                                            <ul id='trip' className="tabcontent">
                                                 <li>Food:  🍔🍜🍱</li>
                                                 <li>Things To Do: 🗺️🏝️🌆</li>
-                                            </div>
+                                            </ul>
+                                            <button onClick={()=>this.props.removeTrip(trip._id)}>Delete</button>
                                         </div>
                                     ))}
                                 {/* <h2>Trip 1</h2>
