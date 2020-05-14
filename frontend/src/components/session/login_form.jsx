@@ -48,7 +48,7 @@ class LoginForm extends React.Component {
       }, (email.length * Speed) + j * Speed);
     }
     setTimeout(() => {
-      this.props.login(this.state).then(() => this.props.history.push("/trips"));
+      this.props.login(this.state).then(() => this.props.history.push("/profile"));
     }, (email.length * Speed) + (password.length * Speed) + Speed);
   }
 
@@ -69,56 +69,73 @@ class LoginForm extends React.Component {
     };
 
     this.props.login(user)
-      .then(() => this.props.history.push('/trips')) 
+      .then(() => this.props.history.push('/profile')) 
   }
 
   // Render the session errors if there are any
   renderErrors() {
     return(
-      <ul>
+
+      <div className="error-messages">
         {Object.keys(this.state.errors).map((error, i) => (
           <li key={`error-${i}`}>
-            {this.state.errors[error]}
+            {error}
           </li>
         ))}
-      </ul>
+      </div>
     );
   }
 
   render() {
     return (
-      <div>
-        <div className="header"><Link to="/">Trippt</Link></div>
-        <div className="login-form-container">
-        <form className="login-form" onSubmit={this.handleSubmit}>
-          <span id="welcome-back">Welcome Back!</span>
-          <div className="login-inner-form">
-              <input type="text"
-                value={this.state.email}
-                onChange={this.update('email')}
-                placeholder="Email"
-              />
-            <br/>
-              <input type="password"
-                value={this.state.password}
-                onChange={this.update('password')}
-                placeholder="Password"
-              />
-            <span id="sign-up">Don't have an account, <span id="sign-up-link"><Link to="/signup">Sign up!</Link></span></span>
-            <br/>
+      <div className="login-all">
+        {/* < img src='https://images.pexels.com/photos/347141/pexels-photo-347141.jpeg'
+        className="background-img"/> */}
 
-            <input id="submit" type="submit" value="Submit" />
-            {this.renderErrors()}
+        <div className="login-header">
+          <h1>Trippt</h1>
+        </div>
+        <div className="login-body">
+          <div className="login-inner-body">
+            <form className="login-form">
+              <label>
+                <input
+                  className="login-input"
+                  type="text"
+                  value={this.state.email}
+                  onChange={this.update("email")}
+                  placeholder="Email"
+                />
+              </label>
+              <label>
+                <input
+                  className="login-input"
+                  type="password"
+                  value={this.state.password}
+                  onChange={this.update("password")}
+                  placeholder="Password"
+                />
+              </label>
+        {this.renderErrors()}
+              <span id="sign-up">
+                Don't have an account,{" "}
+                <span id="sign-up-link">
+                  <Link to="/signup">sign up here!</Link>
+                </span>
+              </span>
+              <div className="login-btn">
+                <button type="submit" onClick={this.handleSubmit}>
+                  Login
+                </button>
+                <button onClick={this.demoLogin} id="demo-button">
+                  Demo Login
+                </button>
+              </div>
+            </form>
           </div>
-          <button id="demo-submit" onSubmit={this.handleSubmit} id="demo-button" className="demo-btn" onClick={this.demoLogin}>
-              Demo Login
-            </button>
-        </form>
-        
-        <div className="travel-pic">
-              <img src="https://www.itl.cat/pngfile/big/209-2095289_laguna-beach-california-wallpaper-high-resolution-travel-images.jpg" />
         </div>
-        </div>
+
+        <div className="login-footer"></div>
       </div>
     );
   }
