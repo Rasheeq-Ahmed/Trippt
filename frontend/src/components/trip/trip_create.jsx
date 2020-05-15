@@ -1,13 +1,23 @@
 import React from 'react';
 // import { Link } from 'react-router-dom';
 
+const locations = [
+    { location: 'Dubai', locationId: 295424 },
+    { location: 'San Francisco', locationId: 60713 },
+    { location: 'Paris', locationId: 187147 },
+    { location: 'New York', locationId: 60763 },
+    { location: 'Tokyo', locationId: 298184 },
+    { location: 'Sydney', locationId: 255060 },
+    
+]
 
 class CreateTrip extends React.Component {
     constructor(props) {
         super(props)
 
         this.state = {
-            location: ''
+            location: '',
+            locationId: ''
         }
         this.handleSubmit = this.handleSubmit.bind(this)
         this.handleGetAttraction = this.handleGetAttraction.bind(this)
@@ -40,12 +50,17 @@ class CreateTrip extends React.Component {
             <div>
 
                 <form onSubmit={this.handleSubmit}>
-                    <button onClick={() => this.setState({location: 'Dubai'})}>Dubai</button>
+                   {locations.map((loc, idx) => (
+                       <button 
+                            onClick={() => this.setState({location: loc.location, locationId: loc.locationId  })}
+                            key={idx}
+                            >{loc.location}</button>
+                   ))}
                 </form>
-                <button onClick={this.handleGetAttraction}>Get Attractions</button>
+                {/* <button onClick={this.handleGetAttraction}>Get Attractions</button>
                 {this.props.attractions.map((attr, idx) => (
                     <li key={idx}>{attr.name}</li>
-                ))}
+                ))} */}
 
                 <div>
                     {this.props.trips.map((trip, idx) => (
@@ -54,8 +69,12 @@ class CreateTrip extends React.Component {
                             <h3>{trip.location}</h3>
                             <ul id='trip' className="tabcontent">
                                 <li>Food:  🍔🍜🍱</li>
-                                <li>Things To Do: 🗺️🏝️🌆</li>
+                                <li onClick={() => this.props.getAttractions(this.state.location, this.state.locationId)}>Things To Do: 🗺️🏝️🌆</li>
                             </ul>
+                            {this.props.attractions.map((attr, idx) => (
+                                <li key={idx}>{attr.name}</li>
+                            ))}
+
                             <button onClick={() => this.props.removeTrip(trip._id)}>Delete</button>
                         </div>
                     ))}

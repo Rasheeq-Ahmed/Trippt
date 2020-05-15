@@ -9,7 +9,6 @@ const TripReducer = (state = {}, action) => {
             return Object.assign({}, action.trips);
         
         case RECEIVE_TRIP:
-    
             return Object.assign({}, state, {[action.trip.data._id]: action.trip.data});
             
         case RECEIVE_USER_TRIPS:
@@ -21,7 +20,6 @@ const TripReducer = (state = {}, action) => {
         
         case REMOVE_TRIP:
             nextState = Object.assign({}, state)
-
             delete nextState[action.id]
             return nextState;
     
