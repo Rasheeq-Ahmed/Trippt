@@ -20,6 +20,10 @@
 
 }
 
+.link-signup:hover{
+  font-weight: bold;
+}
+
 
 .login-body {
   /* background-color: lightcyan; */

@@ -1,23 +1,24 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-
-class Restaurant extends React.Component{
+class NightLife extends React.Component{
   constructor(props){
     super(props);
   }
 
   componentDidMount(){
-    this.props.getRestaurants(295424, 'Dubai')
+    this.props.getNightlife(295424, 'Dubai')
   }
 
   
 
   render(){
-    if (!this.props.restaurants.Dubai) {
+
+    if (!this.props.nightlife) {
       return null;
     }
-        const getPhotos = (photos) => {
+    
+    const getPhotos = (photos) => {
       for(var key in photos){
         if(key === "images"){
           return photos[key];
@@ -40,27 +41,29 @@ class Restaurant extends React.Component{
         }
       }
     }
-    
+
+    // {console.log(this.props.nightlife.Dubai)}
     return(
       <div>
       <div className="headline"> <span className="exploring"><Link to="/destination">Back to exploring
       <img className="back-icon" src="https://vectorified.com/images/arrow-icon-font-29.png"/>
       </Link></span>
-        <span className="category">Restaurants in Dubai</span>
+        <span className="category">NightLife in Dubai</span>
       </div>
       <div className="gallery">
-      {/* {console.log(this.props.restaurants.Dubai)} */}
-        {this.props.restaurants.Dubai.map((place, idx) => (
+      {/* {console.log(this.props.nightlife[0])} */}
+              {this.props.nightlife.map((place, idx) => (
           <figure key={idx} className="gallery-image">{place.name}
             {getUrl((getImages(getPhotos(place.photo)))) !== undefined ?
              <img className="picture" src={`${getUrl((getImages(getPhotos(place.photo))))}`} alt=""/> 
              : "" } 
           </figure>
         ))}
+    
       </div>
       </div>
       )
   }
 }
 
-export default Restaurant;
+export default NightLife;

@@ -63,7 +63,7 @@ class SignupForm extends React.Component {
         className="background-img"/> */}
 
         <div className="signup-header">
-          <h1>Trippt</h1>
+          <h1><Link to="/">Trippt</Link></h1>
         </div>
         <div className="signup-body">
           <div className="signup-inner-body">
@@ -108,7 +108,7 @@ class SignupForm extends React.Component {
               <span id="log-in">
                 Already on Trippt,{" "}
                 <span id="login-link">
-                  <Link to="/login">Login!</Link>
+                  <Link className="link-login" to="/login">Login!</Link>
                 </span>
               </span>
               <div className="signup-btn">
