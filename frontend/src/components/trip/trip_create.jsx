@@ -7,8 +7,7 @@ const locations = [
     { location: 'Paris', locationId: 187147 },
     { location: 'New York', locationId: 60763 },
     { location: 'Tokyo', locationId: 298184 },
-    { location: 'Sydney', locationId: 255060 },
-    
+    { location: 'Sydney', locationId: 255060 },  
 ]
 
 class CreateTrip extends React.Component {
@@ -17,7 +16,8 @@ class CreateTrip extends React.Component {
 
         this.state = {
             location: '',
-            locationId: ''
+            locationId: '',
+            
         }
         this.handleSubmit = this.handleSubmit.bind(this)
         this.handleGetAttraction = this.handleGetAttraction.bind(this)

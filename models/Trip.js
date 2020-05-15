@@ -17,6 +17,8 @@ const TripSchema = new Schema({
         required: true
     },
 
+    attractions: [],
+
     date: {
         type: Date,
         default: Date.now
