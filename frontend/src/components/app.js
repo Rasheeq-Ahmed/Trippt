@@ -26,10 +26,10 @@ const App = () => (
       <ProtectedRoute exact path="/trips" component={Trip}/>
       <ProtectedRoute exact path={`/create`} component={CreateTrip}/>
       <Route exact path="/destination" component={Destination}/>
-      <Route path="/attractions/" component={Attraction}/>
+      <Route path="/attractions/:location" component={Attraction}/>
       <Route path="/:locationId" component={AttractionShow}/>
-      <Route path="/restaurants/" component={Restaurant}/>
-      <Route path="/nightlife/" component={NightLife}/>
+      <Route path="/restaurants/:location" component={Restaurant}/>
+      <Route path="/nightlife/:location" component={NightLife}/>
       <ProtectedRoute path="/profile" component={ProfilePage}/>
     </Switch>
   </div>
