@@ -11,9 +11,6 @@ class ProfilePage extends React.Component {
         this.props.getUserTrips(this.props.user.id)
     };
 
-    // componentWillUnmount() {
-    //     this.props.getUserTrips(this.props.user.id)
-    // };
 
     tabClick() {
 

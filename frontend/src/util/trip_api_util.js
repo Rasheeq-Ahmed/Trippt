@@ -14,7 +14,7 @@ export const getUserTrips = (user_id) => {
 };
 
 export const createTrip = (data) => {
-    return axios.post(`/api/trips/${data.location}`, data)
+    return axios.post(`/api/trips/`, data)
 };
 
 export const removeTrip = (id) => {

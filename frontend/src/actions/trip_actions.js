@@ -15,15 +15,19 @@ const receiveUserTrips = (trips) => ({
     trips
 });
 
-const receiveTrip = (trip) => ({
-    type: RECEIVE_TRIP,
-    trip
-});
+const receiveTrip = (trip) => {
+    return {
+        type: RECEIVE_TRIP,
+        trip
+    }
+};
 
-const deleteTrip = (id) => ({
-    type: REMOVE_TRIP,
-    id
-});
+const deleteTrip = (id) => {
+    return {
+        type: REMOVE_TRIP,
+        id
+    }
+};
 
 export const getTrips = () => dispatch => (
     tripAPIUtils.getTrips()
@@ -40,10 +44,10 @@ export const getUserTrips = (user_id) => dispatch => (
         .then((trips) => dispatch(receiveUserTrips(trips)))
 );
 
-export const createTrip = (data) => dispatch => (
-    tripAPIUtils.createTrip(data)
+export const createTrip = (data) => dispatch => {
+    return tripAPIUtils.createTrip(data)
         .then((trip) => dispatch(receiveTrip(trip)))
-);
+};
 
 export const updateTrip = (data) => dispatch => (
     tripAPIUtils.updateTrip(data)
