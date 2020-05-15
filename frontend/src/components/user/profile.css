@@ -120,7 +120,7 @@ width: 100px;;
 }
 
 .prof-tabs button {
-    background-color: rgb(42, 180, 162);
+    background-color: rgb(26, 194, 180);
     border: none;
     outline: none;
     cursor: pointer;
@@ -129,7 +129,7 @@ width: 100px;;
     color: white;
 }
 .prof-tabs button:hover {
-    background-color: rgb(33, 145, 130);
+    background-color: rgb(45, 154, 158);
 }
 
 .tabcontent {
