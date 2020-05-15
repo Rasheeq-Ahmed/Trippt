@@ -12,6 +12,10 @@ const TripSchema = new Schema({
         required: true
     },
 
+    locationId: {
+        type: Number,
+        required: true
+    },
 
     date: {
         type: Date,

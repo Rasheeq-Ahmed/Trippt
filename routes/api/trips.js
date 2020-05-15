@@ -31,7 +31,8 @@ router.post("/:location",
     (req, res) => {
         const newTrip = new Trip({
             user: req.user.id,
-            location: req.params.location
+            location: req.body.location,
+            locationId: req.body.locationId
         });
 
         newTrip.save().then(trip => res.json(trip))
