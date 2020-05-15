@@ -25,6 +25,7 @@ width: 100px;;
     flex-direction: column;
     /* background-color: rgb(141, 63, 63); */
     margin-top: 100px;
+    background-color: whitesmoke;
 }
 
 
@@ -139,6 +140,7 @@ width: 100px;;
 .prof-right-body {
     width: 100%;
     height: 100%;
+    padding-left: 10px;
     /* background-color: burlywood; */
 }
 
@@ -149,6 +151,19 @@ width: 100px;;
     /* background-color: khaki; */
     height: 90%;
     margin-top: 15px;
+}
+
+.trips button {
+    background-color: rgb(42, 180, 162);
+    border: none;
+    outline: none;
+    cursor: pointer;
+    transition: 0.3s;
+    padding: 10px 20px;
+    color: white;
+    margin-right: 20px;
+    margin-bottom: 20px;
+
 }
 
 #trip {

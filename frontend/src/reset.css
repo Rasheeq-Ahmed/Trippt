@@ -30,3 +30,7 @@ a, a:visited, a:hover, a:active {
 a:-webkit-any-link {
     cursor: pointer;
 }
+
+html {
+	background-color: whitesmoke;
+}
