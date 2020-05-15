@@ -31,8 +31,9 @@ width: 100px;;
 
 .prof-banner{
     width: 90%;
+    max-width: 1000px;
     /* background-color: grey; */
-    height: 300px;
+    height: 400px;
     /* justify-content: center; */
     /* max-width: 1000px; */
     background-image: url(https://i.imgur.com/EFtDLws.jpg);
