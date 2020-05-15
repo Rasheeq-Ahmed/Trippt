@@ -67,7 +67,7 @@ class Attraction extends React.Component{
           <div className="gallery-grid" key={idx}>
             <figure className="gallery-image">{place.name}
             {getUrl((getImages(getPhotos(place.photo)))) !== null ?
-            <Link to={`/${place.location_id}`}> <img className="picture" src={`${getUrl((getImages(getPhotos(place.photo))))}`} alt=""/></Link>
+            <Link to={`/attractions/${place.location_id}`}> <img className="picture" src={`${getUrl((getImages(getPhotos(place.photo))))}`} alt=""/></Link>
              : "" }
              </figure>
             

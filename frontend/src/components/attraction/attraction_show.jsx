@@ -54,14 +54,14 @@ class AttractionShow extends React.Component{
         <div className="show-body">
           <div className="show-content">
             <div className='show-left'>
-        <div>{this.props.attraction.name}
-          {/* {console.log(this.props)} */}
-          <div>{this.props.attraction.address}</div>
-          <div>{this.props.attraction.description}</div>
-          <div>{this.props.attraction.website}</div>
-          <div>{this.props.attraction.ranking}</div>
-          <div>{this.props.attraction.rating}</div>
-          <div>{this.props.attraction.recommended_visit_length}</div>
+              <div>{this.props.attraction.name}
+                {/* {console.log(this.props)} */}
+                <div>{this.props.attraction.address}</div>
+                <div>{this.props.attraction.description}</div>
+                <div>{this.props.attraction.website}</div>
+                <div>{this.props.attraction.ranking}</div>
+                <div>{this.props.attraction.rating}</div>
+                <div>{this.props.attraction.recommended_visit_length}</div>
         </div>
               </div>
             <div className="show-right">
