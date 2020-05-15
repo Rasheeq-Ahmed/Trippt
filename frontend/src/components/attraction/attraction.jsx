@@ -1,6 +1,7 @@
 import React from 'react';
 import './attraction.css';
 import { Link } from 'react-router-dom';
+import NavBar from '../nav/navbar_container';
 
 
 class Attraction extends React.Component{
@@ -54,30 +55,36 @@ class Attraction extends React.Component{
       }
     }
 
-    return(
-      <div>
-      {/* <div>{console.log(this.props.attractions.slice(0,10))}</div> */}
-      <div className="headline"> <span className="exploring"><Link to="/destination">Back to exploring
-      <img className="back-icon" src="https://vectorified.com/images/arrow-icon-font-29.png"/>
-      </Link></span>
-        <span className="category">Attractions in Dubai</span>
-      </div>
-      <div className="gallery">
-        {this.props.attractions.map((place, idx) => (
-          <div className="gallery-grid" key={idx}>
-            <figure className="gallery-image">{place.name}
-            {getUrl((getImages(getPhotos(place.photo)))) !== null ?
-            <Link to={`/attractions/${place.location_id}`}> <img className="picture" src={`${getUrl((getImages(getPhotos(place.photo))))}`} alt=""/></Link>
-             : "" }
-             </figure>
-            
-            {/* {console.log(result(place.photo))} */}
-            {/* {console.log(getImages(getPhotos(place.photo)))} */}
+    return (
+      <div className="att-all">
+        <div className="att-header">
+          <NavBar />
+        </div>
+
+        <div className="att-body">
+          <div className="page-title">Attractions in Dubai</div>
+          <div className="gallery">
+            {this.props.attractions.map((place, idx) => (
+              <div className="gallery-image">
+                  <Link to={`/attractions/${place.location_id}`}>
+                    <div className="att"
+                      style={{
+                        backgroundImage: `url(${getUrl(
+                          getImages(getPhotos(place.photo))
+                        )})`}}>
+                          <p>
+                        {place.name}
+                          </p>
+                    </div>
+                  </Link>
+              </div>
+            ))}
           </div>
-        ))}
+        </div>
+
+        <div className="att-footer"></div>
       </div>
-      </div>
-      )
+    );
   }
 }
 

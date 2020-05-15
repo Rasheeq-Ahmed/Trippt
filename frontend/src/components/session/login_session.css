@@ -91,7 +91,7 @@
     color: white;
     font-weight: 500;
     font-size: 18px;
-    background-color: rgb(65, 218, 205);
+    background-color:rgb(26, 194, 180);
     display: flex;
     align-items: center;
     -webkit-box-pack: center;
@@ -109,7 +109,7 @@
 }
 
 .login-body button:hover {
-  background-color: rgb(42, 180, 162);
+  background-color: rgb(45, 154, 158);
 }
 
 /* 
