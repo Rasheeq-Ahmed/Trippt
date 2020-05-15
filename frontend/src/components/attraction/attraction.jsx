@@ -11,7 +11,7 @@ class Attraction extends React.Component{
    state = { show: false };
 
   componentDidMount(){
-    this.props.getAttractions(295424)
+    this.props.getAttractions(295424, 'Dubai')
   }
 
   // showModal = () => {
@@ -26,7 +26,7 @@ class Attraction extends React.Component{
 
   render(){
 
-    if (!this.props.attractions) {
+    if (!this.props.attractions.Dubai) {
       return null;
     }
     // data -> photo -> images -> url: "img src"

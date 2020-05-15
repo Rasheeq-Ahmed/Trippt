@@ -55,7 +55,7 @@ class NightLife extends React.Component{
               {this.props.nightlife.map((place, idx) => (
           <figure key={idx} className="gallery-image">{place.name}
             {getUrl((getImages(getPhotos(place.photo)))) !== undefined ?
-             <img className="picture" src={`${getUrl((getImages(getPhotos(place.photo))))}`} alt=""/> 
+            <Link to={`/nightlife/${place.location_id}`}><img className="picture" src={`${getUrl((getImages(getPhotos(place.photo))))}`} alt=""/></Link>
              : "" } 
           </figure>
         ))}
