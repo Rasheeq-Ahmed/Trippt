@@ -10,7 +10,7 @@ class Attraction extends React.Component{
    state = { show: false };
 
   componentDidMount(){
-    this.props.getAttractions(295424)
+    this.props.getAttractions(295424, 'Dubai')
   }
 
   // showModal = () => {
@@ -25,7 +25,7 @@ class Attraction extends React.Component{
 
   render(){
 
-    if (!this.props.attractions) {
+    if (!this.props.attractions.Dubai) {
       return null;
     }
     // data -> photo -> images -> url: "img src"
@@ -57,13 +57,14 @@ class Attraction extends React.Component{
     return(
       <div>
       {/* <div>{console.log(this.props.attractions.slice(0,10))}</div> */}
+      {console.log(this.props.attractions.Dubai.photo)}
       <div className="headline"> <span className="exploring"><Link to="/destination">Back to exploring
       <img className="back-icon" src="https://vectorified.com/images/arrow-icon-font-29.png"/>
       </Link></span>
         <span className="category">Attractions in Dubai</span>
       </div>
       <div className="gallery">
-        {this.props.attractions.map((place, idx) => (
+        {this.props.attractions.Dubai.map((place, idx) => (
           <div className="gallery-grid" key={idx}>
             <figure className="gallery-image">{place.name}
             {getUrl((getImages(getPhotos(place.photo)))) !== null ?

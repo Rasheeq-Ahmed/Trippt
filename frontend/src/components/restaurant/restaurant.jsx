@@ -53,7 +53,7 @@ class Restaurant extends React.Component{
         {this.props.restaurants.Dubai.map((place, idx) => (
           <figure key={idx} className="gallery-image">{place.name}
             {getUrl((getImages(getPhotos(place.photo)))) !== undefined ?
-             <img className="picture" src={`${getUrl((getImages(getPhotos(place.photo))))}`} alt=""/> 
+            <Link to={`/attractions/${place.location_id}`}><img className="picture" src={`${getUrl((getImages(getPhotos(place.photo))))}`} alt=""/></Link> 
              : "" } 
           </figure>
         ))}
