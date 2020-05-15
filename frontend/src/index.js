@@ -8,8 +8,8 @@ import { setAuthToken } from './util/session_api_util';
 import { logout } from './actions/session_actions';
 
 //Window Testing Only//
-import * as AttAPIUtil from './util/attraction_api_util'
-import * as TripAPIUtil from './util/trip_api_util'
+import * as AttAPIUtil from './util/attraction_api_util';
+import * as TripAPIUtil from './util/trip_api_util';
 // import { getAttractions } from './actions/attraction_actions'
 //Window Testing Only//
 
