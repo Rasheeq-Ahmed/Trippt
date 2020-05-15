@@ -14,11 +14,11 @@ class Destination extends React.Component{
           Explore Your Options
         </div>
         <div className="categories">
-          <span className="restaurants"><Link to="/restaurants/dubai">Restaurants</Link></span>
-          <span className="attractions"><Link to="/attractions/dubai">Attractions</Link></span>
+          <span className="restaurants"><Link to="/restaurants">Restaurants</Link></span>
+          <span className="attractions"><Link to="/attractions">Attractions</Link></span>
         </div>
         <div className="categories">
-          <span className="nightlife"><Link to="/nightlife/dubai">NightLife</Link></span>
+          <span className="nightlife"><Link to="/nightlife">NightLife</Link></span>
         </div>
       </div>
     )

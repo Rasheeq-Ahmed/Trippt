@@ -19,6 +19,7 @@ time, mark, audio, video {
 	vertical-align: baseline;
 	text-decoration: none;
 	list-style-type: none;
+	font-family: sans-serif;
 
 }
 
@@ -28,4 +29,8 @@ a, a:visited, a:hover, a:active {
 
 a:-webkit-any-link {
     cursor: pointer;
+}
+
+html {
+	background-color: whitesmoke;
 }
