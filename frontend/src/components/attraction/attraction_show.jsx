@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import './attraction_show.css'
 import NavBar from '../nav/navbar';
+import { urlencoded } from 'body-parser';
 
 
 class AttractionShow extends React.Component{
@@ -68,11 +69,11 @@ class AttractionShow extends React.Component{
             </div>
           </div>
             <div className="show-right"
-                  style={{ backgroundImage: `url${getUrl(getImages(getPhotos(this.props.attraction.photo)))}` }}>
+            style={{ backgroundImage: ""}}>
               <div className="show-photo"
                     // style={{ backgroundImage: `url${getUrl(getImages(getPhotos(this.props.attraction.photo)))}`}}
               >
-                Inner Div
+              <img src={getUrl(getImages(getPhotos(this.props.attraction.photo)))} alt=""/>
               </div>
               Outer Div
           </div>
