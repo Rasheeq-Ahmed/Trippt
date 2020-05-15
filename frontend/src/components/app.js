@@ -25,13 +25,13 @@ const App = () => (
     <AuthRoute exact path="/signup" component={SignupFormContainer} />
     <ProtectedRoute exact path="/trips" component={Trip} />
     <ProtectedRoute exact path={`/create`} component={CreateTrip} />
+    <ProtectedRoute exact path="/profile" component={ProfilePage} />
     <Route exact path="/destination" component={Destination} />
-    {/* <Route path="/:locationId" component={AttractionShow} /> */}
-    <Route path="/attractions" component={Attraction} />
-    <Route path="/restaurants" component={Restaurant} />
-    <Route path="/nightlife" component={NightLife} />
-    <ProtectedRoute path="/profile" component={ProfilePage} />
-    <Route path="/show" component={AttractionShow}/>
+    <Route exact path="/attractions" component={Attraction} />
+    <Route exact path="/:locationId" component={AttractionShow} />
+    <Route exact path="/restaurants/:locationId" component={Restaurant} />
+    <Route exact path="/nightlife" component={NightLife} />
+    {/* <Route path="/show" component={AttractionShow}/> */}
     </Switch>
   </div>
 );
