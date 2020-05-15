@@ -1,0 +1,106 @@
+.splash-all {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  background-color:whitesmoke;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+
+.splash-header {
+    height:100px;
+}
+.splash-background {
+  width: 90%;
+  height: 100%;
+}
+
+.splash-header {
+  /* background-color: red; */
+  height: 100px;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  font-size: 35px;
+
+}
+
+
+
+.splash-body {
+  background-color: whitesmoke;
+  height: 80%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.splash-inner-body {
+  width: 90%;
+  height: 80%;
+  /* background-color: lightcoral; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url(https://i.imgur.com/MKL5deQ.jpg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  max-width: 1800px;
+  height: 700px;
+  background-position: center;
+  /* position: fixed; */
+  /* z-index: 100; */
+}
+
+.splash-def {
+    display: flex;
+    /* background-color: lavenderblush; */
+    color: rgb(201, 248, 248);
+    flex-direction: column;
+    height: 200px;
+    width: 300px;
+    align-items: flex-start;
+    /* background-color: violet; */
+    /* overflow: auto; */
+    list-style: none;
+    justify-content: center;
+    /* background-color: whitesmoke; */
+    background-color: rgb(40, 83, 94);
+    opacity: .9;
+    font-weight: 500;
+    padding-left: 20px;
+}
+
+.splash-word  {
+    font-size: 40px;
+    /* margin-bottom: -25px; */
+
+}
+.splash-word-type {
+    font-size: 10px;
+        /* margin-bottom: -20px; */
+
+}
+
+.splash-subtext {
+    display: flex;
+    flex-direction: row;
+    font-size: 30px;
+}
+
+.italic {
+    font-style: italic;
+    margin-left: 10px;
+    margin-bottom: 10px;;
+}
+
+.splash-footer {
+  background-color: rgb(207, 207, 207);
+  height: 60px;
+  margin-top: 10px;
+  /* position: absolute; */
+  bottom: 0;
+}
+.definition {
+    margin-right: 18px;
+}

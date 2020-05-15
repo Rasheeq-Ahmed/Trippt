@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './attraction_show.css'
+import NavBar from '../nav/navbar';
 
 
 class AttractionShow extends React.Component{
@@ -46,10 +47,13 @@ class AttractionShow extends React.Component{
     }
 
     return(
-      <div className="show-form">
-        <div className="show-photo">
-          <img src={`${getUrl(getImages(getPhotos(this.props.attraction.photo)))}`} alt=""/>
+        <div className="show-all">
+        <div className="show-header">
+         <NavBar/>
         </div>
+        <div className="show-body">
+          <div className="show-content">
+            <div className='show-left'>
         <div>{this.props.attraction.name}
           {/* {console.log(this.props)} */}
           <div>{this.props.attraction.address}</div>
@@ -59,7 +63,19 @@ class AttractionShow extends React.Component{
           <div>{this.props.attraction.rating}</div>
           <div>{this.props.attraction.recommended_visit_length}</div>
         </div>
+              </div>
+            <div className="show-right">
+        <div className="show-photo">
+          <img src={`${getUrl(getImages(getPhotos(this.props.attraction.photo)))}`} alt=""/>
+        </div>
+            </div>
+          </div>
+        </div>
+
+        <div className="show-footer"></div>
       </div>
+        
+      // </div>
     )
   }
 }

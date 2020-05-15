@@ -1,5 +1,7 @@
 import React from 'react';
+import NavBar from '../nav/navbar_container';
 // import { Link } from 'react-router-dom';
+import './create.css'
 
 const locations = [
     { location: 'Dubai', locationId: 295424 },
@@ -7,8 +9,7 @@ const locations = [
     { location: 'Paris', locationId: 187147 },
     { location: 'New York', locationId: 60763 },
     { location: 'Tokyo', locationId: 298184 },
-    { location: 'Sydney', locationId: 255060 },
-    
+    { location: 'Sydney', locationId: 255060 },  
 ]
 
 class CreateTrip extends React.Component {
@@ -17,7 +18,8 @@ class CreateTrip extends React.Component {
 
         this.state = {
             location: '',
-            locationId: ''
+            locationId: '',
+            
         }
         this.handleSubmit = this.handleSubmit.bind(this)
         this.handleGetAttraction = this.handleGetAttraction.bind(this)
@@ -47,9 +49,17 @@ class CreateTrip extends React.Component {
 
     render() {
         return (
-            <div>
 
-                <form onSubmit={this.handleSubmit}>
+
+
+             <div className="create-all">
+        <div className="create-header">
+         <NavBar/>
+        </div>
+        <div className="create-body">
+          <div className="create-content">
+              <div className="content-inner">
+               <form onSubmit={this.handleSubmit}>
                    {locations.map((loc, idx) => (
                        <button 
                             onClick={() => this.setState({location: loc.location, locationId: loc.locationId  })}
@@ -57,12 +67,9 @@ class CreateTrip extends React.Component {
                             >{loc.location}</button>
                    ))}
                 </form>
-                {/* <button onClick={this.handleGetAttraction}>Get Attractions</button>
-                {this.props.attractions.map((attr, idx) => (
-                    <li key={idx}>{attr.name}</li>
-                ))} */}
-
-                <div>
+              </div>
+            <div className='content-inner2'>
+              <div>
                     {this.props.trips.map((trip, idx) => (
                         <div key={trip._id}>
                             <h2>Trip {idx + 1}</h2>
@@ -79,7 +86,13 @@ class CreateTrip extends React.Component {
                         </div>
                     ))}
                 </div>
-            </div>
+              </div>
+          </div>
+        </div>
+
+        <div className="create-footer"></div>
+      </div>
+      
         )
     }
 }

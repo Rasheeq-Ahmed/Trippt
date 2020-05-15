@@ -6,7 +6,7 @@ const Trip = require("../../models/Trip");
 router.get("/user/:user_id", (req, res) => {
     Trip
         .find({user: req.params.user_id})
-        .sort({date: -1})
+        // .sort({date: -1})
         .then(trips => res.json(trips))
         // .then(trips => console.log(trips))
         .catch(err => res.status(400).json(err));
@@ -26,6 +26,11 @@ router.delete("/:id", (req, res) => {
         .catch(err => res.status(400).json(err))
 }); 
 
+router.patch("./:id", (req, res) => {
+    Trip
+        .findByIdAndUpdate(req.params.id, )
+});
+
 router.post("/", 
     passport.authenticate("jwt", { session: false }),
     (req, res) => {
@@ -37,5 +42,6 @@ router.post("/",
 
         newTrip.save().then(trip => res.json(trip))
 }); 
+
 
 module.exports = router;
