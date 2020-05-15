@@ -41,7 +41,8 @@ class SignupForm extends React.Component {
     };
 
     this.props.signup(user)
-      .then(() => this.props.history.push('/trips'))
+      .then(() => this.props.login(user))
+      .then(() => this.props.history.push('/profile')) 
   }
 
   renderErrors() {
@@ -75,6 +76,7 @@ class SignupForm extends React.Component {
                   value={this.state.email}
                   onChange={this.update("email")}
                   placeholder="Email"
+                  required
                 />
               </label>
               <label>
@@ -84,6 +86,7 @@ class SignupForm extends React.Component {
                   value={this.state.handle}
                   onChange={this.update("handle")}
                   placeholder="Handle"
+                  required
                 />
               </label>
               <label>
@@ -93,6 +96,7 @@ class SignupForm extends React.Component {
                   value={this.state.password}
                   onChange={this.update("password")}
                   placeholder="Password"
+                  required
                 />
               </label>
               <label>
@@ -102,6 +106,7 @@ class SignupForm extends React.Component {
                   value={this.state.password2}
                   onChange={this.update("password2")}
                   placeholder="Confirm Password"
+                  required
                 />
               </label>
               {this.renderErrors()}

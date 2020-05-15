@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import './attraction_show.css'
 import NavBar from '../nav/navbar';
+import { urlencoded } from 'body-parser';
 
 
 class AttractionShow extends React.Component{
