@@ -11,7 +11,6 @@ class Destination extends React.Component{
       <div>
         <NavBar />
         <div className="headline">
-          Explore Your Options
         </div>
         <div className="categories">
           <span className="restaurants"><Link to="/restaurants">Restaurants</Link></span>

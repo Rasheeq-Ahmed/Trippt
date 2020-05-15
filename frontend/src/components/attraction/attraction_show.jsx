@@ -33,7 +33,7 @@ class AttractionShow extends React.Component{
 
     const getImages = (obj) => {
       for(var key in obj){
-        if(key === "medium"){
+        if(key === "large"){
           return obj[key]
         }
       }
@@ -47,43 +47,50 @@ class AttractionShow extends React.Component{
       }
     }
 
-    return(
-  
-        <div className="show-all">
-            <div className="show-header">
-                <NavBar/>
-            </div>
+    return (
+      <div className="show-all">
+        <div className="show-header">
+          <NavBar />
+        </div>
         <div className="show-body">
           <div className="show-content">
-            <div className='show-left'>
-                <span className='att-name'>{this.props.attraction.name} </span>
-                <span className='att-add'> Address: {this.props.attraction.address}</span>
-                <span>Ranking: {this.props.attraction.ranking}</span>
-                <span>Rating: {this.props.attraction.rating}</span>
-                <span>Recommended Visit Length: {this.props.attraction.recommended_visit_length}</span>
-                <a href={this.props.attraction.website}>{`Visit ${this.props.attraction.name}'s website`}</a>
+            <div className="show-left">
+              <span className="att-name">{this.props.attraction.name} </span>
+              <span className="att-add">
+                {" "}
+                Address: {this.props.attraction.address}
+              </span>
+              <span>Ranking: {this.props.attraction.ranking}</span>
+              <span>Rating: {this.props.attraction.rating}</span>
+              <span>
+                Recommended Visit Length:{" "}
+                {this.props.attraction.recommended_visit_length}
+              </span>
+              <a
+                href={this.props.attraction.website}
+              >{`Visit ${this.props.attraction.name}'s website`}</a>
 
-  
-                <div className='att-des'> {this.props.attraction.description}</div>
-
+              <div className="att-des">
+                {" "}
+                {this.props.attraction.description}
+              </div>
+            </div>
+            <div className="show-right">
+              <div className="show-photo">
+                <img className='photo'
+                  src={`${getUrl(
+                    getImages(getPhotos(this.props.attraction.photo))
+                  )}`}
+                  alt=""
+                />
+              </div>
             </div>
           </div>
-            <div className="show-right"
-            style={{ backgroundImage: ""}}>
-              <div className="show-photo"
-                    // style={{ backgroundImage: `url${getUrl(getImages(getPhotos(this.props.attraction.photo)))}`}}
-              >
-              <img src={getUrl(getImages(getPhotos(this.props.attraction.photo)))} alt=""/>
-              </div>
-              Outer Div
-          </div>
-          </div>
 
-        <div className="show-footer"></div>
+          <div className="show-footer"></div>
+        </div>
       </div>
-        
-      // </div>
-    )
+    );
   }
 }
 
