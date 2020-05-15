@@ -15,6 +15,8 @@ import Attraction from './attraction/attraction_container';
 import Restaurant from './restaurant/restaurant_container';
 import NightLife from './nightlife/nightlife_container';
 import AttractionShow from './attraction/attraction_show_container'
+import NightlifeShow from './nightlife/nightlife_show_container'
+import RestaurantShow from './restaurant/restaurant_show_container'
 
 const App = () => (
   <div>
@@ -30,7 +32,9 @@ const App = () => (
     <Route exact path="/attractions" component={Attraction} />
     <Route exact path="/attractions/:locationId" component={AttractionShow} />
     <Route exact path="/restaurants/" component={Restaurant} />
+    <Route exact path="/restaurants/:locationId" component={RestaurantShow} />
     <Route exact path="/nightlife/" component={NightLife} />
+    <Route exact path="/nightlife/:locationId" component={NightlifeShow} />
     {/* <Route path="/show" component={AttractionShow}/> */}
     </Switch>
   </div>

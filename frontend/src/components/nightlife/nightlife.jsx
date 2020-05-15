@@ -1,5 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import NavBar from '../nav/navbar_container'
+import '../attraction/attraction.css';
+
 
 class NightLife extends React.Component{
   constructor(props){
@@ -44,24 +47,35 @@ class NightLife extends React.Component{
 
     // {console.log(this.props.nightlife.Dubai)}
     return(
-      <div>
-      <div className="headline"> <span className="exploring"><Link to="/destination">Back to exploring
-      <img className="back-icon" src="https://vectorified.com/images/arrow-icon-font-29.png"/>
-      </Link></span>
-        <span className="category">NightLife in Dubai</span>
-      </div>
-      <div className="gallery">
-      {/* {console.log(this.props.nightlife[0])} */}
-              {this.props.nightlife.map((place, idx) => (
-          <figure key={idx} className="gallery-image">{place.name}
-            {getUrl((getImages(getPhotos(place.photo)))) !== undefined ?
-             <img className="picture" src={`${getUrl((getImages(getPhotos(place.photo))))}`} alt=""/> 
-             : "" } 
-          </figure>
-        ))}
-    
-      </div>
-      </div>
+      <div className="att-all" >
+        <div className="att-header">
+          <NavBar />
+        </div>
+
+        <div className="att-body">
+          <div className="page-title">Nightlife in Dubai</div>
+          <div className="gallery">
+            {this.props.nightlife.map((place, idx) => (
+              <div className="gallery-image">
+                <Link to={`/attractions/${place.location_id}`}>
+                  <div className="att"
+                    style={{
+                      backgroundImage: `url(${getUrl(
+                        getImages(getPhotos(place.photo))
+                      )})`
+                    }}>
+                    <p>
+                      {place.name}
+                    </p>
+                  </div>
+                </Link>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <div className="att-footer"></div>
+      </div >
       )
   }
 }

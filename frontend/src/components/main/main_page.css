@@ -65,7 +65,7 @@
     list-style: none;
     justify-content: center;
     /* background-color: whitesmoke; */
-    background-color: rgb(40, 83, 94);
+    background-color: rgba(40, 83, 94, 0.733);
     opacity: .9;
     font-weight: 500;
     padding-left: 20px;
