@@ -12,7 +12,7 @@ export const getNightlife = (locationId) => {
     },"params":{
     "lang":"en_US",
     "currency":"USD",
-    "sort":"recommended",
+    "sort":"ranking",
     "lunit":"km",
     "subcategory":"20",
     "location_id": `${locationId}`
