@@ -29,7 +29,7 @@ const App = () => (
     <Route exact path="/destination" component={Destination} />
     <Route exact path="/attractions" component={Attraction} />
     <Route exact path="/:locationId" component={AttractionShow} />
-    <Route exact path="/restaurants/:locationId" component={Restaurant} />
+    <Route exact path="/restaurants/" component={Restaurant} />
     <Route exact path="/nightlife" component={NightLife} />
     {/* <Route path="/show" component={AttractionShow}/> */}
     </Switch>
