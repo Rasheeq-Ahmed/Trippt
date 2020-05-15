@@ -19,19 +19,20 @@ import AttractionShow from './attraction/attraction_show_container'
 const App = () => (
   <div>
     {/* <NavBarContainer /> */}
-    {/* <Switch> */}
+    <Switch>
     <Route exact path="/" component={MainPage} />
     <AuthRoute exact path="/login" component={LoginFormContainer} />
     <AuthRoute exact path="/signup" component={SignupFormContainer} />
     <ProtectedRoute exact path="/trips" component={Trip} />
     <ProtectedRoute exact path={`/create`} component={CreateTrip} />
     <Route exact path="/destination" component={Destination} />
-    <Route path="/:locationId" component={AttractionShow} />
+    {/* <Route path="/:locationId" component={AttractionShow} /> */}
     <Route path="/attractions" component={Attraction} />
     <Route path="/restaurants" component={Restaurant} />
     <Route path="/nightlife" component={NightLife} />
     <ProtectedRoute path="/profile" component={ProfilePage} />
-    {/* </Switch> */}
+    <Route path="/show" component={AttractionShow}/>
+    </Switch>
   </div>
 );
 
