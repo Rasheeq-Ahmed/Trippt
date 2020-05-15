@@ -10,7 +10,7 @@ class Attraction extends React.Component{
    state = { show: false };
 
   componentDidMount(){
-    this.props.getAttractions(295424, 'Dubai')
+    this.props.getAttractions(295424)
   }
 
   // showModal = () => {
@@ -67,8 +67,8 @@ class Attraction extends React.Component{
           <div className="gallery-grid" key={idx}>
             <figure className="gallery-image">{place.name}
             {getUrl((getImages(getPhotos(place.photo)))) !== null ?
-             <img className="picture" src={`${getUrl((getImages(getPhotos(place.photo))))}`} alt=""/>
-             : "" } 
+            <Link to={`/${place.location_id}`}> <img className="picture" src={`${getUrl((getImages(getPhotos(place.photo))))}`} alt=""/></Link>
+             : "" }
              </figure>
             
             {/* {console.log(result(place.photo))} */}
