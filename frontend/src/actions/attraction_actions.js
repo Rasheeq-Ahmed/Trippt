@@ -4,10 +4,11 @@ import * as SAttAPIUtil from '../util/single_attraction_api_util';
 export const RECEIVE_ATTRACTIONS = 'RECEIVE_ATTRACTIONS';
 export const RECEIVE_ATTRACTION = 'RECEIVE_ATTRACTION';
 
-const receiveAttractions = (attractions) => {
+const receiveAttractions = (attractions, city) => {
     return {
         type: RECEIVE_ATTRACTIONS,
-        attractions
+        attractions,
+        city
     }
 };
 
@@ -20,9 +21,9 @@ const receiveAttraction = (attraction) => {
 
 
 
-export const getAttractions = (locationId) => dispatch => {
+export const getAttractions = (locationId, city) => dispatch => {
     return AttAPIUtil.getAttractions(locationId)
-        .then((attractions) => dispatch(receiveAttractions(attractions)))
+        .then((attractions) => dispatch(receiveAttractions(attractions, city)))
         // .then(attractions => console.log(attractions))
         .catch(error => console.log(error))
 };
