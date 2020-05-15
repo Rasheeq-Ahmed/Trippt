@@ -1,118 +1,70 @@
-/* .NavBar {
+.navbar-all {
+    /* background-color: rgb(0, 81, 255); */
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
-}
-
-.NavBar button {
-    height: 20px;
-}
-
-.Links1 {
-    width: 100px;
-    display: flex;
-    justify-content: space-between;
-}
-
-.Links2 {
-    width: 400px;
-    display: flex;
-    justify-content: space-between;
-} */
-
-a {
-    text-decoration: none;
-}
-
-a, a:visited, a:hover, a:active {
-	color: inherit;
-}
-
-body{
-    margin: 0;
-}
-
-.main-background{
-    background: linear-gradient(45deg, black, transparent); 
-    height: 100vh;
+    justify-content: space-around;
+    height: 80px;
     width: 100%;
+    align-items: center;
+    box-sizing: border-box;
+    position: fixed;
+    background-color: whitesmoke;
+    top: 0;
 }
 
-.homepage-header{
+.nav-left {
+    align-items: center;
+    /* background-color: royalblue; */
+    height: 100%;
+    width: 40%;
+    align-items: center;
     display: flex;
-    flex-direction: column;
-    /* border: 2px solid blue; */
+    font-size: 60px;
+    justify-content: flex-start;
 }
 
-.app-name{
-    font-size: 70px;
+.nav-right {
+    width: 40%;
+    height: 100%;
     display: flex;
-    justify-content: center;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    color: white;
-
-}
-
-.user-login-signup{
-    display: flex;
+    align-items: center;
     justify-content: flex-end;
-    margin-top: -50px;
-    /* border: 2px solid red; */
+}
+
+.nav-auth {
+    display:flex;
+    flex-direction: row;
+    justify-content: space-evenly;
 
 }
 
-.user-login-signup > a{
+.nav-auth button{
+    margin-left: 30px;
+    background-color: rgb(42, 180, 162);
+    padding: 10px 20px;
+    font-size: 18px;
+    line-height: 20px;
+    text-align: center;
+    color:white;
+    cursor: pointer;
+}
+
+.nav-auth button:hover {
+    background-color: rgb(45, 154, 158);
+}
+
+/* 
+.nav-auth > button{
     margin-right: 30px;
     font-size: 20px;
     border: 2px solid white;
     padding: 10px 25px 10px;
     border-radius: 5px;
-}
+} */
 
-.user-login-signup > a:hover{
+.nav-auth > button:hover{
     border: 2px solid;
     background: white;
     cursor: pointer;
     color: black
-}
-
-.destination{
-    justify-content: center;
-    display: flex;
-    margin-top: 100px;
-    padding-top: 20px;
-    padding-bottom: 20px;
-    color: white;
-    font-family: cursive;;
-    /* border: 2px solid pink; */
-
-}
-
-.dubai{
-    height: 270px;
-    display: flex;
-    margin: 0 auto;
-    /* border: 2px solid rebeccapurple; */
-}
-
-.city{
-    display: flex;
-    justify-content: center;
-    color: bisque;
-    margin-top: 50px;
-    /* border: 2px solid green; */
-}
-
-.footer{
-    display: flex;
-    justify-content: center;
-    color: white;
-    position: absolute;
-    bottom: 10px;
-    width: 99%;
-    /* border: 2px solid black; */
-}
-
-.cities{
-    height: 620px;
 }

@@ -32,7 +32,7 @@ class LoginForm extends React.Component {
   demoLogin() {
     const email = this.demoEmail;
     const password = this.demoPassword;
-    const Speed = 50;
+    const Speed = 100;
 
     document.getElementById("demo-button").disabled = true;
     this.setState({ email: "", password: "" });
@@ -89,9 +89,6 @@ class LoginForm extends React.Component {
   render() {
     return (
       <div className="login-all">
-        {/* < img src='https://images.pexels.com/photos/347141/pexels-photo-347141.jpeg'
-        className="background-img"/> */}
-
         <div className="login-header">
           <h1><Link to="/">Trippt</Link></h1>
         </div>

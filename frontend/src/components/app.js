@@ -13,27 +13,26 @@ import SignupFormContainer from './session/signup_form_container';
 import Destination from './destination/destination'
 import Attraction from './attraction/attraction_container';
 import Restaurant from './restaurant/restaurant_container';
-import NightLife from './nightlife/nightlife_container'
+import NightLife from './nightlife/nightlife_container';
 import AttractionShow from './attraction/attraction_show_container'
 
 const App = () => (
   <div>
     {/* <NavBarContainer /> */}
-    <Switch>
-      <Route exact path="/" component={MainPage} />
-      <AuthRoute exact path="/login" component={LoginFormContainer} />
-      <AuthRoute exact path="/signup" component={SignupFormContainer} />
-      <ProtectedRoute exact path="/trips" component={Trip}/>
-      <ProtectedRoute exact path={`/create`} component={CreateTrip}/>
-      <Route exact path="/destination" component={Destination}/>
-      <Route path="/attractions/:location" component={Attraction}/>
-      <Route path="/:locationId" component={AttractionShow}/>
-      <Route path="/restaurants/:location" component={Restaurant}/>
-      <Route path="/nightlife/:location" component={NightLife}/>
-      <ProtectedRoute path="/profile" component={ProfilePage}/>
-    </Switch>
+    {/* <Switch> */}
+    <Route exact path="/" component={MainPage} />
+    <AuthRoute exact path="/login" component={LoginFormContainer} />
+    <AuthRoute exact path="/signup" component={SignupFormContainer} />
+    <ProtectedRoute exact path="/trips" component={Trip} />
+    <ProtectedRoute exact path={`/create`} component={CreateTrip} />
+    <Route exact path="/destination" component={Destination} />
+    <Route path="/:locationId" component={AttractionShow} />
+    <Route path="/attractions" component={Attraction} />
+    <Route path="/restaurants" component={Restaurant} />
+    <Route path="/nightlife" component={NightLife} />
+    <ProtectedRoute path="/profile" component={ProfilePage} />
+    {/* </Switch> */}
   </div>
 );
 
 export default App;
-
