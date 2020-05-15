@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 
 class Restaurant extends React.Component{
@@ -42,7 +43,11 @@ class Restaurant extends React.Component{
     
     return(
       <div>
-      <div className="headline">Restaurants in Dubai</div>
+      <div className="headline"> <span className="exploring"><Link to="/destination">Back to exploring
+      <img className="back-icon" src="https://vectorified.com/images/arrow-icon-font-29.png"/>
+      </Link></span>
+        <span className="category">Restaurants in Dubai</span>
+      </div>
       <div className="gallery">
       {/* {console.log(this.props.restaurants.Dubai)} */}
         {this.props.restaurants.Dubai.map((place, idx) => (

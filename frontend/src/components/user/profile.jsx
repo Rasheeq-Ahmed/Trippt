@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
 import './profile.css'
 
 class ProfilePage extends React.Component {
@@ -44,8 +45,8 @@ class ProfilePage extends React.Component {
                     <div className="prof-right">
                         <div className="prof-right-header">
                             <div className="prof-tabs">
-                                <button className="tablinks" >Trips</button>
-                                <button className="tablinks" >Destinations</button>
+                                <Link to="/trips"><button className="tablinks" >Trips</button></Link>
+                                <Link to="/destination"><button className="tablinks" >Destinations</button></Link>
                                 <button className="tablinks" >Other</button>
                             </div>
                             

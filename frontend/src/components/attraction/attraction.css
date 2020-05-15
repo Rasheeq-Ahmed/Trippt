@@ -37,3 +37,19 @@
   display: flex;
   justify-content: center;
 }
+
+.exploring{
+  display: flex;
+  margin: 0 auto 0 0;
+  text-underline-position: under;
+}
+
+.category{
+  display: flex;
+  justify-content: center;
+  position: absolute;
+}
+
+.back-icon{
+  height: 20px;
+}

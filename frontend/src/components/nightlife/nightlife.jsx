@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 class NightLife extends React.Component{
   constructor(props){
@@ -44,7 +45,11 @@ class NightLife extends React.Component{
     // {console.log(this.props.nightlife.Dubai)}
     return(
       <div>
-      <div className="headline">NightLife in Dubai</div>
+      <div className="headline"> <span className="exploring"><Link to="/destination">Back to exploring
+      <img className="back-icon" src="https://vectorified.com/images/arrow-icon-font-29.png"/>
+      </Link></span>
+        <span className="category">NightLife in Dubai</span>
+      </div>
       <div className="gallery">
       {/* {console.log(this.props.nightlife[0])} */}
               {this.props.nightlife.map((place, idx) => (

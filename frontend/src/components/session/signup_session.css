@@ -121,3 +121,7 @@
     margin-top: -10px;
     margin-bottom: 20px;
   } */
+
+  .link-login:hover{
+    font-weight: bold;
+  }
