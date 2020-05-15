@@ -1,21 +1,113 @@
-.picture{
-  height: 200px;
-  margin-bottom: 20px;
+
+
+.att-all{
+  display: flex;
+  box-sizing: border-box;
+  flex-direction: column;
+  width: 100%;
+  height: 100vh;
+  /* background-color: rgb(255, 140, 0); */
+  flex-direction: column;
 }
 
-.gallery{
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  /* grid-template-rows: repeat(8, 5vw); */
-  grid-gap: 15px;
+.att-header {
+/* top: 0;
+  height: 10px; */
+  /* height: 500px;; */
+  height: 20%;
 }
 
+.att-body {
+
+  /* position: center; */
+  
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 80%;
+  justify-content: center;
+  /* margin-top: 300px; */
+  /* background-color: teal; */
+  justify-content: center;
+}
+
+.page-title {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  /* background-color: blue; */
+  height: 20px;
+  font-size: 50px;
+}
+/* .att-footer {
+  height: 10%;
+} */
+
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  width: 100%;
+  height: 100%;
+  margin-left: 20px;
+  /* background-color: tomato; */
+}
 .gallery-image{
   display: flex;
-  flex-direction: column-reverse;
+  flex-direction: row;
+  align-items: center;
+  margin-top: 75px;
+  margin-left: 30px;
+  font-family: fantasy;
+  /* background-color: thistle; */
+  width: 500px;
+  height: 500px; 
+  justify-content: center;
+  align-items: center;
+  
+}
+
+
+
+/* .picture-title {
+  display: flex;
+  width: 30px;
+  height: 30px;
+  align-items: center;
+  justify-content: center;
+  background-size: contain;
+  font-size: 40px;
+  color: white;
+  background-color: rgb(172, 117, 117);
+} */
+
+
+.att{
+    background-size: cover; 
+   display: flex;
+  /* flex-direction: column-reverse; */
   align-items: center;
   margin-bottom: 10px;
   font-family: fantasy;
+  background-color: thistle;
+  width: 500px;
+  height: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center; 
+  margin-left: 30px;
+}
+.att > p {
+  background-color: rgba(0, 0, 0, 0.425);
+  height:100px;
+  width: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 30px;
+  flex-direction: row;
+  /* padding-top: -10px; */
+  color: white;
 }
 
 .picture:hover{
@@ -23,33 +115,3 @@
   box-shadow: 0px 0px 20px cadetblue;
 }
 
-.headline{
-  display: flex;
-  justify-content: center;
-  font-size: 30px;
-  margin-bottom: 20px;
-  text-decoration: underline;
-  margin-top: 9px;
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-}
-
-.gallery-grid{
-  display: flex;
-  justify-content: center;
-}
-
-.exploring{
-  display: flex;
-  margin: 0 auto 0 0;
-  text-underline-position: under;
-}
-
-.category{
-  display: flex;
-  justify-content: center;
-  position: absolute;
-}
-
-.back-icon{
-  height: 20px;
-}
