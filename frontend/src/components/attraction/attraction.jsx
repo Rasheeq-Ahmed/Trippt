@@ -57,7 +57,7 @@ class Attraction extends React.Component{
     return(
       <div>
       {/* <div>{console.log(this.props.attractions.slice(0,10))}</div> */}
-      {console.log(this.props.attractions.Dubai.photo)}
+      {/* {console.log(this.props.attractions.Dubai.photo)} */}
       <div className="headline"> <span className="exploring"><Link to="/destination">Back to exploring
       <img className="back-icon" src="https://vectorified.com/images/arrow-icon-font-29.png"/>
       </Link></span>
