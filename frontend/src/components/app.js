@@ -23,7 +23,7 @@ const App = () => (
       <AuthRoute exact path="/login" component={LoginFormContainer} />
       <AuthRoute exact path="/signup" component={SignupFormContainer} />
       <ProtectedRoute exact path="/trips" component={Trip}/>
-      <ProtectedRoute exact path={`/create/:location`} component={CreateTrip}/>
+      <ProtectedRoute exact path={`/create`} component={CreateTrip}/>
       <Route exact path="/destination" component={Destination}/>
       <Route path="/attractions/:location" component={Attraction}/>
       <Route path="/restaurants/:location" component={Restaurant}/>
