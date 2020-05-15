@@ -64,7 +64,7 @@ class Attraction extends React.Component{
         <div className="att-body">
           <div className="page-title">Attractions in Dubai</div>
           <div className="gallery">
-            {this.props.attractions.map((place, idx) => (
+            {this.props.attractions.Dubai.map((place, idx) => (
               <div className="gallery-image">
                   <Link to={`/attractions/${place.location_id}`}>
                     <div className="att"
