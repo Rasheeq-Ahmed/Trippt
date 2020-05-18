@@ -1,4 +1,4 @@
-<img src='frontend/src/assets/trippt-home.PNG' width='900' height='600' >
+<img src='frontend/src/assets/trippt-home.PNG' width='700' height='600' >
 
 # Overview 
 
@@ -58,7 +58,7 @@ Users can select from three different categories. They can choose from Attractio
 <img src='frontend/src/assets/trippt-login.PNG' width='900' height='600' >
 
 ### Trips
-<img src='frontend/src/assets/trippt-trips.PNG' width='900' height='600' >
+<img src='frontend/src/assets/trippt-trips.PNG' width='1200' height='600' >
 
 ### User Profile
-<img src='frontend/src/assets/trippt-userprofile.PNG' width='900' height='600' >
+<img src='frontend/src/assets/trippt-userprofile.PNG' width='900' height='400' >
