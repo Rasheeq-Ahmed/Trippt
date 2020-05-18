@@ -27,7 +27,7 @@
 </ul>
 
 
-#Experiences
+# Experiences
 
 <img src='frontend/src/assets/trippt-experiences.PNG' width='900' height='600' >
 
