@@ -1,4 +1,4 @@
-<img src='frontend/src/assets/images/trippt-home.png' width='600' height='375' >
+<img src='frontend/src/assets/trippt-home.PNG' width='600' height='375' >
 
 # Overview 
 
@@ -29,7 +29,7 @@
 
 #Experiences
 
-<img src='frontend/src/assets/images/trippt-experiences.png' width='600' height='375' >
+<img src='frontend/src/assets/trippt-experiences.PNG' width='600' height='375' >
 
 Users can select from three different categories. They can choose from Attractions, Restaurants, and Nightlife. After a user selects one of these categories they are then shown the top recommended experiences. 
 
@@ -55,10 +55,10 @@ Users can select from three different categories. They can choose from Attractio
 </ul>
 
 ### Login
-<img src='frontend/src/assets/images/trippt-login.png' width='600' height='375' >
+<img src='frontend/src/assets/trippt-login.PNG' width='600' height='375' >
 
 ### Trips
-<img src='frontend/src/assets/images/trippt-trips.png' width='600' height='375' >
+<img src='frontend/src/assets/trippt-trips.PNG' width='600' height='375' >
 
 ### User Profile
-<img src='frontend/src/assets/images/trippt-userprofile.png' width='600' height='375' >
+<img src='frontend/src/assets/trippt-userprofile.PNG' width='600' height='375' >
