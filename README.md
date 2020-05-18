@@ -1,7 +1,7 @@
 
-#Overview 
+# Overview 
 
-<strong>Trippt<strong> is a single-page web app that offers users a simple way to find things to do when they travel. Trippt offers the most trending recommendations in popular cities.
+<strong>Trippt</strong> is a single-page web app that offers users a simple way to find things to do when they travel. Trippt offers the most trending recommendations in popular cities.
 
 <a href="https://trippt.herokuapp.com/#/" target="_blank"><strong>Live Demo</strong></a>
 
