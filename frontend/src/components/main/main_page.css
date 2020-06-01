@@ -4,7 +4,7 @@
   display: flex;
   background-color:whitesmoke;
   flex-direction: column;
-  /* box-sizing: border-box; */
+  box-sizing: border-box;
 }
 
 
@@ -27,7 +27,7 @@
 
 .splash-body {
   background-color: whitesmoke;
-  height: 85%;
+  height: 82%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -95,7 +95,7 @@
 
 .splash-footer {
   background-color: rgb(207, 207, 207);
-  min-height: 5%;
+  min-height: 8%;
   /* position: absolute; */
   /* bottom: 0; */
   display: flex;
