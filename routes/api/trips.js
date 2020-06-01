@@ -6,9 +6,7 @@ const Trip = require("../../models/Trip");
 router.get("/user/:user_id", (req, res) => {
     Trip
         .find({user: req.params.user_id})
-        // .sort({date: -1})
         .then(trips => res.json(trips))
-        // .then(trips => console.log(trips))
         .catch(err => res.status(400).json(err));
 });
 

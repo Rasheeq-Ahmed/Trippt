@@ -75,16 +75,15 @@ class LoginForm extends React.Component {
   // Render the session errors if there are any
   renderErrors() {
     return(
-
-      <div className="error-messages">
+      <ul>
         {Object.keys(this.state.errors).map((error, i) => (
           <li key={`error-${i}`}>
-            {error}
+            {this.state.errors[error]}
           </li>
         ))}
-      </div>
-    );
-  }
+      </ul>
+    )
+  };
 
   render() {
     return (
@@ -113,7 +112,7 @@ class LoginForm extends React.Component {
                   placeholder="Password"
                 />
               </label>
-        {this.renderErrors()}
+              {this.renderErrors()}
               <span id="sign-up">
                 Don't have an account,{" "}
                 <span id="sign-up-link">
