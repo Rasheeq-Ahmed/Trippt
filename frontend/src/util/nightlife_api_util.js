@@ -14,7 +14,7 @@ export const getNightlife = (locationId) => {
     "currency":"USD",
     "sort":"ranking",
     "lunit":"km",
-    "limit": 20,
+    "limit": 3,
     "subcategory":"20",
     "location_id": `${locationId}`
     }
