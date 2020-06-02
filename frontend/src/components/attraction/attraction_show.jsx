@@ -68,12 +68,14 @@ class AttractionShow extends React.Component{
               </span>
               <a
                 href={this.props.attraction.website}
+                target="_blank"
               >{`Visit ${this.props.attraction.name}'s website`}</a>
 
               <div className="att-des">
                 {" "}
                 {this.props.attraction.description}
               </div>
+              <button>Add to my trip</button>
             </div>
             <div className="show-right">
               <div className="show-photo">

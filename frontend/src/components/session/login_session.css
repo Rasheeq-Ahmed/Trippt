@@ -112,16 +112,18 @@
   background-color: rgb(45, 154, 158);
 }
 
-
+/* 
   .error-messages {
-
-    font-size: medium;
-    color: cornflowerblue;
-    /* margin-top: 10px; */
-    background-color: rgb(163, 163, 231);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 10px;
     list-style: none;
-    height: 1rem;
+    color: red;
+    font-size: 12px;
+    background-color: red;
+    height: 30px;
     width: 100%;
-    /* margin-top: -10px;
-    margin-bottom: 20px; */
-  }
+    margin-top: -10px;
+    margin-bottom: 20px;
+  } */
