@@ -26,11 +26,12 @@ class LoginForm extends React.Component {
     if (nextProps.currentUser === true) {
       this.props.history.push('/');
     }
+  }
 
   //   // Set or clear errors
   //   this.setState({errors: nextProps.errors})
   // }
-  componentDidMount() {
+  componentDidMount(){
     this.props.clearSessionErrors();
   }
 
@@ -90,21 +91,14 @@ class LoginForm extends React.Component {
   // Render the session errors if there are any
   renderErrors() {
     return(
-<<<<<<< HEAD
 
       <div className="error-messages">
         {Object.keys(this.props.errors).map((error, i) => (
           <li key={`error-${i}`}>
             {this.props.errors[error]}
-=======
-      <ul>
-        {Object.keys(this.state.errors).map((error, i) => (
-          <li key={`error-${i}`}>
-            {this.state.errors[error]}
->>>>>>> master
           </li>
         ))}
-      </ul>
+      </div>
     )
   };
 
