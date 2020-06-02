@@ -11,7 +11,7 @@ class Attraction extends React.Component{
    state = { show: false };
 
   componentDidMount(){
-    this.props.getAttractions(295424, 'Dubai')
+    this.props.getAttractions(this.props.locationId, this.props.locationName)
   }
 
   // showModal = () => {
@@ -26,7 +26,7 @@ class Attraction extends React.Component{
 
   render(){
 
-    if (!this.props.attractions.Dubai) {
+    if (!this.props.attractions[this.props.locationName]) {
       return null;
     }
     // data -> photo -> images -> url: "img src"
@@ -62,10 +62,10 @@ class Attraction extends React.Component{
         </div>
 
         <div className="att-body">
-          <div className="page-title">Attractions in Dubai</div>
+        <div className="page-title">Attractions in {this.props.locationName}</div>
           <div className="gallery">
-            {this.props.attractions.Dubai.map((place, idx) => (
-              <div className="gallery-image">
+            {this.props.attractions[this.props.locationName].map((place, idx) => (
+              <div key={idx} className="gallery-image">
                   <Link to={`/attractions/${place.location_id}`}>
                     <div className="att"
                       style={{
