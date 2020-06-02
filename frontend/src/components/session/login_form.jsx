@@ -29,9 +29,9 @@ class LoginForm extends React.Component {
   //   // Set or clear errors
   //   this.setState({errors: nextProps.errors})
   // }
-  // componentDidMount() {
-  //   this.props.clearSessionErrors();
-  // }
+  componentDidMount() {
+    this.props.clearSessionErrors();
+  }
 
   componentWillReceiveProps(nextProps) {
     this.setState({ errors: nextProps.errors });
@@ -127,9 +127,7 @@ class LoginForm extends React.Component {
                   placeholder="Password"
                 />
               </label>
-              {console.log(this.state)}
-              {console.log(this.props)}
-        {this.renderErrors()}
+              {this.renderErrors()}
               <span id="sign-up">
                 Don't have an account,{" "}
                 <span id="sign-up-link">
