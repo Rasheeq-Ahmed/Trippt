@@ -74,7 +74,7 @@ class ProfilePage extends React.Component {
                             <button
                               onClick={() => this.props.getAttractions(trip.locationId, trip.location)}
                             >
-                              Find Attractions
+                              <Link to={`/locations/${trip.locationId}`}>Get Attractions</Link>
                             </button>
                             <button
                               onClick={() => this.props.removeTrip(trip._id)}
