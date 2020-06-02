@@ -17,13 +17,21 @@ class SignupForm extends React.Component {
     this.clearedErrors = false;
   }
 
+  componentDidMount() {
+    this.props.clearSessionErrors();
+  }
+
   componentWillReceiveProps(nextProps) {
     if (nextProps.signedIn === true) {
-      this.props.history.push('/');
+      this.props.history.push('/login');
     }
 
     this.setState({errors: nextProps.errors})
   }
+
+  // componentDidMount() {
+  //   this.props.clearSessionErrors();
+  // }
 
   update(field) {
     return e => this.setState({
@@ -31,18 +39,37 @@ class SignupForm extends React.Component {
     });
   }
 
-  handleSubmit(e) {
-    e.preventDefault();
-    let user = {
-      email: this.state.email,
-      handle: this.state.handle,
-      password: this.state.password,
-      password2: this.state.password2
-    };
+  // handleSubmit(e) {
+  //   e.preventDefault();
+  //   let user = {
+  //     email: this.state.email,
+  //     handle: this.state.handle,
+  //     password: this.state.password,
+  //     password2: this.state.password2
+  //   };
 
-    this.props.signup(user)
-      .then(() => this.props.login(user))
-      // .then(() => this.props.history.push('/profile')) 
+  //   this.props.signup(user)
+  //     .then(() => this.props.login(user))
+  //     // .then(() => this.props.history.push('/profile')) 
+  // }
+  
+
+
+
+  handleSubmit() {
+    let { email, handle, password, password2} = this.state
+    return (e) => {
+      e.preventDefault();
+      this.props.signup({ email, handle, password, password2})
+        .then(res => {
+          if (!res.errors) {
+            this.props.login({ email, handle, password, password2 })
+            .then(
+            this.props.history.push('/profile')
+            )
+          }
+        })
+    };
   }
 
   renderErrors() {
@@ -117,9 +144,10 @@ class SignupForm extends React.Component {
                 </span>
               </span>
               <div className="signup-btn">
-                <button type="submit" onClick={this.handleSubmit}>
+                {/* <button type="submit" onClick={this.handleSubmit}>
                   Register Account
-                </button>
+                </button> */}
+                <button className="submit-button" onClick={this.handleSubmit()}>Sign Up</button>
               </div>
             </form>
           </div>
