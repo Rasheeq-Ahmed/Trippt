@@ -14,12 +14,12 @@ class SignupForm extends React.Component {
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
-    this.clearedErrors = false;
+    // this.clearedErrors = false;
   }
 
   componentWillReceiveProps(nextProps) {
     if (nextProps.signedIn === true) {
-      this.props.history.push('/trips');
+      this.props.history.push('/');
     }
 
     this.setState({errors: nextProps.errors})
@@ -31,18 +31,30 @@ class SignupForm extends React.Component {
     });
   }
 
-  handleSubmit(e) {
-    e.preventDefault();
-    let user = {
-      email: this.state.email,
-      handle: this.state.handle,
-      password: this.state.password,
-      password2: this.state.password2
-    };
+  // handleSubmit(e) {
+  //   e.preventDefault();
+  //   let user = {
+  //     email: this.state.email,
+  //     handle: this.state.handle,
+  //     password: this.state.password,
+  //     password2: this.state.password2
+  //   };
 
-    this.props.signup(user)
-      .then(() => this.props.login(user))
-      // .then(() => this.props.history.push('/profile')) 
+  //   this.props.signup(user)
+  //     .then(() => this.props.login(user))
+  //     // .then(() => this.props.history.push('/profile')) 
+  // }
+  
+
+
+
+  handleSubmit() {
+    let { email, handle, password, password2} = this.state
+    return (e) => {
+      e.preventDefault();
+      this.props.signup({ email, handle, password, password2})
+        .then(() => this.props.history.push('/profile')) 
+    };
   }
 
   renderErrors() {
@@ -110,6 +122,8 @@ class SignupForm extends React.Component {
                 />
               </label>
               {this.renderErrors()}
+              {console.log(this.props)}
+              {console.log(this.state)}
               <span id="log-in">
                 Already on Trippt,{" "}
                 <span id="login-link">
@@ -117,9 +131,10 @@ class SignupForm extends React.Component {
                 </span>
               </span>
               <div className="signup-btn">
-                <button type="submit" onClick={this.handleSubmit}>
+                {/* <button type="submit" onClick={this.handleSubmit}>
                   Register Account
-                </button>
+                </button> */}
+                <button className="submit-button" onClick={this.handleSubmit()}>Sign Up</button>
               </div>
             </form>
           </div>

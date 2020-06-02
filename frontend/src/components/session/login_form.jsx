@@ -29,6 +29,13 @@ class LoginForm extends React.Component {
   //   // Set or clear errors
   //   this.setState({errors: nextProps.errors})
   // }
+  // componentDidMount() {
+  //   this.props.clearSessionErrors();
+  // }
+
+  componentWillReceiveProps(nextProps) {
+    this.setState({ errors: nextProps.errors });
+  }
 
   demoLogin() {
     const email = this.demoEmail;
@@ -78,9 +85,6 @@ class LoginForm extends React.Component {
     this.props.clearSessionErrors();
   }
 
-  componentDidMount() {
-    this.props.clearSessionErrors();
-  }
 
   // Render the session errors if there are any
   renderErrors() {
@@ -123,6 +127,7 @@ class LoginForm extends React.Component {
                   placeholder="Password"
                 />
               </label>
+              {console.log(this.state)}
               {console.log(this.props)}
         {this.renderErrors()}
               <span id="sign-up">
