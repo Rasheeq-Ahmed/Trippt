@@ -27,6 +27,8 @@ router.delete("/:id", (req, res) => {
 router.patch("./:id", (req, res) => {
     Trip
         .findByIdAndUpdate(req.params.id, )
+        .then(()=> res.status(200).json('Success'))
+        .catch(err => res.status(400).json(err))
 });
 
 router.post("/", 

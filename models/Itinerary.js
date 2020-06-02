@@ -4,7 +4,7 @@ const Schema = mongoose.Schema;
 const ItinerarySchema = new Schema({
     trip: {
         type: Schema.Types.ObjectId,
-        ref: 'trip'
+        ref: 'trips'
     },
 
     activities: [],
