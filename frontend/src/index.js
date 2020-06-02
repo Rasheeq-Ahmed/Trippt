@@ -39,6 +39,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
   //Window Testing Only//
+
   window.dispatch = store.dispatch
   window.getState = store.getState
   window.getAttractions = AttAPIUtil.getAttractions
