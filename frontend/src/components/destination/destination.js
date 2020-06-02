@@ -14,7 +14,7 @@ class Destination extends React.Component{
         </div>
         <div className="categories">
           <span className="restaurants"><Link to="/restaurants">Restaurants</Link></span>
-          <Link className="attractions" to="/attractions">Attractions</Link>
+          <Link className="attractions" to="/attractions/295424/Dubai">Attractions</Link>
         </div>
         <div className="categories">
           <span className="nightlife"><Link to="/nightlife">NightLife</Link></span>

@@ -2,10 +2,12 @@ import { connect } from 'react-redux';
 import { getAttractions } from '../../actions/attraction_actions'
 import Attraction from './attraction';
 
-const mapStateToProps = (state) => {
+const mapStateToProps = (state, ownProps) => {
     return {
       //  user: state.session.user
-      attractions: state.attractions || {}
+      attractions: state.attractions || {},
+      locationId: ownProps.match.params.locationId,
+      locationName: ownProps.match.params.locationName,
     };
 };
 
