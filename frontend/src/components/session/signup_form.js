@@ -14,16 +14,20 @@ class SignupForm extends React.Component {
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
-    // this.clearedErrors = false;
+    this.clearedErrors = false;
   }
 
   componentWillReceiveProps(nextProps) {
     if (nextProps.signedIn === true) {
-      this.props.history.push('/');
+      this.props.history.push('/login');
     }
 
     this.setState({errors: nextProps.errors})
   }
+
+  // componentDidMount() {
+  //   this.props.clearSessionErrors();
+  // }
 
   update(field) {
     return e => this.setState({
@@ -53,7 +57,14 @@ class SignupForm extends React.Component {
     return (e) => {
       e.preventDefault();
       this.props.signup({ email, handle, password, password2})
-        .then(() => this.props.history.push('/profile')) 
+        .then(res => {
+          if (!res.errors) {
+            this.props.login({ email, handle, password, password2 })
+            .then(
+            this.props.history.push('/profile')
+            )
+          }
+        })
     };
   }
 
@@ -122,8 +133,6 @@ class SignupForm extends React.Component {
                 />
               </label>
               {this.renderErrors()}
-              {console.log(this.props)}
-              {console.log(this.state)}
               <span id="log-in">
                 Already on Trippt,{" "}
                 <span id="login-link">
