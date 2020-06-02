@@ -18,6 +18,7 @@ class LoginForm extends React.Component {
     this.demoLogin = this.demoLogin.bind(this);
     this.demoEmail = "trippt@trippt.com";
     this.demoPassword = "password";
+    
   }
 
   // Once the user has been authenticated, redirect to the Tweets page
