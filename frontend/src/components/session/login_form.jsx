@@ -31,7 +31,7 @@ class LoginForm extends React.Component {
     }
   // }
   //   // Set or clear errors
-    this.setState({errors: nextProps.errors})
+    this.setState({ errors: nextProps.errors})
   }
 
   demoLogin() {
