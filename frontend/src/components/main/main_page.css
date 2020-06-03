@@ -34,7 +34,7 @@
 }
 
 .splash-inner-body {
-  width: 90%;
+  width: 90vw;
   height: 80%;
   background-color: lightcoral;
   display: flex;
@@ -43,9 +43,11 @@
   background-image: url(https://i.imgur.com/MKL5deQ.jpg);
   background-size: contain;
   background-repeat: no-repeat;
-  max-width: 80%;
+  /* max-width: 60%; */
+  /* max-width: 100vmax; */
   /* height: 700px; */
   background-position: center;
+  background-size: cover;
   /* position: fixed; */
   /* z-index: 100; */
 }
@@ -56,8 +58,9 @@
     color: rgb(201, 248, 248);
     flex-direction: column;
     height: 40%;
-    min-width: 30%;
+    min-width: 20%;
     max-width: 300px;
+    /* width: 100vw; */
     align-items: flex-start;
     /* background-color: violet; */
     /* overflow: auto; */
@@ -68,6 +71,7 @@
     opacity: .9;
     font-weight: 500;
     padding-left: 2%;
+    font-size: 90%;
 }
 
 .splash-word  {
@@ -76,7 +80,7 @@
 
 }
 .splash-word-type {
-    font-size: 10px;
+    /* font-size: 10px; */
         /* margin-bottom: -20px; */
 
 }
@@ -84,7 +88,7 @@
 .splash-subtext {
     display: flex;
     flex-direction: row;
-    font-size: 30px;
+    font-size: 2rem;
 }
 
 .italic {
