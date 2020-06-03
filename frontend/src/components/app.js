@@ -30,8 +30,8 @@ const App = () => (
       <ProtectedRoute exact path="/profile" component={ProfilePage} />
       <Route exact path="/destination" component={Destination} />
       {/* <Route exact path="/attractions" component={Attraction} /> */}
-      <Route exact path="/attractions/:locationId" component={AttractionShow} />
       <Route exact path="/attractions/:locationId/:locationName" component={Attraction} />
+      <Route exact path="/attraction/:locationId/:locationName" component={AttractionShow} />
       <Route exact path="/restaurants/" component={Restaurant} />
       <Route exact path="/restaurants/:locationId" component={RestaurantShow} />
       <Route exact path="/nightlife/" component={NightLife} />

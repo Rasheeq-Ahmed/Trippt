@@ -6,8 +6,9 @@ import AttractionShow from './attraction_show';
 const mapStateToProps = (state, ownProps) => {
     return {
       //  user: state.session.user
-      attraction: state.attractions || {},
-      locationId: ownProps.match.params.locationId
+      attractions: state.attractions || {},
+      locationId: ownProps.match.params.locationId,
+      locationName: ownProps.match.params.locationName
     };
 };
 
