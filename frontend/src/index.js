@@ -44,6 +44,7 @@ document.addEventListener('DOMContentLoaded', () => {
   window.getState = store.getState
   window.getAttractions = AttAPIUtil.getAttractions
   window.getUserTrips = TripAPIUtil.getUserTrips
+  window.updateTrip = TripAPIUtil.updateTrip
   // window.getAttractions = getAttractions
   //Window Testing Only//
 

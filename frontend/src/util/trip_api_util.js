@@ -20,6 +20,6 @@ export const removeTrip = (id) => {
     return axios.delete(`/api/trips/${id}`)
 };
 
-export const updateTrip = (data) => {
-    return axios.patch(`/api/trips/${data.id}`, data)
+export const updateTrip = (tripId, data) => {
+    return axios.patch(`/api/trips/${tripId}`, data)
 };

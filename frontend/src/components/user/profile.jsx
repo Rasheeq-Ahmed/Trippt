@@ -54,6 +54,12 @@ class ProfilePage extends React.Component {
                       <Link to="/create">
                         <button className="tablinks">Trips</button>
                       </Link>
+                      <div className="tablinks dropdown">
+                        Add Trips
+                          <ul className='dropdown-content'>
+                          
+                          </ul>
+                        </div>
                       <Link to="/destination">
                         <button className="tablinks">Destinations</button>
                       </Link>

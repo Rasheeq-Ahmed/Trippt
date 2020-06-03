@@ -49,10 +49,11 @@ export const createTrip = (data) => dispatch => {
         .then((trip) => dispatch(receiveTrip(trip)))
 };
 
-export const updateTrip = (data) => dispatch => (
-    tripAPIUtils.updateTrip(data)
+export const updateTrip = (tripId, data) => dispatch => {
+    debugger
+    return tripAPIUtils.updateTrip(tripId, data)
         .then((trip) => dispatch(receiveTrip(trip)))
-);
+};
 
 export const removeTrip = (id) => dispatch => {
    return  tripAPIUtils.removeTrip(id)
