@@ -4,10 +4,25 @@ import NavBar from '../nav/navbar_container'
 import './profile.css'
 import "../nav/navbar.css";
 
+const locations = [
+  { location: 'Dubai', locationId: 295424 },
+  { location: 'San Francisco', locationId: 60713 },
+  { location: 'Paris', locationId: 187147 },
+  { location: 'New York', locationId: 60763 },
+  { location: 'Tokyo', locationId: 298184 },
+  { location: 'Sydney', locationId: 255060 },
+]
+
 
 class ProfilePage extends React.Component {
     constructor(props) {
         super(props)
+
+        this.state = {
+          location: '',
+          locationId: '',
+
+        }
     }
 
     componentDidMount() {
@@ -54,6 +69,17 @@ class ProfilePage extends React.Component {
                       <Link to="/create">
                         <button className="tablinks">Trips</button>
                       </Link>
+                      <div className="tablinks dropdown">
+                        Add Trips
+                          <ul className='dropdown-content'>
+                            {locations.map((loc, idx) => (
+                              <li
+                                onClick={() => this.props.createTrip({ location: loc.location, locationId: loc.locationId })}
+                                key={idx}
+                              >{loc.location}</li>
+                            ))}
+                          </ul>
+                        </div>
                       <Link to="/destination">
                         <button className="tablinks">Destinations</button>
                       </Link>
@@ -74,7 +100,7 @@ class ProfilePage extends React.Component {
                             <button
                               // onClick={() => this.props.getAttractions(trip.locationId, trip.location)}
                             >
-                              <Link to={`/attractions/${trip.locationId}/${trip.location}`}>Get Attractions</Link>
+                              <Link to={`/attractions/${trip.locationId}/${trip.location}`}>Find Attractions</Link>
                             </button>
                             <button
                               onClick={() => this.props.removeTrip(trip._id)}
