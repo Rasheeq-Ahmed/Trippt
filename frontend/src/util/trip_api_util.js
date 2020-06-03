@@ -10,7 +10,6 @@ export const getTrip = (id) => {
 
 export const getUserTrips = (user_id) => {
     return axios.get(`/api/trips/user/${user_id}`)
-    // .then(trips => console.log(trips))
 };
 
 export const createTrip = (data) => {
