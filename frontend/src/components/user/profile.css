@@ -181,6 +181,7 @@ width: 100px;;
 .dropdown {
     position: relative;
     display: inline-block;
+    overflow: none;
 }
 
 .dropdown-content {
