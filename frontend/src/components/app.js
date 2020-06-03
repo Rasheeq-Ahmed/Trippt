@@ -22,21 +22,21 @@ const App = () => (
   <div>
     {/* <NavBarContainer /> */}
     <Switch>
-    <Route exact path="/" component={MainPage} />
-    <AuthRoute exact path="/login" component={LoginFormContainer} />
-    <AuthRoute exact path="/signup" component={SignupFormContainer} />
-    <ProtectedRoute exact path="/trips" component={Trip} />
-    <ProtectedRoute exact path={`/create`} component={CreateTrip} />
-    <ProtectedRoute exact path="/profile" component={ProfilePage} />
-    <Route exact path="/destination" component={Destination} />
-    {/* <Route exact path="/attractions" component={Attraction} /> */}
-    <Route exact path="/attractions/:locationId" component={AttractionShow} />
-    <Route exact path="/attractions/:locationId/:locationName" component={Attraction} />
-    <Route exact path="/restaurants/" component={Restaurant} />
-    <Route exact path="/restaurants/:locationId" component={RestaurantShow} />
-    <Route exact path="/nightlife/" component={NightLife} />
-    <Route exact path="/nightlife/:locationId" component={NightlifeShow} />
-    {/* <Route path="/show" component={AttractionShow}/> */}
+      <Route exact path="/" component={MainPage} />
+      <AuthRoute exact path="/login" component={LoginFormContainer} />
+      <AuthRoute exact path="/signup" component={SignupFormContainer} />
+      {/* <ProtectedRoute exact path="/trips" component={Trip} /> */}
+      <ProtectedRoute exact path={`/create`} component={CreateTrip} />
+      <ProtectedRoute exact path="/profile" component={ProfilePage} />
+      <Route exact path="/destination" component={Destination} />
+      {/* <Route exact path="/attractions" component={Attraction} /> */}
+      <Route exact path="/attractions/:locationId" component={AttractionShow} />
+      <Route exact path="/attractions/:locationId/:locationName" component={Attraction} />
+      <Route exact path="/restaurants/" component={Restaurant} />
+      <Route exact path="/restaurants/:locationId" component={RestaurantShow} />
+      <Route exact path="/nightlife/" component={NightLife} />
+      <Route exact path="/nightlife/:locationId" component={NightlifeShow} />
+      {/* <Route path="/show" component={AttractionShow}/> */}
     </Switch>
   </div>
 );
