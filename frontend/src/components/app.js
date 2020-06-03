@@ -17,12 +17,14 @@ import NightLife from './nightlife/nightlife_container';
 import AttractionShow from './attraction/attraction_show_container'
 import NightlifeShow from './nightlife/nightlife_show_container'
 import RestaurantShow from './restaurant/restaurant_show_container'
+import About from './main/about';
 
 const App = () => (
   <div>
     {/* <NavBarContainer /> */}
     <Switch>
     <Route exact path="/" component={MainPage} />
+    <Route exact path="/about" component={About} />
     <AuthRoute exact path="/login" component={LoginFormContainer} />
     <AuthRoute exact path="/signup" component={SignupFormContainer} />
     <ProtectedRoute exact path="/trips" component={Trip} />
@@ -37,6 +39,7 @@ const App = () => (
     <Route exact path="/nightlife/" component={NightLife} />
     <Route exact path="/nightlife/:locationId" component={NightlifeShow} />
     {/* <Route path="/show" component={AttractionShow}/> */}
+
     </Switch>
   </div>
 );
