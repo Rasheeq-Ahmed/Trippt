@@ -20,6 +20,9 @@ class SignupForm extends React.Component {
   componentDidMount() {
     this.props.clearSessionErrors();
   }
+  // componentWillMount() {
+  //   this.props.clearSessionErrors();
+  // }
 
   componentWillReceiveProps(nextProps) {
     if (nextProps.signedIn === true) {
@@ -28,10 +31,6 @@ class SignupForm extends React.Component {
 
     this.setState({errors: nextProps.errors})
   }
-
-  // componentDidMount() {
-  //   this.props.clearSessionErrors();
-  // }
 
   update(field) {
     return e => this.setState({
