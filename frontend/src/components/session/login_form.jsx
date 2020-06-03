@@ -13,21 +13,31 @@ class LoginForm extends React.Component {
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleClearErrors = this.handleClearErrors.bind(this);
     this.renderErrors = this.renderErrors.bind(this);
     this.demoLogin = this.demoLogin.bind(this);
     this.demoEmail = "trippt@trippt.com";
     this.demoPassword = "password";
+    
   }
 
-  // Once the user has been authenticated, redirect to the Tweets page
-  // componentWillReceiveProps(nextProps) {
-  //   if (nextProps.currentUser === true) {
-  //     this.props.history.push('/trips');
-  //   }
+  //Once the user has been authenticated, redirect to the Tweets page
+  componentWillReceiveProps(nextProps) {
+    if (nextProps.currentUser === true) {
+      this.props.history.push('/');
+    }
+  }
 
   //   // Set or clear errors
   //   this.setState({errors: nextProps.errors})
   // }
+  componentDidMount(){
+    this.props.clearSessionErrors();
+  }
+
+  componentWillReceiveProps(nextProps) {
+    this.setState({ errors: nextProps.errors });
+  }
 
   demoLogin() {
     const email = this.demoEmail;
@@ -72,19 +82,25 @@ class LoginForm extends React.Component {
       .then(() => this.props.history.push('/profile')) 
   }
 
+  handleClearErrors(e) {
+    e.preventDefault();
+    this.props.clearSessionErrors();
+  }
+
+
   // Render the session errors if there are any
   renderErrors() {
     return(
 
       <div className="error-messages">
-        {Object.keys(this.state.errors).map((error, i) => (
+        {Object.keys(this.props.errors).map((error, i) => (
           <li key={`error-${i}`}>
-            {error}
+            {this.props.errors[error]}
           </li>
         ))}
       </div>
-    );
-  }
+    )
+  };
 
   render() {
     return (
@@ -113,7 +129,7 @@ class LoginForm extends React.Component {
                   placeholder="Password"
                 />
               </label>
-        {this.renderErrors()}
+              {this.renderErrors()}
               <span id="sign-up">
                 Don't have an account,{" "}
                 <span id="sign-up-link">

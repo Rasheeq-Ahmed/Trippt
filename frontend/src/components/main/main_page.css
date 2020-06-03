@@ -7,9 +7,7 @@
   box-sizing: border-box;
 }
 
-.splash-header {
-    height:100px;
-}
+
 .splash-background {
   width: 90%;
   height: 100%;
@@ -17,19 +15,19 @@
 
 .splash-header {
   /* background-color: red; */
-  height: 100px;
+  min-height: 10%;
   justify-content: center;
   align-items: center;
   display: flex;
   font-size: 35px;
-
+  background-color: khaki;
 }
 
 
 
 .splash-body {
   background-color: whitesmoke;
-  height: 80%;
+  height: 82%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -38,15 +36,15 @@
 .splash-inner-body {
   width: 90%;
   height: 80%;
-  /* background-color: lightcoral; */
+  background-color: lightcoral;
   display: flex;
   justify-content: center;
   align-items: center;
   background-image: url(https://i.imgur.com/MKL5deQ.jpg);
   background-size: contain;
   background-repeat: no-repeat;
-  max-width: 1800px;
-  height: 700px;
+  max-width: 80%;
+  /* height: 700px; */
   background-position: center;
   /* position: fixed; */
   /* z-index: 100; */
@@ -57,8 +55,9 @@
     /* background-color: lavenderblush; */
     color: rgb(201, 248, 248);
     flex-direction: column;
-    height: 200px;
-    width: 300px;
+    height: 40%;
+    min-width: 30%;
+    max-width: 300px;
     align-items: flex-start;
     /* background-color: violet; */
     /* overflow: auto; */
@@ -68,7 +67,7 @@
     background-color: rgba(40, 83, 94, 0.733);
     opacity: .9;
     font-weight: 500;
-    padding-left: 20px;
+    padding-left: 2%;
 }
 
 .splash-word  {
@@ -90,17 +89,17 @@
 
 .italic {
     font-style: italic;
-    margin-left: 10px;
-    margin-bottom: 10px;;
+    margin-left: 5%;
+    margin-bottom: 5%;
 }
 
 .splash-footer {
   background-color: rgb(207, 207, 207);
-  height: 60px;
-  margin-top: 10px;
+  min-height: 8%;
   /* position: absolute; */
-  bottom: 0;
+  /* bottom: 0; */
+  display: flex;
 }
 .definition {
-    margin-right: 18px;
+    margin-right: 5%;
 }
