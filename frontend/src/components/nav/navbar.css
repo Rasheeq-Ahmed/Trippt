@@ -1,26 +1,29 @@
 .navbar-all {
-    /* background-color: rgb(0, 81, 255); */
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: space-between;
     height: 80px;
     width: 100%;
     align-items: center;
     box-sizing: border-box;
     position: fixed;
-    background-color: whitesmoke;
+    background-color: white;
     top: 0;
 }
 
 .nav-left {
-    align-items: center;
+    /* align-items: center; */
     /* background-color: royalblue; */
     height: 100%;
     width: 40%;
-    align-items: center;
+    /* align-items: center; */
     display: flex;
     font-size: 60px;
     justify-content: flex-start;
+    /* background-color: lawngreen; */
+    min-width: 50%;
+    margin-left: 2rem;
+
 }
 
 .nav-right {
@@ -29,6 +32,7 @@
     display: flex;
     align-items: center;
     justify-content: flex-end;
+    margin-right: 3rem;
 }
 
 .nav-auth {
@@ -39,7 +43,7 @@
 }
 
 .nav-auth button{
-    margin-left: 30px;
+    margin-left: 2rem;
     background-color:rgb(26, 194, 180);
     padding: 10px 20px;
     font-size: 18px;
