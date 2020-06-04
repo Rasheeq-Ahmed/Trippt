@@ -13,30 +13,27 @@ class LoginForm extends React.Component {
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
-    this.handleClearErrors = this.handleClearErrors.bind(this);
     this.renderErrors = this.renderErrors.bind(this);
     this.demoLogin = this.demoLogin.bind(this);
     this.demoEmail = "trippt@trippt.com";
     this.demoPassword = "password";
-    
+    this.clearedErrors = false;
   }
 
-  //Once the user has been authenticated, redirect to the Tweets page
+  componentDidMount() {
+    if(!this.props.errors){
+      this.props.clearSessionErrors()
+    } 
+  }
+
+  //Once the user has been authenticated, redirect to the Homepage
   componentWillReceiveProps(nextProps) {
     if (nextProps.currentUser === true) {
       this.props.history.push('/');
     }
-  }
-
-  //   // Set or clear errors
-  //   this.setState({errors: nextProps.errors})
   // }
-  componentDidMount(){
-    this.props.clearSessionErrors();
-  }
-
-  componentWillReceiveProps(nextProps) {
-    this.setState({ errors: nextProps.errors });
+  //   // Set or clear errors
+    this.setState({ errors: nextProps.errors})
   }
 
   demoLogin() {
@@ -82,25 +79,20 @@ class LoginForm extends React.Component {
       .then(() => this.props.history.push('/profile')) 
   }
 
-  handleClearErrors(e) {
-    e.preventDefault();
-    this.props.clearSessionErrors();
-  }
-
 
   // Render the session errors if there are any
-  renderErrors() {
-    return(
 
-      <div className="error-messages">
+  renderErrors() {
+    return (
+      <ul>
         {Object.keys(this.props.errors).map((error, i) => (
           <li key={`error-${i}`}>
             {this.props.errors[error]}
           </li>
         ))}
-      </div>
-    )
-  };
+      </ul>
+    );
+  }
 
   render() {
     return (
@@ -129,6 +121,7 @@ class LoginForm extends React.Component {
                   placeholder="Password"
                 />
               </label>
+              {console.log(this.props)}
               {this.renderErrors()}
               <span id="sign-up">
                 Don't have an account,{" "}

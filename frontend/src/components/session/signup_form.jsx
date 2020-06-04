@@ -17,21 +17,22 @@ class SignupForm extends React.Component {
     this.clearedErrors = false;
   }
 
+
   componentDidMount() {
     this.props.clearSessionErrors();
   }
+
+  componentWillUnmount() {
+    this.props.clearSessionErrors();
+  }
+
 
   componentWillReceiveProps(nextProps) {
     if (nextProps.signedIn === true) {
       this.props.history.push('/login');
     }
-
-    this.setState({errors: nextProps.errors})
+    this.setState({ errors: nextProps.errors })
   }
-
-  // componentDidMount() {
-  //   this.props.clearSessionErrors();
-  // }
 
   update(field) {
     return e => this.setState({
@@ -54,8 +55,6 @@ class SignupForm extends React.Component {
   // }
   
 
-
-
   handleSubmit() {
     let { email, handle, password, password2} = this.state
     return (e) => {
@@ -63,10 +62,10 @@ class SignupForm extends React.Component {
       this.props.signup({ email, handle, password, password2})
         .then(res => {
           if (!res.errors) {
-            this.props.login({ email, handle, password, password2 })
-            .then(
-            this.props.history.push('/profile')
-            )
+            this.props.login({ email, handle, password, password2 }) 
+            // .then(
+            // this.props.history.push('/profile')
+            // )
           }
         })
     };
