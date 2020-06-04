@@ -1,0 +1,157 @@
+.about-all {
+    
+    height: 100vh;
+    display: flex;
+    background-color: white;
+    flex-direction: column;
+    box-sizing: border-box;
+    margin: 0;
+    /* overflow: auto; */
+    justify-content: center;
+    align-items: center;
+}
+
+
+.about-header {
+ height: 5%; 
+ background-color: blue; 
+ display: flex;
+ justify-content: center; 
+}
+
+
+.about-body {
+    height: 100%; 
+    width: 90%;
+    background-color: whitesmoke;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+}
+
+#team {
+    font-size: 50px;
+    height: 5%;
+}
+
+.about-people-all {
+    background-color:whitesmoke;
+    height: 70%;
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-width: 90%;
+
+} 
+
+.about-team-members {
+    /* background-color: darkgray; */
+    height: 80%;
+    width: 70%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+.person {
+    /* border: 3px solid black; */
+    display: flex;
+    flex-direction: column;
+    height: 70%;
+    /* width: 40%; */
+    align-items: center;
+    overflow: hidden;
+    /* padding: 10%; */
+    
+    
+}
+
+.person-pic {
+    width: 100%;
+    height: 50%;
+    /* background-color: khaki; */
+    display: flex;
+    justify-content: center;
+}
+
+.person-pic img {
+    height: 100%;
+    border-radius: 50%;
+}
+
+.person-name {
+    height: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    width: 100%;
+}
+
+.person-links {
+    /* background-color: ivory; */
+    height: 10%;
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center
+}
+
+
+#linked-icon {
+    height: 40px;
+}
+
+#git-icon {
+    height: 54px;
+}
+
+
+.about-proj {
+    /* background-color: darkkhaki; */
+    height: 10%;
+    width: 90%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.about-proj-tech {
+    width: inherit;
+    height: 80%;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    align-items: center;
+}
+.about-proj-tech ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    /* background-color: darkolivegreen; */
+    height: 100%;
+    width: 100%;
+    align-items: center;
+}
+
+.tech-title {
+    font-size: 30px;
+    font-weight: bold;
+}
+.tech-icons {
+    width: 100%;
+    /* background-color: khaki; */
+}
+
+.about-proj-tech li> img {
+    height: 4.5rem;
+}
+
+#mongo-icon {
+    height: 6rem;
+}

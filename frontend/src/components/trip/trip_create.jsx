@@ -73,14 +73,11 @@ class CreateTrip extends React.Component {
                     {this.props.trips.map((trip, idx) => (
                         <div key={trip._id}>
                             <h2>Trip {idx + 1}</h2>
-                            <h3>{trip.location}</h3>
+                            <h3 id="locationName">{trip.location}</h3>
                             <ul id='trip' className="tabcontent">
                                 <li>Food:  🍔🍜🍱</li>
-                                <li onClick={() => this.props.getAttractions(this.state.location, this.state.locationId)}>Things To Do: 🗺️🏝️🌆</li>
+                                <li>Things To Do: 🗺️🏝️🌆</li>
                             </ul>
-                            {this.props.attractions.map((attr, idx) => (
-                                <li key={idx}>{attr.name}</li>
-                            ))}
 
                             <button onClick={() => this.props.removeTrip(trip._id)}>Delete</button>
                         </div>
