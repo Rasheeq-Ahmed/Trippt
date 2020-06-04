@@ -31,6 +31,13 @@ router.patch("/:id", (req, res) => {
         .catch(err => res.status(400).json(err))
 });
 
+router.patch("/:id/:loc_id", (req, res) => {
+    Trip
+        .findByIdAndUpdate({_id: req.params.id}, {$pull: {attractions: req.params.loc_id}})
+        .then(()=> res.status(200).json('Success'))
+        .catch(err => res.status(400).json(err))
+});
+
 router.post("/", 
     passport.authenticate("jwt", { session: false }),
     (req, res) => {

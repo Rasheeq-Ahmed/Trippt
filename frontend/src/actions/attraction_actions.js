@@ -24,7 +24,6 @@ const receiveAttraction = (attraction) => {
 export const getAttractions = (locationId, city) => dispatch => {
     return AttAPIUtil.getAttractions(locationId)
         .then((attractions) => dispatch(receiveAttractions(attractions, city)))
-        // .then(attractions => console.log(attractions))
         .catch(error => console.log(error))
 };
 

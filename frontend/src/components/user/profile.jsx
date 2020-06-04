@@ -97,7 +97,11 @@ class ProfilePage extends React.Component {
                               <li>Food: 🍔🍜🍱</li>
                               <li>Things To Do: 🗺️🏝️🌆</li>
                               {trip.attractions ? trip.attractions.map((att, idx) => (
-                                <Link to={`/attraction/${att.location_id}/${att.name}`}><img src={`${att.photo.images.thumbnail.url}`} alt=""/>{att.name}</Link>
+                                <Link
+                                    key={idx} 
+                                    to={`/attraction/${att.location_id}/${att.name}`}>
+                                    <img src={`${att.photo.images.thumbnail.url}`} alt=""/>
+                                    {att.name}</Link>
                               )) : null}
                             </ul>
                             
