@@ -15,7 +15,7 @@ const mapStateToProps = (state, ownProps) => {
 const mapDispatchToProps = dispatch => {
     return {
         getAttraction: (locationId) => dispatch(getAttraction(locationId)),
-        updateTrip: (data) => dispatch(updateTrip(data))
+        updateTrip: (tripId, data) => dispatch(updateTrip(tripId, data))
     };
 };
 

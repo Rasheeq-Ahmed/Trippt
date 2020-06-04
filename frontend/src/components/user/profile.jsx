@@ -98,7 +98,6 @@ class ProfilePage extends React.Component {
                               <li>Things To Do: 🗺️🏝️🌆</li>
                             </ul>
                             <button
-                              // onClick={() => this.props.getAttractions(trip.locationId, trip.location)}
                             >
                               <Link to={`/attractions/${trip.locationId}/${trip.location}`}>Find Attractions</Link>
                             </button>
