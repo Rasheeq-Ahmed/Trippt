@@ -66,7 +66,7 @@ class Attraction extends React.Component{
           <div className="gallery">
             {this.props.attractions[this.props.locationName].map((place, idx) => (
               <div key={idx} className="gallery-image">
-                  <Link to={`/attraction/${place.location_id}/${place.name}`}>
+                <Link to={this.props.tripId ? `/attraction/${place.location_id}/${place.name}/${this.props.tripId}` : `/attraction/${place.location_id}/${place.name}`}>
                     <div className="att"
                       style={{
                         backgroundImage: `url(${getUrl(

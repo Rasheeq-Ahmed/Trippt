@@ -51,6 +51,7 @@ const App = () => (
       <Route exact path="/attractions/:locationId/:locationName" component={Attraction} />
       <Route exact path="/attraction/:locationId/:locationName" component={AttractionShow} />
       <ProtectedRoute exact path="/attractions/:locationId/:locationName/:tripId" component={Attraction}/>
+      <ProtectedRoute exact path="/attraction/:locationId/:locationName/:tripId" component={AttractionShow} />
       <Route exact path="/restaurants/" component={Restaurant} />
       <Route exact path="/restaurants/:locationId" component={RestaurantShow} />
       <Route exact path="/nightlife/" component={NightLife} />

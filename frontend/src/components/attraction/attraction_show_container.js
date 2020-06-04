@@ -8,7 +8,8 @@ const mapStateToProps = (state, ownProps) => {
       //  user: state.session.user
       attractions: state.attractions || {},
       locationId: ownProps.match.params.locationId,
-      locationName: ownProps.match.params.locationName
+      locationName: ownProps.match.params.locationName,
+      tripId: ownProps.match.params.tripId
     };
 };
 
