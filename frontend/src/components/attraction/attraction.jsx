@@ -77,6 +77,10 @@ class Attraction extends React.Component{
                           </p>
                     </div>
                   </Link>
+                  <button 
+                    onClick={()=>this.props.updateTrip(this.props.tripId, place)}
+                    className={!this.props.tripId ? "btn-hide" : ""}
+                    > Add to Trip</button>
               </div>
             ))}
           </div>

@@ -25,7 +25,6 @@ router.delete("/:id", (req, res) => {
 }); 
 
 router.patch("/:id", (req, res) => {
-    debugger
     Trip
         .findByIdAndUpdate({_id: req.params.id}, {$push: {attractions: req.body} })
         .then(()=> res.status(200).json('Success'))

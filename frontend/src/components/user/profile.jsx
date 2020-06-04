@@ -96,10 +96,14 @@ class ProfilePage extends React.Component {
                             <ul id="trip" className="tabcontent">
                               <li>Food: 🍔🍜🍱</li>
                               <li>Things To Do: 🗺️🏝️🌆</li>
+                              {trip.attractions ? trip.attractions.map((att, idx) => (
+                                <Link to={`/attraction/${att.location_id}/${att.name}`}>{att.name}</Link>
+                              )) : null}
                             </ul>
+                            
                             <button
                             >
-                              <Link to={`/attractions/${trip.locationId}/${trip.location}`}>Find Attractions</Link>
+                              <Link to={`/attractions/${trip.locationId}/${trip.location}/${trip._id}`}>Find Attractions</Link>
                             </button>
                             <button
                               onClick={() => this.props.removeTrip(trip._id)}

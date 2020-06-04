@@ -50,7 +50,6 @@ export const createTrip = (data) => dispatch => {
 };
 
 export const updateTrip = (tripId, data) => dispatch => {
-    debugger
     return tripAPIUtils.updateTrip(tripId, data)
         .then((trip) => dispatch(receiveTrip(trip)))
 };
