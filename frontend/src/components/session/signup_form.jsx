@@ -17,6 +17,16 @@ class SignupForm extends React.Component {
     this.clearedErrors = false;
   }
 
+
+  componentDidMount() {
+    this.props.clearSessionErrors();
+  }
+
+  componentWillUnmount() {
+    this.props.clearSessionErrors();
+  }
+
+
   componentWillReceiveProps(nextProps) {
     if (nextProps.signedIn === true) {
       this.props.history.push('/login');
@@ -29,11 +39,6 @@ class SignupForm extends React.Component {
       [field]: e.currentTarget.value
     });
   }
-
-  // componentDidMount() {
-  //   this.props.clearSessionErrors();
-  // }
-
 
   // handleSubmit(e) {
   //   e.preventDefault();

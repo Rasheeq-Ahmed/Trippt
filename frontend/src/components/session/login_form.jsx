@@ -20,8 +20,10 @@ class LoginForm extends React.Component {
     this.clearedErrors = false;
   }
 
-  componentWillMount() {
-    this.props.clearSessionErrors();
+  componentDidMount() {
+    if(!this.props.errors){
+      this.props.clearSessionErrors()
+    } 
   }
 
   //Once the user has been authenticated, redirect to the Homepage
@@ -79,18 +81,6 @@ class LoginForm extends React.Component {
 
 
   // Render the session errors if there are any
-  // renderErrors() {
-  //   return(
-
-  //     <div className="error-messages">
-  //       {Object.keys(this.props.errors).map((error, i) => (
-  //         <li key={`error-${i}`}>
-  //           {this.props.errors[error]}
-  //         </li>
-  //       ))}
-  //     </div>
-  //   )
-  // };
 
   renderErrors() {
     return (
