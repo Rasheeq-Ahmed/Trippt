@@ -75,7 +75,7 @@ class AttractionShow extends React.Component{
                 {" "}
                 {attraction.description}
               </div>
-              <button onClick={()=>this.props.updateTrip(attraction)}>Add to my trip</button>
+              <button onClick={() => this.props.updateTrip("5ec1d303e958240017dc916f", attraction)}>Add to my trip</button>
             </div>
             <div className="show-right">
               <div className="show-photo">
