@@ -11,7 +11,10 @@ class Attraction extends React.Component{
    state = { show: false };
 
   componentDidMount(){
-    this.props.getAttractions(this.props.locationId, this.props.locationName)
+    let {locationId, locationName} = this.props
+    this.props.getAttractions(locationId, locationName)
+    this.props.getRestaurants(locationId, locationName)
+    this.props.getNightlife(locationId,locationName)
   }
 
   // showModal = () => {
@@ -27,6 +30,12 @@ class Attraction extends React.Component{
   render(){
 
     if (!this.props.attractions[this.props.locationName]) {
+      return null;
+    }
+    if (!this.props.restaurants[this.props.locationName]) {
+      return null;
+    }
+    if (!this.props.nightlife[this.props.locationName]) {
       return null;
     }
     // data -> photo -> images -> url: "img src"
@@ -64,25 +73,80 @@ class Attraction extends React.Component{
         <div className="att-body">
         <div className="page-title">Attractions in {this.props.locationName}</div>
           <div className="gallery">
-            {this.props.attractions[this.props.locationName].map((place, idx) => (
-              <div key={idx} className="gallery-image">
-                <Link to={this.props.tripId ? `/attraction/${place.location_id}/${place.name}/${this.props.tripId}` : `/attraction/${place.location_id}/${place.name}`}>
+            {this.props.attractions[this.props.locationName].map((place, idx) => {
+
+              if (place.name) {
+                return (
+                  <div key={idx} className="gallery-image">
+                    <Link to={this.props.tripId ? `/attraction/${place.location_id}/${place.name}/${this.props.tripId}` : `/attraction/${place.location_id}/${place.name}`}>
+                        <div className="att"
+                          style={{
+                            backgroundImage: `url(${getUrl(
+                              getImages(getPhotos(place.photo))
+                            )})`}}>
+                              <p>
+                            {place.name}
+                              </p>
+                        </div>
+                      </Link>
+                      <button 
+                        onClick={()=>this.props.updateTrip(this.props.tripId, place)}
+                        className={!this.props.tripId ? "btn-hide" : ""}
+                        > Add to Trip</button>
+                  </div>
+                )
+              }
+            })}
+            {this.props.restaurants[this.props.locationName].map((place, idx) => {
+
+              if (place.name) {
+                return (
+                  <div key={idx} className="gallery-image">
+                    <Link to={this.props.tripId ? `/attraction/${place.location_id}/${place.name}/${this.props.tripId}` : `/attraction/${place.location_id}/${place.name}`}>
+                      <div className="att"
+                        style={{
+                          backgroundImage: `url(${getUrl(
+                            getImages(getPhotos(place.photo))
+                          )})`
+                        }}>
+                        <p>
+                          {place.name}
+                        </p>
+                      </div>
+                    </Link>
+                    <button
+                      onClick={() => this.props.updateTrip(this.props.tripId, place)}
+                      className={!this.props.tripId ? "btn-hide" : ""}
+                    > Add to Trip</button>
+                  </div>
+                )
+              }
+            })}
+            {this.props.nightlife[this.props.locationName].map((place, idx) => {
+              if (place.name) {
+                return (
+
+                <div key={idx} className="gallery-image">
+                  <Link to={this.props.tripId ? `/attraction/${place.location_id}/${place.name}/${this.props.tripId}` : `/attraction/${place.location_id}/${place.name}`}>
                     <div className="att"
                       style={{
                         backgroundImage: `url(${getUrl(
                           getImages(getPhotos(place.photo))
-                        )})`}}>
-                          <p>
+                        )})`
+                      }}>
+                      <p>
                         {place.name}
-                          </p>
+                      </p>
                     </div>
                   </Link>
-                  <button 
-                    onClick={()=>this.props.updateTrip(this.props.tripId, place)}
+                  <button
+                    onClick={() => this.props.updateTrip(this.props.tripId, place)}
                     className={!this.props.tripId ? "btn-hide" : ""}
-                    > Add to Trip</button>
-              </div>
-            ))}
+                  > Add to Trip</button>
+                </div>
+                )
+              }
+              })}
           </div>
         </div>
 

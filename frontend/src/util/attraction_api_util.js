@@ -15,19 +15,13 @@ export const getAttractions = (locationId) => {
             }, 
         "params": {
             "lang": "en_US",
-            "limit": "3",
+            "limit": "1",
             "currency": "USD",
             "sort": "recommended",
             "lunit": "km",
             "location_id": `${locationId}`
             }
         })
-        // .then((response) => {
-        //     console.log(response)
-        // })
-        // .catch((error) => {
-        //     console.log(error)
-    // })
 
 };
 
