@@ -31,9 +31,9 @@ router.patch("/:id", (req, res) => {
         .catch(err => res.status(400).json(err))
 });
 
-router.patch("/:id/:loc_id", (req, res) => {
+router.patch("/:trip_id/:attrac_id", (req, res) => {
     Trip
-        .findByIdAndUpdate({_id: req.params.id}, {$pull: {attractions: req.params.loc_id}})
+        .findByIdAndUpdate({_id: req.params.trip_id}, {$pull: {attractions: {location_id: req.params.attrac_id}}})
         .then(()=> res.status(200).json('Success'))
         .catch(err => res.status(400).json(err))
 });

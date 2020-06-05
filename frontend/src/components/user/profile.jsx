@@ -97,11 +97,14 @@ class ProfilePage extends React.Component {
                               <li>Food: 🍔🍜🍱</li>
                               <li>Things To Do: 🗺️🏝️🌆</li>
                               {trip.attractions ? trip.attractions.map((att, idx) => (
-                                <Link
-                                    key={idx} 
-                                    to={`/attraction/${att.location_id}/${att.name}`}>
-                                    <img src={`${att.photo.images.thumbnail.url}`} alt=""/>
-                                    {att.name}</Link>
+                                <div>
+                                  <Link
+                                      key={idx} 
+                                      to={`/attraction/${att.location_id}/${att.name}`}>
+                                      <img src={`${att.photo.images.thumbnail.url}`} alt=""/>
+                                      {att.name}</Link>
+                                      <button onClick={()=> this.props.removeAttrac(trip._id, att.location_id)}>Remove</button>
+                                </div>
                               )) : null}
                             </ul>
                             

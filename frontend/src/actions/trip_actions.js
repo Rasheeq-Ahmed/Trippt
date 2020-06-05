@@ -54,8 +54,12 @@ export const updateTrip = (tripId, data) => dispatch => {
         .then((trip) => dispatch(receiveTrip(trip)))
 };
 
+export const removeAttrac = (tripId, attracId) => dispatch => {
+    return tripAPIUtils.removeAttrac(tripId, attracId)
+        .then((trip) => dispatch(receiveTrip(trip)))
+};
+
 export const removeTrip = (id) => dispatch => {
    return  tripAPIUtils.removeTrip(id)
         .then(() => dispatch(deleteTrip(id)))
-
 };

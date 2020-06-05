@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import ProfilePage from './profile';
-import { createTrip, getUserTrips, removeTrip} from '../../actions/trip_actions'
+import { createTrip, getUserTrips, removeTrip, removeAttrac} from '../../actions/trip_actions'
 import { getAttractions } from '../../actions/attraction_actions'
 
 const mSTP = state => ({
@@ -12,7 +12,8 @@ const mDTP = dispatch => ({
     getUserTrips: (user_id) => dispatch(getUserTrips(user_id)),
     removeTrip: (id) => dispatch(removeTrip(id)),
     getAttractions: (locationId, city) => dispatch(getAttractions(locationId, city)),
-    createTrip: (data) => dispatch(createTrip(data))
+    createTrip: (data) => dispatch(createTrip(data)),
+    removeAttrac: (tripId, attracId) => dispatch(removeAttrac(tripId, attracId))
 
 
 });
