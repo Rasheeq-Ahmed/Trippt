@@ -26,7 +26,14 @@ router.delete("/:id", (req, res) => {
 
 router.patch("/:id", (req, res) => {
     Trip
-        .findByIdAndUpdate(req.params.id, {$push: {attractions: updateHash}})
+        .findByIdAndUpdate({_id: req.params.id}, {$push: {attractions: req.body} })
+        .then(()=> res.status(200).json('Success'))
+        .catch(err => res.status(400).json(err))
+});
+
+router.patch("/:trip_id/:attrac_id", (req, res) => {
+    Trip
+        .findByIdAndUpdate({_id: req.params.trip_id}, {$pull: {attractions: {location_id: req.params.attrac_id}}})
         .then(()=> res.status(200).json('Success'))
         .catch(err => res.status(400).json(err))
 });

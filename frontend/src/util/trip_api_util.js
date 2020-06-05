@@ -23,3 +23,7 @@ export const removeTrip = (id) => {
 export const updateTrip = (tripId, data) => {
     return axios.patch(`/api/trips/${tripId}`, data)
 };
+
+export const removeAttrac = (tripId, attracId) => {
+    return axios.patch(`/api/trips/${tripId}/${attracId}`)
+};

@@ -4,6 +4,7 @@ export const RECEIVE_TRIPS = 'RECEIVE_TRIPS';
 export const RECEIVE_USER_TRIPS = 'RECEIVE_USER_TRIPS'
 export const RECEIVE_TRIP = 'RECEIVE_TRIP';
 export const REMOVE_TRIP = 'REMOVE_TRIP';
+export const REMOVE_ATTRAC = 'REMOVE_ATTRAC'
 
 const receiveTrips = (trips) => ({
     type: RECEIVE_TRIPS,
@@ -21,6 +22,14 @@ const receiveTrip = (trip) => {
         trip
     }
 };
+
+const deleteAttrac = (tripId, attracId) => {
+    return {
+        type: REMOVE_ATTRAC,
+        tripId,
+        attracId
+    }
+}
 
 const deleteTrip = (id) => {
     return {
@@ -50,13 +59,17 @@ export const createTrip = (data) => dispatch => {
 };
 
 export const updateTrip = (tripId, data) => dispatch => {
-    debugger
     return tripAPIUtils.updateTrip(tripId, data)
         .then((trip) => dispatch(receiveTrip(trip)))
+};
+
+export const removeAttrac = (tripId, attracId) => dispatch => {
+    return tripAPIUtils.removeAttrac(tripId, attracId)
+        .then(() => dispatch(deleteAttrac(tripId, attracId)))
+        // .then((trip) => dispatch(receiveTrip(trip)))
 };
 
 export const removeTrip = (id) => dispatch => {
    return  tripAPIUtils.removeTrip(id)
         .then(() => dispatch(deleteTrip(id)))
-
 };
