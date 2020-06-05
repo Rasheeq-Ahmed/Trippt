@@ -1,16 +1,8 @@
 import React from 'react';
 import NavBar from '../nav/navbar_container';
 // import { Link } from 'react-router-dom';
+import { LOCATIONS } from '../../assets/locations'
 import './create.css'
-
-const locations = [
-    { location: 'Dubai', locationId: 295424 },
-    { location: 'San Francisco', locationId: 60713 },
-    { location: 'Paris', locationId: 187147 },
-    { location: 'New York', locationId: 60763 },
-    { location: 'Tokyo', locationId: 298184 },
-    { location: 'Sydney', locationId: 255060 },  
-]
 
 class CreateTrip extends React.Component {
     constructor(props) {
@@ -60,7 +52,7 @@ class CreateTrip extends React.Component {
           <div className="create-content">
               <div className="content-inner">
                <form onSubmit={this.handleSubmit}>
-                   {locations.map((loc, idx) => (
+                   {LOCATIONS.map((loc, idx) => (
                        <button 
                             onClick={() => this.setState({location: loc.location, locationId: loc.locationId  })}
                             key={idx}
