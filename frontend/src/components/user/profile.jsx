@@ -3,15 +3,7 @@ import { Link } from 'react-router-dom';
 import NavBar from '../nav/navbar_container'
 import './profile.css'
 import "../nav/navbar.css";
-
-const locations = [
-  { location: 'Dubai', locationId: 295424 },
-  { location: 'San Francisco', locationId: 60713 },
-  { location: 'Paris', locationId: 187147 },
-  { location: 'New York', locationId: 60763 },
-  { location: 'Tokyo', locationId: 298184 },
-  { location: 'Sydney', locationId: 255060 },
-]
+import { LOCATIONS } from '../../assets/locations'
 
 
 class ProfilePage extends React.Component {
@@ -72,7 +64,7 @@ class ProfilePage extends React.Component {
                       <div className="tablinks dropdown">
                         <button>Add Trips</button>
                           <ul className='dropdown-content'>
-                            {locations.map((loc, idx) => (
+                            {LOCATIONS.map((loc, idx) => (
                               <li
                                 onClick={() => this.props.createTrip({ location: loc.location, locationId: loc.locationId })}
                                 key={idx}
@@ -97,11 +89,12 @@ class ProfilePage extends React.Component {
                               <li>Food: 🍔🍜🍱</li>
                               <li>Things To Do: 🗺️🏝️🌆</li>
                               {trip.attractions ? trip.attractions.map((att, idx) => (
-                                <div>
+                                <div key={idx}>
                                   <Link
                                       key={idx} 
                                       to={`/attraction/${att.location_id}/${att.name}`}>
-                                      <img src={`${att.photo.images.thumbnail.url}`} alt=""/>
+                                      <img src={`${att.photo.images.thumbnail.url}`} 
+                                           alt=""/>
                                       {att.name}</Link>
                                       <button onClick={()=> this.props.removeAttrac(trip._id, att.location_id)}>Remove</button>
                                 </div>

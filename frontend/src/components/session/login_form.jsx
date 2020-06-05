@@ -31,8 +31,7 @@ class LoginForm extends React.Component {
     if (nextProps.currentUser === true) {
       this.props.history.push('/');
     }
-  // }
-  //   // Set or clear errors
+    // Set or clear errors
     this.setState({ errors: nextProps.errors})
   }
 
