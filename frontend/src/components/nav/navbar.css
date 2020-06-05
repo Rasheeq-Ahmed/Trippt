@@ -12,17 +12,15 @@
 }
 
 .nav-left {
-    /* align-items: center; */
     /* background-color: royalblue; */
     height: 100%;
     width: 40%;
-    /* align-items: center; */
     display: flex;
     font-size: 60px;
     justify-content: flex-start;
-    /* background-color: lawngreen; */
     min-width: 50%;
     margin-left: 2rem;
+    align-items: center;
 
 }
 
