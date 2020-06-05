@@ -117,3 +117,7 @@
   background-color: rgba(204, 204, 204, 0.877);
   height: 80px;
 }
+
+.btn-hide {
+  display: none;
+}

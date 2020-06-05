@@ -1,4 +1,4 @@
-import { RECEIVE_TRIPS, RECEIVE_TRIP, REMOVE_TRIP, RECEIVE_USER_TRIPS } from '../actions/trip_actions';
+import { RECEIVE_TRIPS, RECEIVE_TRIP, REMOVE_TRIP, RECEIVE_USER_TRIPS, REMOVE_ATTRAC } from '../actions/trip_actions';
 
 const TripReducer = (state = {}, action) => {
     Object.freeze(state);
@@ -16,6 +16,13 @@ const TripReducer = (state = {}, action) => {
             action.trips.data.forEach(trip => {
                 nextState[trip._id] = trip
             })
+            return nextState;
+        
+        case REMOVE_ATTRAC:
+            nextState = Object.assign({}, state)
+            let attractions = nextState[action.tripId].attractions
+            let newAttractions = attractions.filter(attrac => attrac.location_id !== action.attracId)
+            nextState[action.tripId].attractions = newAttractions
             return nextState
         
         case REMOVE_TRIP:
