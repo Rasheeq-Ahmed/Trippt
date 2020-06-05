@@ -62,7 +62,7 @@ class ProfilePage extends React.Component {
                         <button className="tablinks">Trips</button>
                       </Link>
                       <div className="tablinks dropdown">
-                        Add Trips
+                        <button>Add Trips</button>
                           <ul className='dropdown-content'>
                             {LOCATIONS.map((loc, idx) => (
                               <li
@@ -75,7 +75,7 @@ class ProfilePage extends React.Component {
                       <Link to="/destination">
                         <button className="tablinks">Destinations</button>
                       </Link>
-                      <button className="tablinks">Other</button>
+                      {/* <button className="tablinks">Other</button> */}
                     </div>
                   </div>
                   <div className="prof-right-body">
@@ -83,8 +83,8 @@ class ProfilePage extends React.Component {
                       <ul>
                         {this.props.trips.map((trip, idx) => (
                           <div key={trip._id}>
-                            <h2>Trip {idx + 1}</h2>
-                            <h3>{trip.location}</h3>
+                            <h2 className='trip-num'>Trip {idx + 1}</h2>
+                            <h3 className='trip-city'>{trip.location}</h3>
                             <ul id="trip" className="tabcontent">
                               <li>Food: 🍔🍜🍱</li>
                               <li>Things To Do: 🗺️🏝️🌆</li>

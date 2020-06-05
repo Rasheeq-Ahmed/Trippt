@@ -19,6 +19,9 @@ class NavBar extends React.Component {
       if (this.props.loggedIn) {
         return (
           <div className="nav-auth">
+            <Link to="/about">
+              <button>About</button>
+            </Link>
             <Link to="/destination">
               <button>Explore</button>
             </Link>
@@ -33,6 +36,9 @@ class NavBar extends React.Component {
       } else {
         return (
           <div className="nav-auth">
+            <Link to="/about">
+              <button>About</button>
+            </Link>
             <Link to="/destination">
               <button>Explore</button>
             </Link>
