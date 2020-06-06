@@ -1,6 +1,12 @@
-div {
+.slider {
+  position: absolute;
+  left: 25%;
+}
+
+.slider div {
     cursor: pointer;
 }
+
 
 .slider-items {
     display: inline-flex;
@@ -13,6 +19,6 @@ div {
 }
 
 #photo {
-    height: 30em;
-    width: 30em;
+    height: 40em;
+    width: 40em;
 }
