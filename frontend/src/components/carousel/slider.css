@@ -1,0 +1,18 @@
+div {
+    cursor: pointer;
+}
+
+.slider-items {
+    display: inline-flex;
+}
+.inactive {
+  display: none;
+}
+.active {
+  display: block;
+}
+
+#photo {
+    height: 30em;
+    width: 30em;
+}

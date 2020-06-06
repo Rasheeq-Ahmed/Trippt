@@ -17,11 +17,5 @@ export const getAttraction = (locationId) => {
     "location_id":`${locationId}`
     }
     })
-    // .then((response)=>{
-    //   console.log(response)
-    // })
-    // .catch((error)=>{
-    //   console.log(error)
-    // })
   }
 

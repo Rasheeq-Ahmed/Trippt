@@ -3,6 +3,7 @@ import NavBar from '../nav/navbar_container';
 import { Link } from 'react-router-dom';
 import "./destination.css"
 import { LOCATIONS } from "../../assets/locations"
+import Slider from "../carousel/slider"
 
 
 class Destination extends React.Component{
@@ -26,6 +27,7 @@ class Destination extends React.Component{
               key={idx}
               > {location.location} </Link>
         ))}
+        <Slider data={ LOCATIONS }/>
       </div>
     )
   }
