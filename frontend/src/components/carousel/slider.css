@@ -1,0 +1,24 @@
+.slider {
+  position: absolute;
+  left: 25%;
+}
+
+.slider div {
+    cursor: pointer;
+}
+
+
+.slider-items {
+    display: inline-flex;
+}
+.inactive {
+  display: none;
+}
+.active {
+  display: block;
+}
+
+#photo {
+    height: 40em;
+    width: 40em;
+}
