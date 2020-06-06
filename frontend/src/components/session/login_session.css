@@ -178,14 +178,9 @@
     /* height: 44px; */
     line-height: 2rem;
     text-align: center;
-    /* border-radius: 28px; */
-    /* position: relative; */
-    /* margin-top: 15px; */
-    /* margin-bottom: 3px; */
     cursor: pointer;
     border: none;
     width: 100%;
-    /* margin-top: 1rem; */
 
 }
 
@@ -201,15 +196,9 @@
   .error-messages {
     display: flex;
     flex-direction: column;
-    /* justify-content: space-evenly; */
-    /* align-items: center; */
-    /* margin-bottom: 10%; */
-    /* padding: 1rem; */
     list-style: none;
     color: red;
-    /* font-size: 1rem; */
     height: 50%;
     width: 100%;
-    /* margin-top: -10px; */
-    /* margin-bottom: 20px; */
+  
   }
