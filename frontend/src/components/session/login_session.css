@@ -54,12 +54,12 @@
   background-color: rgba(255, 255, 255, 0.87);
   display: flex;
   flex-direction: column;
-  height: 60%;
+  height: 70%;
   /* max-height: 800px; */
   /* justify-content: center; */
   align-items: center;
   width: 50%;
-  max-width: 300px;
+  max-width: 325px;
   opacity: 1;
   /* overflow: auto; */
   
@@ -198,7 +198,7 @@
     flex-direction: column;
     list-style: none;
     color: red;
-    height: 50%;
+    /* height: 50%; */
     width: 100%;
   
   }

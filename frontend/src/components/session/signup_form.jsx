@@ -73,7 +73,7 @@ class SignupForm extends React.Component {
 
   renderErrors() {
     return(
-      <ul>
+      <ul className='error-messages'>
         {Object.keys(this.state.errors).map((error, i) => (
           <li key={`error-${i}`}>
             {this.state.errors[error]}
@@ -95,6 +95,10 @@ class SignupForm extends React.Component {
         <div className="signup-body">
           <div className="signup-inner-body">
             <form className="signup-form">
+              <div className="s-form">
+
+              <div className="s-form-top">
+
               <label>
                 <input
                   className="signup-input"
@@ -103,7 +107,7 @@ class SignupForm extends React.Component {
                   onChange={this.update("email")}
                   placeholder="Email"
                   required
-                />
+                  />
               </label>
               <label>
                 <input
@@ -113,7 +117,7 @@ class SignupForm extends React.Component {
                   onChange={this.update("handle")}
                   placeholder="Handle"
                   required
-                />
+                  />
               </label>
               <label>
                 <input
@@ -123,7 +127,7 @@ class SignupForm extends React.Component {
                   onChange={this.update("password")}
                   placeholder="Password"
                   required
-                />
+                  />
               </label>
               <label>
                 <input
@@ -133,20 +137,28 @@ class SignupForm extends React.Component {
                   onChange={this.update("password2")}
                   placeholder="Confirm Password"
                   required
-                />
+                  />
               </label>
+              </div>
+              <span id='errors'>
+
               {this.renderErrors()}
+              </span>
               <span id="log-in">
                 Already on Trippt,{" "}
                 <span id="login-link">
                   <Link className="link-login" to="/login">Login!</Link>
                 </span>
               </span>
-              <div className="signup-btn">
-                {/* <button type="submit" onClick={this.handleSubmit}>
-                  Register Account
-                </button> */}
-                <button className="submit-button" onClick={this.handleSubmit()}>Sign Up</button>
+              <div className="s-form-bot">
+
+                <div className="signup-btn">
+                  {/* <button type="submit" onClick={this.handleSubmit}>
+                    Register Account
+                  </button> */}
+                  <button className="submit-button" onClick={this.handleSubmit()}>Sign Up</button>
+                </div>
+              </div>
               </div>
             </form>
           </div>
