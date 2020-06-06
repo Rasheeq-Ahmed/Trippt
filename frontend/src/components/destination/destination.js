@@ -27,7 +27,7 @@ class Destination extends React.Component{
               key={idx}
               > {location.location} </Link>
         ))}
-        <Slider/>
+        <Slider data={ LOCATIONS }/>
       </div>
     )
   }

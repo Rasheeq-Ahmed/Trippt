@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import Slide from './slide';
-import {LOCATIONS} from '../../assets/locations';
 import LeftArrow from './left_arrow';
 import RightArrow from './right_arrow';
 import './slider.css'
@@ -11,7 +10,7 @@ export default class Slider extends Component {
         super(props);
         this.state = {
             activeIndex: 0,
-            length: LOCATIONS.length
+            length: this.props.data.length
         };
     }
 
@@ -42,6 +41,15 @@ export default class Slider extends Component {
         });
     }
 
+    randomSlide() {
+        let length = this.state.length;
+        let rand = Math.floor(Math.random() * length);
+
+        this.setState({
+            activeIndex: rand
+        })
+    }
+
     render() {
         return (
             <div className='slider'>
@@ -52,12 +60,14 @@ export default class Slider extends Component {
                     <div className='slider-text'>
                         <Slide
                             activeIndex={this.state.activeIndex}
+                            data={this.props.data}
                         />
                     </div>
                     <RightArrow
                         goToNextSlide={() => this.goToNextSlide()}
                     />
                 </div>
+                <button onClick={()=> this.randomSlide()}>Random</button>
             </div>
         );
     }
