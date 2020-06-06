@@ -152,3 +152,17 @@
   h1 > a {
     font-size: 4em;
   }
+
+
+
+  /* Scroll bar */
+
+*::-webkit-scrollbar {
+  width: 8px;
+}
+
+ 
+*::-webkit-scrollbar-thumb {
+  background-color:  rgb(26, 194, 180);
+  /* outline: 1px solid slategrey; */
+}
