@@ -83,7 +83,7 @@ class LoginForm extends React.Component {
 
   renderErrors() {
     return (
-      <ul>
+      <ul className='error-messages'>
         {Object.keys(this.props.errors).map((error, i) => (
           <li key={`error-${i}`}>
             {this.props.errors[error]}
@@ -101,41 +101,52 @@ class LoginForm extends React.Component {
         </div>
         <div className="login-body">
           <div className="login-inner-body">
+          
             <form className="login-form">
-              <label>
-                <input
-                  className="login-input"
-                  type="text"
-                  value={this.state.email}
-                  onChange={this.update("email")}
-                  placeholder="Email"
-                />
-              </label>
-              <label>
-                <input
-                  className="login-input"
-                  type="password"
-                  value={this.state.password}
-                  onChange={this.update("password")}
-                  placeholder="Password"
-                />
-              </label>
-              {console.log(this.props)}
-              {this.renderErrors()}
-              <span id="sign-up">
-                Don't have an account,{" "}
-                <span id="sign-up-link">
-                  <Link className="link-signup"to="/signup">sign up here!</Link>
-                </span>
-              </span>
-              <div className="login-btn">
-                <button type="submit" onClick={this.handleSubmit}>
-                  Login
-                </button>
-                <button onClick={this.demoLogin} id="demo-button">
-                  Demo Login
-                </button>
+              <div className="form">
+
+              <div className="form-top">
+                <label>
+                  <input
+                    className="login-input"
+                    type="text"
+                    value={this.state.email}
+                    onChange={this.update("email")}
+                    placeholder="Email"
+                  />
+                </label>
+                <label>
+                  <input
+                    className="login-input"
+                    type="password"
+                    value={this.state.password}
+                    onChange={this.update("password")}
+                    placeholder="Password"
+                    />
+                </label>
               </div>
+              <div className="form-mid">
+
+                {/* {console.log(this.props)} */}
+                <span>{this.renderErrors()}</span>
+                <span id="sign-up">
+                  Don't have an account,{" "}
+                  <span id="sign-up-link">
+                    <Link className="link-signup" to="/signup">sign up here!</Link>
+                  </span>
+                </span>
+              </div>
+              <div className="form-bot">
+                <div className="login-btn">
+                  <button type="submit" onClick={this.handleSubmit}>
+                    Login
+                  </button>
+                  <button onClick={this.demoLogin} id="demo-button">
+                    Demo Login
+                  </button>
+              </div>
+              </div>
+            </div>
             </form>
           </div>
         </div>
