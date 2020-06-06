@@ -94,8 +94,9 @@ class AttractionShow extends React.Component{
               </div>
             </div>
           </div>
+        </div>
+        <div className="show-footer">
 
-          <div className="show-footer"></div>
         </div>
       </div>
     );

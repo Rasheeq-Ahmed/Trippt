@@ -4,36 +4,43 @@
   display: flex;
   /* background-color: rgb(22, 10, 189); */
   flex-direction: column;
+  justify-content: center;
+  box-sizing: border-box;
   
 }
-/* .login-background {
-  width: 90%;
-  height: 100%;
-} */
+
 .show-header {
-    height:100px;
+    width: 100%;
+    height: 10%;
+    background-color: thistle;
 }
 
 .show-body {
-  /* background-color: rgb(22, 158, 158); */
-  height: 80%;
+  background-color: rgb(22, 158, 158);
+  height: 85%;
   display: flex;
   justify-content: center;
   align-items: center;
     
 }
 
+.show-footer {
+  background-color: rgba(204, 204, 204, 0.877);
+  height: 5%;
+}
+
+
 .show-content {
-  /* width: %; */
+  width: 100%;
   height: 80%;
   display: flex;
   justify-content: space-evenly;
   /* align-items: center; */
-  max-width: 1200px;
-  height: 500px;
-  background-color: whitesmoke;
+  /* max-width: 1200px; */
+  /* height: 500px; */
+  background-color: rgb(255, 116, 116);
   flex-direction: row;
-  margin-top: 50px;
+  /* margin-top: 50px; */
 }
 
 .show-left {
@@ -41,13 +48,13 @@
     flex-direction: column;
     width: 95%;
     /* background-color: turquoise; */
-    margin-right: 20px;
+    /* margin-right: 20px; */
     justify-content: space-evenly;
 }
 
 .show-left span {
   /* width: max-content; */
-  margin-bottom: 10px;
+  /* margin-bottom: 10px; */
 }
 
 .att-name {
@@ -67,15 +74,15 @@
 
 .att-des {
   display: block;
-  height: 500px;
-  width: 500px;
-  overflow-y: auto;
+  /* height: 500px;
+  width: 500px; */
+  /* overflow-y: auto; */
   border-bottom: 1px solid black;
   
 }
 
 .att-description {
-  margin-top: 15px;
+  /* margin-top: 15px; */
 }
 
 
@@ -83,18 +90,18 @@
 .show-right {
     display: flex;
     width: 50%;
-    /* background-color: teal; */
+    background-color: teal;
     display: flex;
     justify-content: center;
     align-items: center;
+    
     
 }
 
 .show-right img {
     display: flex;
-    width: 500px;
-    height: 500px;
-    /* background-color: teal; */
+    max-width: 100%;
+    background-color: rgb(61, 255, 255);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -113,10 +120,7 @@
 
 
 
-.show-footer {
-  background-color: rgba(204, 204, 204, 0.877);
-  height: 80px;
-}
+
 
 .btn-hide {
   display: none;
