@@ -17,10 +17,13 @@ class Destination extends React.Component{
         </div>
 
         <div className="dest-body">
+          <div className="dest-title">
+            <h1>Discover Your Next Adventure</h1>
+          </div>
           <div className="dest-slides">
           <Slider data={ LOCATIONS }/>
           </div>
-          
+
         </div>
 
         <div className="dest-footer">

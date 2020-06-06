@@ -8,7 +8,7 @@
 
 .slides {
   display: flex;
-  background-color: teal;
+  /* background-color: teal; */
   height: 100%;
   width: 100%;
   /* flex-wrap: wrap; */
@@ -40,11 +40,11 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-left: 1rem;
+    margin: 1rem;
 }
 
 .slide-city {
-  background-color: rgba(255, 255, 255, 0.527);
+  background-color: rgba(255, 255, 255, 0.664);
   font-size: 2rem;
   display: flex;
   /* flex-wrap: wrap; */
