@@ -21,6 +21,16 @@ class ProfilePage extends React.Component {
         this.props.getUserTrips(this.props.user.id)
     };
 
+    randomTrip() {
+      let randLocation = Math.floor(Math.random() * LOCATIONS.length)
+      let location = LOCATIONS[randLocation]
+      this.props.createTrip({location: location.location, locationId: location.locationId})
+    }
+
+    
+
+
+
 
     tabClick() {
 
@@ -75,7 +85,7 @@ class ProfilePage extends React.Component {
                       <Link to="/destination">
                         <button className="tablinks">Destinations</button>
                       </Link>
-                      {/* <button className="tablinks">Other</button> */}
+                      <button className="tablinks" onClick={()=>this.randomTrip()}>Trippt Me</button>
                     </div>
                   </div>
                   <div className="prof-right-body">
@@ -109,6 +119,9 @@ class ProfilePage extends React.Component {
                             >
                               Delete
                             </button>
+                            <button
+                            >
+                            Trippt Me</button>
                           </div>
                         ))}
                       </ul>
