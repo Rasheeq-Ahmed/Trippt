@@ -54,20 +54,20 @@ export default class Slider extends Component {
         return (
             <div className='slider'>
                 <div className='slider-items'>
-                    <LeftArrow
+                    {/* <LeftArrow
                         goToPrevSlide={() => this.goToPrevSlide()}
-                    />
+                    /> */}
                     <div className='slider-text'>
                         <Slide
                             activeIndex={this.state.activeIndex}
                             data={this.props.data}
                         />
                     </div>
-                    <RightArrow
+                    {/* <RightArrow
                         goToNextSlide={() => this.goToNextSlide()}
-                    />
+                    /> */}
                 </div>
-                <button onClick={()=> this.randomSlide()}>Random</button>
+                {/* <button onClick={()=> this.randomSlide()}>Random</button> */}
             </div>
         );
     }
