@@ -2,6 +2,7 @@ import React from 'react';
 import NavBar from '../nav/navbar_container';
 // import { Link } from 'react-router-dom';
 import { LOCATIONS } from '../../assets/locations'
+import Modal from '../modal/modal'
 import './create.css'
 
 class CreateTrip extends React.Component {
@@ -11,10 +12,12 @@ class CreateTrip extends React.Component {
         this.state = {
             location: '',
             locationId: '',
-            
+            show: false
         }
         this.handleSubmit = this.handleSubmit.bind(this)
         this.handleGetAttraction = this.handleGetAttraction.bind(this)
+        this.showModal = this.showModal.bind(this)
+        this.closeModal = this.closeModal.bind(this)
         // this.handleGetUserTrips = this.handleGetUserTrips.bind(this)
     };
 
@@ -31,6 +34,14 @@ class CreateTrip extends React.Component {
         e.preventDefault();
         this.props.getAttractions(295424, 'Dubai')
     };
+
+    showModal() {
+        this.setState({ show: true })
+    }
+
+    closeModal() {
+        this.setState({ show: false })
+    }
 
 
 
@@ -77,6 +88,8 @@ class CreateTrip extends React.Component {
                 </div>
               </div>
           </div>
+          <button onClick={()=>this.showModal()}>Click</button>
+          <Modal show={this.state.show} closeModal={this.closeModal}/>
         </div>
 
         <div className="create-footer"></div>

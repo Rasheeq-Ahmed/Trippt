@@ -1,5 +1,6 @@
 import React from 'react'
-import './modal'
+import './modal.css'
+import {Link} from 'react-router-dom'
 
 class Modal extends React.Component {
     constructor() {
@@ -16,12 +17,16 @@ class Modal extends React.Component {
             <div className="modal" id="modal">
                 <h2>Modal Window</h2>
                 <div className="content">{this.props.children}</div>
+                <p>Attractions has been added to your Trips</p>
                 <div className='actions'>
                     <button
                         className="toggle-button"
                         onClick={() => { this.props.closeModal() }}>
 
-                        Close </button>
+                        Stay </button>
+                    <Link to="/profile">
+                        <button>Profile</button>
+                    </Link>
                 </div>
             </div>
         )
