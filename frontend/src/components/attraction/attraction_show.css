@@ -6,17 +6,18 @@
   flex-direction: column;
   justify-content: center;
   box-sizing: border-box;
+  font-size: 1rem;
   
 }
 
 .show-header {
     width: 100%;
     height: 10%;
-    background-color: thistle;
+    /* background-color: thistle; */
 }
 
 .show-body {
-  background-color: rgb(22, 158, 158);
+  /* background-color: rgb(91, 255, 255); */
   height: 85%;
   display: flex;
   justify-content: center;
@@ -31,14 +32,15 @@
 
 
 .show-content {
-  width: 100%;
-  height: 80%;
+  width: 90%;
+  height: 90%;
   display: flex;
   justify-content: space-evenly;
+  align-items: center;
   /* align-items: center; */
-  /* max-width: 1200px; */
+  max-width: 1000px;
   /* height: 500px; */
-  background-color: rgb(255, 116, 116);
+  background-color: rgba(255, 255, 255, 0.966);
   flex-direction: row;
   /* margin-top: 50px; */
 }
@@ -46,50 +48,86 @@
 .show-left {
     display: flex;
     flex-direction: column;
-    width: 95%;
+    width: 50%;
+    height: 95%;
     /* background-color: turquoise; */
     /* margin-right: 20px; */
-    justify-content: space-evenly;
+    justify-content: center;
+    align-items: center;
+    /* text-align: start; */
+    font-size: 1em;
+    /* position: relative; */
 }
 
-.show-left span {
-  /* width: max-content; */
-  /* margin-bottom: 10px; */
+.left-top {
+  width: 90%;
+  height: 40%;
+  /* background-color: yellow; */
+  display: flex;
+  /* justify-content: center; */
+  flex-direction: column;
+  align-items: center;
+  /* text-align: left; */
+  
+}
+
+.att-details {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  /* background-color: blanchedalmond; */
+  flex-direction: column;
+  justify-content: space-evenly;
+  overflow: hidden;
+  /* align-items: center; */
+
+  
+
+}
+
+
+.left-bot {
+  height: 60%;
+  /* min-height: fit-content; */
+  /* background-color: rgb(150, 150, 22); */
+  display: flex;
+  width: 90%;
+  /* justify-content: center; */
+  flex-direction: column;
 }
 
 .att-name {
-  /* margin-top: 50px; */
-  display: block;
-  width: auto;
-  height: auto;
-  font-size: x-large;
   border-bottom: 1px solid black;
+  /* background-color: thistle; */
+  font-size: 1.5em;
 }
 
 .att-add {
-  width: 500px;
-  height: max-content;
+  border-bottom: 1px solid black;
+  /* background-color: violet; */
+}
+
+.att-web {
   border-bottom: 1px solid black;
 }
 
 .att-des {
-  display: block;
-  /* height: 500px;
-  width: 500px; */
-  /* overflow-y: auto; */
-  border-bottom: 1px solid black;
+  /* display: block; */
+  height: 90%;
+  width: 100%;
+  /* background-color: rgb(255, 152, 27); */
+  /* display: flex; */
+  /* justify-content: space-evenly; */
+  /* align-items: center; */
+  overflow: hidden;
+  /* flex-direction: column; */
   
 }
 
-.att-description {
-  /* margin-top: 15px; */
-}
-
-
-
 .show-right {
     display: flex;
-    width: 50%;
+    width: 45%;
+    height: 91%;
     background-color: teal;
     display: flex;
     justify-content: center;
@@ -98,28 +136,38 @@
     
 }
 
-.show-right img {
+/* .show-right img {
     display: flex;
     max-width: 100%;
+    min-height: 100%;
     background-color: rgb(61, 255, 255);
     display: flex;
     justify-content: center;
     align-items: center;
-    
-}
-
-/* .show-photo {
-  width: 300px;
-  height: 300px;
-  width: 50%;
-  background-color: violet;
-  background-size: cover;
+    resize: horizontal;    
 } */
 
+.show-photo {
+  width: 100%;
+  height: 100%;
+ 
+}
 
 
+.photo {
+  height: 100%;
+  width: 100%;
+}
 
-
+#trip-btn {
+    background-color:rgb(26, 194, 180);
+    padding: 10px 20px;
+    font-size: 18px;
+    line-height: 20px;
+    text-align: center;
+    color:white;
+    cursor: pointer;
+}
 
 
 .btn-hide {

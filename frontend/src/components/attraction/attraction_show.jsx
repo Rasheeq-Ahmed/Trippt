@@ -57,6 +57,9 @@ class AttractionShow extends React.Component{
         <div className="show-body">
           <div className="show-content">
             <div className="show-left">
+              <div className="left-top">
+              <div className="att-details">
+
               <span className="att-name">{attraction.name} </span>
               <span className="att-add">
                 {" "}
@@ -68,20 +71,25 @@ class AttractionShow extends React.Component{
                 Recommended Visit Length:{" "}
                 {attraction.recommended_visit_length}
               </span>
-              <a
+              <a className='att-web'
                 href={attraction.website}
                 target="_blank"
-              >{`Visit ${attraction.name}'s website`}</a>
+                >{`Visit ${attraction.name}'s website`}</a>
+
+                </div>
+              </div>
+              <div className="left-bot">
 
               <div className="att-des">
                 {" "}
                 {attraction.description}
               </div>
-              <button 
+              <button id='trip-btn'
                 onClick={() => this.props.updateTrip(this.props.tripId, attraction)}
                 className={!this.props.tripId ? "btn-hide" : ""}
                 >Add to my trip</button>
         
+            </div>
             </div>
             <div className="show-right">
               <div className="show-photo">

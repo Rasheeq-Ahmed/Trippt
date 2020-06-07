@@ -243,17 +243,14 @@
 
 
 
-/* Scroll bar */
+  /* Scroll bar */
 
-.prof-all::-webkit-scrollbar {
+*::-webkit-scrollbar {
   width: 8px;
 }
+
  
-/* body::-webkit-scrollbar-track {
-  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
-} */
- 
-.prof-all::-webkit-scrollbar-thumb {
+*::-webkit-scrollbar-thumb {
   background-color:  rgb(26, 194, 180);
   /* outline: 1px solid slategrey; */
 }
