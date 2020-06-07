@@ -93,12 +93,12 @@ class Attraction extends React.Component{
         <div className="att-body">
         <div className="page-title">Attractions in {this.props.locationName}</div>
           <div className="gallery">
-            <Link to="/profile">
+        
               <button 
                   onClick={()=> this.tripptMe(this.props.tripId, attractions,newRestaurants,nightlife)}
                   className={!this.props.tripId ? "btn-hide" : ""} 
               >Trippt Me</button>
-            </Link>
+   
             
             
             {attractions.map((place, idx) => {
