@@ -30,7 +30,7 @@
 }
 
 .splash-inner-body {
-  width: 90vw;
+  width: 90%;
   height: 80%;
   background-color: lightcoral;
   display: flex;
@@ -39,7 +39,7 @@
   background-image: url(https://i.imgur.com/MKL5deQ.jpg);
   background-size: contain;
   background-repeat: no-repeat;
-  /* max-width: 60%; */
+  max-width: 70rem;
   /* max-width: 100vmax; */
   /* height: 700px; */
   background-position: center;
@@ -82,9 +82,14 @@
 }
 
 .splash-subtext {
+    
     display: flex;
     flex-direction: row;
     font-size: 2rem;
+}
+
+.definition {
+  width: 90%;
 }
 
 .italic {
