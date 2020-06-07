@@ -3,7 +3,6 @@ import './attraction.css';
 import { Link } from 'react-router-dom';
 import NavBar from '../nav/navbar_container';
 
-
 class Attraction extends React.Component{
   constructor(props){
     super(props);
@@ -13,6 +12,7 @@ class Attraction extends React.Component{
       nightlife: this.props.nightlife
     }
   }
+
 
   componentDidMount(){
     let {locationId, locationName} = this.props
@@ -30,7 +30,6 @@ class Attraction extends React.Component{
       let rand = this.randNum(arr.length)
       this.props.updateTrip(tripId, arr[rand])
     })
-
   }
 
   // showModal = () => {
@@ -94,10 +93,12 @@ class Attraction extends React.Component{
         <div className="att-body">
         <div className="page-title">Attractions in {this.props.locationName}</div>
           <div className="gallery">
-            <button 
-                onClick={()=> this.tripptMe(this.props.tripId, attractions,newRestaurants,nightlife)}
-                className={!this.props.tripId ? "btn-hide" : ""} 
-            >Trippt Me</button>
+            <Link to="/profile">
+              <button 
+                  onClick={()=> this.tripptMe(this.props.tripId, attractions,newRestaurants,nightlife)}
+                  className={!this.props.tripId ? "btn-hide" : ""} 
+              >Trippt Me</button>
+            </Link>
             
             
             {attractions.map((place, idx) => {
