@@ -27,8 +27,6 @@ class ProfilePage extends React.Component {
       this.props.createTrip({location: location.location, locationId: location.locationId})
     }
 
-    
-
 
 
 
@@ -119,9 +117,7 @@ class ProfilePage extends React.Component {
                             >
                               Delete
                             </button>
-                            <button
-                            >
-                            Trippt Me</button>
+
                           </div>
                         ))}
                       </ul>
