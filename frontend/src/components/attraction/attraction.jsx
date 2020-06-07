@@ -2,23 +2,32 @@ import React from 'react';
 import './attraction.css';
 import { Link } from 'react-router-dom';
 import NavBar from '../nav/navbar_container';
-
+import Modal from '../modal/modal'
 
 class Attraction extends React.Component{
   constructor(props){
     super(props);
     this.state = {
-      attractions: this.props.attractions,
-      restaurants: this.props.restaurants,
-      nightlife: this.props.nightlife
+      show: false
     }
+    this.closeModal = this.closeModal.bind(this)
+    this.showModal = this.showModal.bind(this)
   }
+
 
   componentDidMount(){
     let {locationId, locationName} = this.props
     this.props.getAttractions(locationId, locationName)
     this.props.getRestaurants(locationId, locationName)
     this.props.getNightlife(locationId,locationName)
+  }
+
+  showModal() {
+    this.setState({ show: true })
+  }
+
+  closeModal() {
+    this.setState({ show: false })
   }
 
   randNum(length) {
@@ -30,16 +39,7 @@ class Attraction extends React.Component{
       let rand = this.randNum(arr.length)
       this.props.updateTrip(tripId, arr[rand])
     })
-
   }
-
-  // showModal = () => {
-  //   this.setState({ show: true });
-  // };
-
-  // hideModal = () => {
-  //   this.setState({ show: false });
-  // };
 
   
 
@@ -94,10 +94,15 @@ class Attraction extends React.Component{
         <div className="att-body">
         <div className="page-title">Attractions in {this.props.locationName}</div>
           <div className="gallery">
-            <button 
-                onClick={()=> this.tripptMe(this.props.tripId, attractions,newRestaurants,nightlife)}
-                className={!this.props.tripId ? "btn-hide" : ""} 
-            >Trippt Me</button>
+              <div >
+                <button 
+                    onClick={()=> {this.tripptMe(this.props.tripId, attractions,newRestaurants,nightlife);
+                                   this.showModal()}}
+                    className={!this.props.tripId ? "btn-hide" : ""} 
+                >Trippt Me</button>
+                <Modal show={this.state.show} closeModal={this.closeModal}/>
+              </div>
+   
             
             
             {attractions.map((place, idx) => {
