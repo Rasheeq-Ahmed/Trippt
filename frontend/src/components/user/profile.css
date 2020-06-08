@@ -247,14 +247,13 @@
 
   /* Scroll bar */
 
-.prof-all::-webkit-scrollbar {
+*::-webkit-scrollbar {
   /* height: 100px; */
   /* width: 50%; */
   width: .5rem;
 }
 
- 
-.prof-all::-webkit-scrollbar-thumb {
+ *::-webkit-scrollbar-thumb {
   background-color:  rgb(26, 194, 180);
   /* outline: 1px solid slategrey; */
 }

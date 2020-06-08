@@ -41,7 +41,6 @@
     justify-content: center;
     align-items: center;
     margin: 1rem;
-    scroll-snap-align: start;
 
 }
 
@@ -50,12 +49,15 @@
   font-size: 2rem;
   display: flex;
   /* flex-wrap: wrap; */
-
+  
 }
 
 .cities {
   width: 100%;
   display: flex;
+  scroll-snap-align: center;
+  scroll-behavior: smooth;
+
 
 }
 
@@ -64,11 +66,6 @@
 }
 
 
-/* .slider-items {
-  background-color: violet;
-  height: 40%;
-  overflow-x: scroll;
-} */
 
 
 
