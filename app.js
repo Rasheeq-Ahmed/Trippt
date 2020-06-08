@@ -8,7 +8,6 @@ const path = require('path');
 
 const users = require("./routes/api/users");
 const trips = require("./routes/api/trips");
-const attractions = require("./routes/api/attractions")
 
 if (process.env.NODE_ENV === "production") {
   app.use(express.static("frontend/build"));
@@ -31,7 +30,6 @@ app.use(bodyParser.json());
 
 app.use("/api/users", users);
 app.use("/api/trips", trips);
-app.use("/api/attractions", attractions);
 
 const port = process.env.PORT || 5005;
 app.listen(port, () => console.log(`Server is running on port ${port}`));

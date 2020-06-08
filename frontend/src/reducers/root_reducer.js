@@ -5,6 +5,7 @@ import trips from "./trip_reducer"
 import attractions from "./attraction_reducer"
 import restaurants from "./restaurant_reducer"
 import nightlife from "./nightlife_reducer"
+import ui from "./ui_reducer"
 
 const RootReducer = combineReducers({
   errors,
@@ -12,7 +13,8 @@ const RootReducer = combineReducers({
   trips,
   attractions,
   restaurants,
-  nightlife
+  nightlife,
+  ui
 });
 
 export default RootReducer;
