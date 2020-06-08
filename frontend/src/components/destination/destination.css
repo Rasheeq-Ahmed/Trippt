@@ -44,9 +44,9 @@
   width: 100%;
   display: flex;
   overflow-x: scroll;
-  /* scroll-behavior: smooth; */
-  /* scroll-snap-align: 100px; */
-  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  /* scroll-snap-type: x proximity; */
+
 }
 
 
@@ -56,6 +56,57 @@
   background-color: gray;
 }
 
+
+.dest-slides::-webkit-scrollbar {
+  /* height: 100px; */
+
+  /* width: 50%; */
+  /* width: 90%; */
+  
+
+}
+
+.dest-slides::-webkit-scrollbar-button{
+  width: 1rem;
+}
+
+.dest-slides::-webkit-scrollbar-button:end:decrement {
+  display: none;
+}
+.dest-slides::-webkit-scrollbar-button:start:increment {
+display: none;
+}
+.dest-slides::-webkit-scrollbar-button:start:decrement {
+  /* width: 10px;
+  height: 10px; */
+  background-color: rgb(26, 194, 180);
+  border-radius: 50%;
+  /* background-size: contain;
+  background-repeat: no-repeat;
+  background-position: bottom;
+  background-image: url(https://i.imgur.com/Asnn3Zm.png?1); */
+}
+
+.dest-slides::-webkit-scrollbar-button:end:increment {
+  /* width: 10px;
+  height: 10px; */
+  background-color: rgb(26, 194, 180);
+  border-radius: 50%;
+}
+
+
+
+
+.dest-slides::-webkit-scrollbar-track {
+  background-color: rgb(192, 192, 192);
+}
+ 
+.dest-slides::-webkit-scrollbar-thumb {
+  background-color:  rgb(26, 194, 180);
+  width: 30%;
+  /* outline: 1px solid slategrey; */
+}
+ 
 
 
 
@@ -138,3 +189,4 @@
 }
 
  */
+

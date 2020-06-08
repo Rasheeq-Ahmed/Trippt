@@ -13,6 +13,7 @@
 .prof-header {
     /* background-color: turquoise; */
     min-height: 10%;
+    z-index: 1;
 }
 
 .prof-container {
@@ -225,10 +226,11 @@
     position: absolute;
     background-color: white;
     min-height: fit-content;
-    min-width: 100%;
+    min-width: 120%;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     padding: 12px 16px;
-    z-index: 1;
+    cursor: pointer;
+    /* z-index: 1; */
 }
 
 .dropdown:hover .dropdown-content {
@@ -246,11 +248,12 @@
   /* Scroll bar */
 
 *::-webkit-scrollbar {
-  width: 8px;
+  /* height: 100px; */
+  /* width: 50%; */
+  width: .5rem;
 }
 
- 
-*::-webkit-scrollbar-thumb {
+ *::-webkit-scrollbar-thumb {
   background-color:  rgb(26, 194, 180);
   /* outline: 1px solid slategrey; */
 }

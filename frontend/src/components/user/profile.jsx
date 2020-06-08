@@ -90,7 +90,7 @@ class ProfilePage extends React.Component {
                     <div className="trips">
                       <ul>
                         {this.props.trips.map((trip, idx) => (
-                          <div key={trip._id}>
+                          <div classname='trip-container' key={trip._id}>
                             <h2 className='trip-num'>Trip {idx + 1}</h2>
                             <h3 className='trip-city'>{trip.location}</h3>
                             <ul id="trip" className="tabcontent">
