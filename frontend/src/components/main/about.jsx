@@ -22,10 +22,10 @@ class About extends React.Component {
                                 </div>
                                 <div className="person-name">Rasheeq Ahmed</div>
                                 <div className="person-links">
-                                    <a href="https://www.linkedin.com/in/rasheeq-ahmed-53b7aa91/">
+                                    <a href="https://www.linkedin.com/in/rasheeq-ahmed-53b7aa91/" target="_blank">
                                         <img id="linked-icon" src="https://i.imgur.com/Xm1qtqN.png" />
                                     </a>
-                                    <a href="https://github.com/Rasheeq-Ahmed">
+                                    <a href="https://github.com/Rasheeq-Ahmed" target="_blank">
                                         <img id="git-icon" src="https://i.imgur.com/vwPks93.png" />
                                     </a>
                                 </div>
@@ -38,10 +38,10 @@ class About extends React.Component {
                                 <div className="person-name">Eric Chen</div>
 
                                 <div className="person-links">
-                                    <a href="https://www.linkedin.com/in/eric-chen-782b951a9/">
+                                    <a href="https://www.linkedin.com/in/eric-chen-782b951a9/" target="_blank">
                                     <img id="linked-icon" src="https://i.imgur.com/Xm1qtqN.png" />     
                                     </a>
-                                    <a href="https://github.com/echen831">
+                                    <a href="https://github.com/echen831" target="_blank">
                                     <img id="git-icon" src="https://i.imgur.com/vwPks93.png" />
                                 </a>
                                 </div>
@@ -54,10 +54,10 @@ class About extends React.Component {
                                 <div className="person-name">Hari Sachdeva</div>
 
                                 <div className="person-links">
-                                    <a href="https://www.linkedin.com/in/hari-sachdeva-8748051a6/">
+                                    <a href="https://www.linkedin.com/in/hari-sachdeva-8748051a6/" target="_blank">
                                         <img id="linked-icon" src="https://i.imgur.com/Xm1qtqN.png" />     
                                     </a>
-                                    <a href="https://github.com/hsachdeva01/">
+                                    <a href="https://github.com/hsachdeva01/" target="_blank">
                                         <img id="git-icon" src="https://i.imgur.com/vwPks93.png"/>
                                     </a>
                                 </div>
