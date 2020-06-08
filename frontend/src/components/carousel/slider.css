@@ -41,6 +41,8 @@
     justify-content: center;
     align-items: center;
     margin: 1rem;
+    scroll-snap-align: start;
+
 }
 
 .slide-city {
@@ -58,7 +60,6 @@
 }
 
 .city {
-  scroll-snap-align: start;
 
 }
 
@@ -68,3 +69,6 @@
   height: 40%;
   overflow-x: scroll;
 } */
+
+
+

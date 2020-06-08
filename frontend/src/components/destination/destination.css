@@ -44,9 +44,10 @@
   width: 100%;
   display: flex;
   overflow-x: scroll;
-  /* scroll-behavior: smooth; */
-  /* scroll-snap-align: 100px; */
+  scroll-behavior: auto;
+  scroll-snap-align: 1000px;
   scroll-snap-type: x mandatory;
+
 }
 
 
@@ -56,6 +57,55 @@
   background-color: gray;
 }
 
+
+::-webkit-scrollbar {
+  /* height: 100px; */
+
+  /* width: 50%; */
+  width: 90%;
+  display: flex;
+  
+
+}
+
+::-webkit-scrollbar-button{
+  width: 1rem;
+}
+
+
+::-webkit-scrollbar-button:start:decrement {
+  /* width: 10px;
+  height: 10px; */
+  background-color: rgb(26, 194, 180);
+  border-radius: 50%;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: bottom;
+  background-image: url(https://i.imgur.com/Asnn3Zm.png?1);
+}
+
+::-webkit-scrollbar-button:end:increment {
+  /* width: 10px;
+  height: 10px; */
+  background-color: rgb(26, 194, 180);
+  border-radius: 50%;
+}
+
+
+
+
+::-webkit-scrollbar-track {
+  width: 100px;
+  background-color: bisque;
+  color: aqua;
+}
+ 
+::-webkit-scrollbar-thumb {
+  background-color:  rgb(26, 194, 180);
+  width: 30%;
+  /* outline: 1px solid slategrey; */
+}
+ 
 
 
 
@@ -138,3 +188,4 @@
 }
 
  */
+
