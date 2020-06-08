@@ -61,6 +61,8 @@ class CreateTrip extends React.Component {
         </div>
         <div className="create-body">
           <div className="create-content">
+                <button onClick={() => this.showModal()}>Click</button>
+                <Modal show={this.state.show} closeModal={this.closeModal} />
               <div className="content-inner">
                <form onSubmit={this.handleSubmit}>
                    {LOCATIONS.map((loc, idx) => (
@@ -88,8 +90,6 @@ class CreateTrip extends React.Component {
                 </div>
               </div>
           </div>
-          <button onClick={()=>this.showModal()}>Click</button>
-          <Modal show={this.state.show} closeModal={this.closeModal}/>
         </div>
 
         <div className="create-footer"></div>
