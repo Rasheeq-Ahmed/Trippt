@@ -13,7 +13,8 @@ const mapStateToProps = (state, ownProps) => {
       nightlife: state.nightlife || {},
       locationId: ownProps.match.params.locationId,
       locationName: ownProps.match.params.locationName,
-      tripId: ownProps.match.params.tripId
+      tripId: ownProps.match.params.tripId,
+      loggedIn: state.session.isAuthenticated
     };
 };
 
