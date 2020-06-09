@@ -14,7 +14,9 @@ class AttractionShow extends React.Component{
   }
 
   componentDidMount(){
-    let {tripAttractions, tripId, locationId} = this.props
+    let {tripAttractions, tripId, locationId, user, getUserTrips} = this.props
+    getUserTrips(user.id)
+
     let foundAttraction = tripAttractions[tripId] ? this.findAttraction(tripAttractions[tripId].attractions, locationId) : null
     if (!tripAttractions || !foundAttraction) {
       this.props.getAttraction(this.props.locationId)
@@ -38,16 +40,16 @@ class AttractionShow extends React.Component{
 
 
   render(){
-    let {tripAttractions, getAttraction, tripId, locationId, locationName, loading} = this.props
+    let {tripAttractions, tripId, locationId, locationName, loading} = this.props
 
     if(loading) return(<Loader/>);
 
     // let attraction = this.props.attractions[this.props.locationName]
     let attraction;
-    
     let attractions = tripAttractions[tripId]
+    let foundAttraction = tripAttractions[tripId] ? this.findAttraction(tripAttractions[tripId].attractions, locationId) : null
     
-    if (!attractions) {
+    if (!attractions || !foundAttraction) {
       attractions = this.props.attractions
       attraction = attractions[locationName]
     } else {
@@ -119,10 +121,11 @@ class AttractionShow extends React.Component{
                 {attraction.description}
               </div>
               <button id='trip-btn'
-                onClick={
-                  () => this.props.updateTrip(this.props.tripId, attraction)}
+                onClick={ foundAttraction ?
+                  () => this.props.removeAttrac(tripId, locationId) :
+                  () => this.props.updateTrip(tripId, attraction)}
                 className={!this.props.tripId ? "btn-hide" : ""}
-                >Add To Trip</button>
+                >{foundAttraction ? "Remove From Trip" : "Add To My Trip"}</button>
         
             </div>
             </div>

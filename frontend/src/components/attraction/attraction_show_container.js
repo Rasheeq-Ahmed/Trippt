@@ -1,6 +1,7 @@
 import { connect } from 'react-redux';
 import { getAttraction } from '../../actions/attraction_actions';
 import { updateTrip, removeAttrac } from '../../actions/trip_actions';
+import { getUserTrips } from '../../actions/trip_actions'
 import AttractionShow from './attraction_show';
 
 const mapStateToProps = (state, ownProps) => {
@@ -9,7 +10,7 @@ const mapStateToProps = (state, ownProps) => {
     let tripId = ownProps.match.params.tripId
 
     return {
-      //  user: state.session.user
+      user: state.session.user,
       attractions: state.attractions || {},
       tripAttractions: state.trips || {},
       locationId,
@@ -24,6 +25,7 @@ const mapDispatchToProps = dispatch => {
         getAttraction: (locationId) => dispatch(getAttraction(locationId)),
         updateTrip: (tripId, data) => dispatch(updateTrip(tripId, data)),
         removeAttrac: (tripId, attracId) => dispatch(removeAttrac(tripId, attracId)),
+        getUserTrips: (userId) => dispatch(getUserTrips(userId))
     };
 };
 
