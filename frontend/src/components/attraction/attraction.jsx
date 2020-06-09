@@ -120,10 +120,12 @@ class Attraction extends React.Component{
                               </p>
                         </div>
                       </Link>
-                      <button 
+                      {this.props.loggedIn ? <button 
                         onClick={()=>this.props.updateTrip(this.props.tripId, place)}
-                        className={!this.props.tripId ? "btn-hide" : ""}
-                        > Add to Trip</button>
+                        className=""
+                        > Add to Trip</button> : <button>
+                          <Link to='/login'> Add to Trip</Link>
+                      </button> }
                   </div>
                 )
               }
@@ -145,10 +147,12 @@ class Attraction extends React.Component{
                         </p>
                       </div>
                     </Link>
-                    <button
+                    {this.props.loggedIn ? <button
                       onClick={() => this.props.updateTrip(this.props.tripId, place)}
-                      className={!this.props.tripId ? "btn-hide" : ""}
-                    > Add to Trip</button>
+                      className=""
+                    > Add to Trip</button> : <button>
+                        <Link to='/login'> Add to Trip</Link>
+                      </button>}
                   </div>
                 )
               }
@@ -170,10 +174,12 @@ class Attraction extends React.Component{
                       </p>
                     </div>
                   </Link>
-                  <button
-                    onClick={() => this.props.updateTrip(this.props.tripId, place)}
-                    className={!this.props.tripId ? "btn-hide" : ""}
-                  > Add to Trip</button>
+                    {this.props.loggedIn ? <button
+                      onClick={() => this.props.updateTrip(this.props.tripId, place)}
+                      className=""
+                    > Add to Trip</button> : <button>
+                        <Link to='/login'> Add to Trip</Link>
+                      </button>}
                 </div>
                 )
               }
