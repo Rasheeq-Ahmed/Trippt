@@ -1,4 +1,4 @@
-
+import { SHOW_LOADER, HIDE_LOADER} from "../actions/ui_actions"
 
 const initialState = {
     loading: false
@@ -6,7 +6,14 @@ const initialState = {
 
 const UIReducer = (state = initialState, action) => {
     Object.freeze(state)
-    return state
+    switch (action.type) {
+        case SHOW_LOADER:
+            return Object.assign({}, state, { loading: true })
+        case HIDE_LOADER:
+            return Object.assign({}, state, { loading: false })
+        default:
+            return state;
+    }
 }
 
 export default UIReducer
