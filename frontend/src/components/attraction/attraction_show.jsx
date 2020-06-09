@@ -9,19 +9,40 @@ import { urlencoded } from 'body-parser';
 class AttractionShow extends React.Component{
   constructor(props){
     super(props);
+
+    this.findAttraction = this.findAttraction.bind(this)
   }
 
   componentDidMount(){
-    this.props.getAttraction(this.props.locationId)
+    if (!this.props.attractions) {
+      this.props.getAttraction(this.props.locationId)
+    }
   };
+
+  findAttraction(attractions, attractionId) {
+    for(let i = 0; i < attractions.length; i ++) {
+      let attraction = attractions[i]
+      if (attraction.location_id === attractionId) {
+        return attraction
+      }
+    }
+    return null
+  };
+
+
 
 
 
   render(){
 
     if(this.props.loading) return(<Loader/>);
+
+    let api = this.props.attractions[this.props.locationName];
+    let state = this.props.attractions[this.props.tripId]
+    let haveTrip = this.findAttraction(state.attractions, this.props.locationId)
     
-    let attraction = this.props.attractions[this.props.locationName]
+    let attraction = !state ? api : haveTrip
+
     if (!attraction) {
       return null;
     }
@@ -88,9 +109,11 @@ class AttractionShow extends React.Component{
                 {attraction.description}
               </div>
               <button id='trip-btn'
-                onClick={() => this.props.updateTrip(this.props.tripId, attraction)}
-                className={!this.props.tripId ? "btn-hide" : ""}
-                >Add to my trip</button>
+                onClick={
+                  haveTrip ? () => this.props.removeAttrac(this.props.tripId, this.props.locationId) :
+                  () => this.props.updateTrip(this.props.tripId, attraction)}
+                // className={(haveTrip) ? "btn-hide" : ""}
+                >{haveTrip ? "Remove Trip" : "Add Trip"}</button>
         
             </div>
             </div>
