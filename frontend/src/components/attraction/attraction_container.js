@@ -14,7 +14,7 @@ const mapStateToProps = (state, ownProps) => {
       locationId: ownProps.match.params.locationId,
       locationName: ownProps.match.params.locationName,
       tripId: ownProps.match.params.tripId,
-      loggedIn: state.session.isAuthenticated
+      loggedIn: state.session.isAuthenticated 
     };
 };
 
