@@ -13,7 +13,6 @@ class ProfilePage extends React.Component {
         this.state = {
           location: '',
           locationId: '',
-
         }
     }
 

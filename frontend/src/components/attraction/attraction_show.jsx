@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import './attraction_show.css'
 import NavBar from '../nav/navbar_container';
+import Loader from '../loader/loader'
 import { urlencoded } from 'body-parser';
 
 
@@ -17,6 +18,9 @@ class AttractionShow extends React.Component{
 
 
   render(){
+
+    if(this.props.loading) return(<Loader/>);
+    
     let attraction = this.props.attractions[this.props.locationName]
     if (!attraction) {
       return null;
