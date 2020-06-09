@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom'
-import './slider.css'
+import './slide.css'
 
 class Slide extends Component {
     constructor(props) {
@@ -20,19 +20,19 @@ class Slide extends Component {
             <div className='slides'>
                 {
                     this.state.landing.map((loc, index) =>
-                            <Link className='city-link' to={`/attractions/${loc.locationId}/${loc.location}`}>
                         <div className='city-container' key={index}>
                             
                                 
 
                                 <div className='slide' style={{ backgroundImage: `url(${loc.url})`}}>
+                                <Link className='city-link' to={`/attractions/${loc.locationId}/${loc.location}`}>
                                 <h1 className='slide-city'>{loc.location}</h1>
 
                                 {/* <img id="slide-photo" src={`${loc.url}`} alt=""/> */}
+                                </Link>
                                 </div>
                                 
                         </div>
-                                </Link>
                     )}
             </div>
         )

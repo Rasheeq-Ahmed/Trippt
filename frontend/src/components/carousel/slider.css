@@ -1,57 +1,22 @@
-/* .slider {
-  position: absolute;
-  left: 25%;
-} */
-* {
-  box-sizing: content-box;
+.slider {
+background-color: grey;
 }
 
-.slides {
-  width: 100%;
-  display: flex;
-  /* background-color: chocolate;
-  grid-template-columns: 20rem 20rem 20rem;
-  grid-auto-rows: auto;
-  grid-auto-columns: auto;
-  grid-gap: 1rem;
-  overflow: auto; */
-  
-  /* background-color: teal; */
-  /* height: 100%; */
-  /* width: fit-content; */
-  flex-wrap: wrap;
-  justify-content: center;
-  /* align-items: center; */
-  /* overflow-x: scroll; */
-  /* flex-direction: row;
-  flex-wrap: wrap; */
-  /* overflow-x: scroll;   */
-  /* overflow: auto;
-  resize: both; */
-}
 
-.city-container {
+.slider-text {
   width: fit-content;
-  height: fit-content;
+  background-color: greenyellow;
+  display:flex;
+  justify-content: center;
 }
 
 
-.slide {
-    height: 15em;
-    width: 20em;
-    background-size: cover;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 1rem;
+.slider-items {
 
 }
 
-.slide-city {
-  background-color: rgba(255, 255, 255, 0.664);
-  font-size: 2rem;
-  display: flex;
-  /* flex-wrap: wrap; */
-  
-}
+
+
+
+
 
