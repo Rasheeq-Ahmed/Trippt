@@ -7,6 +7,12 @@ class Slide extends Component {
         super(props);
         this.state = { landing: this.props.data };
     }
+
+
+    
+
+
+
     render() {
         return (
 
@@ -14,23 +20,19 @@ class Slide extends Component {
             <div className='slides'>
                 {
                     this.state.landing.map((loc, index) =>
-                        <div className={
-                            index === this.props.activeIndex ? 'active' : 'inactive'}
-                            key={index}>
+                            <Link className='city-link' to={`/attractions/${loc.locationId}/${loc.location}`}>
+                        <div className='city-container' key={index}>
                             
-                            <Link to={`/attractions/${loc.locationId}/${loc.location}`}>
-                                <ul className="cities">
-                                <li className="city">
+                                
 
                                 <div className='slide' style={{ backgroundImage: `url(${loc.url})`}}>
                                 <h1 className='slide-city'>{loc.location}</h1>
 
                                 {/* <img id="slide-photo" src={`${loc.url}`} alt=""/> */}
                                 </div>
-                                </li>
-                                </ul>
-                                </Link>
+                                
                         </div>
+                                </Link>
                     )}
             </div>
         )
