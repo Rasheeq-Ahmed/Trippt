@@ -109,6 +109,7 @@ class Attraction extends React.Component{
               if (place.name) {
                 return (
                   <div key={idx} className="gallery-image">
+                    {console.log(this.props)}
                     <Link to={this.props.tripId ? `/attraction/${place.location_id}/${place.name}/${this.props.tripId}` : `/attraction/${place.location_id}/${place.name}`}>
                         <div className="att"
                           style={{
