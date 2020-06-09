@@ -52,7 +52,6 @@ class AttractionShow extends React.Component{
     }
 
     
-
     return (
       <div className="show-all">
         <div className="show-header">
