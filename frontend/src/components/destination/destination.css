@@ -15,17 +15,18 @@
 }
 
 .dest-body {
-  background-color: whitesmoke;
+  /* background-color: rgb(238, 130, 130); */
   /* max-width: 100%; */
-  height: 85%;
+  height: 90%;
   display: flex;
   align-items: center;
   flex-direction: column;
+  /* flex-wrap: wrap; */
   /* justify-content: center; */
 }
 
 .dest-title  {
-  height: 20%;
+  min-height: 15%;
   width: 100%;
   /* background-color: violet; */
   display: flex;
@@ -39,21 +40,33 @@
 
 
 .dest-slides {
-  background-color: rgb(255, 255, 255);
-  min-height:50%;
-  width: 100%;
+  /* background-color: rgb(139, 0, 0); */
+  /* min-height:50%; */
+  min-height: fit-content;
+  width: 95%;
+  /* max-width: 72rem; */
   display: flex;
-  overflow-x: scroll;
-  scroll-behavior: smooth;
+  justify-content: center;
+  /* overflow: auto;
+  resize: both; */
+
+
+  
+  flex-direction: column;
+  justify-content: center;
+  flex-wrap: wrap;
+  /* overflow-x: scroll; */
+  /* scroll-behavior: smooth; */
   /* scroll-snap-type: x proximity; */
 
 }
 
 
 .dest-footer {
-  height: 5%;
-  width: 100%;
-  background-color: gray;
+  /* bottom: 0;
+  height: 5vw;
+  width: 100%; */
+  /* background-color: gray; */
 }
 
 
@@ -67,20 +80,20 @@
 }
 
 .dest-slides::-webkit-scrollbar-button{
-  width: 1rem;
+  /* width: 1rem; */
 }
 
 .dest-slides::-webkit-scrollbar-button:end:decrement {
-  display: none;
+  /* display: none; */
 }
 .dest-slides::-webkit-scrollbar-button:start:increment {
-display: none;
+/* display: none; */
 }
 .dest-slides::-webkit-scrollbar-button:start:decrement {
   /* width: 10px;
   height: 10px; */
-  background-color: rgb(26, 194, 180);
-  border-radius: 50%;
+  /* background-color: rgb(26, 194, 180);
+  border-radius: 50%; */
   /* background-size: contain;
   background-repeat: no-repeat;
   background-position: bottom;
@@ -90,20 +103,20 @@ display: none;
 .dest-slides::-webkit-scrollbar-button:end:increment {
   /* width: 10px;
   height: 10px; */
-  background-color: rgb(26, 194, 180);
-  border-radius: 50%;
+  /* background-color: rgb(26, 194, 180);
+  border-radius: 50%; */
 }
 
 
 
 
 .dest-slides::-webkit-scrollbar-track {
-  background-color: rgb(192, 192, 192);
+  /* background-color: rgb(192, 192, 192); */
 }
  
 .dest-slides::-webkit-scrollbar-thumb {
-  background-color:  rgb(26, 194, 180);
-  width: 30%;
+  /* background-color:  rgb(26, 194, 180);
+  width: 30%; */
   /* outline: 1px solid slategrey; */
 }
  
