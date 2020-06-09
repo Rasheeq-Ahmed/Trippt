@@ -1,5 +1,8 @@
 import React from 'react';
+import NavBar from '../nav/navbar_container'
+import LoaderGif from '../../assets/loading.gif'
 import './loader.css'
+
 
 class Loader extends React.Component {
 
@@ -7,8 +10,11 @@ class Loader extends React.Component {
 
         return (
             <div className='loader-container'>
+                <NavBar/>
                 <div className='loader'>
-                    <img src="https://media.giphy.com/media/jAYUbVXgESSti/giphy.gif" alt="Loading..."/>
+                    <img
+                        src={LoaderGif} 
+                        alt="Loading..."/>
                 </div>
             </div>
         )

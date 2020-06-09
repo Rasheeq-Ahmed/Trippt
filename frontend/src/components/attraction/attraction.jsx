@@ -49,7 +49,7 @@ class Attraction extends React.Component{
     let restaurants = this.props.restaurants[this.props.locationName];
     let nightlife = this.props.nightlife[this.props.locationName];
 
-    if (this.props.loading) return (<NavBar/>,<Loader/>);
+    if (this.props.loading) return (<Loader/>);
 
     if (!attractions) {
       return null;
