@@ -14,12 +14,16 @@ class AttractionShow extends React.Component{
   }
 
   componentDidMount(){
-    if (!this.props.attractions) {
+    let {tripAttractions, tripId, locationId} = this.props
+    let foundAttraction = tripAttractions[tripId] ? this.findAttraction(tripAttractions[tripId].attractions, locationId) : null
+    if (!tripAttractions || !foundAttraction) {
       this.props.getAttraction(this.props.locationId)
     }
+
   };
 
   findAttraction(attractions, attractionId) {
+    if (!attractions) return null
     for(let i = 0; i < attractions.length; i ++) {
       let attraction = attractions[i]
       if (attraction.location_id === attractionId) {
@@ -34,19 +38,23 @@ class AttractionShow extends React.Component{
 
 
   render(){
+    let {tripAttractions, getAttraction, tripId, locationId, locationName, loading} = this.props
 
-    if(this.props.loading) return(<Loader/>);
+    if(loading) return(<Loader/>);
 
-    let api = this.props.attractions[this.props.locationName];
-    let state = this.props.attractions[this.props.tripId]
-    let haveTrip = this.findAttraction(state.attractions, this.props.locationId)
+    // let attraction = this.props.attractions[this.props.locationName]
+    let attraction;
     
-    let attraction = !state ? api : haveTrip
-
-    if (!attraction) {
-      return null;
+    let attractions = tripAttractions[tripId]
+    
+    if (!attractions) {
+      attractions = this.props.attractions
+      attraction = attractions[locationName]
+    } else {
+      attraction = this.findAttraction(attractions.attractions, locationId);
     }
-
+    
+    if (!attraction) return null;
         
     const getPhotos = (photos) => {
       for(var key in photos){
@@ -75,6 +83,8 @@ class AttractionShow extends React.Component{
     
     return (
       <div className="show-all">
+        {/* {console.log(attractions)}
+        {console.log(attraction)} */}
         <div className="show-header">
           <NavBar />
         </div>
@@ -110,10 +120,9 @@ class AttractionShow extends React.Component{
               </div>
               <button id='trip-btn'
                 onClick={
-                  haveTrip ? () => this.props.removeAttrac(this.props.tripId, this.props.locationId) :
                   () => this.props.updateTrip(this.props.tripId, attraction)}
-                // className={(haveTrip) ? "btn-hide" : ""}
-                >{haveTrip ? "Remove Trip" : "Add Trip"}</button>
+                className={!this.props.tripId ? "btn-hide" : ""}
+                >Add To Trip</button>
         
             </div>
             </div>

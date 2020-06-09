@@ -4,14 +4,14 @@ import { updateTrip, removeAttrac } from '../../actions/trip_actions';
 import AttractionShow from './attraction_show';
 
 const mapStateToProps = (state, ownProps) => {
-    let tripAttractions = state.trips;
     let locationId = ownProps.match.params.locationId;
     let locationName = ownProps.match.params.locationName;
     let tripId = ownProps.match.params.tripId
 
     return {
       //  user: state.session.user
-      attractions: tripAttractions || state.attractions || {},
+      attractions: state.attractions || {},
+      tripAttractions: state.trips || {},
       locationId,
       locationName,
       tripId,
