@@ -23,7 +23,7 @@
 
 .splash-body {
   background-color: whitesmoke;
-  height: 82%;
+  height: 85%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -55,7 +55,7 @@
     flex-direction: column;
     height: 40%;
     min-width: 20%;
-    max-width: 300px;
+    max-width: 18rem;
     /* width: 100vw; */
     align-items: flex-start;
     /* background-color: violet; */
@@ -99,8 +99,8 @@
 }
 
 .splash-footer {
-  background-color: rgb(207, 207, 207);
-  min-height: 8%;
+  background-color: gray;
+  min-height: 5%;
   /* position: absolute; */
   /* bottom: 0; */
   display: flex;

@@ -12,7 +12,7 @@ class Loader extends React.Component {
             <div className='loader-container'>
                 <NavBar/>
                 <div className='loader'>
-                    <img
+                    <img className='load-img'
                         src={LoaderGif} 
                         alt="Loading..."/>
                 </div>
