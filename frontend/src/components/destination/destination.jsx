@@ -21,7 +21,7 @@ class Destination extends React.Component{
             <h1>Discover Your Next Adventure</h1>
           </div>
           <div className="dest-slides">
-          <Slider data={ LOCATIONS }/>
+          <Slider data={ LOCATIONS } showLoader={ this.props.showLoader}/>
           </div>
 
         </div>
@@ -39,4 +39,4 @@ class Destination extends React.Component{
   }
 }
 
-export default Destination;
+export default Destination

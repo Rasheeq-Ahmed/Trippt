@@ -1,4 +1,9 @@
-import { SHOW_LOADER, HIDE_LOADER} from "../actions/ui_actions"
+
+import { RECEIVE_ATTRACTION, 
+         RECEIVE_ATTRACTIONS,
+         LOADING_ATTRACTION,
+         LOADING_ATTRACTIONS
+        } from "../actions/attraction_actions"
 
 const initialState = {
     loading: false
@@ -7,10 +12,14 @@ const initialState = {
 const UIReducer = (state = initialState, action) => {
     Object.freeze(state)
     switch (action.type) {
-        case SHOW_LOADER:
-            return Object.assign({}, state, { loading: true })
-        case HIDE_LOADER:
-            return Object.assign({}, state, { loading: false })
+        case RECEIVE_ATTRACTIONS:
+            return Object.assign({}, state, { loading: false });
+        case LOADING_ATTRACTIONS:
+            return Object.assign({}, state, { loading: true });
+        case RECEIVE_ATTRACTION:
+            return Object.assign({}, state, { loading: false });
+        case LOADING_ATTRACTION:
+            return Object.assign({}, state, { loading: true });
         default:
             return state;
     }

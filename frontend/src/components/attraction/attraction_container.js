@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
-import { getAttractions, getAttraction } from '../../actions/attraction_actions'
-import { getRestaurants } from '../../actions/restaurant_actions'
-import { getNightlife } from '../../actions/nightlife_actions'
+import { getAttractions, getAttraction } from '../../actions/attraction_actions';
+import { getRestaurants } from '../../actions/restaurant_actions';
+import { getNightlife } from '../../actions/nightlife_actions';
 import { updateTrip } from '../../actions/trip_actions';
 import Attraction from './attraction';
 
@@ -13,7 +13,8 @@ const mapStateToProps = (state, ownProps) => {
       nightlife: state.nightlife || {},
       locationId: ownProps.match.params.locationId,
       locationName: ownProps.match.params.locationName,
-      tripId: ownProps.match.params.tripId
+      tripId: ownProps.match.params.tripId,
+      loading: state.ui.loading
     };
 };
 
@@ -23,7 +24,7 @@ const mapDispatchToProps = dispatch => {
         getAttraction: (locationId) => dispatch(getAttraction(locationId)),
         getRestaurants: (locationId, city) => dispatch(getRestaurants(locationId, city)),
         getNightlife: (locationId, city) => dispatch(getNightlife(locationId, city)),
-        updateTrip: (tripId, data) => dispatch(updateTrip(tripId, data))
+        updateTrip: (tripId, data) => dispatch(updateTrip(tripId, data)),
     };
 };
 

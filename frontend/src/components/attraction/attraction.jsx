@@ -3,6 +3,7 @@ import './attraction.css';
 import { Link } from 'react-router-dom';
 import NavBar from '../nav/navbar_container';
 import Modal from '../modal/modal'
+import Loader from '../loader/loader'
 
 class Attraction extends React.Component{
   constructor(props){
@@ -47,6 +48,9 @@ class Attraction extends React.Component{
     let attractions = this.props.attractions[this.props.locationName];
     let restaurants = this.props.restaurants[this.props.locationName];
     let nightlife = this.props.nightlife[this.props.locationName];
+
+    if (this.props.loading) return (<Loader/>);
+
     if (!attractions) {
       return null;
     }
@@ -90,7 +94,6 @@ class Attraction extends React.Component{
         <div className="att-header">
           <NavBar />
         </div>
-
         <div className="att-body">
         <div className="page-title">Attractions in {this.props.locationName}</div>
           <div className="gallery">
