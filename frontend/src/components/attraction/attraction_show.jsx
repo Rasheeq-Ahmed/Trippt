@@ -15,7 +15,10 @@ class AttractionShow extends React.Component{
 
   componentDidMount(){
     let {tripAttractions, tripId, locationId, user, getUserTrips} = this.props
-    getUserTrips(user.id)
+
+    if (user.id) {
+      getUserTrips(user.id)
+    }
 
     let foundAttraction = tripAttractions[tripId] ? this.findAttraction(tripAttractions[tripId].attractions, locationId) : null
     if (!tripAttractions || !foundAttraction) {
