@@ -1,5 +1,4 @@
 import React from 'react';
-import { connect } from 'react-redux'
 import './loader.css'
 
 class Loader extends React.Component {
@@ -9,7 +8,7 @@ class Loader extends React.Component {
         return (
             <div className='loader-container'>
                 <div className='loader'>
-                    <img src="https://media.giphy.com/media/jAYUbVXgESSti/giphy.gif" alt=""/>
+                    <img src="https://media.giphy.com/media/jAYUbVXgESSti/giphy.gif" alt="Loading..."/>
                 </div>
             </div>
         )
