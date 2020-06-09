@@ -9,7 +9,8 @@ const mapStateToProps = (state, ownProps) => {
       attractions: state.attractions || {},
       locationId: ownProps.match.params.locationId,
       locationName: ownProps.match.params.locationName,
-      tripId: ownProps.match.params.tripId
+      tripId: ownProps.match.params.tripId,
+      loading: state.ui.loading
     };
 };
 
