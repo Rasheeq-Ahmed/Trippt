@@ -16,11 +16,12 @@ class Slide extends Component {
     render() {
         return (
 
-            
+            <div className="slides-all">
+
             <div className='slides'>
                 {
                     this.state.landing.map((loc, index) =>
-                        <div className='city-container' key={index}>
+                    <div className='city-container' key={index}>
                             
                                 
 
@@ -34,6 +35,7 @@ class Slide extends Component {
                                 
                         </div>
                     )}
+            </div>
             </div>
         )
     }

@@ -1,24 +1,28 @@
 .slider {
-background-color: grey;
+/* background-color: grey; */
 width: 100%;
 height: 100%;
 display: flex;
 justify-content: center;
+
 }
 
 
 
 .slider-items {
-  background-color: hotpink;
-  width: 80%;
+  /* background-color: hotpink; */
+  /* width: 95%; */
   display: flex;
   justify-content: center;
+  align-items: center;
+    /* flex-direction: row; */
+
 }
 
 .slider-text {
   /* width: fit-content; */
-  width: 90%;
-  background-color: greenyellow;
+  /* width: 90%; */
+  /* background-color: greenyellow; */
   display:flex;
   justify-content: center;
   align-items: center;
