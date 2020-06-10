@@ -1,15 +1,21 @@
 import { connect } from 'react-redux';
 import { getAttraction } from '../../actions/attraction_actions';
-import { updateTrip } from '../../actions/trip_actions';
+import { updateTrip, removeAttrac } from '../../actions/trip_actions';
+import { getUserTrips } from '../../actions/trip_actions'
 import AttractionShow from './attraction_show';
 
 const mapStateToProps = (state, ownProps) => {
+    let locationId = ownProps.match.params.locationId;
+    let locationName = ownProps.match.params.locationName;
+    let tripId = ownProps.match.params.tripId
+
     return {
-      //  user: state.session.user
+      user: state.session.user,
       attractions: state.attractions || {},
-      locationId: ownProps.match.params.locationId,
-      locationName: ownProps.match.params.locationName,
-      tripId: ownProps.match.params.tripId,
+      tripAttractions: state.trips || {},
+      locationId,
+      locationName,
+      tripId,
       loading: state.ui.loading
     };
 };
@@ -17,7 +23,9 @@ const mapStateToProps = (state, ownProps) => {
 const mapDispatchToProps = dispatch => {
     return {
         getAttraction: (locationId) => dispatch(getAttraction(locationId)),
-        updateTrip: (tripId, data) => dispatch(updateTrip(tripId, data))
+        updateTrip: (tripId, data) => dispatch(updateTrip(tripId, data)),
+        removeAttrac: (tripId, attracId) => dispatch(removeAttrac(tripId, attracId)),
+        getUserTrips: (userId) => dispatch(getUserTrips(userId))
     };
 };
 
