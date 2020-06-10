@@ -31,9 +31,6 @@ class Slide extends Component {
 
                                 {/* <img id="slide-photo" src={`${loc.url}`} alt=""/> */}
                                 </Link>
-                                <button className={user ? "btn-show" : ""}
-                                        onClick={()=>createTrip({location: loc.location, locationId: loc.locationId})}
-                                >Add To My Trips </button>
                                 </div>
                                 
                         </div>
@@ -44,15 +41,5 @@ class Slide extends Component {
     }
 }
 
-const mSTP = state => {
-    return {
-        user: state.session.user
-    }
-};
 
-const mDTP = dispatch => {
-    return {
-        createTrip: (data) => dispatch(createTrip(data))
-    }
-}
-export default connect(mSTP, mDTP)(Slide);
+export default Slide

@@ -26,8 +26,6 @@ class Slide extends Component {
                             <div className='slide' style={{ backgroundImage: `url(${loc.url})` }}>
                                 <Link className='city-link' to={`/attractions/${loc.locationId}/${loc.location}`}>
                                     <h1 className='slide-city'>{loc.location}</h1>
-
-                                    {/* <img id="slide-photo" src={`${loc.url}`} alt=""/> */}
                                 </Link>
                                 <button className={user ? "btn-show" : ""}
                                     onClick={() => createTrip({ location: loc.location, locationId: loc.locationId })}
@@ -43,7 +41,7 @@ class Slide extends Component {
 
 const mSTP = state => {
     return {
-        user: state.session.user
+        user: state.session.isAuthenticated
     }
 };
 

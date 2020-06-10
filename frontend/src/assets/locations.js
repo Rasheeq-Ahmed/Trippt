@@ -22,4 +22,6 @@ export const LOCATIONS = [
     { location: 'Mexico City', locationId: 150800, country: 'Mexico', url:"https://media-cdn.tripadvisor.com/media/photo-o/13/0d/61/90/from-dia-de-los-muertos.jpg" },
     { location: 'Taipei', locationId: 293913, country: 'Taiwan', url: "https://media-cdn.tripadvisor.com/media/photo-c/2560x500/06/d7/dc/f6/bigphotofortaipei.jpg" },
     { location: 'Shanghai', locationId: 308272, country: 'China', url: "https://media-cdn.tripadvisor.com/media/photo-o/0d/04/4a/7e/top-of-shanghai.jpg" },
+    { location: 'Seville', locationId: 187443, country: 'Spain', url: "https://media-cdn.tripadvisor.com/media/photo-o/0f/93/17/01/photo0jpg.jpg" },
+    { location: 'Rome', locationId: 187791, country: 'Italy', url: "https://media-cdn.tripadvisor.com/media/photo-m/1280/1b/33/cb/56/caption.jpg" },
 ]
