@@ -3,7 +3,7 @@ import NavBar from '../nav/navbar_container';
 import { Link } from 'react-router-dom';
 import "./destination.css"
 import { LOCATIONS } from "../../assets/locations"
-import Slider from "../carousel/slider"
+import Slide from "./dest_slide"
 
 
 class Destination extends React.Component{
@@ -21,7 +21,7 @@ class Destination extends React.Component{
             <h1>Discover Your Next Adventure</h1>
           </div>
           <div className="dest-slides">
-          <Slider data={ LOCATIONS } showLoader={ this.props.showLoader}/>
+          <Slide data={ LOCATIONS }/>
           </div>
 
         </div>
