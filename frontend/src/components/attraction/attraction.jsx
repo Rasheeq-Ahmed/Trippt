@@ -17,23 +17,32 @@ class Attraction extends React.Component{
 
 
   componentDidMount(){
-    let {locationId, locationName} = this.props
-    this.props.getAttractions(locationId, locationName)
-    this.props.getRestaurants(locationId, locationName)
-    this.props.getNightlife(locationId,locationName)
-  }
+    let {locationId, locationName, attractions, restaurants, nightlife} = this.props
+
+    if (!attractions[locationName]) {
+      this.props.getAttractions(locationId, locationName)
+    }
+
+    if (!restaurants[locationName]) {
+      this.props.getRestaurants(locationId, locationName)
+    }
+    
+    if (!nightlife[locationName]) {
+      this.props.getNightlife(locationId,locationName)
+    }
+  };
 
   showModal() {
     this.setState({ show: true })
-  }
+  };
 
   closeModal() {
     this.setState({ show: false })
-  }
+  };
 
   randNum(length) {
     return Math.floor(Math.random() * length)
-  }
+  };
 
   tripptMe(tripId, ...args) {
     args.forEach(arr => {

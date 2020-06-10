@@ -32,11 +32,11 @@
 .splash-inner-body {
   width: 90%;
   height: 80%;
-  background-color: lightcoral;
+  /* background-color: lightcoral; */
   display: flex;
   justify-content: center;
   align-items: center;
-  background-image: url(https://i.imgur.com/MKL5deQ.jpg);
+  background-image: url('../../assets/splash-img.jpg');
   background-size: contain;
   background-repeat: no-repeat;
   max-width: 70rem;

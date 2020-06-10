@@ -29,7 +29,7 @@ class LoginForm extends React.Component {
   //Once the user has been authenticated, redirect to the Homepage
   componentWillReceiveProps(nextProps) {
     if (nextProps.currentUser === true) {
-      this.props.history.push('/');
+      this.props.history.push('/profile');
     }
     // Set or clear errors
     this.setState({ errors: nextProps.errors})
@@ -75,7 +75,6 @@ class LoginForm extends React.Component {
     };
 
     this.props.login(user)
-      .then(() => this.props.history.push('/profile')) 
   }
 
 

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 import './attraction_show.css'
 import NavBar from '../nav/navbar_container';
 import Loader from '../loader/loader'
@@ -9,23 +9,57 @@ import { urlencoded } from 'body-parser';
 class AttractionShow extends React.Component{
   constructor(props){
     super(props);
+
+    this.findAttraction = this.findAttraction.bind(this)
   }
 
   componentDidMount(){
-    this.props.getAttraction(this.props.locationId)
+    let {tripAttractions, tripId, locationId, user, getUserTrips} = this.props
+
+    if (user.id) {
+      getUserTrips(user.id)
+    }
+
+    let foundAttraction = tripAttractions[tripId] ? this.findAttraction(tripAttractions[tripId].attractions, locationId) : null
+    if (!tripAttractions || !foundAttraction) {
+      this.props.getAttraction(this.props.locationId)
+    }
+
+  };
+
+  findAttraction(attractions, attractionId) {
+    if (!attractions) return null
+    for(let i = 0; i < attractions.length; i ++) {
+      let attraction = attractions[i]
+      if (attraction.location_id === attractionId) {
+        return attraction
+      }
+    }
+    return null
   };
 
 
 
+
+
   render(){
+    let {tripAttractions, tripId, locationId, locationName, loading} = this.props
 
-    if(this.props.loading) return(<Loader/>);
+    if(loading) return(<Loader/>);
+
+    // let attraction = this.props.attractions[this.props.locationName]
+    let attraction;
+    let attractions = tripAttractions[tripId]
+    let foundAttraction = tripAttractions[tripId] ? this.findAttraction(tripAttractions[tripId].attractions, locationId) : null
     
-    let attraction = this.props.attractions[this.props.locationName]
-    if (!attraction) {
-      return null;
+    if (!attractions || !foundAttraction) {
+      attractions = this.props.attractions
+      attraction = attractions[locationName]
+    } else {
+      attraction = this.findAttraction(attractions.attractions, locationId);
     }
-
+    
+    if (!attraction) return null;
         
     const getPhotos = (photos) => {
       for(var key in photos){
@@ -54,6 +88,8 @@ class AttractionShow extends React.Component{
     
     return (
       <div className="show-all">
+        {/* {console.log(attractions)}
+        {console.log(attraction)} */}
         <div className="show-header">
           <NavBar />
         </div>
@@ -88,9 +124,11 @@ class AttractionShow extends React.Component{
                 {attraction.description}
               </div>
               <button id='trip-btn'
-                onClick={() => this.props.updateTrip(this.props.tripId, attraction)}
+                onClick={ foundAttraction ?
+                  () => this.props.removeAttrac(tripId, locationId) :
+                  () => this.props.updateTrip(tripId, attraction)}
                 className={!this.props.tripId ? "btn-hide" : ""}
-                >Add to my trip</button>
+                >{foundAttraction ? "Remove From Trip" : "Add To My Trip"}</button>
         
             </div>
             </div>

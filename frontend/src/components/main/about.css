@@ -13,8 +13,8 @@
 
 
 .about-header {
- height: 5%; 
- background-color: blue; 
+ height: 10%; 
+ /* background-color: blue;  */
  display: flex;
  justify-content: center; 
 }
@@ -104,7 +104,7 @@
 
 
 #linked-icon {
-    height: 40px;
+    height: 41px;
 }
 
 #git-icon {
