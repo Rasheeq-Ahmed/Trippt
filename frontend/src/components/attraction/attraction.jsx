@@ -17,7 +17,9 @@ class Attraction extends React.Component{
 
 
   componentDidMount(){
-    let {locationId, locationName} = this.props
+    let {locationId, locationName, attractions, restaurants, nightlife} = this.props
+
+    
     this.props.getAttractions(locationId, locationName)
     this.props.getRestaurants(locationId, locationName)
     this.props.getNightlife(locationId,locationName)

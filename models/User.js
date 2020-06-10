@@ -21,7 +21,6 @@ const UserSchema = new Schema({
     lastName: {
       type: String
     }
-
   },
   date: {
     type: Date,
