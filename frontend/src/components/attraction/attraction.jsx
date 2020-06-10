@@ -20,6 +20,7 @@ class Attraction extends React.Component{
     this.props.getAttractions(locationId, locationName)
     this.props.getRestaurants(locationId, locationName)
     this.props.getNightlife(locationId,locationName)
+    this.props.getUserTrips(this.props.user.id)
   }
 
   showModal() {
@@ -44,6 +45,7 @@ class Attraction extends React.Component{
   
 
   render(){
+    {console.log(this.props)}
     let attractions = this.props.attractions[this.props.locationName];
     let restaurants = this.props.restaurants[this.props.locationName];
     let nightlife = this.props.nightlife[this.props.locationName];
