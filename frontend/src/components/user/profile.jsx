@@ -13,7 +13,6 @@ class ProfilePage extends React.Component {
         this.state = {
           location: '',
           locationId: '',
-
         }
     }
 
@@ -90,7 +89,7 @@ class ProfilePage extends React.Component {
                     <div className="trips">
                       <ul>
                         {this.props.trips.map((trip, idx) => (
-                          <div classname='trip-container' key={trip._id}>
+                          <div className='trip-container' key={trip._id}>
                             <h2 className='trip-num'>Trip {idx + 1}</h2>
                             <h3 className='trip-city'>{trip.location}</h3>
                             <ul id="trip" className="tabcontent">
@@ -100,7 +99,7 @@ class ProfilePage extends React.Component {
                                 <div key={idx}>
                                   <Link
                                       key={idx} 
-                                      to={`/attraction/${att.location_id}/${att.name}`}>
+                                      to={`/attraction/${att.location_id}/${att.name}/${trip._id}`}>
                                       <img src={`${att.photo.images.thumbnail.url}`} 
                                            alt=""/>
                                       {att.name}</Link>

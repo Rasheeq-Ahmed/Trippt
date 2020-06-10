@@ -16,6 +16,7 @@ const mapStateToProps = (state, ownProps) => {
       loggedIn: state.session.isAuthenticated,
       userTrips: state.trips || {},
       user: state.session.user,   
+      loading: state.ui.loading
     };
 };
 

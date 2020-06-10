@@ -42,6 +42,7 @@
       padding: 0.5rem 1rem;
       font-size: 0.8rem;
       line-height: 1;
+      cursor: pointer;
     }
 
 #centered-toggle-button {

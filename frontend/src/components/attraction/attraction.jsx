@@ -3,6 +3,7 @@ import './attraction.css';
 import { Link } from 'react-router-dom';
 import NavBar from '../nav/navbar_container';
 import Modal from '../modal/modal'
+import Loader from '../loader/loader'
 
 class Attraction extends React.Component{
   constructor(props){
@@ -17,26 +18,36 @@ class Attraction extends React.Component{
 
 
   componentDidMount(){
-    let {locationId, locationName} = this.props
-    this.props.getAttractions(locationId, locationName)
-    // this.props.getRestaurants(locationId, locationName)
-    this.props.getNightlife(locationId,locationName)
+    let {locationId, locationName, attractions, restaurants, nightlife} = this.props
+
+    if (!attractions[locationName]) {
+      this.props.getAttractions(locationId, locationName)
+    }
+
+    if (!restaurants[locationName]) {
+      this.props.getRestaurants(locationId, locationName)
+    }
+    
+    if (!nightlife[locationName]) {
+      this.props.getNightlife(locationId,locationName)
+    }
+    
     if(this.props.user){
       this.props.getUserTrips(this.props.user.id)
     }
-  }
+  };
 
   showModal() {
     this.setState({ show: true })
-  }
+  };
 
   closeModal() {
     this.setState({ show: false })
-  }
+  };
 
   randNum(length) {
     return Math.floor(Math.random() * length)
-  }
+  };
 
   tripptMe(tripId, ...args) {
     args.forEach(arr => {
@@ -67,6 +78,9 @@ class Attraction extends React.Component{
     let attractions = this.props.attractions[this.props.locationName];
     // let restaurants = this.props.restaurants[this.props.locationName];
     let nightlife = this.props.nightlife[this.props.locationName];
+
+    if (this.props.loading) return (<Loader/>);
+
     if (!attractions) {
       return null;
     }
@@ -111,7 +125,6 @@ class Attraction extends React.Component{
         <div className="att-header">
           <NavBar />
         </div>
-
         <div className="att-body">
         <div className="page-title">Attractions in {this.props.locationName}</div>
           <div className="gallery">
