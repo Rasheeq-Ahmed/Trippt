@@ -24,14 +24,14 @@ class Attraction extends React.Component{
       this.props.getAttractions(locationId, locationName)
     }
 
-    if (!restaurants[locationName]) {
-      this.props.getRestaurants(locationId, locationName)
-    }
+    // if (!restaurants[locationName]) {
+    //   this.props.getRestaurants(locationId, locationName)
+    // }
     
     if (!nightlife[locationName]) {
       this.props.getNightlife(locationId,locationName)
     }
-    
+
     if(this.props.user){
       this.props.getUserTrips(this.props.user.id)
     }
