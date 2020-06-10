@@ -12,6 +12,7 @@ class Attraction extends React.Component{
     }
     this.closeModal = this.closeModal.bind(this)
     this.showModal = this.showModal.bind(this)
+    this.findTripId = this.findTripId.bind(this)
   }
 
 
@@ -42,9 +43,26 @@ class Attraction extends React.Component{
     })
   }
 
+  findTripId(userTrips, locationId){
+    if(!userTrips) return null;
+    let trips = [];
+    for(let tripId in userTrips){
+      let trip = userTrips[tripId]
+      console.log(tripId)
+      console.log(userTrips)
+      console.log(trip.locationId)
+      console.log(locationId)
+      if(trip.locationId === Math.floor(locationId)){
+        trips.push(tripId);
+      }
+    }
+    return trips; 
+  }
+
   
 
   render(){
+    {console.log(this.findTripId(this.props.userTrips, this.props.locationId))}
     {console.log(this.props)}
     let attractions = this.props.attractions[this.props.locationName];
     let restaurants = this.props.restaurants[this.props.locationName];

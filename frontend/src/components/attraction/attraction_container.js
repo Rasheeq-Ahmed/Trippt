@@ -2,7 +2,7 @@ import { connect } from 'react-redux';
 import { getAttractions, getAttraction } from '../../actions/attraction_actions'
 import { getRestaurants } from '../../actions/restaurant_actions'
 import { getNightlife } from '../../actions/nightlife_actions'
-import { updateTrip, getUserTrips } from '../../actions/trip_actions';
+import { updateTrip, getUserTrips, createTrip } from '../../actions/trip_actions';
 import Attraction from './attraction';
 
 const mapStateToProps = (state, ownProps) => {
@@ -26,7 +26,8 @@ const mapDispatchToProps = dispatch => {
         getRestaurants: (locationId, city) => dispatch(getRestaurants(locationId, city)),
         getNightlife: (locationId, city) => dispatch(getNightlife(locationId, city)),
         updateTrip: (tripId, data) => dispatch(updateTrip(tripId, data)),
-        getUserTrips: (user_id) => dispatch(getUserTrips(user_id))
+        getUserTrips: (user_id) => dispatch(getUserTrips(user_id)),
+        createTrip: (data) => dispatch(createTrip(data))
     };
 };
 
