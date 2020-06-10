@@ -34,10 +34,12 @@
 
 
 .slide {
+    position: relative;
     height: 15em;
     width: 20em;
     background-size: cover;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     margin: 1rem;
@@ -59,3 +61,13 @@
     align-items: center;
 }
 
+.slide button {
+  display: none;
+  position: absolute;
+  top: 15em;
+  cursor: pointer;
+}
+
+.slide:hover .btn-show {
+  display: flex;
+}

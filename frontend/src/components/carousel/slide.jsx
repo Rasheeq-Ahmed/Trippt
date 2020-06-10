@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom'
+import { connect } from 'react-redux'
+import { createTrip } from '../../actions/trip_actions'
 import './slide.css'
 
 class Slide extends Component {
@@ -9,14 +11,11 @@ class Slide extends Component {
     }
 
 
-    
-
-
-
     render() {
+        let {user, createTrip} = this.props
+
         return (
 
-            
             <div className='slides'>
                 {
                     this.state.landing.map((loc, index) =>
@@ -30,6 +29,9 @@ class Slide extends Component {
 
                                 {/* <img id="slide-photo" src={`${loc.url}`} alt=""/> */}
                                 </Link>
+                                <button className={user ? "btn-show" : ""}
+                                        onClick={()=>createTrip({location: loc.location, locationId: loc.locationId})}
+                                >Add To My Trips </button>
                                 </div>
                                 
                         </div>
@@ -38,4 +40,16 @@ class Slide extends Component {
         )
     }
 }
-export default Slide;
+
+const mSTP = state => {
+    return {
+        user: state.session.user
+    }
+};
+
+const mDTP = dispatch => {
+    return {
+        createTrip: (data) => dispatch(createTrip(data))
+    }
+}
+export default connect(mSTP, mDTP)(Slide);
