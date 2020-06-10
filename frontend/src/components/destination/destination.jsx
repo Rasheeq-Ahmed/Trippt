@@ -29,11 +29,6 @@ class Destination extends React.Component{
         <div className="dest-footer">
 
         </div>
-      
-
-
-
-      
       </div>
     )
   }

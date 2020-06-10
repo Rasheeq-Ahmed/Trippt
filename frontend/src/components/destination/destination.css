@@ -40,13 +40,14 @@
 
 
 .dest-slides {
-  background-color: rgb(139, 0, 0);
+  /* background-color: rgb(139, 0, 0); */
   /* min-height:50%; */
   min-height: fit-content;
-  width: 95%;
+  width: 90%;
   /* max-width: 72rem; */
   display: flex;
   justify-content: center;
+  
   /* overflow: auto;
   resize: both; */
 
