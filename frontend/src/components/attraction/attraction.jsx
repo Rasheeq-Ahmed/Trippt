@@ -21,7 +21,9 @@ class Attraction extends React.Component{
     this.props.getAttractions(locationId, locationName)
     // this.props.getRestaurants(locationId, locationName)
     this.props.getNightlife(locationId,locationName)
-    this.props.getUserTrips(this.props.user.id)
+    if(this.props.user){
+      this.props.getUserTrips(this.props.user.id)
+    }
   }
 
   showModal() {
