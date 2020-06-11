@@ -120,6 +120,16 @@
   width: 30%; */
   /* outline: 1px solid slategrey; */
 }
+
+.modal-btn {
+    background-color:rgb(26, 194, 180);
+    padding: 10px 20px;
+    font-size: 18px;
+    line-height: 20px;
+    text-align: center;
+    color:white;
+    cursor: pointer;
+}
  
 
 

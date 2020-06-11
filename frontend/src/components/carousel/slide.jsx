@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom'
+import { connect } from 'react-redux'
+import { createTrip } from '../../actions/trip_actions'
 import './slide.css'
 
 class Slide extends Component {
@@ -9,11 +11,9 @@ class Slide extends Component {
     }
 
 
-    
-
-
-
     render() {
+        let {user, createTrip} = this.props
+
         return (
 
             <div className="slides-all">
@@ -40,4 +40,6 @@ class Slide extends Component {
         )
     }
 }
-export default Slide;
+
+
+export default Slide

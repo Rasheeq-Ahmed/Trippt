@@ -3,7 +3,7 @@
   display: flex;
   /* justify-content: center; */
   box-sizing: border-box;
-    background-color:  white;
+  background-color:  white;
   /* background-color: chocolate;
   grid-template-columns: 20rem 20rem 20rem;
   grid-auto-rows: auto;
@@ -42,7 +42,7 @@
 
 
 .slide {
-    position: relative;
+    /* position: relative; */
     height: 15em;
     width: 20em;
     background-size: cover;
@@ -50,6 +50,7 @@
     /* justify-content: center; */
     /* align-items: center; */
     margin: 1rem;
+    flex-direction: column;
 
 }
 
@@ -62,7 +63,7 @@
 }
 .city-link {
     width: 100%;
-    height: 100%;
+    height: 90%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -70,11 +71,11 @@
 
 .slide button {
   display: none;
-  position: absolute;
-  top: 15em;
   cursor: pointer;
+  height: 10%;
 }
 
 .slide:hover .btn-show {
   display: flex;
+  justify-content: center;
 }
