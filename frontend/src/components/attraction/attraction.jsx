@@ -210,7 +210,7 @@ class Attraction extends React.Component{
                     </div>
                   </Link>
                     {this.props.loggedIn ? <button
-                      onClick={() => this.props.updateTrip(this.props.tripId, place)}
+                      onClick={() => this.props.updateTrip(myTrips[0], place)}
                       className=""
                     > Add to Trip</button> : <button>
                         <Link to='/login'> Add to Trip</Link>
