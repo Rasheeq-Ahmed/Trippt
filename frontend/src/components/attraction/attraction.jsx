@@ -9,7 +9,9 @@ class Attraction extends React.Component{
   constructor(props){
     super(props);
     this.state = {
-      show: false
+      show: false,
+      location: '',
+      locationId: '',
     }
     this.closeModal = this.closeModal.bind(this)
     this.showModal = this.showModal.bind(this)
@@ -57,7 +59,9 @@ class Attraction extends React.Component{
   }
 
   findTripId(userTrips, locationId){
-    if (!userTrips) return null;
+    if (!userTrips) {
+      userTrips = this.props.createTrip({location: this.props.locationName, locationId: this.props.locationId})
+    }
     let trips = [];
     for(let tripId in userTrips){
       let trip = userTrips[tripId]
@@ -119,14 +123,6 @@ class Attraction extends React.Component{
       }
     }
 
-    const linked = (place) => {
-      if(!myTrips[0]){
-        this.props.createTrip(this.props.locationName, this.props.locationId) && this.props.updateTrip(myTrips[0], place)
-      } else {
-        this.props.updateTrip(myTrips[0], place)
-      }
-    }
-
     return (
 
       <div className="att-all">
@@ -135,6 +131,9 @@ class Attraction extends React.Component{
         </div>
         <div className="att-body">
         <div className="page-title">Attractions in {this.props.locationName}</div>
+          {myTrips.length === 0  && this.props.loggedIn ? <li
+           onClick={() => this.props.createTrip({ location: this.props.locationName, locationId: this.props.locationId })}
+          >Add {this.props.locationName} to my Trips!</li> : ""}
           <div className="gallery">
               <div >
                 {/* <button 
@@ -151,7 +150,7 @@ class Attraction extends React.Component{
               if (place.name) {
                 return (
                   <div key={idx} className="gallery-image">
-                    {/* {console.log(this.props)} */}
+                    {console.log(this.props)}
                     <Link to={this.props.tripId ? `/attraction/${place.location_id}/${place.name}/${this.props.tripId}` : `/attraction/${place.location_id}/${place.name}`}>
                         <div className="att"
                           style={{
@@ -163,10 +162,10 @@ class Attraction extends React.Component{
                               </p>
                         </div>
                       </Link>
-                    {this.props.loggedIn ? <button
-                      onClick={() => linked(place)}
-                      className=""
-                    > Add to Trip</button> : <button>
+                      {this.props.loggedIn ? myTrips.length > 0 ? <button 
+                      onClick={() => this.props.updateTrip(myTrips[0], place)}
+                        className=""
+                        > Add to Trip</button> : "" : <button>
                           <Link to='/login'> Add to Trip</Link>
                       </button> }
                   </div>
@@ -218,7 +217,7 @@ class Attraction extends React.Component{
                     </div>
                   </Link>
                     {this.props.loggedIn ? <button
-                      onClick={() => this.props.updateTrip(myTrips[0], place)}
+                      onClick={() => this.props.updateTrip(this.props.tripId, place)}
                       className=""
                     > Add to Trip</button> : <button>
                         <Link to='/login'> Add to Trip</Link>
