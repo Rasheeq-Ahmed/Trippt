@@ -189,12 +189,12 @@ class Attraction extends React.Component{
                         </p>
                       </div>
                     </Link>
-                    {this.props.loggedIn ? <button
-                      onClick={() => this.props.updateTrip(this.props.tripId, place)}
-                      className=""
-                    > Add to Trip</button> : <button>
-                        <Link to='/login'> Add to Trip</Link>
-                      </button>}
+                    {this.props.loggedIn ? myTrips.length > 0 ? <button
+                      onClick={() => this.props.updateTrip(myTrips[0], place)}
+                        className=""
+                        > Add to Trip</button> : "" : <button>
+                          <Link to='/login'> Add to Trip</Link>
+                      </button> }
                   </div>
                 )
               }
@@ -216,10 +216,10 @@ class Attraction extends React.Component{
                       </p>
                     </div>
                   </Link>
-                    {this.props.loggedIn ? <button
-                      onClick={() => this.props.updateTrip(this.props.tripId, place)}
+                    {this.props.loggedIn ? myTrips.length > 0 ? <button
+                      onClick={() => this.props.updateTrip(myTrips[0], place)}
                       className=""
-                    > Add to Trip</button> : <button>
+                    > Add to Trip</button> : "" : <button>
                         <Link to='/login'> Add to Trip</Link>
                       </button>}
                 </div>
