@@ -57,7 +57,9 @@ class Attraction extends React.Component{
   }
 
   findTripId(userTrips, locationId){
-    if(!userTrips) return null;
+    if (!userTrips) {
+      userTrips =  this.props.createTrip(this.props.locationName, this.props.locationId)
+    }
     let trips = [];
     for(let tripId in userTrips){
       let trip = userTrips[tripId]

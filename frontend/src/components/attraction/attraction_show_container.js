@@ -25,7 +25,7 @@ const mapDispatchToProps = dispatch => {
         getAttraction: (locationId) => dispatch(getAttraction(locationId)),
         updateTrip: (tripId, data) => dispatch(updateTrip(tripId, data)),
         removeAttrac: (tripId, attracId) => dispatch(removeAttrac(tripId, attracId)),
-        getUserTrips: (userId) => dispatch(getUserTrips(userId))
+        getUserTrips: (userId) => dispatch(getUserTrips(userId)),
     };
 };
 
