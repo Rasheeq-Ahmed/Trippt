@@ -131,7 +131,7 @@ class Attraction extends React.Component{
         </div>
         <div className="att-body">
         <div className="page-title">Attractions in {this.props.locationName}</div>
-          {myTrips.length === 0  && this.props.loggedIn ? <li
+          {myTrips.length === 0  && this.props.loggedIn ? <li className="add-city"
            onClick={() => this.props.createTrip({ location: this.props.locationName, locationId: this.props.locationId })}
           >Add {this.props.locationName} to my Trips!</li> : ""}
           <div className="gallery">
