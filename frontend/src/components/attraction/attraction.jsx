@@ -119,6 +119,14 @@ class Attraction extends React.Component{
       }
     }
 
+    const linked = (place) => {
+      if(!myTrips[0]){
+        this.props.createTrip(this.props.locationName, this.props.locationId) && this.props.updateTrip(myTrips[0], place)
+      } else {
+        this.props.updateTrip(myTrips[0], place)
+      }
+    }
+
     return (
 
       <div className="att-all">
@@ -155,10 +163,10 @@ class Attraction extends React.Component{
                               </p>
                         </div>
                       </Link>
-                      {this.props.loggedIn ? <button 
-                        onClick={()=>this.props.updateTrip(myTrips[0], place)}
-                        className=""
-                        > Add to Trip</button> : <button>
+                    {this.props.loggedIn ? <button
+                      onClick={() => linked(place)}
+                      className=""
+                    > Add to Trip</button> : <button>
                           <Link to='/login'> Add to Trip</Link>
                       </button> }
                   </div>
