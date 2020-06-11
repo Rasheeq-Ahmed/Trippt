@@ -9,25 +9,26 @@ class TripModal extends React.Component {
             return null
         }
         return (
+            <div className="dest-modal-container" onClick={()=> this.props.closeModal()}>
+                <div className="dest-modal" id="modal">
+                    <h2>My Trips</h2>
+                    <div className="dest-modal-content">{this.props.children}</div>
+                    {Object.values(this.props.trips).map((trip, idx) => (
+                        <div key={idx} id="trip-container">
+                            {trip.location} 
+                            <p onClick={()=> this.props.removeTrip(trip._id)}>remove</p>
+                        </div>
+                    ))}
+                    <div className='dest-modal-actions'>
+                        <button
+                            className="dest-modal-toggle-button"
+                            onClick={() => { this.props.closeModal() }}>
 
-            <div className="modal" id="modal">
-                <h2>My Trips</h2>
-                <div className="content">{this.props.children}</div>
-                {Object.values(this.props.trips).map((trip, idx) => (
-                    <div key={idx} id="trip-container">
-                        {trip.location} 
-                        <p onClick={()=> this.props.removeTrip(trip._id)}>remove</p>
+                            Stay </button>
+                        <Link to="/profile">
+                            <button>Profile</button>
+                        </Link>
                     </div>
-                ))}
-                <div className='actions'>
-                    <button
-                        className="toggle-button"
-                        onClick={() => { this.props.closeModal() }}>
-
-                        Stay </button>
-                    <Link to="/profile">
-                        <button>Profile</button>
-                    </Link>
                 </div>
             </div>
         )

@@ -23,15 +23,16 @@ class Destination extends React.Component {
   }
 
   componentWillMount() {
-    this.props.getUserTrips(this.props.user.id)
-    this.setState({trips: this.props.trips})
-    
+    if (this.props.signedIn) {
+      this.props.getUserTrips(this.props.user.id)
+      this.setState({trips: this.props.trips})
+    }
   }
 
   componentDidUpdate(prevProps) {
     if(prevProps.trips !== this.props.trips) {
-      this.setState({trips: this.props.trips, show: true})
-    }
+      this.setState({trips: this.props.trips})
+    } 
   }
 
 

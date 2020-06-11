@@ -1,5 +1,22 @@
-.modal {
+.dest-modal-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.582);
+}
+
+.dest-modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
   transform: translate(-50%, -50%);
+  width: 15em;
+  height: 15em;
   background: white;
   border: 1px solid #ccc;
   transition: 1.1s ease-out;
@@ -17,20 +34,21 @@
     box-shadow: 1rem 0 0 rgba(black, 0.2);
 }
 
-.modal h2 {
+.dest-modal h2 {
     border-bottom: 1px solid #ccc;
     padding: 1rem;
     margin: 0;
-  }
-.content {
+}
+
+.dest-modal-content {
     padding: 1rem;
-  }
-.actions {
+}
+.dest-modal-actions {
     border-top: 1px solid #ccc;
     background: #eee;
     padding: 0.5rem 1rem;
 }
-.modal button {
+.dest-modal button {
       border: 0;
       background: #78f89f;
       border-radius: 5px;
@@ -40,13 +58,13 @@
       cursor: pointer;
     }
 
-#centered-toggle-button {
-  position: absolute;
+.dest-modal-toggle-button {
+  /* position: absolute; */
 }
 
 #trip-container {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
 }
 
 #trip-container p {
@@ -54,3 +72,8 @@
     font-size: small;
     cursor: pointer;
 }
+
+
+
+/*******************/
+
