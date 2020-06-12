@@ -79,7 +79,7 @@ class Attraction extends React.Component{
     // {console.log(this.findTripId(this.props.userTrips, this.props.locationId))}
     // {console.log(this.props)}
     let myTrips = this.findTripId(this.props.userTrips, this.props.locationId) // array of tripIds
-    console.log(myTrips);
+    // console.log(myTrips);
     let attractions = this.props.attractions[this.props.locationName];
     // let restaurants = this.props.restaurants[this.props.locationName];
     let nightlife = this.props.nightlife[this.props.locationName];
