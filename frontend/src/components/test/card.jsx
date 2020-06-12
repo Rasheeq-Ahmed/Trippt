@@ -16,8 +16,10 @@ class Card extends React.Component{
             return null;
         }
     return (
-        <div className="card">
-            {this.props.location.location}
+        <div className="card" style={{ backgroundImage: `url(${this.props.location.url})` }}>
+            <h1>
+                {this.props.location.location}
+            </h1>
             {/* <img src={`${this.props.location.url}`} alt=""/> */}
         </div>
     )
