@@ -136,15 +136,13 @@ class Attraction extends React.Component{
                 >Trippt Me</button> */}
                 <Modal show={this.state.show} closeModal={this.closeModal}/>
               </div>
-   
-            
-            
+            <div className="gallery-top">
             {attractions.map((place, idx) => {
               if (place.name) {
                 return (
                   <div key={idx} className="gallery-image">
-                    {console.log(this.props)}
-                    <Link to={this.props.tripId ? `/attraction/${place.location_id}/${place.name}/${this.props.tripId}` : `/attraction/${place.location_id}/${place.name}`}>
+                    {/* {console.log(this.props)} */}
+                    {/* <Link to={this.props.tripId ? `/attraction/${place.location_id}/${place.name}/${this.props.tripId}` : `/attraction/${place.location_id}/${place.name}`}> */}
                         <div className="att"
                           style={{
                             backgroundImage: `url(${getUrl(
@@ -154,7 +152,7 @@ class Attraction extends React.Component{
                             {place.name}
                               </p>
                         </div>
-                      </Link>
+                      {/* </Link> */}
                       {this.props.loggedIn ? <button 
                         onClick={()=>this.props.updateTrip(myTrips[0], place)}
                         className=""
@@ -165,6 +163,10 @@ class Attraction extends React.Component{
                 )
               }
             })}
+
+            </div>
+            
+            
             {/* {restaurants.map((place, idx) => {
 
               if (place.name) {
