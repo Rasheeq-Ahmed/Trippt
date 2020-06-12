@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import NavBar from '../nav/navbar_container';
 import Modal from '../modal/modal'
 import Loader from '../loader/loader'
+import AttractionSlider from './attraction-slider'
 
 class Attraction extends React.Component{
   constructor(props){
@@ -137,6 +138,8 @@ class Attraction extends React.Component{
                 <Modal show={this.state.show} closeModal={this.closeModal}/>
               </div>
             <div className="gallery-top">
+              {/* < AttractionSlider/> */}
+              {console.log(attractions)}
             {attractions.map((place, idx) => {
               if (place.name) {
                 return (
