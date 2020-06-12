@@ -100,29 +100,6 @@ class Attraction extends React.Component{
 
     // let newRestaurants = restaurants.filter(res => res.name)
     
-    const getPhotos = (photos) => {
-      for(var key in photos){
-        if(key === "images"){
-          return photos[key];
-        }
-      }
-    }
-
-    const getImages = (obj) => {
-      for(var key in obj){
-        if(key === "large"){
-          return obj[key]
-        }
-      }
-    }
-
-    const getUrl = (obj) => {
-      for(var key in obj){
-        if(key === 'url'){
-          return obj[key]
-        }
-      }
-    }
 
     return (
 
@@ -183,10 +160,7 @@ class Attraction extends React.Component{
                     <Link to={this.props.tripId ? `/attraction/${place.location_id}/${place.name}/${this.props.tripId}` : `/attraction/${place.location_id}/${place.name}`}>
                       <div className="att"
                         style={{
-                          backgroundImage: `url(${getUrl(
-                            getImages(getPhotos(place.photo))
-                          )})`
-                        }}>
+                          backgroundImage: `url(${place.photo.images.large.url})`}}>
                         <p>
                           {place.name}
                         </p>
@@ -210,10 +184,7 @@ class Attraction extends React.Component{
                   <Link to={this.props.tripId ? `/attraction/${place.location_id}/${place.name}/${this.props.tripId}` : `/attraction/${place.location_id}/${place.name}`}>
                     <div className="att"
                       style={{
-                        backgroundImage: `url(${getUrl(
-                          getImages(getPhotos(place.photo))
-                        )})`
-                      }}>
+                        backgroundImage: `url(${place.photo.images.large.url})`}}>
                       <p>
                         {place.name}
                       </p>
