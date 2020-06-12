@@ -118,3 +118,20 @@
   display: none;
 }
 
+
+.add-city{
+  background-color: rgb(26, 194, 180);
+  padding: 10px 20px;
+  font-size: 18px;
+  line-height: 20px;
+  text-align: center;
+  color: white;
+  cursor: pointer;
+  align-self: center;
+  margin-top: 40px;
+  border: 2px solid black;
+}
+
+.add-city:hover{
+  background-color: rgb(45, 154, 158);
+}
