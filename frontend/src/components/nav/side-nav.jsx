@@ -1,33 +1,31 @@
-import React, { Component } from 'react'
+// import React, { Component } from 'react'
 
-class SideNav extends React.Component {
-    constructor(props) {
-        super(props)
+// class SideNav extends React.Component {
+//     constructor(props) {
+//         super(props)
     
-        this.state = {
-             on: false,
-        }
-    }
+//         this.state = {
+//              on: false,
+//         }
+//         this.toggle = this.toggle.bind(this);
+//     }
     
 
-    toggle() {
-        this.setState({
-            on: !this.state.on
-        })
-    }
+//     toggle() {
+//         this.setState({
+//             on: !this.state.on
+//         })
+//     }
 
 
-    render() {
-        return (
-            <div>
-                {this.state.on && (
-                    <h1>Toggle Me</h1>
+//     render() {
+//         return (
+//             <div>
+//                 {this.state.on && this.props.children} 
+//                 <button onClick={this.toggle}>Show/Hide</button>
+//             </div>
+//         )
+//     }
+// }
 
-                )}
-                <button onClick={this.toggle}>Show/Hide</button>
-            </div>
-        )
-    }
-}
-
-export default SideNav;
+// export default SideNav;
