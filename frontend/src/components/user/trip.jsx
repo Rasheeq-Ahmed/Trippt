@@ -1,21 +1,24 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
+
 export const Trip = (props) => {
+    let { trip, removeAttrac, show, outsideClose, closeTrip } = props
+    if (show && trip.attractions) { 
     return (
-        <div>
-            {props.trips.map((trip, idx) => (
-                <div className='trip-container' key={idx}>
+        <div id="modal-container" className='modal-container' onClick={(e)=>outsideClose(e)}>
+                <div className='trip-container'>
                     <div className="trip-header">
                         <h3 className='trip-city'> My Trip to {trip.location}</h3>
-                        <div className='header-actions'>
-                            <button>
-                                <Link to={`/attractions/${trip.locationId}/${trip.location}/${trip._id}`}>Find Attractions</Link>
-                            </button>
-                            <button onClick={() => props.removeTrip(trip._id)}> Remove Trip </button>
-                        </div>
+                        <p onClick={()=>closeTrip()}>&times;</p>
                     </div>
-                    <ul id="trip">
+                    <div className='trip-header-2'>
+                        <p className='attrac-count '>Places to go {`(${trip.attractions.length})`}</p>
+                        <Link to={`/attractions/${trip.locationId}/${trip.location}/${trip._id}`}>
+                                 {trip.attractions.length ? 'Find More' : 'Find Attractions'}
+                            </Link>
+                    </div>
+                    <ul id="trip" className='attrac-ul'>
                         {trip.attractions ? trip.attractions.map((att, idx) => (
                             <div key={idx} className='attrac-container'>
                                 <img src={`${att.photo.images.small.url}`}
@@ -31,7 +34,7 @@ export const Trip = (props) => {
                                             Details </Link>
                                         <a href={att.website} target="_blank">Website</a>
                                         <a href={att.booking.url} target="_blank">Book</a>
-                                        <p onClick={() => props.removeAttrac(trip._id, att.location_id)}>Remove</p>
+                                        <p onClick={() => removeAttrac(trip._id, att.location_id)}>Remove Attraction</p>
                                     </div>
                                 </div> 
                                
@@ -40,7 +43,9 @@ export const Trip = (props) => {
                     </ul>
 
                 </div>
-            ))}
         </div>
-    )
+    
+    )} else {
+        return null
+    }
 }

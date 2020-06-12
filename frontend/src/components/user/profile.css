@@ -250,8 +250,29 @@
 }
 
 /*******************Trip Component**********************/
+
+.modal-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.295);
+}
+
 .trip-container {
-    border: 1px solid black;
+    position: relative;
+    background-color:white;
+    border: 1px solid rgb(59, 57, 57);
+    top: 3em;
+    width: 35em;
+    max-height: 30em;
+    padding: 0.5em;
+    border-radius: 0.25em;
+    box-shadow: 3px 3px 10px #888888;
 }
 
 .trip-header {
@@ -268,6 +289,14 @@
     width: 6em;
     height: 6em;
     margin-right: 0.5em;
+    border-radius: 0.25em;
+    box-shadow: 3px 3px 10px #888888;
+}
+
+.attrac-ul {
+    display: flex;
+    max-height: 18em;
+    overflow-y: auto;
 }
 
 .attrac-container {
@@ -279,17 +308,29 @@
 
 .trip-header {
     display: flex;
+    align-items: flex-start;
     justify-content: space-between;
 }
 
-.header-actions {
+
+
+.trip-header-2 {
     display: flex;
-    justify-content: space-around;
-    width: 20em;
-    border: 1px solid black;
+    align-items: center;
+    width: 15em;
+}
+
+.trip-header-2 a {
+    display: flex;
+    font-size: small;
+    font-style: italic;
+    margin-left: 1em;
 }
 
 
+.attrac-count {
+    padding: 0.5em;
+}
 .attrac-details {
     display: flex;
     flex-direction: column;
@@ -298,6 +339,7 @@
 #attrac-name {
     font-size: large;
     padding-bottom: 2.5px;
+    text-decoration: underline;
 }
 
 #attrac-ranking {
@@ -314,7 +356,7 @@
     font-size: small;
     text-overflow: ellipsis;
     display: block;
-    width: 40em;
+    width: 30em;
     overflow: hidden;     
     white-space: nowrap;
     padding: 2.5px;
@@ -323,15 +365,23 @@
 
 .attrac-actions {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     position: absolute;
     border-top: 1px solid grey;
     padding: 0.5em;
     font-size: small;
     font-style: italic;
-    width: 75%;
+    width: 70%;
     top: 8.5em;
     cursor: pointer;
 }
 
+.attrac-actions a:hover, .trip-header-2 a:hover {
+    color: rgb(26, 194, 180);
+}
+
+.attrac-actions p:hover, .trip-header p:hover {
+    color: red;
+    cursor: pointer;
+}
 /******************************************************/

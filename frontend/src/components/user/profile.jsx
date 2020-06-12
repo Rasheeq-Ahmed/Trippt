@@ -14,12 +14,32 @@ class ProfilePage extends React.Component {
         this.state = {
           location: '',
           locationId: '',
+          show: false
         }
+        this.closeTrip = this.closeTrip.bind(this)
+        this.outsideClose = this.outsideClose.bind(this)
     }
 
-    componentDidMount() {
+  componentDidMount() {
         this.props.getUserTrips(this.props.user.id)
     };
+
+  showTrip() {
+    this.setState({ show: !this.state.show })
+  };
+
+  closeTrip() {
+    this.setState({ show: false })
+  };
+
+  outsideClose(e) {
+    let modal = document.getElementById("modal-container");
+    if (e.target === modal) {
+      this.setState({show: false})
+    }
+  }
+
+
 
     randomTrip() {
       let randLocation = Math.floor(Math.random() * LOCATIONS.length)
@@ -27,12 +47,16 @@ class ProfilePage extends React.Component {
       this.props.createTrip({location: location.location, locationId: location.locationId})
     }
 
-
-
-
-    tabClick() {
-
+    getLocation(locationName, locations) {
+      for(let i = 0; i < locations.length; i ++) {
+        let location = locations[i]
+        if (location.location === locationName) {
+          return location
+        }
+      }
+      return null;
     }
+
 
     render () {
     
@@ -88,42 +112,20 @@ class ProfilePage extends React.Component {
                   </div>
                   <div className="prof-right-body">
                     <div className="trips">
+                      <h1>My Trips</h1>
                       <ul>
-                        <Trip 
-                            removeAttrac={this.props.removeAttrac} 
-                            removeTrip={this.props.removeTrip}
-                            trips={this.props.trips}/>
-                        {/* {this.props.trips.map((trip, idx) => (
-                          <div className='trip-container' key={trip._id}>
-                            <h2 className='trip-num'>Trip {idx + 1}</h2>
-                            <h3 className='trip-city'>{trip.location}</h3>
-                            <ul id="trip" className="tabcontent">
-                              <li>Food: 🍔🍜🍱</li>
-                              <li>Things To Do: 🗺️🏝️🌆</li>
-                              {trip.attractions ? trip.attractions.map((att, idx) => (
-                                <div key={idx}>
-                                  <Link
-                                      key={idx} 
-                                      to={`/attraction/${att.location_id}/${att.name}/${trip._id}`}>
-                                      <img src={`${att.photo.images.thumbnail.url}`} 
-                                           alt=""/>
-                                      {att.name}</Link>
-                                      <button onClick={()=> this.props.removeAttrac(trip._id, att.location_id)}>Remove</button>
-                                </div>
-                              )) : null}
-                            </ul>
-                            
-                            <button>
-                              <Link to={`/attractions/${trip.locationId}/${trip.location}/${trip._id}`}>Find Attractions</Link>
-                            </button>
-                            <button
-                              onClick={() => this.props.removeTrip(trip._id)}
-                            >
-                              Delete
-                            </button>
+                        {this.props.trips.map((trip, idx) => (
 
+                          <div key={idx}>
+                            <p onClick={()=>this.showTrip()}>{trip.location}</p>
+                            <Trip 
+                                removeAttrac={this.props.removeAttrac} 
+                                trip={trip}
+                                show={this.state.show}
+                                closeTrip={this.closeTrip}
+                                outsideClose = {this.outsideClose}/>
                           </div>
-                        ))} */}
+                        ))}
                       </ul>
                     </div>
                   </div>
