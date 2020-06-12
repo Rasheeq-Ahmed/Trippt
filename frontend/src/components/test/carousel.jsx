@@ -8,8 +8,6 @@ class Carousel extends Component {
         super(props)
     
         this.state = {
-            width:300,
-            height:800,
             locations: LOCATIONS
         }
 
@@ -37,11 +35,13 @@ class Carousel extends Component {
     renderSlides() {
         const locations = this.state.locations;
         return (
-            <div className="slider-items">
+            <div className="slider-cards" style ={{
+                
+            }}>
                 {
                     locations.map((location, index) => {
                         return (
-                            <Card location={location} width={this.state.width} height={this.state.height} key={index} />
+                            <Card location={location} key={index} />
                         )
                     })
                 }
@@ -51,30 +51,21 @@ class Carousel extends Component {
 
 
 
-
-    renderNavigation() {
-        return (
-            <div className="slider-arrows">
-                <a className='arrow left'>
-                    <button onClick={this.slideLeft}>Left</button>
-                </a>
-                <a className='arrow right'>
-                    <button onClick={this.slideRight}>Right</button>
-                </a>
-
-                {/* {console.log(this.state.locations[0])} */}
-            </div>
-        )
-    }
-
-
-
     
     render() {
         return (
-            <div className="slider">
-                {this.renderNavigation()}
+            <div className="carry-all">
+                <div className="carry-controls">
+                    <button className="slide-btn" onClick={this.slideLeft}>{"<"}</button>
+                    <button className="slide-btn" onClick={this.slideRight}>{">"}</button>
+
+                        {/* {console.log(this.state.locations[0])} */}
+                 </div>
+                <div className="carry-container">
                 {this.renderSlides()}
+
+                </div>
+
             </div>
         )
     }

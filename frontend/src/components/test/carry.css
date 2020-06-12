@@ -1,10 +1,102 @@
+.carry-all {
+    background-color: rgb(102, 190, 102);
+    width: 100%;
+    height: 100vh;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  
 
 
+}
+
+.carry-controls {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* background-color: khaki; */
+}
+
+.slide-btn {
+    /* padding: 1em ; */
+    border-radius: 50%;
+    font-size: 2em;
+    outline: none;
+    box-shadow: none;
+    cursor: pointer;
+    border: none;
+    color: white;
+    background-color: rgb(26, 194, 180);
+    z-index: 1;
+}
 
 
+.carry-container {
+    height: fit-content;
+    width: fit-content;
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+    /* background-color: indianred; */
+    overflow: hidden;
+    /* scroll-behavior: smooth;
+    scroll-snap-type: x mandatory; */
+
+      /* transition: translate(20em) 300ms cubic-bezier(0.455, 0.03, 0.515, 0.955); */
+
+}
+
+.slider-cards {
+    display: flex;
+    /* background-color: indigo; */
+    /* -webkit-transition: 0.5s;
+  -moz-transition: 0.5s;
+  -o-transition: 0.5s; */
+      /* transition: translate(20em) 300ms cubic-bezier(0.455, 0.03, 0.515, 0.955); */
+        /* transform: translateX(-300px);
+        transition-duration: 2s;  */
 
 
+}
 
+.slider-cards .card {
+    /* transform: translateX(300px); */
+    /* transition: cubic-bezier(0.455, 0.03, 0.515, 0.955);
+    
+}
+
+.carry-container {}
+
+.carry-container .card {
+    /* transition-property: transform; */
+    /* transition: transform 300ms; */
+    /* transform: translate(20rem); */
+    /* transform: translate(20em);
+      transition: transform 5s ease-in; */
+}
+
+.card {
+    width: 20rem;
+    height: 17rem;
+    background-size: cover;
+    margin-right: 2em;
+    /* background-repeat: no-repeat; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* scroll-snap-align: start; */
+      /* transition: translate(20em) 300ms cubic-bezier(0.455, 0.03, 0.515, 0.955); */
+
+}
+
+.card-city {
+    background: rgba(255, 255, 255, 0.664);
+    font-size: 2rem;
+}
 
 
 
