@@ -46,6 +46,7 @@
     max-width: 35rem;
     height: 100%;
     overflow: hidden;
+    
 
 
 
@@ -60,6 +61,7 @@
     text-align: center;
     color:white;
     cursor: pointer;
+    box-shadow: none;
 }
 
 .nav-auth button:hover {
@@ -80,4 +82,8 @@
     background: white;
     cursor: pointer;
     color: black
+}
+
+button {
+    border-style: nonne;
 }

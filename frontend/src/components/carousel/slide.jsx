@@ -29,7 +29,7 @@ class Slide extends Component {
                                 <Link className='city-link' to={`/attractions/${loc.locationId}/${loc.location}`}>
                                 <h1 className='slide-city'>{loc.location}</h1>
 
-                                {/* <img id="slide-photo" src={`${loc.url}`} alt=""/> */}
+                                <img id="slide-photo" src={`${loc.url}`} alt=""/>
                                 </Link>
                                 </div>
                                 
