@@ -21,7 +21,7 @@
   border-radius: 0.5em;
   box-shadow: 0 5px 8px 0 rgba(0,0,0,0.2), 0 7px 20px 0 rgba(0,0,0,0.2);
   animation-name: modal;
-  animation-duration: 4s;
+  animation-duration: 2s;
   animation-fill-mode: forwards;
 
   /* position: absolute;
