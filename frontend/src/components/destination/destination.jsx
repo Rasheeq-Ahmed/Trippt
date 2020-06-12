@@ -19,7 +19,7 @@ class Destination extends React.Component {
     }
 
     this.showModal = this.showModal.bind(this);
-    this.closeModal = this.closeModal.bind(this)
+    this.closeModal = this.closeModal.bind(this);
   }
 
   componentWillMount() {
@@ -44,6 +44,8 @@ class Destination extends React.Component {
   closeModal() {
     this.setState({ show: false })
   };
+
+
 
   render(){
     let {trips, show} = this.state
