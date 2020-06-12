@@ -1,7 +1,7 @@
 .carry-all {
     height: fit-content;
     width: 100%;
-    background-color: salmon;
+    /* background-color: salmon; */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -23,9 +23,9 @@
    /* top: 50%;
    left: 50%;
    transform: translate(-50%, -50%); */
-   width: 350px;
+   /* width: 350px; */
    height: 300px;
-   background-color: red;
+   /* background-color: red; */
    overflow: hidden;
    display: flex;
    /* margin: 1em; */
@@ -36,6 +36,8 @@
     display: flex;
     flex-direction: row;
     width: fit-content;
+    justify-content: center;
+    
 
 }
 
@@ -54,7 +56,7 @@
 }
 
 
-/* button {
+button {
     height: 1em;
     width: 1em;
     border-radius: 50%;
@@ -69,4 +71,4 @@
     outline: none;
 
 
-} */
+}
