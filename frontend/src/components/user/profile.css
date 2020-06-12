@@ -192,15 +192,6 @@
     font-size: 1.5rem;
 }
 .trips button {
-    background-color:  rgb(26, 194, 180);
-    border: none;
-    outline: none;
-    cursor: pointer;
-    transition: 0.3s;
-    padding: 10px 20px;
-    color: white;
-    margin-right: 5%;
-    margin-bottom: 5%;
 
 }
 
@@ -257,3 +248,90 @@
   background-color:  rgb(26, 194, 180);
   /* outline: 1px solid slategrey; */
 }
+
+/*******************Trip Component**********************/
+.trip-container {
+    border: 1px solid black;
+}
+
+.trip-header {
+    display: flex;
+    padding: 0.5em;
+}
+
+.trip-container ul {
+    margin: 0;
+    padding: 0;
+}
+
+.trips img {
+    width: 6em;
+    height: 6em;
+    margin-right: 0.5em;
+}
+
+.attrac-container {
+    display: flex;
+    border: none;
+    position: relative;
+    padding: 1em;
+}
+
+.trip-header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.header-actions {
+    display: flex;
+    justify-content: space-around;
+    width: 20em;
+    border: 1px solid black;
+}
+
+
+.attrac-details {
+    display: flex;
+    flex-direction: column;
+}
+
+#attrac-name {
+    font-size: large;
+    padding-bottom: 2.5px;
+}
+
+#attrac-ranking {
+    font-size: small;
+    padding: 2.5px;
+}
+
+#attrac-address {
+    font-size: small;
+    padding: 2.5px;
+}
+
+#attrac-description {
+    font-size: small;
+    text-overflow: ellipsis;
+    display: block;
+    width: 40em;
+    overflow: hidden;     
+    white-space: nowrap;
+    padding: 2.5px;
+    line-height: 1.5;
+}
+
+.attrac-actions {
+    display: flex;
+    justify-content: space-around;
+    position: absolute;
+    border-top: 1px solid grey;
+    padding: 0.5em;
+    font-size: small;
+    font-style: italic;
+    width: 75%;
+    top: 8.5em;
+    cursor: pointer;
+}
+
+/******************************************************/

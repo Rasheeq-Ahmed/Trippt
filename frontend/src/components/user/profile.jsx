@@ -4,6 +4,7 @@ import NavBar from '../nav/navbar_container'
 import './profile.css'
 import "../nav/navbar.css";
 import { LOCATIONS } from '../../assets/locations'
+import {Trip} from './trip'
 
 
 class ProfilePage extends React.Component {
@@ -88,7 +89,11 @@ class ProfilePage extends React.Component {
                   <div className="prof-right-body">
                     <div className="trips">
                       <ul>
-                        {this.props.trips.map((trip, idx) => (
+                        <Trip 
+                            removeAttrac={this.props.removeAttrac} 
+                            removeTrip={this.props.removeTrip}
+                            trips={this.props.trips}/>
+                        {/* {this.props.trips.map((trip, idx) => (
                           <div className='trip-container' key={trip._id}>
                             <h2 className='trip-num'>Trip {idx + 1}</h2>
                             <h3 className='trip-city'>{trip.location}</h3>
@@ -118,7 +123,7 @@ class ProfilePage extends React.Component {
                             </button>
 
                           </div>
-                        ))}
+                        ))} */}
                       </ul>
                     </div>
                   </div>
