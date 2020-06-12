@@ -1,5 +1,5 @@
 .carry-all {
-    height: 100vh;
+    height: fit-content;
     width: 100%;
     background-color: salmon;
     display: flex;
@@ -9,7 +9,7 @@
 
 .carry-controls {
     position: absolute;
-    height: 100%;
+    height: fit-content;
     width: 100%;
     border: solid 1px black;
     display: flex;
