@@ -155,9 +155,7 @@ class Attraction extends React.Component{
                     <Link to={this.props.tripId ? `/attraction/${place.location_id}/${place.name}/${this.props.tripId}` : `/attraction/${place.location_id}/${place.name}`}>
                         <div className="att"
                           style={{
-                            backgroundImage: `url(${getUrl(
-                              getImages(getPhotos(place.photo))
-                            )})`}}>
+                            backgroundImage: `url(${place.photo.images.large.url})`}}>
                               <p>
                             {place.name}
                               </p>
