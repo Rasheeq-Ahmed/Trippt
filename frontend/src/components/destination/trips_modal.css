@@ -8,20 +8,22 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: rgba(0, 0, 0, 0.5);
-    /* overflow: auto; */
+    background-color: rgba(0, 0, 0, 0);
 }
 
 .dest-modal {
-  position: relative;
+  position: fixed;
   background-color: #f4f4f4;
-  margin: 20% auto;
-  padding: 20px;
-  width: 50%;
-  height: 50%;
+  /* margin: 20% auto; */
+  /* padding: 20px; */
+  width: 20%;
+  height: 20em;
   border-radius: 0.5em;
   box-shadow: 0 5px 8px 0 rgba(0,0,0,0.2), 0 7px 20px 0 rgba(0,0,0,0.2);
-  z-index: 99;
+  animation-name: modal;
+  animation-duration: 4s;
+  animation-fill-mode: forwards;
+
   /* position: absolute;
   top: 50%;
   left: 50%;
@@ -37,6 +39,16 @@
   opacity: 1;
   visibility: visible; */
 }
+
+@keyframes modal {
+  0%   {right: -20%; top: 20em; }
+  /* 25%  {background-color: yellow; left: 200px; top: 0px; }
+  50%  {background-color: blue; left: 200px; top: 200px; } */
+  100% {right: 0%; top: 20em; }
+}
+
+
+
 .off {
     opacity: 0;
     visibility: hidden;

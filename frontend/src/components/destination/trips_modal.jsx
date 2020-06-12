@@ -14,12 +14,12 @@ class TripModal extends React.Component {
             if (e.target === modal) {
                 this.props.closeModal()
             }
-            {console.log(modal)}
         }
 
         return (
             <div className="dest-modal-container" id="container" onClick={(e)=>outsideClick(e)}>
-                <div className="dest-modal" id="modal">
+                <div className={"dest-modal"}
+                     id="modal">
                     <div className="dest-modal-header">
                         <h2>My Trips</h2>
 
