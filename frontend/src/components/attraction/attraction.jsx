@@ -145,7 +145,7 @@ class Attraction extends React.Component{
                 return (
                   <div key={idx} className="gallery-image">
                     {/* {console.log(this.props)} */}
-                    {/* <Link to={this.props.tripId ? `/attraction/${place.location_id}/${place.name}/${this.props.tripId}` : `/attraction/${place.location_id}/${place.name}`}> */}
+                    <Link to={this.props.tripId ? `/attraction/${place.location_id}/${place.name}/${this.props.tripId}` : `/attraction/${place.location_id}/${place.name}`}>
                         <div className="att"
                           style={{
                             backgroundImage: `url(${getUrl(
@@ -155,7 +155,7 @@ class Attraction extends React.Component{
                             {place.name}
                               </p>
                         </div>
-                      {/* </Link> */}
+                      </Link>
                       {this.props.loggedIn ? <button 
                         onClick={()=>this.props.updateTrip(myTrips[0], place)}
                         className=""
