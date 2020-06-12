@@ -19,6 +19,7 @@ import NightlifeShow from './nightlife/nightlife_show_container'
 import RestaurantShow from './restaurant/restaurant_show_container'
 import About from './main/about';
 import Carousel from './test/carousel';
+import Testing from './test/attractions-test';
 
 const App = () => (
   <div>
@@ -29,6 +30,8 @@ const App = () => (
       <AuthRoute exact path="/login" component={LoginFormContainer} />
       <Route exact path='/carry' component={Carousel}/>
       <Route exact path="/about" component={About} />
+      <Route exact path="/testing" component={Testing} />
+
       <AuthRoute exact path="/signup" component={SignupFormContainer} />
       {/* <ProtectedRoute exact path="/trips" component={Trip} /> */}
       <ProtectedRoute exact path={`/create`} component={CreateTrip} />
