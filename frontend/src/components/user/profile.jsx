@@ -4,23 +4,21 @@ import NavBar from '../nav/navbar_container'
 import './profile.css'
 import "../nav/navbar.css";
 import { LOCATIONS } from '../../assets/locations'
-import {Trip} from './trip'
+import Trip from './trip'
 
 
 class ProfilePage extends React.Component {
     constructor(props) {
         super(props)
-
         this.state = {
-          location: '',
-          locationId: '',
+          current: null,
           show: false
         }
         this.closeTrip = this.closeTrip.bind(this)
         this.outsideClose = this.outsideClose.bind(this)
     }
 
-  componentDidMount() {
+    componentDidMount() {
         this.props.getUserTrips(this.props.user.id)
     };
 
@@ -35,11 +33,9 @@ class ProfilePage extends React.Component {
   outsideClose(e) {
     let modal = document.getElementById("modal-container");
     if (e.target === modal) {
-      this.setState({show: false})
+      this.setState({ show: false })
     }
   }
-
-
 
     randomTrip() {
       let randLocation = Math.floor(Math.random() * LOCATIONS.length)
@@ -59,7 +55,7 @@ class ProfilePage extends React.Component {
 
 
     render () {
-    
+      if (!this.props.trips) return null
         return (
           <div className="prof-all">
             <div className="prof-header">
@@ -115,15 +111,17 @@ class ProfilePage extends React.Component {
                       <h1>My Trips</h1>
                       <ul>
                         {this.props.trips.map((trip, idx) => (
-
                           <div key={idx}>
-                            <p onClick={()=>this.showTrip()}>{trip.location}</p>
+                            <p onClick={() => this.showTrip()}>{trip.location}</p>
+                            <img src={`${this.getLocation(trip.location,LOCATIONS).url}`} alt=""/>
                             <Trip 
                                 removeAttrac={this.props.removeAttrac} 
                                 trip={trip}
                                 show={this.state.show}
                                 closeTrip={this.closeTrip}
-                                outsideClose = {this.outsideClose}/>
+                                outsideClose={this.outsideClose}
+                                />
+                                <button onClick={()=> this.props.removeTrip(trip._id)}>Remove</button>
                           </div>
                         ))}
                       </ul>
