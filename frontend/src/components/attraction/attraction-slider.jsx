@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import Card from './attraction-card'
 import '../test/carry.css'
+import { Link } from 'react-router-dom';
+
 import { LOCATIONS } from '../../assets/locations'
 
 class AttractionSlider extends Component {
@@ -41,7 +43,11 @@ class AttractionSlider extends Component {
                 {
                     attractions.map((attraction, index) => {
                         return (
-                            <Card attraction={attraction} key={index} />
+                            <div>
+                                <Link to={this.props.properties.userTrips ? `/attraction/${attraction.location_id}/${attraction.name}/${Object.keys(this.props.properties.userTrips)[0]}` : `/attraction/${attraction.location_id}/${attraction.name}`}>
+                                <Card attraction={attraction} key={index} /></Link>
+
+                            </div>
                         )
                     })
                 }
@@ -53,6 +59,8 @@ class AttractionSlider extends Component {
 
 
     render() {
+        { console.log(this.state) }
+        { console.log(this.props) }
         return (
             <div className="carry-all">
                 <div className="carry-controls">
