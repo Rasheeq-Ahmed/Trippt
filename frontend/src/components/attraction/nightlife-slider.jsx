@@ -19,16 +19,12 @@ class NightlifeSlider extends Component {
   slideLeft() {
     let last = this.state.nightlife.slice(-1)[0]
     let rest = this.state.nightlife.slice(0, -1)
-    // console.log(last)
-    // console.log(rest)
     let nightlife = [last, ...rest]
     this.setState({ nightlife: nightlife });
   }
 
   slideRight() {
     let [first, ...rest] = this.state.nightlife;
-    // console.log(first)
-    // console.log(rest)
     let nightlife = [...rest, first];
     this.setState({ nightlife: nightlife });
   }
@@ -58,8 +54,6 @@ class NightlifeSlider extends Component {
 
 
   render() {
-    { console.log(this.state) }
-    { console.log(this.props) }
     return (
       <div className="carry-all">
         <div className="carry-controls">
@@ -69,7 +63,6 @@ class NightlifeSlider extends Component {
         </div>
         <div className="carry-container">
           {this.renderSlides()}
-          {/* {console.log(this.state.nightlife)} */}
         </div>
 
       </div>

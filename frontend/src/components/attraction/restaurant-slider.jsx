@@ -19,16 +19,12 @@ class RestaurantSlider extends Component {
   slideLeft() {
     let last = this.state.restaurant.slice(-1)[0]
     let rest = this.state.restaurant.slice(0, -1)
-    // console.log(last)
-    // console.log(rest)
     let restaurant = [last, ...rest]
     this.setState({ restaurant: restaurant });
   }
 
   slideRight() {
     let [first, ...rest] = this.state.restaurant;
-    // console.log(first)
-    // console.log(rest)
     let restaurant = [...rest, first];
     this.setState({ restaurant: restaurant });
   }
@@ -58,8 +54,6 @@ class RestaurantSlider extends Component {
 
 
   render() {
-    { console.log(this.state) }
-    { console.log(this.props) }
     return (
       <div className="carry-all">
         <div className="carry-controls">

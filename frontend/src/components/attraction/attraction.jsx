@@ -78,10 +78,7 @@ class Attraction extends React.Component{
   
 
   render(){
-    // {console.log(this.findTripId(this.props.userTrips, this.props.locationId))}
-    // {console.log(this.props)}
     let myTrips = this.findTripId(this.props.userTrips, this.props.locationId) // array of tripIds
-    // console.log(myTrips);
     let attractions = this.props.attractions[this.props.locationName];
     let restaurants = this.props.restaurants[this.props.locationName];
     let nightlife = this.props.nightlife[this.props.locationName];
@@ -103,29 +100,6 @@ class Attraction extends React.Component{
 
     // let newRestaurants = restaurants.filter(res => res.name)
     
-    const getPhotos = (photos) => {
-      for(var key in photos){
-        if(key === "images"){
-          return photos[key];
-        }
-      }
-    }
-
-    const getImages = (obj) => {
-      for(var key in obj){
-        if(key === "large"){
-          return obj[key]
-        }
-      }
-    }
-
-    const getUrl = (obj) => {
-      for(var key in obj){
-        if(key === 'url'){
-          return obj[key]
-        }
-      }
-    }
 
     return (
 
@@ -137,9 +111,9 @@ class Attraction extends React.Component{
           <div className="page-title">
             {this.props.locationName}
           </div>
-                  {/* {myTrips.length === 0  && this.props.loggedIn ? <li className="add-city"
+                  {myTrips.length === 0  && this.props.loggedIn ? <li className="add-city"
                   onClick={() => this.props.createTrip({ location: this.props.locationName, locationId: this.props.locationId })}
-                  >Add {this.props.locationName} to my Trips!</li> : ""} */}
+                  >Add {this.props.locationName} to my Trips!</li> : ""}
           <div className="gallery">
                 {/* <div >
                   <button 
@@ -151,19 +125,19 @@ class Attraction extends React.Component{
                 </div> */}
               <div className="gallery-top">
                 {/* < AttractionSlider/> */}
-                {/* {console.log(attractions)} */}
 
                 <p className="category">Attractions</p>
+                {console.log(this.props.tripId)}
                 <AttractionSlider attractions={attractions} properties={this.props}/>
               <p className="category">Nightlife</p>
                 <NightlifeSlider nightlife={nightlife} properties={this.props}/>
-              <p className="category">Restaurants</p>
-                <RestaurantSlider restaurant={restaurants} properties={this.props}/>
+              {/* <p className="category">Restaurants</p>
+                <RestaurantSlider restaurant={restaurants} properties={this.props}/> */}
+                
                 {/* {attractions.map((place, idx) => {
                 if (place.name) {
                   return (
                     <div key={idx} className="gallery-image">
-                      {console.log(this.props)}
                       <Link to={this.props.tripId ? `/attraction/${place.location_id}/${place.name}/${this.props.tripId}` : `/attraction/${place.location_id}/${place.name}`}>
                           <div className="att"
                             style={{
