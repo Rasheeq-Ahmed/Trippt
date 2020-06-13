@@ -20,6 +20,7 @@ import RestaurantShow from './restaurant/restaurant_show_container'
 import About from './main/about';
 import Carousel from './test/carousel';
 import Testing from './test/attractions-test';
+import Test from './nav/test';
 
 const App = () => (
   <div>
@@ -30,6 +31,8 @@ const App = () => (
       <AuthRoute exact path="/login" component={LoginFormContainer} />
       <Route exact path='/carry' component={Carousel}/>
       <Route exact path="/about" component={About} />
+      
+      <Route exact path="/tests" component={Test} />
       <Route exact path="/testing" component={Testing} />
 
       <AuthRoute exact path="/signup" component={SignupFormContainer} />
