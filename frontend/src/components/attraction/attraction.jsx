@@ -4,7 +4,8 @@ import { Link } from 'react-router-dom';
 import NavBar from '../nav/navbar_container';
 import Modal from '../modal/modal'
 import Loader from '../loader/loader'
-import AttractionSlider from './attraction-slider'
+
+// import '../test/carry.css'
 
 class Attraction extends React.Component{
   constructor(props){
@@ -13,10 +14,75 @@ class Attraction extends React.Component{
       show: false,
       location: '',
       locationId: '',
+      attractions: this.props.attractions[this.props.locationName]
     }
     this.closeModal = this.closeModal.bind(this)
     this.showModal = this.showModal.bind(this)
     this.findTripId = this.findTripId.bind(this)
+    this.slideLeft = this.slideLeft.bind(this)
+    // this.slideRight = this.slideRight.bind(this)
+  }
+
+  slideLeft() {
+    if(!this.state.attractions){
+      this.setState(this.props.attractions[this.props.locationName])
+    }
+    let last = this.state.attractions.slice(-1)[0]
+    let rest = this.state.attractions.slice(0, -1)
+    console.log(last)
+    console.log(rest)
+    let attractions = [last, ...rest]
+    console.log(attractions)
+    this.setState({ attractions: attractions });
+    console.log(this.state.attractions)
+  }
+
+  // slideRight() {
+  //   let [first, ...rest] = this.props.attractions[this.props.locationName];
+  //   // console.log(first)
+  //   let attractions = [...rest, first];
+  //   console.log(attractions)
+  //   this.setState({ attractions: attractions });
+  //   console.log(this.state.attractions)
+  // }
+
+
+  renderSlides() {
+    // const locations = this.state.locations;
+
+    return (
+      <div className="slider-cards" style={{
+
+      }}>
+        {this.props.attractions[this.props.locationName].map((place, idx) => {
+          if (place.name) {
+            return (
+              <div place={place} key={idx}>
+              <div key={idx} className="gallery-image">
+                {/* {console.log(this.props)} */}
+                <Link to={this.props.tripId ? `/attraction/${place.location_id}/${place.name}/${this.props.tripId}` : `/attraction/${place.location_id}/${place.name}`}>
+                  <div className="att"
+                    style={{
+                      backgroundImage: `url(${place.photo.images.large.url}`
+                    }}>
+                    <p>
+                      {place.name}
+                    </p>
+                  </div>
+                </Link>
+                {this.props.loggedIn ? this.findTripId(this.props.userTrips, this.props.locationId).length > 0 ? <button
+                  onClick={() => this.props.updateTrip(this.findTripId(this.props.userTrips, this.props.locationId)[0], place)}
+                  className=""
+                > Add to Trip</button> : "" : <button>
+                    <Link to='/login'> Add to Trip</Link>
+                  </button>}
+              </div>
+              </div>
+            )
+          }
+        })}
+      </div>
+    )
   }
 
 
@@ -77,10 +143,15 @@ class Attraction extends React.Component{
 
   render(){
     // {console.log(this.findTripId(this.props.userTrips, this.props.locationId))}
+    // {console.log(this.props.attractions)}
+    // {console.log(this.state.attractions)}
+    // {console.log(this.props.attractions)}
+    // { console.log(this.props.attractions[this.props.locationName])}
     // {console.log(this.props)}
     let myTrips = this.findTripId(this.props.userTrips, this.props.locationId) // array of tripIds
-    console.log(myTrips);
+    // console.log(myTrips);
     let attractions = this.props.attractions[this.props.locationName];
+    // console.log(attractions)
     // let restaurants = this.props.restaurants[this.props.locationName];
     let nightlife = this.props.nightlife[this.props.locationName];
 
@@ -127,6 +198,7 @@ class Attraction extends React.Component{
     return (
 
       <div className="att-all">
+        {/* {console.log(this.state)} */}
         <div className="att-header">
           <NavBar />
         </div>
@@ -145,35 +217,19 @@ class Attraction extends React.Component{
                 <Modal show={this.state.show} closeModal={this.closeModal}/>
               </div>
             <div className="gallery-top">
-              {/* < AttractionSlider/> */}
-              {console.log(attractions)}
-            {attractions.map((place, idx) => {
-              if (place.name) {
-                return (
-                  <div key={idx} className="gallery-image">
-                    {/* {console.log(this.props)} */}
-                    {/* <Link to={this.props.tripId ? `/attraction/${place.location_id}/${place.name}/${this.props.tripId}` : `/attraction/${place.location_id}/${place.name}`}> */}
-                        <div className="att"
-                          style={{
-                            backgroundImage: `url(${getUrl(
-                              getImages(getPhotos(place.photo))
-                            )})`}}>
-                              <p>
-                            {place.name}
-                              </p>
-                        </div>
-                      
-                      {this.props.loggedIn ? myTrips.length > 0 ? <button 
-                      onClick={() => this.props.updateTrip(myTrips[0], place)}
-                        className=""
-                        > Add to Trip</button> : "" : <button>
-                          <Link to='/login'> Add to Trip</Link>
-                      </button> }
-                  </div>
-                )
-              }
-            })}
+              <div className="carry-all">
+                <div className="carry-controls">
+                  <button className="slide-btn" onClick={this.slideLeft}>{"<"}</button>
+                  {/* <button className="slide-btn" onClick={this.slideRight}>{">"}</button> */}
 
+                  {/* {console.log(this.state.locations[0])} */}
+                </div>
+                <div className="carry-container">
+                  {this.renderSlides()}
+
+                </div>
+
+              </div>
             </div>
             
             
