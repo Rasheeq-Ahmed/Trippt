@@ -135,7 +135,7 @@ class Attraction extends React.Component{
         </div>
         <div className="att-body">
           <div className="page-title">
-            Attractions in {this.props.locationName}
+            {this.props.locationName}
           </div>
                   {/* {myTrips.length === 0  && this.props.loggedIn ? <li className="add-city"
                   onClick={() => this.props.createTrip({ location: this.props.locationName, locationId: this.props.locationId })}
@@ -153,9 +153,11 @@ class Attraction extends React.Component{
                 {/* < AttractionSlider/> */}
                 {/* {console.log(attractions)} */}
 
-
+                <p className="category">Attractions</p>
                 <AttractionSlider attractions={attractions} properties={this.props}/>
+              <p className="category">Nightlife</p>
                 <NightlifeSlider nightlife={nightlife} properties={this.props}/>
+              <p className="category">Restaurants</p>
                 <RestaurantSlider restaurant={restaurants} properties={this.props}/>
                 {/* {attractions.map((place, idx) => {
                 if (place.name) {
