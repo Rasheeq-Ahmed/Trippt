@@ -7,6 +7,7 @@ import { LOCATIONS } from "../../assets/locations"
 import { getUserTrips, removeTrip } from "../../actions/trip_actions"
 import Slide from "./dest_slide"
 import TripsModal from "./trips_modal"
+// import SideNav from '../nav/side-nav'
 
 
 class Destination extends React.Component {
@@ -64,16 +65,20 @@ class Destination extends React.Component {
                               trips={this.state.trips}
                               /> : null}
         <div className="dest-body">
-          <div className="dest-title">
-            <h1>Discover Your Next Adventure</h1>
-            {this.props.signedIn ? 
-                <button onClick={()=>this.showModal()}
-                        className="modal-btn"
-                  >My Trips { `(${trips ? Object.keys(trips).length : null})`}
-                </button> : null}
+          <div className="body-left">
+            <div className="dest-title">
+              <h1>Discover Your Next Adventure</h1>
+              </div>
+              <div className="dest-slides">
+              <Slide data={ LOCATIONS }/>
+              </div>
           </div>
-          <div className="dest-slides">
-          <Slide data={ LOCATIONS }/>
+          <div className="body-right">
+          {this.props.signedIn ? 
+                  <button onClick={()=>this.showModal()}
+                          className="modal-btn"
+                    >My Trips { `(${trips ? Object.keys(trips).length : null})`}
+                  </button> : null}
           </div>
 
         </div>

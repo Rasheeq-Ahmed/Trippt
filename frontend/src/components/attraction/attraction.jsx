@@ -133,50 +133,55 @@ class Attraction extends React.Component{
           <NavBar />
         </div>
         <div className="att-body">
-        <div className="page-title">Attractions in {this.props.locationName}</div>
-          {myTrips.length === 0  && this.props.loggedIn ? <li className="add-city"
-           onClick={() => this.props.createTrip({ location: this.props.locationName, locationId: this.props.locationId })}
-          >Add {this.props.locationName} to my Trips!</li> : ""}
+          <div className="page-title">
+            Attractions in {this.props.locationName}
+          </div>
+                  {/* {myTrips.length === 0  && this.props.loggedIn ? <li className="add-city"
+                  onClick={() => this.props.createTrip({ location: this.props.locationName, locationId: this.props.locationId })}
+                  >Add {this.props.locationName} to my Trips!</li> : ""} */}
           <div className="gallery">
-              <div >
-                {/* <button 
-                    onClick={()=> {this.tripptMe(this.props.tripId, attractions,newRestaurants,nightlife);
-                                   this.showModal()}}
-                    className={!this.props.tripId ? "btn-hide" : ""} 
-                >Trippt Me</button> */}
-                <Modal show={this.state.show} closeModal={this.closeModal}/>
-              </div>
-            <div className="gallery-top">
-              {/* < AttractionSlider/> */}
-              {console.log(attractions)}
-            {attractions.map((place, idx) => {
-              if (place.name) {
-                return (
-                  <div key={idx} className="gallery-image">
-                    {/* {console.log(this.props)} */}
-                    {/* <Link to={this.props.tripId ? `/attraction/${place.location_id}/${place.name}/${this.props.tripId}` : `/attraction/${place.location_id}/${place.name}`}> */}
-                        <div className="att"
-                          style={{
-                            backgroundImage: `url(${getUrl(
-                              getImages(getPhotos(place.photo))
-                            )})`}}>
-                              <p>
-                            {place.name}
-                              </p>
-                        </div>
-                      
-                      {this.props.loggedIn ? myTrips.length > 0 ? <button 
-                      onClick={() => this.props.updateTrip(myTrips[0], place)}
-                        className=""
-                        > Add to Trip</button> : "" : <button>
-                          <Link to='/login'> Add to Trip</Link>
-                      </button> }
-                  </div>
-                )
-              }
-            })}
+                {/* <div >
+                  <button 
+                      onClick={()=> {this.tripptMe(this.props.tripId, attractions,newRestaurants,nightlife);
+                                    this.showModal()}}
+                      className={!this.props.tripId ? "btn-hide" : ""} 
+                  >Trippt Me</button>
+                  <Modal show={this.state.show} closeModal={this.closeModal}/>
+                </div> */}
+              <div className="gallery-top">
+                {/* < AttractionSlider/> */}
+                {console.log(attractions)}
 
-            </div>
+
+                <AttractionSlider attractions={attractions}/>
+                {/* {attractions.map((place, idx) => {
+                if (place.name) {
+                  return (
+                    <div key={idx} className="gallery-image">
+                      {console.log(this.props)}
+                      <Link to={this.props.tripId ? `/attraction/${place.location_id}/${place.name}/${this.props.tripId}` : `/attraction/${place.location_id}/${place.name}`}>
+                          <div className="att"
+                            style={{
+                              backgroundImage: `url(${getUrl(
+                                getImages(getPhotos(place.photo))
+                              )})`}}>
+                                <p>
+                              {place.name}
+                                </p>
+                          </div>
+                        
+                        {this.props.loggedIn ? myTrips.length > 0 ? <button 
+                        onClick={() => this.props.updateTrip(myTrips[0], place)}
+                          className=""
+                          > Add to Trip</button> : "" : <button>
+                            <Link to='/login'> Add to Trip</Link>
+                        </button> }
+                    </div>
+                  )
+                }
+                })} */}
+
+              </div>
             
             
             {/* {restaurants.map((place, idx) => {
@@ -206,7 +211,7 @@ class Attraction extends React.Component{
                 )
               }
             })} */}
-            {nightlife.map((place, idx) => {
+            {/* {nightlife.map((place, idx) => {
               if (place.name) {
                 return (
 
@@ -232,7 +237,7 @@ class Attraction extends React.Component{
                 </div>
                 )
               }
-              })}
+              })} */}
           </div>
         </div>
         <div className="att-footer"></div>

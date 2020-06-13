@@ -1,0 +1,20 @@
+.all {
+    background-color: turquoise;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.testing {
+    font-size: 2em;
+    width: 50%;
+    height: 50%;
+    background-color: thistle;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
