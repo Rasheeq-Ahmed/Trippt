@@ -2,30 +2,10 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 
 
-export default class Trip extends React.Component {
-    constructor(props) {
-        super(props) 
+export const AttractionModal = (props) => {
 
-    }
 
-    // showTrip() {
-    //     this.setState({ show: !this.state.show })
-    // };
-
-    // closeTrip() {
-    //     this.setState({ show: false })
-    // };
-
-    // outsideClose(e) {
-    //     let modal = document.getElementById("modal-container");
-    //     if (e.target === modal) {
-    //         this.setState({ show: false })
-    //     }
-    // }
-
-    render() {
-
-        let { trip, removeAttrac, show, closeTrip, outsideClose, current } = this.props
+        let { trip, removeAttrac, show, closeTrip, outsideClose, current } = props
         if (!show || (current !== trip.location) ) { 
             return null
         }
@@ -70,5 +50,5 @@ export default class Trip extends React.Component {
             </div>
         
         )
-     }
+     
 }

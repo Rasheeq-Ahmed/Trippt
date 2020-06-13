@@ -4,7 +4,7 @@ import NavBar from '../nav/navbar_container'
 import './profile.css'
 import "../nav/navbar.css";
 import { LOCATIONS } from '../../assets/locations'
-import Trip from './trip'
+import {AttractionModal} from './attraction_modal'
 
 
 class ProfilePage extends React.Component {
@@ -120,8 +120,7 @@ class ProfilePage extends React.Component {
                                     >{trip.location}</p>   
                                 <p id='remove-btn' onClick={()=> this.props.removeTrip(trip._id)}>&times;</p>
                             </div>
-                            {/* <img src={`${this.getLocation(trip.location,LOCATIONS).url}`} alt=""/> */}
-                            <Trip 
+                            <AttractionModal 
                                 removeAttrac={this.props.removeAttrac} 
                                 trip={trip}
                                 show={this.state.show}

@@ -246,7 +246,6 @@
 .trips-container {
     display: flex;
     padding: 0;
-    justify-content: space-around;
     max-width: 50em;
     height: 50em;
     border: 1px solid black;
@@ -258,8 +257,8 @@
     background-size: cover;
     border-radius: 0.25em;
     box-shadow: 3px 3px 10px #888888;
-    width: 10em;
-    height: 10em;
+    width: 15em;
+    height: 15em;
     z-index: 1;
 }
 
@@ -267,9 +266,9 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 10em;
+    width: 14em;
     height: 90%;
-    font-size: large;
+    font-size: x-large;
     color: white;
 }
 
