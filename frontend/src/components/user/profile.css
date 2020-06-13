@@ -173,16 +173,12 @@
     flex-direction: column;
     width: 100%;
     /* background-color: khaki; */
-        border-left: 1px solid gray;
+    border-left: 1px solid gray;
 
     /* height: 90%; */
     /* margin-top: 15px; */
 }
 
-.trips ul {
-    padding: 2rem;
-    /* font-size: 1.5em; */
-}
 
 .trip-num  {
     font-size: 1.5rem;
@@ -190,9 +186,6 @@
 
 .trip-city  {
     font-size: 1.5rem;
-}
-.trips button {
-
 }
 
 #trip {
@@ -249,6 +242,58 @@
   /* outline: 1px solid slategrey; */
 }
 
+/******************* Trip Button ***********************/
+.trips-container {
+    display: flex;
+    padding: 0;
+    justify-content: space-around;
+    max-width: 50em;
+    height: 50em;
+    border: 1px solid black;
+}
+.trip-icon {
+    display: flex;
+    align-items: flex-end;
+    position: relative;
+    background-size: cover;
+    border-radius: 0.25em;
+    box-shadow: 3px 3px 10px #888888;
+    width: 10em;
+    height: 10em;
+    z-index: 1;
+}
+
+#location-name{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 10em;
+    height: 90%;
+    font-size: large;
+    color: white;
+}
+
+.trip-icon:hover {
+    cursor: pointer;
+}
+
+#remove-btn {
+    color: white;
+    position: absolute;
+    top: 0;
+    right: 0.4em;
+}
+
+#remove-btn:hover {
+    color: tomato;
+}
+
+
+
+
+
+/*******************************************************/
+
 /*******************Trip Component**********************/
 
 .modal-container {
@@ -261,6 +306,7 @@
     justify-content: center;
     align-items: center;
     background-color: rgba(0, 0, 0, 0.295);
+    z-index: 99;
 }
 
 .trip-container {

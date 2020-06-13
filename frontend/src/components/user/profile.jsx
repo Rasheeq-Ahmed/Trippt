@@ -50,7 +50,7 @@ class ProfilePage extends React.Component {
           return location
         }
       }
-      return null;
+      return null
     }
 
 
@@ -109,13 +109,18 @@ class ProfilePage extends React.Component {
                   <div className="prof-right-body">
                     <div className="trips">
                       <h1>My Trips</h1>
-                      <ul>
+                      <div className="trips-container">          
                         {this.props.trips.map((trip, idx) => (
-                          <div key={idx}>
-                            <p onClick={
-                                        () => this.showTrip(trip.location)
-                                }>{trip.location}</p>
-                            <img src={`${this.getLocation(trip.location,LOCATIONS).url}`} alt=""/>
+                          <div  key={idx}>
+                            <div className="trip-icon"
+                              style={{ backgroundImage: this.getLocation(trip.location, LOCATIONS) ? `url(${this.getLocation(trip.location, LOCATIONS).url})` : null}}
+                                 >
+                                <p id='location-name'
+                                    onClick={() => this.showTrip(trip.location)}
+                                    >{trip.location}</p>   
+                                <p id='remove-btn' onClick={()=> this.props.removeTrip(trip._id)}>&times;</p>
+                            </div>
+                            {/* <img src={`${this.getLocation(trip.location,LOCATIONS).url}`} alt=""/> */}
                             <Trip 
                                 removeAttrac={this.props.removeAttrac} 
                                 trip={trip}
@@ -124,10 +129,9 @@ class ProfilePage extends React.Component {
                                 outsideClose={this.outsideClose}
                                 current={this.state.current}
                                 />
-                                <button onClick={()=> this.props.removeTrip(trip._id)}>Remove</button>
                           </div>
                         ))}
-                      </ul>
+                      </div> 
                     </div>
                   </div>
                 </div>
