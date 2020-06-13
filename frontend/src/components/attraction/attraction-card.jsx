@@ -1,15 +1,15 @@
 import React from 'react'
-import './carry.css'
+import '../test/carry.css'
 
-class Card extends React.Component{
+class Card extends React.Component {
     constructor(props) {
         super(props)
-    
+
         this.state = {
-             
+
         }
     }
-    
+
 
 
     render() {
@@ -39,19 +39,20 @@ class Card extends React.Component{
         if (!this.props.attraction) {
             return null;
         }
-    return (
-        <div className='card' style={{
-            backgroundImage: `url(${getUrl(
-                getImages(getPhotos(this.props.attraction.photo))
-            )})` }}>
-                                {/* <Link className='city-link' to={`/attractions/${this.props.attraction.locationId}/${this.props.location.location}`}> */}
-                                    <h1 className='card-city'>{this.props.attraction.name}</h1>
-                                {/* </Link> */}
-                                {/* <button className={user ? "btn-show" : ""}
+        return (
+            <div className='card' style={{
+                backgroundImage: `url(${getUrl(
+                    getImages(getPhotos(this.props.attraction.photo))
+                )})`
+            }}>
+                {/* <Link className='city-link' to={`/attractions/${this.props.attraction.locationId}/${this.props.location.location}`}> */}
+                <h1 className='card-city'>{this.props.attraction.name}</h1>
+                {/* </Link> */}
+                {/* <button className={user ? "btn-show" : ""}
                                     onClick={() => createTrip({ location: this.props.location.location, locationId: this.props.location.locationId })}
                                 >Add To My Trips </button> */}
-                            </div>
-    )
+            </div>
+        )
     }
 }
 

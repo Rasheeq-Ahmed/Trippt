@@ -8,7 +8,7 @@ class Carousel extends Component {
         super(props)
     
         this.state = {
-            locations: LOCATIONS
+            // locations: LOCATIONS
         }
 
         this.slideLeft = this.slideLeft.bind(this)
@@ -53,7 +53,7 @@ class Carousel extends Component {
 
     
     render() {
-        {console.log(this.state.locations)}
+        // {console.log(this.state.locations)}
         // {console.log(LOCATIONS)}
         return (
             <div className="carry-all">
