@@ -1,10 +1,11 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
 import NavBar from '../nav/navbar_container'
-import './profile.css'
+import './profile.css';
 import "../nav/navbar.css";
-import { LOCATIONS } from '../../assets/locations'
-import {AttractionModal} from './attraction_modal'
+import { LOCATIONS } from '../../assets/locations';
+import {AttractionModal} from './attraction_modal';
+import {TripIcon} from './trip_icon';
 
 
 class ProfilePage extends React.Component {
@@ -14,6 +15,7 @@ class ProfilePage extends React.Component {
           current: null,
           show: false
         }
+        this.showTrip = this.showTrip.bind(this)
         this.closeTrip = this.closeTrip.bind(this)
         this.outsideClose = this.outsideClose.bind(this)
     }
@@ -89,7 +91,7 @@ class ProfilePage extends React.Component {
                       <Link to="/create">
                         <button className="tablinks">Trips</button>
                       </Link>
-                      <div className="tablinks dropdown">
+                      {/* <div className="tablinks dropdown">
                         <button>Add Trips</button>
                           <ul className='dropdown-content'>
                             {LOCATIONS.map((loc, idx) => (
@@ -99,7 +101,7 @@ class ProfilePage extends React.Component {
                               >{loc.location}</li>
                             ))}
                           </ul>
-                        </div>
+                        </div> */}
                       <Link to="/destination">
                         <button className="tablinks">Destinations</button>
                       </Link>
@@ -111,23 +113,22 @@ class ProfilePage extends React.Component {
                       <h1>My Trips</h1>
                       <div className="trips-container">          
                         {this.props.trips.map((trip, idx) => (
-                          <div  key={idx}>
-                            <div className="trip-icon"
-                              style={{ backgroundImage: this.getLocation(trip.location, LOCATIONS) ? `url(${this.getLocation(trip.location, LOCATIONS).url})` : null}}
-                                 >
-                                <p id='location-name'
-                                    onClick={() => this.showTrip(trip.location)}
-                                    >{trip.location}</p>   
-                                <p id='remove-btn' onClick={()=> this.props.removeTrip(trip._id)}>&times;</p>
-                            </div>
+                          <div key={idx}>
+                            <TripIcon 
+                              getLocation={this.getLocation}
+                              trip={trip}
+                              LOCATIONS={LOCATIONS}
+                              showTrip={this.showTrip}
+                              removeTrip={this.props.removeTrip}
+                            />
                             <AttractionModal 
-                                removeAttrac={this.props.removeAttrac} 
-                                trip={trip}
-                                show={this.state.show}
-                                closeTrip={this.closeTrip}
-                                outsideClose={this.outsideClose}
-                                current={this.state.current}
-                                />
+                              removeAttrac={this.props.removeAttrac} 
+                              trip={trip}
+                              show={this.state.show}
+                              closeTrip={this.closeTrip}
+                              outsideClose={this.outsideClose}
+                              current={this.state.current}
+                            />
                           </div>
                         ))}
                       </div> 

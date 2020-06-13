@@ -184,9 +184,7 @@
     font-size: 1.5rem;
 }
 
-.trip-city  {
-    font-size: 1.5rem;
-}
+
 
 #trip {
     /* padding: 20px; */
@@ -242,7 +240,7 @@
   /* outline: 1px solid slategrey; */
 }
 
-/******************* Trip Button ***********************/
+/******************* Trip Icon ***********************/
 .trips-container {
     display: flex;
     padding: 0;
@@ -266,10 +264,11 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 14em;
+    width: 15em;
     height: 90%;
     font-size: x-large;
     color: white;
+    text-shadow: 2px 2px 5px black;
 }
 
 .trip-icon:hover {
@@ -279,6 +278,7 @@
 #remove-btn {
     color: white;
     position: absolute;
+    text-shadow: 2px 2px 5px black;
     top: 0;
     right: 0.4em;
 }
@@ -323,6 +323,14 @@
 .trip-header {
     display: flex;
     padding: 0.5em;
+}
+
+.trip-city  {
+    font-size: 1.5rem;
+    display: flex;
+    width: 100%;
+    padding-bottom: 0.25em;
+    border-bottom: 2px solid grey;
 }
 
 .trip-container ul {
