@@ -53,6 +53,8 @@ class Carousel extends Component {
 
     
     render() {
+        {console.log(this.state.locations)}
+        // {console.log(LOCATIONS)}
         return (
             <div className="carry-all">
                 <div className="carry-controls">
