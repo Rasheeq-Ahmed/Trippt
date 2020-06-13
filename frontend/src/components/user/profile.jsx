@@ -22,12 +22,12 @@ class ProfilePage extends React.Component {
         this.props.getUserTrips(this.props.user.id)
     };
 
-  showTrip() {
-    this.setState({ show: !this.state.show })
+  showTrip(location) {
+    this.setState({ show: !this.state.show, current: location })
   };
 
   closeTrip() {
-    this.setState({ show: false })
+    this.setState({ show: false, current: null })
   };
 
   outsideClose(e) {
@@ -112,7 +112,9 @@ class ProfilePage extends React.Component {
                       <ul>
                         {this.props.trips.map((trip, idx) => (
                           <div key={idx}>
-                            <p onClick={() => this.showTrip()}>{trip.location}</p>
+                            <p onClick={
+                                        () => this.showTrip(trip.location)
+                                }>{trip.location}</p>
                             <img src={`${this.getLocation(trip.location,LOCATIONS).url}`} alt=""/>
                             <Trip 
                                 removeAttrac={this.props.removeAttrac} 
@@ -120,6 +122,7 @@ class ProfilePage extends React.Component {
                                 show={this.state.show}
                                 closeTrip={this.closeTrip}
                                 outsideClose={this.outsideClose}
+                                current={this.state.current}
                                 />
                                 <button onClick={()=> this.props.removeTrip(trip._id)}>Remove</button>
                           </div>

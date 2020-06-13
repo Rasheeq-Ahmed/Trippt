@@ -25,8 +25,8 @@ export default class Trip extends React.Component {
 
     render() {
 
-        let { trip, removeAttrac, show, closeTrip, outsideClose } = this.props
-        if (!show || !trip.attractions) { 
+        let { trip, removeAttrac, show, closeTrip, outsideClose, current } = this.props
+        if (!show || (current !== trip.location) ) { 
             return null
         }
         return (
