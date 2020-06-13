@@ -5,6 +5,8 @@ import NavBar from '../nav/navbar_container';
 import Modal from '../modal/modal'
 import Loader from '../loader/loader'
 import AttractionSlider from './attraction-slider'
+import NightlifeSlider from './nightlife-slider'
+import RestaurantSlider from './restaurant-slider'
 
 class Attraction extends React.Component{
   constructor(props){
@@ -27,9 +29,9 @@ class Attraction extends React.Component{
       this.props.getAttractions(locationId, locationName)
     }
 
-    // if (!restaurants[locationName]) {
-    //   this.props.getRestaurants(locationId, locationName)
-    // }
+    if (!restaurants[locationName]) {
+      this.props.getRestaurants(locationId, locationName)
+    }
     
     if (!nightlife[locationName]) {
       this.props.getNightlife(locationId,locationName)
@@ -81,7 +83,7 @@ class Attraction extends React.Component{
     let myTrips = this.findTripId(this.props.userTrips, this.props.locationId) // array of tripIds
     // console.log(myTrips);
     let attractions = this.props.attractions[this.props.locationName];
-    // let restaurants = this.props.restaurants[this.props.locationName];
+    let restaurants = this.props.restaurants[this.props.locationName];
     let nightlife = this.props.nightlife[this.props.locationName];
 
     if (this.props.loading) return (<Loader/>);
@@ -89,9 +91,10 @@ class Attraction extends React.Component{
     if (!attractions) {
       return null;
     }
-    // if (!restaurants) {
-    //   return null;
-    // } 
+    
+    if (!restaurants) {
+      return null;
+    } 
 
     if (!nightlife) {
       return null;
@@ -152,6 +155,8 @@ class Attraction extends React.Component{
 
 
                 <AttractionSlider attractions={attractions} properties={this.props}/>
+                <NightlifeSlider nightlife={nightlife} properties={this.props}/>
+                <RestaurantSlider restaurant={restaurants} properties={this.props}/>
                 {/* {attractions.map((place, idx) => {
                 if (place.name) {
                   return (
