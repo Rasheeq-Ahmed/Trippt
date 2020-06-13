@@ -39,9 +39,10 @@ class AttractionShow extends React.Component{
   };
 
   render(){
+    
     let {tripAttractions, tripId, locationId, locationName, loading} = this.props
-
     if(loading) return(<Loader/>);
+
 
     // let attraction = this.props.attractions[this.props.locationName]
     let attraction;
