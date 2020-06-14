@@ -21,6 +21,8 @@ class Attraction extends React.Component{
     this.findTripId = this.findTripId.bind(this)
   }
 
+  
+
 
   componentDidMount(){
     let {locationId, locationName, attractions, restaurants, nightlife} = this.props
