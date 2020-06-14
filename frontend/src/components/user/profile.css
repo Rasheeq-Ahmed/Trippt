@@ -246,6 +246,10 @@
     max-width: 50em;
     height: 50em;
     border: 1px solid black;
+    /* overflow: scroll; */
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+
 }
 .trip-icon {
     display: flex;
@@ -256,6 +260,8 @@
     box-shadow: 3px 3px 10px #888888;
     width: 15em;
     height: 15em;
+    margin: 1em;
+    /* z-index: 1; */
 }
 
 #location-name{
