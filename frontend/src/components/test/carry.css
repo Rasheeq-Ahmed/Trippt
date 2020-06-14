@@ -52,6 +52,7 @@
 
 .slider-cards {
     display: flex;
+    z-index: 99;
     /* margin: 0; */
     /* width: 100%; */
     /* background-color: indigo; */

@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import Card from './attraction-card'
 import '../test/carry.css'
-import { Link } from 'react-router-dom';
 
 import { LOCATIONS } from '../../assets/locations'
 
@@ -41,7 +40,7 @@ class AttractionSlider extends Component {
                     attractions.map((attraction, index) => {
                         return (
                             <div>
-                                <Link to={this.props.properties.tripId ? `/attraction/${attraction.location_id}/${attraction.name}/${Object.keys(this.props.properties.tripId)[0]}` : `/attraction/${attraction.location_id}/${attraction.name}`}>
+                                <Link to={this.props.tripId ? `/attraction/${attraction.location_id}/${attraction.name}/${this.props.tripId}` : `/attraction/${attraction.location_id}/${attraction.name}`}>
                                 <Card attraction={attraction} key={index} /></Link>
 
                             </div>
