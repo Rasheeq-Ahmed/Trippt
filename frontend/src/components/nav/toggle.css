@@ -6,6 +6,7 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    box-sizing: border-box;
 }
 
 .testing {
@@ -14,7 +15,22 @@
     height: 50%;
     background-color: thistle;
     display:flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
+    flex-direction: row;
+}
+
+.board {
+    display: flex;
     flex-direction: column;
+    /* width: 100%; */
+    width: 30%;
+    height: 90%;
+    background-color: gray;
+
+}
+
+.carD {
+    background-color: green;
+    cursor: -webkit-grabbing;
 }
