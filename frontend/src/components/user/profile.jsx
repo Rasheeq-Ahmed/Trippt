@@ -105,7 +105,7 @@ class ProfilePage extends React.Component {
                       <Link to="/destination">
                         <button className="tablinks">Destinations</button>
                       </Link>
-                      <button className="tablinks" onClick={()=>this.randomTrip()}>Trippt Me</button>
+                      <button className="tablinks" onClick={()=>this.randomTrip()}>Surprise Me!</button>
                     </div>
                   </div>
                   <div className="prof-right-body">

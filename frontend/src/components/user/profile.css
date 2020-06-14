@@ -447,7 +447,7 @@
     color: rgb(26, 194, 180);
 }
 
-.attrac-actions p:hover, .trip-header p:hover {
+.attrac-actions p:hover {
     color: red;
     cursor: pointer;
 }
