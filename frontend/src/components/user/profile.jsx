@@ -6,6 +6,8 @@ import "../nav/navbar.css";
 import { LOCATIONS } from '../../assets/locations';
 import {AttractionModal} from './attraction_modal';
 import {TripIcon} from './trip_icon';
+import Board from './boards';
+
 
 
 class ProfilePage extends React.Component {
@@ -66,25 +68,23 @@ class ProfilePage extends React.Component {
             <div className="prof-container">
               <div className="prof-banner">
                 {/* <img src="https://i.imgur.com/jA0jVwf.jpg" alt="" /> */}
+                <div className="prof-pic">
+                  <img
+                    src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png"
+                    alt=""
+                    className="prof-img"
+                  />
+                </div>
+                <div className="prof-details">
+                  <ul>
+                    <h2>Full Name</h2>
+                    <h4>@Username</h4>
+                    <p>San Franciso, CA</p>
+                  </ul>
+                </div>
               </div>
               <div className="prof-body">
-                <div className="prof-left">
-                  <div className="prof-pic">
-                    <img
-                      src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png"
-                      alt=""
-                      className="prof-img"
-                    />
-                  </div>
-                  <div className="prof-details">
-                    <ul>
-                      <h2>Full Name</h2>
-                      <h4>@Username</h4>
-                      <p>San Franciso, CA</p>
-                    </ul>
-                  </div>
-                </div>
-
+             
                 <div className="prof-right">
                   <div className="prof-right-header">
                     <div className="prof-tabs">
@@ -112,10 +112,13 @@ class ProfilePage extends React.Component {
                     <div className="trips">
                       <h1>My Trips</h1>
                       <div className="trips-container"> 
-                        
+                        <Board id='board-1' className="board">
+                        </Board> 
+                        <Board id='board-2' className="board">
                         {Object.keys(this.props.trips).map((tripId, idx) => (
                           <div key={idx}>
-                            <TripIcon 
+
+                            <TripIcon id={idx} className='carD' draggable='true'
                               getLocation={this.getLocation}
                               tripId={tripId}
                               trip={this.props.trips[tripId]}
@@ -131,9 +134,10 @@ class ProfilePage extends React.Component {
                               closeTrip={this.closeTrip}
                               outsideClose={this.outsideClose}
                               current={this.state.current}
-                            />
+                              />
                           </div>
                         ))}
+                        </Board>
                       </div> 
                     </div>
                   </div>

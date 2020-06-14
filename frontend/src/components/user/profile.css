@@ -248,7 +248,7 @@
     border: 1px solid black;
     /* overflow: scroll; */
     flex-wrap: wrap;
-    justify-content: space-evenly;
+    /* justify-content: space-evenly; */
 
 }
 .trip-icon {
@@ -268,7 +268,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 15em;
+    width: fit-content;
     height: 90%;
     font-size: x-large;
     color: white;
