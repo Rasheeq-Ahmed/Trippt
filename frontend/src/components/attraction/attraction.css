@@ -20,7 +20,7 @@
 .att-body {
 
   /* position: center; */
-  
+  margin-top: 120px;
   display: flex;
   flex-direction: column;
   width: 100%;
@@ -44,7 +44,7 @@
 } */
 
 .gallery {
-  display: flex;
+  /* display: flex; */
   flex-wrap: wrap;
   flex-direction: row;
   justify-content: center;
@@ -53,6 +53,11 @@
   margin-left: 20px;
   /* background-color: tomato; */
 }
+
+.gallery-top{
+  margin-top: 40px;
+}
+
 .gallery-image{
   display: flex;
   flex-direction: row;
@@ -134,4 +139,14 @@
 
 .add-city:hover{
   background-color: rgb(45, 154, 158);
+}
+
+.category{
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  /* background-color: blue; */
+  height: 20px;
+  font-size: 40px;
+  color: darkcyan;
 }
