@@ -243,7 +243,6 @@
 /******************* Trip Icon ***********************/
 .trips-container {
     display: flex;
-    padding: 0;
     max-width: 50em;
     height: 50em;
     border: 1px solid black;
@@ -257,7 +256,6 @@
     box-shadow: 3px 3px 10px #888888;
     width: 15em;
     height: 15em;
-    z-index: 1;
 }
 
 #location-name{

@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { Link } from 'react-router-dom'
 import Card from './attraction-card'
 import '../test/carry.css'
 import { LOCATIONS } from '../../assets/locations'
@@ -41,7 +42,12 @@ class AttractionSlider extends Component {
                 {
                     attractions.map((attraction, index) => {
                         return (
-                            <Card attraction={attraction} key={index} />
+                            <div key={index}>
+                                
+                                <Card attraction={attraction}
+                                      tripId={this.props.tripId} 
+                                      key={index} />
+                            </div>
                         )
                     })
                 }
@@ -61,8 +67,21 @@ class AttractionSlider extends Component {
 
                 </div>
                 <div className="carry-container">
-                    {this.renderSlides()}
-                    {console.log(this.state.attractions)}
+                    {
+                        this.state.attractions.map((attraction, index) => {
+                            return (
+                                <div key={index} className="slider-cards">
+
+                                        <Card attraction={attraction}
+                                            tripId={this.props.tripId}
+                                            key={index} />
+                                    <Link to={`/attraction/${attraction.location_id}/${attraction.name}`}>
+                                        Click
+                                    </Link>
+                                </div>
+                            )
+                        })
+                    }
                 </div>
 
             </div>

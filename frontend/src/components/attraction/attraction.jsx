@@ -125,7 +125,6 @@ class Attraction extends React.Component{
         }
       }
     }
-
     return (
 
       <div className="att-all">
@@ -153,7 +152,10 @@ class Attraction extends React.Component{
                 {console.log(attractions)}
 
 
-                <AttractionSlider attractions={attractions}/>
+                <AttractionSlider attractions={attractions}
+                                  tripId={this.props.tripId}
+                                  
+                />
                 {/* {attractions.map((place, idx) => {
                 if (place.name) {
                   return (
