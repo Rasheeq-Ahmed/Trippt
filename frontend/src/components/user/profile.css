@@ -173,36 +173,18 @@
     flex-direction: column;
     width: 100%;
     /* background-color: khaki; */
-        border-left: 1px solid gray;
+    border-left: 1px solid gray;
 
     /* height: 90%; */
     /* margin-top: 15px; */
 }
 
-.trips ul {
-    padding: 2rem;
-    /* font-size: 1.5em; */
-}
 
 .trip-num  {
     font-size: 1.5rem;
 }
 
-.trip-city  {
-    font-size: 1.5rem;
-}
-.trips button {
-    background-color:  rgb(26, 194, 180);
-    border: none;
-    outline: none;
-    cursor: pointer;
-    transition: 0.3s;
-    padding: 10px 20px;
-    color: white;
-    margin-right: 5%;
-    margin-bottom: 5%;
 
-}
 
 #trip {
     /* padding: 20px; */
@@ -257,3 +239,202 @@
   background-color:  rgb(26, 194, 180);
   /* outline: 1px solid slategrey; */
 }
+
+/******************* Trip Icon ***********************/
+.trips-container {
+    display: flex;
+    padding: 0;
+    max-width: 50em;
+    height: 50em;
+    border: 1px solid black;
+}
+.trip-icon {
+    display: flex;
+    align-items: flex-end;
+    position: relative;
+    background-size: cover;
+    border-radius: 0.25em;
+    box-shadow: 3px 3px 10px #888888;
+    width: 15em;
+    height: 15em;
+    z-index: 1;
+}
+
+#location-name{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 15em;
+    height: 90%;
+    font-size: x-large;
+    color: white;
+    text-shadow: 2px 2px 5px black;
+}
+
+.trip-icon:hover {
+    cursor: pointer;
+}
+
+#remove-btn {
+    color: white;
+    position: absolute;
+    text-shadow: 2px 2px 5px black;
+    top: 0;
+    right: 0.4em;
+}
+
+#remove-btn:hover {
+    color: tomato;
+}
+
+
+
+
+
+/*******************************************************/
+
+/*******************Trip Component**********************/
+
+.modal-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.295);
+    z-index: 99;
+}
+
+.trip-container {
+    position: relative;
+    background-color:white;
+    border: 1px solid rgb(59, 57, 57);
+    top: 3em;
+    width: 35em;
+    max-height: 30em;
+    padding: 0.5em;
+    border-radius: 0.25em;
+    box-shadow: 3px 3px 10px #888888;
+}
+
+.trip-header {
+    display: flex;
+    padding: 0.5em;
+}
+
+.trip-city  {
+    font-size: 1.5rem;
+    display: flex;
+    width: 100%;
+    padding-bottom: 0.25em;
+    border-bottom: 2px solid grey;
+}
+
+.trip-container ul {
+    margin: 0;
+    padding: 0;
+}
+
+.trips img {
+    width: 6em;
+    height: 6em;
+    margin-right: 0.5em;
+    border-radius: 0.25em;
+    box-shadow: 3px 3px 10px #888888;
+}
+
+.attrac-ul {
+    display: flex;
+    max-height: 18em;
+    overflow-y: auto;
+}
+
+.attrac-container {
+    display: flex;
+    border: none;
+    position: relative;
+    padding: 1em;
+}
+
+.trip-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+
+
+.trip-header-2 {
+    display: flex;
+    align-items: center;
+    width: 15em;
+}
+
+.trip-header-2 a {
+    display: flex;
+    font-size: small;
+    font-style: italic;
+    margin-left: 1em;
+}
+
+
+.attrac-count {
+    padding: 0.5em;
+}
+.attrac-details {
+    display: flex;
+    flex-direction: column;
+}
+
+#attrac-name {
+    font-size: large;
+    padding-bottom: 2.5px;
+    text-decoration: underline;
+}
+
+#attrac-ranking {
+    font-size: small;
+    padding: 2.5px;
+}
+
+#attrac-address {
+    font-size: small;
+    padding: 2.5px;
+}
+
+#attrac-description {
+    font-size: small;
+    text-overflow: ellipsis;
+    display: block;
+    width: 30em;
+    overflow: hidden;     
+    white-space: nowrap;
+    padding: 2.5px;
+    line-height: 1.5;
+}
+
+.attrac-actions {
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    border-top: 1px solid grey;
+    padding: 0.5em;
+    font-size: small;
+    font-style: italic;
+    width: 70%;
+    top: 8.5em;
+    cursor: pointer;
+}
+
+.attrac-actions a:hover, .trip-header-2 a:hover {
+    color: rgb(26, 194, 180);
+}
+
+.attrac-actions p:hover, .trip-header p:hover {
+    color: red;
+    cursor: pointer;
+}
+/******************************************************/

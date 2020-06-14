@@ -1,24 +1,43 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
 import NavBar from '../nav/navbar_container'
-import './profile.css'
+import './profile.css';
 import "../nav/navbar.css";
-import { LOCATIONS } from '../../assets/locations'
+import { LOCATIONS } from '../../assets/locations';
+import {AttractionModal} from './attraction_modal';
+import {TripIcon} from './trip_icon';
 
 
 class ProfilePage extends React.Component {
     constructor(props) {
         super(props)
-
         this.state = {
-          location: '',
-          locationId: '',
+          current: null,
+          show: false
         }
+        this.showTrip = this.showTrip.bind(this)
+        this.closeTrip = this.closeTrip.bind(this)
+        this.outsideClose = this.outsideClose.bind(this)
     }
 
     componentDidMount() {
         this.props.getUserTrips(this.props.user.id)
     };
+
+  showTrip(location) {
+    this.setState({ show: !this.state.show, current: location })
+  };
+
+  closeTrip() {
+    this.setState({ show: false, current: null })
+  };
+
+  outsideClose(e) {
+    let modal = document.getElementById("modal-container");
+    if (e.target === modal) {
+      this.setState({ show: false })
+    }
+  }
 
     randomTrip() {
       let randLocation = Math.floor(Math.random() * LOCATIONS.length)
@@ -26,15 +45,19 @@ class ProfilePage extends React.Component {
       this.props.createTrip({location: location.location, locationId: location.locationId})
     }
 
-
-
-
-    tabClick() {
-
+    getLocation(locationName, locations) {
+      for(let i = 0; i < locations.length; i ++) {
+        let location = locations[i]
+        if (location.location === locationName) {
+          return location
+        }
+      }
+      return null
     }
 
+
     render () {
-    
+      if (!this.props.trips) return null
         return (
           <div className="prof-all">
             <div className="prof-header">
@@ -68,7 +91,7 @@ class ProfilePage extends React.Component {
                       <Link to="/create">
                         <button className="tablinks">Trips</button>
                       </Link>
-                      <div className="tablinks dropdown">
+                      {/* <div className="tablinks dropdown">
                         <button>Add Trips</button>
                           <ul className='dropdown-content'>
                             {LOCATIONS.map((loc, idx) => (
@@ -78,7 +101,7 @@ class ProfilePage extends React.Component {
                               >{loc.location}</li>
                             ))}
                           </ul>
-                        </div>
+                        </div> */}
                       <Link to="/destination">
                         <button className="tablinks">Destinations</button>
                       </Link>
@@ -87,39 +110,28 @@ class ProfilePage extends React.Component {
                   </div>
                   <div className="prof-right-body">
                     <div className="trips">
-                      <ul>
+                      <h1>My Trips</h1>
+                      <div className="trips-container">          
                         {this.props.trips.map((trip, idx) => (
-                          <div className='trip-container' key={trip._id}>
-                            <h2 className='trip-num'>Trip {idx + 1}</h2>
-                            <h3 className='trip-city'>{trip.location}</h3>
-                            <ul id="trip" className="tabcontent">
-                              <li>Food: 🍔🍜🍱</li>
-                              <li>Things To Do: 🗺️🏝️🌆</li>
-                              {trip.attractions ? trip.attractions.map((att, idx) => (
-                                <div key={idx}>
-                                  <Link
-                                      key={idx} 
-                                      to={`/attraction/${att.location_id}/${att.name}/${trip._id}`}>
-                                      <img src={`${att.photo.images.thumbnail.url}`} 
-                                           alt=""/>
-                                      {att.name}</Link>
-                                      <button onClick={()=> this.props.removeAttrac(trip._id, att.location_id)}>Remove</button>
-                                </div>
-                              )) : null}
-                            </ul>
-                            
-                            <button>
-                              <Link to={`/attractions/${trip.locationId}/${trip.location}/${trip._id}`}>Find Attractions</Link>
-                            </button>
-                            <button
-                              onClick={() => this.props.removeTrip(trip._id)}
-                            >
-                              Delete
-                            </button>
-
+                          <div key={idx}>
+                            <TripIcon 
+                              getLocation={this.getLocation}
+                              trip={trip}
+                              LOCATIONS={LOCATIONS}
+                              showTrip={this.showTrip}
+                              removeTrip={this.props.removeTrip}
+                            />
+                            <AttractionModal 
+                              removeAttrac={this.props.removeAttrac} 
+                              trip={trip}
+                              show={this.state.show}
+                              closeTrip={this.closeTrip}
+                              outsideClose={this.outsideClose}
+                              current={this.state.current}
+                            />
                           </div>
                         ))}
-                      </ul>
+                      </div> 
                     </div>
                   </div>
                 </div>

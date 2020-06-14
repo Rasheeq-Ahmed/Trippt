@@ -38,14 +38,11 @@ class AttractionShow extends React.Component{
     return null
   };
 
-
-
-
-
   render(){
+    
     let {tripAttractions, tripId, locationId, locationName, loading} = this.props
-
     if(loading) return(<Loader/>);
+
 
     // let attraction = this.props.attractions[this.props.locationName]
     let attraction;
@@ -124,11 +121,9 @@ class AttractionShow extends React.Component{
                 {attraction.description}
               </div>
               <button id='trip-btn'
-                onClick={ foundAttraction ?
-                  () => this.props.removeAttrac(tripId, locationId) :
-                  () => this.props.updateTrip(tripId, attraction)}
-                className={!this.props.tripId ? "btn-hide" : ""}
-                >{foundAttraction ? "Remove From Trip" : "Add To My Trip"}</button>
+                onClick={() => this.props.updateTrip(tripId, attraction)}
+                className={!this.props.tripId || foundAttraction ? "btn-hide" : ""}
+                >"Add To My Trip"</button>
         
             </div>
             </div>
