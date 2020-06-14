@@ -328,9 +328,25 @@
 .trip-city  {
     font-size: 1.5rem;
     display: flex;
+    justify-content: space-between;
     width: 100%;
     padding-bottom: 0.25em;
     border-bottom: 2px solid grey;
+}
+
+#trip-city-btn {
+    width: 2em;
+    height: 2em;
+    border: 1px solid grey;
+    border-radius: 0.25em;
+    background-color: white;
+    color: grey;
+    cursor: pointer;
+    outline: none;
+}
+
+#trip-city-btn:hover, #trip-city-btn:focus {
+    background-color: lightgray;
 }
 
 .trip-container ul {

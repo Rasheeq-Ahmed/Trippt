@@ -13,8 +13,9 @@ export const AttractionModal = (props) => {
             <div id="modal-container" className='modal-container' onClick={(e)=>outsideClose(e)}>
                     <div className='trip-container'>
                         <div className="trip-header">
-                            <h3 className='trip-city'> My Trip to {trip.location}</h3>
-                            <p onClick={()=> closeTrip()}>&times;</p>
+                            <h3 className='trip-city'> My Trip to {trip.location}
+                            <button id="trip-city-btn" onClick={()=> closeTrip()}>&times;</button></h3>
+                            
                         </div>
                         <div className='trip-header-2'>
                             <p className='attrac-count '>Places to go {`(${trip.attractions.length})`}</p>
