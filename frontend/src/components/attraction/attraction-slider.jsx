@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import Card from './attraction-card'
 import '../test/carry.css'
+import { Link } from 'react-router-dom';
+
 import { LOCATIONS } from '../../assets/locations'
 
 class AttractionSlider extends Component {
@@ -18,16 +20,12 @@ class AttractionSlider extends Component {
     slideLeft() {
         let last = this.state.attractions.slice(-1)[0]
         let rest = this.state.attractions.slice(0, -1)
-        // console.log(last)
-        // console.log(rest)
         let attractions = [last, ...rest]
         this.setState({ attractions: attractions });
     }
 
     slideRight() {
         let [first, ...rest] = this.state.attractions;
-        // console.log(first)
-        // console.log(rest)
         let attractions = [...rest, first];
         this.setState({ attractions: attractions });
     }
@@ -41,7 +39,11 @@ class AttractionSlider extends Component {
                 {
                     attractions.map((attraction, index) => {
                         return (
-                            <Card attraction={attraction} key={index} />
+                            <div>
+                                <Link to={this.props.properties.tripId ? `/attraction/${attraction.location_id}/${attraction.name}/${Object.keys(this.props.properties.tripId)[0]}` : `/attraction/${attraction.location_id}/${attraction.name}`}>
+                                <Card attraction={attraction} key={index} /></Link>
+
+                            </div>
                         )
                     })
                 }
@@ -62,7 +64,6 @@ class AttractionSlider extends Component {
                 </div>
                 <div className="carry-container">
                     {this.renderSlides()}
-                    {console.log(this.state.attractions)}
                 </div>
 
             </div>
