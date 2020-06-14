@@ -102,7 +102,6 @@ class Attraction extends React.Component{
 
     // let newRestaurants = restaurants.filter(res => res.name)
     
-
     return (
 
       <div className="att-all">
@@ -130,7 +129,7 @@ class Attraction extends React.Component{
 
                 <p className="category">Attractions</p>
                 {console.log(this.props.tripId)}
-                <AttractionSlider attractions={attractions} properties={this.props}/>
+                <AttractionSlider attractions={attractions} tripId={this.props.tripId}/>
               <p className="category">Nightlife</p>
                 <NightlifeSlider nightlife={nightlife} properties={this.props}/>
               {/* <p className="category">Restaurants</p>

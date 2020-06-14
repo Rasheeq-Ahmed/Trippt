@@ -5,21 +5,22 @@ import { Link } from 'react-router-dom'
 export const AttractionModal = (props) => {
 
 
-        let { trip, removeAttrac, show, closeTrip, outsideClose, current } = props
-        if (!show || (current !== trip.location) ) { 
+        let { trip, tripId, removeAttrac, show, closeTrip, outsideClose, current } = props
+        if (!show || (current !== tripId) ) { 
             return null
         }
         return (
             <div id="modal-container" className='modal-container' onClick={(e)=>outsideClose(e)}>
                     <div className='trip-container'>
                         <div className="trip-header">
-                            <h3 className='trip-city'> My Trip to {trip.location}</h3>
-                            <p onClick={()=> closeTrip()}>&times;</p>
+                            <h3 className='trip-city'> My Trip to {trip.location}
+                            <button id="trip-city-btn" onClick={()=> closeTrip()}>&times;</button></h3>
+                            
                         </div>
                         <div className='trip-header-2'>
                             <p className='attrac-count '>Places to go {`(${trip.attractions.length})`}</p>
                             <Link to={`/attractions/${trip.locationId}/${trip.location}/${trip._id}`}>
-                                     {trip.attractions.length ? 'Find More' : 'Find Attractions'}
+                                     {trip.attractions.length ? 'Find More...' : 'Find Attractions Here'}
                                 </Link>
                         </div>
                         <ul id="trip" className='attrac-ul'>

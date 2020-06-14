@@ -3,7 +3,6 @@ import { Link, Redirect } from 'react-router-dom';
 import './attraction_show.css'
 import NavBar from '../nav/navbar_container';
 import Loader from '../loader/loader'
-import { urlencoded } from 'body-parser';
 
 
 class AttractionShow extends React.Component{
@@ -27,6 +26,8 @@ class AttractionShow extends React.Component{
 
   };
 
+
+
   findAttraction(attractions, attractionId) {
     if (!attractions) return null
     for(let i = 0; i < attractions.length; i ++) {
@@ -38,9 +39,18 @@ class AttractionShow extends React.Component{
     return null
   };
 
+  disableButton() {
+    let addBtn = document.getElementById('trip-btn')
+    if (addBtn) {
+      addBtn.disabled = true
+      addBtn.innerText = "Added to my Trips"
+    } 
+  }
+
   render(){
     
     let {tripAttractions, tripId, locationId, locationName, loading} = this.props
+
     if(loading) return(<Loader/>);
 
 
@@ -48,7 +58,8 @@ class AttractionShow extends React.Component{
     let attraction;
     let attractions = tripAttractions[tripId]
     let foundAttraction = tripAttractions[tripId] ? this.findAttraction(tripAttractions[tripId].attractions, locationId) : null
-    
+
+
     if (!attractions || !foundAttraction) {
       attractions = this.props.attractions
       attraction = attractions[locationName]
@@ -57,36 +68,14 @@ class AttractionShow extends React.Component{
     }
     
     if (!attraction) return null;
-        
-    const getPhotos = (photos) => {
-      for(var key in photos){
-        if(key === "images"){
-          return photos[key];
-        }
-      }
-    }
 
-    const getImages = (obj) => {
-      for(var key in obj){
-        if(key === "large"){
-          return obj[key]
-        }
-      }
-    }
-
-    const getUrl = (obj) => {
-      for(var key in obj){
-        if(key === 'url'){
-          return obj[key]
-        }
-      }
-    }
-
+    let addBtn = document.getElementById('trip-btn')
+    if (addBtn && foundAttraction) {
+       addBtn.disabled = true
+    } 
     
     return (
       <div className="show-all">
-        {/* {console.log(attractions)}
-        {console.log(attraction)} */}
         <div className="show-header">
           <NavBar />
         </div>
@@ -121,18 +110,17 @@ class AttractionShow extends React.Component{
                 {attraction.description}
               </div>
               <button id='trip-btn'
-                onClick={() => this.props.updateTrip(tripId, attraction)}
-                className={!this.props.tripId || foundAttraction ? "btn-hide" : ""}
-                >"Add To My Trip"</button>
+                  onClick={() => { this.props.updateTrip(tripId, attraction); this.disableButton() }
+                }
+                className={(!this.props.tripId || foundAttraction) ? "btn-hide" : ""}
+              >{foundAttraction ? "" : "Add to my Trip"}</button>
         
             </div>
             </div>
             <div className="show-right">
               <div className="show-photo">
                 <img className='photo'
-                  src={`${getUrl(
-                    getImages(getPhotos(attraction.photo))
-                  )}`}
+                  src={`${attraction.photo.images.large.url}`}
                   alt=""
                 />
               </div>

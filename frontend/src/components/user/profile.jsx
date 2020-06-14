@@ -24,8 +24,8 @@ class ProfilePage extends React.Component {
         this.props.getUserTrips(this.props.user.id)
     };
 
-  showTrip(location) {
-    this.setState({ show: !this.state.show, current: location })
+  showTrip(tripId) {
+    this.setState({ show: !this.state.show, current: tripId })
   };
 
   closeTrip() {
@@ -105,25 +105,28 @@ class ProfilePage extends React.Component {
                       <Link to="/destination">
                         <button className="tablinks">Destinations</button>
                       </Link>
-                      <button className="tablinks" onClick={()=>this.randomTrip()}>Trippt Me</button>
+                      <button className="tablinks" onClick={()=>this.randomTrip()}>Surprise Me!</button>
                     </div>
                   </div>
                   <div className="prof-right-body">
                     <div className="trips">
                       <h1>My Trips</h1>
-                      <div className="trips-container">          
-                        {this.props.trips.map((trip, idx) => (
+                      <div className="trips-container"> 
+                        
+                        {Object.keys(this.props.trips).map((tripId, idx) => (
                           <div key={idx}>
                             <TripIcon 
                               getLocation={this.getLocation}
-                              trip={trip}
+                              tripId={tripId}
+                              trip={this.props.trips[tripId]}
                               LOCATIONS={LOCATIONS}
                               showTrip={this.showTrip}
                               removeTrip={this.props.removeTrip}
                             />
                             <AttractionModal 
-                              removeAttrac={this.props.removeAttrac} 
-                              trip={trip}
+                              removeAttrac={this.props.removeAttrac}
+                              tripId={tripId} 
+                              trip={this.props.trips[tripId]}
                               show={this.state.show}
                               closeTrip={this.closeTrip}
                               outsideClose={this.outsideClose}
