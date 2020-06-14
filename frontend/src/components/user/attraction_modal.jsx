@@ -5,8 +5,8 @@ import { Link } from 'react-router-dom'
 export const AttractionModal = (props) => {
 
 
-        let { trip, removeAttrac, show, closeTrip, outsideClose, current } = props
-        if (!show || (current !== trip.location) ) { 
+        let { trip, tripId, removeAttrac, show, closeTrip, outsideClose, current } = props
+        if (!show || (current !== tripId) ) { 
             return null
         }
         return (

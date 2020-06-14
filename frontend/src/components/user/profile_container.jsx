@@ -5,7 +5,7 @@ import { getAttractions, getAttraction } from '../../actions/attraction_actions'
 
 const mSTP = state => ({
     user: state.session.user,
-    trips: Object.values(state.trips) || [],
+    trips: state.trips || {},
     attractions: state.attractions || {}
 });
 
