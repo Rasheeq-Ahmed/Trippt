@@ -334,15 +334,16 @@
 
 #remove-btn {
     color: white;
+    cursor: pointer;
     position: absolute;
     text-align: center;
     /* text-shadow: 2px 2px 5px black; */
-    top: 2%;
-    right: 2%;
+    top: 0;
+    right: 0;
     display: flex;
     justify-content: center;
     /* right: 0.4em; */
-    font-size: 2em;
+    font-size: 1em;
     /* width: 100%; */
     background-color: rgb(26, 194, 180);
     /* z-index: 1; */
@@ -350,8 +351,8 @@
     height: 10%;
     /* width: 90%; */
     align-items: center;
-    border-radius: 50%;
-    padding: 0.20em;
+    /* border-radius: 50%; */
+    padding: 1em;
 
 }
 

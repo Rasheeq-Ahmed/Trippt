@@ -51,7 +51,7 @@ export const TripIcon = (props) => {
         >
 
 
-            <span id='remove-btn' onClick={() => showConfirmDelete(trip._id)}>x</span>
+            <button id='remove-btn' onClick={() => showConfirmDelete(trip._id)}>x</button>
             <div className="rest" onClick={() => showTrip(tripId)} >
             <p id='location-name'>{trip.location}</p>
 
