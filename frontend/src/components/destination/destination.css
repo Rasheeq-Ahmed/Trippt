@@ -61,11 +61,11 @@
 .dest-slides {
   /* background-color: rgb(139, 0, 0); */
   /* min-height:50%; */
-  min-height: fit-content;
-  width: 90%;
+  /* min-height: fit-content; */
+  /* width: 90%; */
   /* max-width: 72rem; */
-  display: flex;
-  justify-content: center;
+  /* display: flex; */
+  /* justify-content: center; */
   
   /* overflow: auto;
   resize: both; */

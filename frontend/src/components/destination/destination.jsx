@@ -74,8 +74,10 @@ class Destination extends React.Component {
             <div className="dest-title">
               <h1>Discover Your Next Adventure</h1>
               </div>
-              <div className="dest-slides">
-              <Slide data={ LOCATIONS }/>
+              <div className="slides">
+                {LOCATIONS.map((location, idx) => (
+                    <Slide data={ location } key={idx}/>
+                ))}
               </div>
           </div>
           <div className="body-right">

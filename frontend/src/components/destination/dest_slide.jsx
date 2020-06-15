@@ -7,34 +7,28 @@ import './dest_slide.css'
 class Slide extends Component {
     constructor(props) {
         super(props);
-        this.state = { landing: this.props.data };
+        this.state = {
+            location: this.props.data
+        }
     }
 
 
+
     render() {
-        let { user, createTrip } = this.props
+        let { location } = this.state
 
         return (
 
-            <div className='slides'>
-                {
-                    this.state.landing.map((loc, index) =>
-                        <div className='city-container' key={index}>
+            <div className='slide' style={{ backgroundImage: `url(${location.url})` }}>
+                 <Link className='city-link' to={`/attractions/${location.locationId}/${location.location}`}>
+                     <div className='slide-city'>
+                        <h2 className=''>{location.location}</h2>
+                        <h1 className=''>{location.country}</h1>
+                     </div>
 
-
-
-                            <div className='slide' style={{ backgroundImage: `url(${loc.url})` }}>
-                                <Link className='city-link' to={`/attractions/${loc.locationId}/${loc.location}`}>
-                                    <h1 className='slide-city'>{loc.location}</h1>
-                                    <button id='slide-btn' className={user ? "btn-show" : ""}
-                                        onClick={() => createTrip({ location: loc.location, locationId: loc.locationId })}
-                                    >Add To My Trips </button>
-                                </Link>
-                            </div>
-
-                        </div>
-                    )}
+                </Link>
             </div>
+
         )
     }
 }
