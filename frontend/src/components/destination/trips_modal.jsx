@@ -1,8 +1,18 @@
 import React from 'react'
 import './trips_modal.css'
 import { Link } from 'react-router-dom'
+import { LOCATIONS } from "../../assets/locations"
 
 class TripModal extends React.Component {
+
+    findPhoto(tripName, locations) {
+        for(let i = 0; i < locations.length; i ++) {
+            if (locations[i].location === tripName) {
+                return locations[i].url
+            }
+        }
+        return
+    }
 
     render() {
         if (!this.props.show) {
@@ -24,9 +34,6 @@ class TripModal extends React.Component {
                         <h2>My Trips</h2>
 
                         <div className='dest-modal-actions'>
-                            {/* <Link to="/profile">
-                                <button>Profile</button>
-                            </Link> */}
                             <button
                                 className="dest-modal-close-btn"
                                 onClick={() => { this.props.closeModal() }}>
@@ -36,7 +43,11 @@ class TripModal extends React.Component {
                     <div className="dest-modal-content">
                         {Object.values(this.props.trips).map((trip, idx) => (
                             <div key={idx} className="content-item">
-                                {trip.location} 
+                                <div>
+
+                                </div>
+                                <p>{trip.location}</p>
+                                <p>Attractions: {trip.attractions.length}</p>
                                 <p className="remove-btn" onClick={()=> this.props.removeTrip(trip._id)}>remove</p>
                             </div>
                         ))}

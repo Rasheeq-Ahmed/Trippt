@@ -1,10 +1,10 @@
 .dest-modal-container {
     position: fixed;
     z-index: 1;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+    bottom: 0;
+    right: 0;
+    width: 30%;
+    height: 88.55%;
     display: flex;
     justify-content: flex-end;
     align-items: flex-end;
@@ -16,9 +16,9 @@
   background-color: #f4f4f4;
   /* margin: 20% auto; */
   /* padding: 20px; */
-  width: 25%;
-  height: 88.5%;
-  border-radius: 0.5em;
+  width: 90%;
+  height: 100%;
+  border-radius: 0.25em;
   box-shadow: 0 5px 8px 0 rgba(0,0,0,0.2), 0 7px 20px 0 rgba(0,0,0,0.2);
   animation-name: modal;
   animation-duration: 2s;

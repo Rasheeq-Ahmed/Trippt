@@ -55,19 +55,19 @@ class Destination extends React.Component {
       <div className= 'dest-all'>
         
         <div className="dest-header">
-          <NavBar />
-      {this.props.signedIn ? 
+          <NavBar showModal={this.showModal} trips={trips}/>
+      {/* {this.props.signedIn ? 
               <button onClick={()=>this.showModal()}
                       className="modal-btn"
                 >My Trips { `(${trips ? Object.keys(trips).length : null})`}
-              </button> : null}
+              </button> : null} */}
         </div>
         
         {this.props.signedIn ? <TripsModal 
-                              show={this.state.show}
+                              show={show}
                               closeModal={this.closeModal}
                               removeTrip={this.props.removeTrip}
-                              trips={this.state.trips}
+                              trips={trips}
                               /> : null}
         <div className="dest-body">
           <div className="body-left">
