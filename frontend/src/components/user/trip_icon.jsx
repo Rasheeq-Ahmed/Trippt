@@ -6,7 +6,7 @@ export const ConfirmDelete = (props) => {
     return (
         <div className='confirm-delete-container'>
             <div className='confirm-delete'>
-                <h1 id="confirm-delete-msg">Are you sure you want to delete this trip?</h1>
+                <h1 id="confirm-delete-msg">Are you sure you want to remove this trip?</h1>
                 <span className='confirm-delete-actions'>
                     <button onClick={() => {props.removeTrip(props.tripId); props.closeConfirmDelete()}}>Yes</button>
                     <button onClick={() => props.closeConfirmDelete() }>No</button>
@@ -51,7 +51,7 @@ export const TripIcon = (props) => {
         >
 
 
-            <span id='remove-btn' onClick={() => showConfirmDelete(trip._id)}>&times;</span>
+            <span id='remove-btn' onClick={() => showConfirmDelete(trip._id)}>x</span>
             <div className="rest" onClick={() => showTrip(tripId)} >
             <p id='location-name'>{trip.location}</p>
 
