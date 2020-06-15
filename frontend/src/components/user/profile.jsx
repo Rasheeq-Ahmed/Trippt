@@ -102,7 +102,7 @@ class ProfilePage extends React.Component {
                       <Link to="/create">
                         <button className="tablinks">Trips</button>
                       </Link>
-                      {/* <div className="tablinks dropdown">
+                      <div className="tablinks dropdown">
                         <button>Add Trips</button>
                           <ul className='dropdown-content'>
                             {LOCATIONS.map((loc, idx) => (
@@ -112,7 +112,7 @@ class ProfilePage extends React.Component {
                               >{loc.location}</li>
                             ))}
                           </ul>
-                        </div> */}
+                        </div>
                       <Link to="/destination">
                         <button className="tablinks">Destinations</button>
                       </Link>
