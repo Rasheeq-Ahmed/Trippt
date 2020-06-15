@@ -41,17 +41,21 @@ export const TripIcon = (props) => {
 
 
     return (
-        <div className="trip-icon" id={props.id}
+        
+        <div className="trip-icon"id={props.id}
             // className={props.className}
             draggable={props.draggable}
             onDragStart={dragStart}
             onDragOver={dragOver}
              style={{ backgroundImage: getLocation(trip.location, LOCATIONS) ? `url(${getLocation(trip.location, LOCATIONS).url})` : null }}
         >
-            <p id='location-name'
-               onClick={() => showTrip(tripId)}
-            >{trip.location}</p>
-            <p id='remove-btn' onClick={() => showConfirmDelete(trip._id)}>&times;</p>
+
+
+            <span id='remove-btn' onClick={() => showConfirmDelete(trip._id)}>&times;</span>
+            <div className="rest" onClick={() => showTrip(tripId)} >
+            <p id='location-name'>{trip.location}</p>
+
+            </div>
         </div>
     )
 

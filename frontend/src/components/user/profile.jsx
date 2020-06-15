@@ -134,10 +134,10 @@ class ProfilePage extends React.Component {
                           <Board id='board-1' className="board">
                           </Board> 
                         </div> */}
-                        <div className="all-trips">
-                        <Board id='board-2' className="board">
+                          <Board id='board-2' className="board"></Board>
+                        <Board className="all-trips">
                         {Object.keys(this.props.trips).map((tripId, idx) => (
-                          <div key={idx}>
+                          <div className="card-con" key={idx}>
                             
                             <TripIcon id={idx} className='carD' draggable='true'
                               getLocation={this.getLocation}
@@ -160,7 +160,6 @@ class ProfilePage extends React.Component {
                           </div>
                         ))}
                         </Board>
-                        </div>
                       </div> 
                     </div>
                   </div>

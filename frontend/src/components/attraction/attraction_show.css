@@ -170,6 +170,10 @@
     cursor: pointer;
 }
 
+button:disabled {
+  background-color: gray;
+  color: gray;
+}
 
 .btn-hide {
   display: none;
