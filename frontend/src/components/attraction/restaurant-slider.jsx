@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import Card from './attraction-card'
-import '../test/carry.css'
+import './attraction.css'
 import { Link } from 'react-router-dom';
 
 
