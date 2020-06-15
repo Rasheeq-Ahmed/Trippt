@@ -56,6 +56,11 @@ class Destination extends React.Component {
         
         <div className="dest-header">
           <NavBar />
+      {this.props.signedIn ? 
+              <button onClick={()=>this.showModal()}
+                      className="modal-btn"
+                >My Trips { `(${trips ? Object.keys(trips).length : null})`}
+              </button> : null}
         </div>
         
         {this.props.signedIn ? <TripsModal 
@@ -74,11 +79,6 @@ class Destination extends React.Component {
               </div>
           </div>
           <div className="body-right">
-          {this.props.signedIn ? 
-                  <button onClick={()=>this.showModal()}
-                          className="modal-btn"
-                    >My Trips { `(${trips ? Object.keys(trips).length : null})`}
-                  </button> : null}
           </div>
 
         </div>

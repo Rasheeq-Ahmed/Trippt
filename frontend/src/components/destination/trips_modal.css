@@ -6,18 +6,18 @@
     width: 100%;
     height: 100%;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    justify-content: flex-end;
+    align-items: flex-end;
     background-color: rgba(0, 0, 0, 0);
 }
 
 .dest-modal {
-  position: fixed;
+  /* position: fixed; */
   background-color: #f4f4f4;
   /* margin: 20% auto; */
   /* padding: 20px; */
-  width: 20%;
-  height: 20em;
+  width: 25%;
+  height: 88.5%;
   border-radius: 0.5em;
   box-shadow: 0 5px 8px 0 rgba(0,0,0,0.2), 0 7px 20px 0 rgba(0,0,0,0.2);
   animation-name: modal;
