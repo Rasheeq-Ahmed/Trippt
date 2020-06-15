@@ -114,9 +114,15 @@ class ProfilePage extends React.Component {
                             ))}
                           </ul>
                         </div>
-                      <Link to="/destination">
-                        <button className="tablinks">Destinations</button>
-                      </Link>
+                      <div className="tablinks dropdown">
+                        <button>Destinations</button>
+                        <ul className='dropdown-content'>
+                          {LOCATIONS.map((loc, idx) => (
+                            <Link to={`/attractions/${loc.locationId}/${loc.location}`}><li>{loc.location}</li></Link>
+
+                          ))}
+                        </ul>
+                      </div>
                       <button className="tablinks" onClick={()=>this.randomTrip()}>Surprise Me!</button>
                     </div>
                   </div>
