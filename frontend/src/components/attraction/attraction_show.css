@@ -184,4 +184,5 @@
 
 #back-btn {
   cursor: pointer;
+  outline: none;
 }
