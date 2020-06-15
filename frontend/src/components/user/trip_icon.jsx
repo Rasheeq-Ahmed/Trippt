@@ -16,7 +16,7 @@ export const TripIcon = (props) => {
 
     const dragOver = e => {
         e.stopPropagation();
-        const target = e.target
+        const target = e.target;
 
         // target.style.display ="none";
 

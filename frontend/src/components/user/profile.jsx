@@ -15,7 +15,8 @@ class ProfilePage extends React.Component {
         super(props)
         this.state = {
           current: null,
-          show: false
+          show: false,
+          // trips: this.props.trips
         }
         this.showTrip = this.showTrip.bind(this)
         this.closeTrip = this.closeTrip.bind(this)
@@ -59,7 +60,7 @@ class ProfilePage extends React.Component {
 
 
     render () {
-      if (!this.props.trips) return null
+      if (!this.props.trips) return null;
         return (
           <div className="prof-all">
             <div className="prof-header">
@@ -77,9 +78,9 @@ class ProfilePage extends React.Component {
                 </div>
                 <div className="prof-details">
                   <ul>
-                    <h2>Full Name</h2>
-                    <h4>@Username</h4>
-                    <p>San Franciso, CA</p>
+                    <li>Full Name</li>
+                    <li>@Username</li>
+                    <li>San Franciso, CA</li>
                   </ul>
                 </div>
               </div>
@@ -112,15 +113,19 @@ class ProfilePage extends React.Component {
                     <div className="trips">
                       <h1>My Trips</h1>
                       <div className="trips-container"> 
+                        <div className="top-trips">
                         <Board id='board-1' className="board">
                         </Board> 
+                        </div>
+                        <div className="all-trips">
                         <Board id='board-2' className="board">
                         {Object.keys(this.props.trips).map((tripId, idx) => (
                           <div key={idx}>
-
+                            
                             <TripIcon id={idx} className='carD' draggable='true'
                               getLocation={this.getLocation}
                               tripId={tripId}
+                              category="all"
                               trip={this.props.trips[tripId]}
                               LOCATIONS={LOCATIONS}
                               showTrip={this.showTrip}
@@ -138,6 +143,7 @@ class ProfilePage extends React.Component {
                           </div>
                         ))}
                         </Board>
+                        </div>
                       </div> 
                     </div>
                   </div>

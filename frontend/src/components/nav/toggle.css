@@ -20,10 +20,10 @@
     flex-direction: row;
 }
 
-.board {
+/* .board {
     display: flex;
     flex-direction: column;
-    /* width: 100%; */
+    width: 100%;
     width: 50%;
     height: 90%;
     background-color: gray;
@@ -33,4 +33,4 @@
 .carD {
     background-color: green;
     cursor: -webkit-grabbing;
-}
+} */

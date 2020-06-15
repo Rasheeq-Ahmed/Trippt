@@ -1,4 +1,5 @@
 import React from 'react'
+import './profile.css'
 
 function Board(props) {
     const drop = e => {
