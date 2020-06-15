@@ -111,12 +111,12 @@ class ProfilePage extends React.Component {
                   </div>
                   <div className="prof-right-body">
                     <div className="trips">
-                      <h1>My Trips</h1>
+                      <h1 className='myTrips'>My Trips</h1>
                       <div className="trips-container"> 
-                        <div className="top-trips">
-                        <Board id='board-1' className="board">
-                        </Board> 
-                        </div>
+                        {/* <div className="top-trips">
+                          <Board id='board-1' className="board">
+                          </Board> 
+                        </div> */}
                         <div className="all-trips">
                         <Board id='board-2' className="board">
                         {Object.keys(this.props.trips).map((tripId, idx) => (
