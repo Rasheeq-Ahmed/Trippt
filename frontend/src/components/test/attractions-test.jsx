@@ -19,12 +19,7 @@ class Testing extends React.Component {
                     <NavBar/>
                 </div>
                 <div className="att-body">
-                    <h1 className="category">Attractions</h1>
-                    <Carousel/>
-                    <h1 className="category">Restaurants</h1>
-                    <Carousel/>
-                    <h1 className="category">Nightlife</h1>
-                    <Carousel/>
+                
                 </div>
                 <div className="att-footer">
 
