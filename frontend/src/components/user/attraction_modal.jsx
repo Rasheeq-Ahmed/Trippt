@@ -20,7 +20,7 @@ export const AttractionModal = (props) => {
                         <div className='trip-header-2'>
                             <p className='attrac-count '>Places to go {`(${trip.attractions.length})`}</p>
                             <Link to={`/attractions/${trip.locationId}/${trip.location}/${trip._id}`}>
-                                     {trip.attractions.length ? 'Find More...' : 'Find Attractions Here'}
+                                     {trip.attractions.length ? 'Find More...' : 'Find Attractions'}
                                 </Link>
                         </div>
                         <ul id="trip" className='attrac-ul'>
