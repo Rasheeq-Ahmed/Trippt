@@ -63,12 +63,12 @@ class Destination extends React.Component {
               </button> : null} */}
         </div>
         
-        {this.props.signedIn ? <TripsModal 
+        {/* {this.props.signedIn ? <TripsModal 
                               show={show}
                               closeModal={this.closeModal}
                               removeTrip={this.props.removeTrip}
                               trips={trips}
-                              /> : null}
+                              /> : null} */}
         <div className="dest-body">
           <div className="body-left">
             <div className="dest-title">

@@ -31,11 +31,11 @@ class NavBar extends React.Component {
             <Link to='/login'>
               <button onClick={this.logoutUser}>Logout</button>
             </Link>
-            {this.props.showModal ?
+            {/* {this.props.showModal ?
               <button onClick={() => this.props.showModal()}
               className="show-trips-btn"
               >My Trips {`(${this.props.trips ? Object.keys(this.props.trips).length : null})`}
-              </button> : null}
+              </button> : null} */}
           </div>
         );
       } else {
