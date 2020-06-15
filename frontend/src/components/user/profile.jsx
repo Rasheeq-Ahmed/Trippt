@@ -5,7 +5,7 @@ import './profile.css';
 import "../nav/navbar.css";
 import { LOCATIONS } from '../../assets/locations';
 import {AttractionModal} from './attraction_modal';
-import {TripIcon} from './trip_icon';
+import { TripIcon, ConfirmDelete } from './trip_icon';
 
 
 class ProfilePage extends React.Component {
@@ -13,16 +13,19 @@ class ProfilePage extends React.Component {
         super(props)
         this.state = {
           current: null,
-          show: false
+          show: false,
+          confirmDelete: false
         }
-        this.showTrip = this.showTrip.bind(this)
-        this.closeTrip = this.closeTrip.bind(this)
-        this.outsideClose = this.outsideClose.bind(this)
+        this.showTrip = this.showTrip.bind(this);
+        this.closeTrip = this.closeTrip.bind(this);
+        this.outsideClose = this.outsideClose.bind(this);
+        this.showConfirmDelete = this.showConfirmDelete.bind(this);
+        this.closeConfirmDelete = this.closeConfirmDelete.bind(this);
     }
 
-    componentDidMount() {
-        this.props.getUserTrips(this.props.user.id)
-    };
+  componentDidMount() {
+    this.props.getUserTrips(this.props.user.id)
+  };
 
   showTrip(tripId) {
     this.setState({ show: !this.state.show, current: tripId })
@@ -39,21 +42,29 @@ class ProfilePage extends React.Component {
     }
   }
 
-    randomTrip() {
-      let randLocation = Math.floor(Math.random() * LOCATIONS.length)
-      let location = LOCATIONS[randLocation]
-      this.props.createTrip({location: location.location, locationId: location.locationId})
-    }
+  showConfirmDelete(tripId) {
+    this.setState({current: tripId, confirmDelete: true})
+  }
 
-    getLocation(locationName, locations) {
-      for(let i = 0; i < locations.length; i ++) {
-        let location = locations[i]
+  closeConfirmDelete() {
+    this.setState({confirmDelete: false, current: null})
+  }
+
+  randomTrip() {
+    let randLocation = Math.floor(Math.random() * LOCATIONS.length)
+    let location = LOCATIONS[randLocation]
+    this.props.createTrip({location: location.location, locationId: location.locationId})
+  }
+
+  getLocation(locationName, locations) {
+    for(let i = 0; i < locations.length; i ++) {
+      let location = locations[i]
         if (location.location === locationName) {
           return location
         }
-      }
-      return null
     }
+    return null
+  }
 
 
     render () {
@@ -111,6 +122,12 @@ class ProfilePage extends React.Component {
                   <div className="prof-right-body">
                     <div className="trips">
                       <h1>My Trips</h1>
+                      <ConfirmDelete
+                        closeConfirmDelete={this.closeConfirmDelete}
+                        removeTrip={this.props.removeTrip}
+                        tripId={this.state.current}
+                        confirmDelete={this.state.confirmDelete}
+                      />
                       <div className="trips-container"> 
                         
                         {Object.keys(this.props.trips).map((tripId, idx) => (
@@ -121,7 +138,7 @@ class ProfilePage extends React.Component {
                               trip={this.props.trips[tripId]}
                               LOCATIONS={LOCATIONS}
                               showTrip={this.showTrip}
-                              removeTrip={this.props.removeTrip}
+                              showConfirmDelete={this.showConfirmDelete}
                             />
                             <AttractionModal 
                               removeAttrac={this.props.removeAttrac}
