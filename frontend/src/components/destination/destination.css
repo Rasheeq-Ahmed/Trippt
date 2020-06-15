@@ -30,7 +30,7 @@
   /* background-color: rgb(238, 130, 130); */
   /* max-width: 100%; */
   height: 90%;
-  width: 80%;
+  width: 100%;
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -38,10 +38,10 @@
   /* justify-content: center; */
 }
 
-.body-right {
+/* .body-right {
   width: 20%;
   background-color: thistle;
-}
+} */
 
 
 .dest-title  {
@@ -59,7 +59,7 @@
 
 
 .dest-slides {
-  background-color: rgb(139, 0, 0);
+  /* background-color: rgb(139, 0, 0); */
   /* min-height:50%; */
   min-height: fit-content;
   width: 90%;
