@@ -348,6 +348,7 @@
     /* z-index: 1; */
     /* pointer-events: none; */
     height: 10%;
+    width: 10%;
     /* width: 90%; */
     align-items: center;
     border-radius: 50%;
@@ -393,9 +394,8 @@
     position: relative;
     background-color:white;
     border: 1px solid rgb(59, 57, 57);
-    top: 3em;
-    width: 35em;
-    max-height: 30em;
+    max-width: 100%;
+    max-height: 25em;
     padding: 0.5em;
     border-radius: 0.25em;
     box-shadow: 3px 3px 10px #888888;
@@ -446,7 +446,7 @@
 
 .attrac-ul {
     display: flex;
-    max-height: 18em;
+    max-height: 16em;
     overflow-y: auto;
 }
 
@@ -461,6 +461,7 @@
     display: flex;
     align-items: flex-start;
     justify-content: space-between;
+    width: 35em;
 }
 
 
