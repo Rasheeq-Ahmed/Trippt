@@ -74,7 +74,7 @@
 }
 
 .prof-img {
-    height: 7em;
+    height: 100%;
     border-radius: 50%;
     /* padding: 10%; */
 }
@@ -335,11 +335,12 @@
 #remove-btn {
     color: white;
     position: absolute;
+    text-align: center;
     /* text-shadow: 2px 2px 5px black; */
     top: 2%;
     right: 2%;
     display: flex;
-    justify-content: flex-end;
+    justify-content: center;
     /* right: 0.4em; */
     font-size: 2em;
     /* width: 100%; */
@@ -645,8 +646,8 @@
     padding: 1em;
 }
 
-#comfirm-delete-msg {
-    
+#confirm-delete-msg {
+    font-size: large;
 }
 
 .confirm-delete-actions {
@@ -662,6 +663,8 @@
     color: white;
     background-color:  rgb(26, 194, 180);
     border-radius: 0.25em;
+    font-size: large;
+    width: 5em;
 }
 
 .confirm-delete-container button:hover {

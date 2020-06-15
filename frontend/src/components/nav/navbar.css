@@ -62,6 +62,7 @@
     color:white;
     cursor: pointer;
     box-shadow: none;
+    outline: none;
 }
 
 .nav-auth button:hover {
@@ -77,12 +78,12 @@
     border-radius: 5px;
 } */
 
-.nav-auth > button:hover{
+/* .nav-auth > button:hover{
     border: 2px solid;
     background: white;
     cursor: pointer;
     color: black
-}
+} */
 
 button {
     border-style: none;
