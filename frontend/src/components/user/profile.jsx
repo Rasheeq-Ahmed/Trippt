@@ -119,7 +119,6 @@ class ProfilePage extends React.Component {
                         <ul className='dropdown-content'>
                           {LOCATIONS.map((loc, idx) => (
                             <Link to={`/attractions/${loc.locationId}/${loc.location}`}><li>{loc.location}</li></Link>
-
                           ))}
                         </ul>
                       </div>
