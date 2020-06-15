@@ -6,6 +6,8 @@ import "../nav/navbar.css";
 import { LOCATIONS } from '../../assets/locations';
 import {AttractionModal} from './attraction_modal';
 import { TripIcon, ConfirmDelete } from './trip_icon';
+import Board from './boards';
+
 
 
 class ProfilePage extends React.Component {
@@ -14,6 +16,7 @@ class ProfilePage extends React.Component {
         this.state = {
           current: null,
           show: false,
+          // trips: this.props.trips
           confirmDelete: false
         }
         this.showTrip = this.showTrip.bind(this);
@@ -68,7 +71,7 @@ class ProfilePage extends React.Component {
 
 
     render () {
-      if (!this.props.trips) return null
+      if (!this.props.trips) return null;
         return (
           <div className="prof-all">
             <div className="prof-header">
@@ -77,25 +80,23 @@ class ProfilePage extends React.Component {
             <div className="prof-container">
               <div className="prof-banner">
                 {/* <img src="https://i.imgur.com/jA0jVwf.jpg" alt="" /> */}
+                <div className="prof-pic">
+                  <img
+                    src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png"
+                    alt=""
+                    className="prof-img"
+                  />
+                </div>
+                <div className="prof-details">
+                  <ul>
+                    <li>Full Name</li>
+                    <li>@Username</li>
+                    <li>San Franciso, CA</li>
+                  </ul>
+                </div>
               </div>
               <div className="prof-body">
-                <div className="prof-left">
-                  <div className="prof-pic">
-                    <img
-                      src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png"
-                      alt=""
-                      className="prof-img"
-                    />
-                  </div>
-                  <div className="prof-details">
-                    <ul>
-                      <h2>Full Name</h2>
-                      <h4>@Username</h4>
-                      <p>San Franciso, CA</p>
-                    </ul>
-                  </div>
-                </div>
-
+             
                 <div className="prof-right">
                   <div className="prof-right-header">
                     <div className="prof-tabs">
@@ -121,7 +122,7 @@ class ProfilePage extends React.Component {
                   </div>
                   <div className="prof-right-body">
                     <div className="trips">
-                      <h1>My Trips</h1>
+                      <h1 className='myTrips'>My Trips</h1>
                       <ConfirmDelete
                         closeConfirmDelete={this.closeConfirmDelete}
                         removeTrip={this.props.removeTrip}
@@ -129,12 +130,19 @@ class ProfilePage extends React.Component {
                         confirmDelete={this.state.confirmDelete}
                       />
                       <div className="trips-container"> 
-                        
+                        {/* <div className="top-trips">
+                          <Board id='board-1' className="board">
+                          </Board> 
+                        </div> */}
+                          <Board id='board-2' className="board"></Board>
+                        <Board className="all-trips">
                         {Object.keys(this.props.trips).map((tripId, idx) => (
-                          <div key={idx}>
-                            <TripIcon 
+                          <div className="card-con" key={idx}>
+                            
+                            <TripIcon id={idx} className='carD' draggable='true'
                               getLocation={this.getLocation}
                               tripId={tripId}
+                              category="all"
                               trip={this.props.trips[tripId]}
                               LOCATIONS={LOCATIONS}
                               showTrip={this.showTrip}
@@ -148,9 +156,10 @@ class ProfilePage extends React.Component {
                               closeTrip={this.closeTrip}
                               outsideClose={this.outsideClose}
                               current={this.state.current}
-                            />
+                              />
                           </div>
                         ))}
+                        </Board>
                       </div> 
                     </div>
                   </div>
