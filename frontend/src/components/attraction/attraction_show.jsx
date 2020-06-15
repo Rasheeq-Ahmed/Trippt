@@ -10,6 +10,7 @@ class AttractionShow extends React.Component{
     super(props);
 
     this.findAttraction = this.findAttraction.bind(this)
+    this.goBack = this.goBack.bind(this)
   }
 
   componentDidMount(){
@@ -45,6 +46,10 @@ class AttractionShow extends React.Component{
       addBtn.disabled = true
       addBtn.innerText = "Added to my Trips"
     } 
+  }
+
+  goBack() {
+    this.props.history.goBack()
   }
 
   render(){
@@ -109,11 +114,14 @@ class AttractionShow extends React.Component{
                 {" "}
                 {attraction.description}
               </div>
-              <button id='trip-btn'
-                  onClick={() => { this.props.updateTrip(tripId, attraction); this.disableButton() }
-                }
-                className={(!this.props.tripId || foundAttraction) ? "btn-hide" : ""}
-              >{foundAttraction ? "" : "Add to my Trip"}</button>
+              <div className='attraction-action'>
+                <button id="back-btn" onClick={()=>this.goBack()}>Back</button>
+                <button id='trip-btn'
+                    onClick={() => { this.props.updateTrip(tripId, attraction); this.disableButton() }
+                  }
+                  className={(!this.props.tripId || foundAttraction) ? "btn-hide" : ""}
+                >{foundAttraction ? "" : "Add to my Trip"}</button>
+              </div>
         
             </div>
             </div>
