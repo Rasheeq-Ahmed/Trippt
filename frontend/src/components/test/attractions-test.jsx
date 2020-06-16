@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import NavBar from '../nav/navbar_container';
-import Carousel from './carousel'
-import './test.css'
+import Carry from './carry'
+// import './test.css'
 
 class Testing extends React.Component {
     constructor(props) {
@@ -19,7 +19,7 @@ class Testing extends React.Component {
                     <NavBar/>
                 </div>
                 <div className="att-body">
-                
+                {/* <Carry/> */}
                 </div>
                 <div className="att-footer">
 
