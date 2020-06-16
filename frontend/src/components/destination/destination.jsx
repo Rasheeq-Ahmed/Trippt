@@ -46,16 +46,6 @@ class Destination extends React.Component {
     this.setState({ show: false })
   };
 
-  shuffle(array) {
-    for (let i = array.length - 1; i > 0; i--) {
-      const j = Math.floor(Math.random() * i)
-      const temp = array[i]
-      array[i] = array[j]
-      array[j] = temp
-    }
-    return array
-  }
-
 
 
   render(){
@@ -85,7 +75,7 @@ class Destination extends React.Component {
               <h1>Discover Your Next Adventure</h1>
               </div>
               <div className="slides">
-                {this.shuffle(locations).map((location, idx) => (
+                {locations.map((location, idx) => (
                     <Slide data={ location } key={idx}/>
                 ))}
               </div>
