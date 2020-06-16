@@ -139,7 +139,7 @@ class ProfilePage extends React.Component {
                           <Board id='board-1' className="board">
                           </Board> 
                         </div> */}
-                          <Board id='board-2' className="board"></Board>
+                      <Board id='board-2' className="board"></Board>
                         <Board className="all-trips">
                         {Object.keys(this.props.trips).map((tripId, idx) => (
                           <div className="card-con" key={idx}>
