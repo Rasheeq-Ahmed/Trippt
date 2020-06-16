@@ -46,11 +46,21 @@ class Destination extends React.Component {
     this.setState({ show: false })
   };
 
+  shuffle(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * i)
+      const temp = array[i]
+      array[i] = array[j]
+      array[j] = temp
+    }
+    return array
+  }
+
 
 
   render(){
     let {trips, show} = this.state
-    console.log(this.state.trips)
+    let locations = LOCATIONS
     return(
       <div className= 'dest-all'>
         
@@ -75,7 +85,7 @@ class Destination extends React.Component {
               <h1>Discover Your Next Adventure</h1>
               </div>
               <div className="slides">
-                {LOCATIONS.map((location, idx) => (
+                {this.shuffle(locations).map((location, idx) => (
                     <Slide data={ location } key={idx}/>
                 ))}
               </div>
