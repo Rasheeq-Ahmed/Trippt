@@ -59,6 +59,7 @@ class ProfilePage extends React.Component {
     this.props.createTrip({location: location.location, locationId: location.locationId})
   }
 
+
   getLocation(locationName, locations) {
     for(let i = 0; i < locations.length; i ++) {
       let location = locations[i]
