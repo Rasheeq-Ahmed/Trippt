@@ -59,6 +59,7 @@ class ProfilePage extends React.Component {
     this.props.createTrip({location: location.location, locationId: location.locationId})
   }
 
+
   getLocation(locationName, locations) {
     for(let i = 0; i < locations.length; i ++) {
       let location = locations[i]
@@ -114,9 +115,14 @@ class ProfilePage extends React.Component {
                             ))}
                           </ul>
                         </div>
-                      <Link to="/destination">
-                        <button className="tablinks">Destinations</button>
-                      </Link>
+                      <div className="tablinks dropdown">
+                        <button>Destinations</button>
+                        <ul className='dropdown-content'>
+                          {LOCATIONS.map((loc, idx) => (
+                            <Link to={`/attractions/${loc.locationId}/${loc.location}`}><li>{loc.location}</li></Link>
+                          ))}
+                        </ul>
+                      </div>
                       <button className="tablinks" onClick={()=>this.randomTrip()}>Surprise Me!</button>
                     </div>
                   </div>
@@ -134,7 +140,7 @@ class ProfilePage extends React.Component {
                           <Board id='board-1' className="board">
                           </Board> 
                         </div> */}
-                          <Board id='board-2' className="board"></Board>
+                      <Board id='board-2' className="board"></Board>
                         <Board className="all-trips">
                         {Object.keys(this.props.trips).map((tripId, idx) => (
                           <div className="card-con" key={idx}>
