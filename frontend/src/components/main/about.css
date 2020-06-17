@@ -1,8 +1,8 @@
 .about-all {
-    
+    width: 100;
     height: 100vh;
     display: flex;
-    background-color: white;
+    background-color: whitesmoke;
     flex-direction: column;
     box-sizing: border-box;
     margin: 0;
@@ -21,11 +21,11 @@
 
 
 .about-body {
-    height: 100%; 
+    height: 90%; 
     width: 90%;
-    background-color: whitesmoke;
+    /* background-color: rgb(201, 85, 85); */
     display: flex;
-    justify-content: center;
+    /* justify-content: center; */
     align-items: center;
     flex-direction: column;
 
@@ -33,16 +33,16 @@
 
 #team {
     font-size: 50px;
-    height: 5%;
+    height: 1em;
 }
 
 .about-people-all {
-    background-color:whitesmoke;
+    /* background-color:rgb(5, 116, 116); */
     height: 70%;
     width: 90%;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-evenly;
     align-items: center;
     min-width: 90%;
 
