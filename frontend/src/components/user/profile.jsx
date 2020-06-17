@@ -101,12 +101,12 @@ class ProfilePage extends React.Component {
                 <div className="prof-right">
                   <div className="prof-right-header">
                     <div className="prof-tabs">
-                      <Link to="/create">
+                      {/* <Link to="/create">
                         <button className="tablinks">Trips</button>
-                      </Link>
+                      </Link> */}
                       <div className="tablinks dropdown">
                         <button>Add Trips</button>
-                          <ul className='dropdown-content'>
+                          <ul className='dropdown-content-1'>
                             {LOCATIONS.map((loc, idx) => (
                               <li
                                 onClick={() => this.props.createTrip({ location: loc.location, locationId: loc.locationId })}
@@ -117,7 +117,7 @@ class ProfilePage extends React.Component {
                         </div>
                       <div className="tablinks dropdown">
                         <button>Destinations</button>
-                        <ul className='dropdown-content'>
+                        <ul className='dropdown-content-2'>
                           {LOCATIONS.map((loc, idx) => (
                             <Link to={`/attractions/${loc.locationId}/${loc.location}`}><li>{loc.location}</li></Link>
                           ))}
