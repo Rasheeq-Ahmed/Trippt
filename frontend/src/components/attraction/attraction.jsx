@@ -143,9 +143,9 @@ class Attraction extends React.Component{
 
               <p className="category">Attractions</p>
               {console.log(this.props.tripId)}
-              {/* <AttractionSlider attractions={attractions} tripId={this.props.tripId}/> */}
+              <AttractionSlider attractions={attractions} tripId={this.props.tripId}/>
               <p className="category">Nightlife</p>
-              {/* <NightlifeSlider nightlife={nightlife} properties={this.props}/> */}
+              <NightlifeSlider nightlife={nightlife} properties={this.props}/>
               {/* <p className="category">Restaurants</p>
                 <RestaurantSlider restaurant={restaurants} properties={this.props}/> */}
 

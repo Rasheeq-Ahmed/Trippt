@@ -19,6 +19,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@glidejs/glide": "^3.4.1",
     "axios": "^0.19.2",
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.19.0",
@@ -33,7 +34,9 @@
     "normalize.css": "^8.0.1",
     "passport": "^0.4.1",
     "passport-jwt": "^4.0.0",
+    "react-slick": "^0.26.1",
     "sass": "^1.26.8",
+    "slick-carousel": "^1.8.1",
     "validator": "^13.0.0"
   },
   "devDependencies": {

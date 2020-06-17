@@ -1,0 +1,120 @@
+
+.test-all {
+    /* background-color: burlywood; */
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    /* overflow: hidden; */
+    overflow-x: hidden;
+
+}
+
+.test-slider {
+    height: 50%;
+    width: 50%;
+    background-color: teal;
+    display: flex;
+    flex-direction: row;
+    overflow-x: hidden;
+
+
+
+}
+
+
+
+
+.test-slider-wrapper {
+    display: flex;
+    position: absolute;
+
+}
+/* 
+.test-slider {
+    position: relative;
+    max-width: 226px;
+    margin: 0 auto;
+}  */
+
+
+
+
+
+
+
+
+/* CARD */
+
+
+.test-card-all {
+    height: 100%;
+    width: 100%;
+    overflow-x: hidden;
+
+}
+.test-image {
+    height: 300px;
+    width: 300px;
+    margin-right: 1em;
+}
+
+
+
+
+
+
+/* 
+
+
+
+
+
+.slick-list {
+    z-index: 1;
+    width: fit-content;
+    height: fit-content;
+}
+ .test-card-all {
+    height: 300px;
+    width: 300px;
+ }
+
+.test-image {
+    height: 300px;
+
+}
+
+.test-slides {
+    height: 500px;
+    height: 500px;
+}
+
+.test-slides .slick-prev,
+.test-slides .slick-next {
+  position: absolute;
+  top: 0;
+  z-index: 1;
+}
+
+
+.test-slides {
+  position: relative;
+}
+
+.test-slides .slick-prev,
+.test-slides .slick-next {
+  position: absolute;
+  top: 50%;
+  z-index:1;
+}
+
+.test-slides .slick-prev {
+  left: 5%;
+}
+
+.test-slides .slick-next {
+  right: 5%;
+} */

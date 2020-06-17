@@ -17,6 +17,7 @@ class AttractionSlider extends Component {
         this.slideRight = this.slideRight.bind(this)
     }
 
+
     slideLeft() {
         let last = this.state.attractions.slice(-1)[0]
         let rest = this.state.attractions.slice(0, -1)
@@ -39,7 +40,7 @@ class AttractionSlider extends Component {
                 {
                     attractions.map((attraction, index) => {
                         return (
-                            <div>
+                            <div card-contains>
                                 <Link to={this.props.tripId ? `/attraction/${attraction.location_id}/${attraction.name}/${this.props.tripId}` : `/attraction/${attraction.location_id}/${attraction.name}`}>
                                 <Card attraction={attraction} key={index} /></Link>
 
