@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import {LOCATIONS} from "../../assets/locations"
 import Card from './card'
+import Slider from 'react-slick'
 import './test.css'
 
 
@@ -13,7 +14,7 @@ import './test.css'
      this.state = {
        locations: LOCATIONS,
        location: LOCATIONS[0],
-       activeIndex: 0,
+      //  activeIndex: 0,
      };
      //  this.nextLocation = this.nextLocation.bind(this);
      //  this.nextLocation = this.nextLocation.bind(this);
@@ -43,8 +44,7 @@ import './test.css'
    render() {
     //  console.log(this.state.location.index);
     let sliderStyle = {
-      transform: `translateX(${(this.state.location.index * -100/this.state.locations.length)}%)`,
-      transition: "1s",
+      
     };
      // console.log(this.state.location.index)
      const { locations, location } = this.state;

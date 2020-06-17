@@ -19,10 +19,13 @@ class Card extends React.Component {
             return null;
         }
         {console.log(this.props.tripId)}
+        let {key, activeIndex} = this.props
         return (
             <div className='card' style={{
                 backgroundImage: `url(${this.props.attraction.photo.images.small.url})`
             }}>
+                <p>{this.props.attraction.name}</p>
+                
                 {/* <Link to={`/attraction/${this.props.attraction.location_id}/${this.props.attraction.name}`}>Click</Link> */}
             </div>
         )

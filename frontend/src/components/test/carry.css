@@ -100,6 +100,18 @@
 
 }
 
+.activeCard {
+    width: 20rem;
+    height: 20rem;
+    background-size: cover;
+    margin-right: 2em;
+    /* background-repeat: no-repeat; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
 .card-city {
     background: rgba(255, 255, 255, 0.664);
     font-size: 2rem;

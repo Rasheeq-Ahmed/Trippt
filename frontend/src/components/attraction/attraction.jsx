@@ -80,24 +80,24 @@ class Attraction extends React.Component{
   
 
   render(){
-    let myTrips = this.findTripId(this.props.userTrips, this.props.locationId) // array of tripIds
+    // let myTrips = this.findTripId(this.props.userTrips, this.props.locationId) // array of tripIds
     let attractions = this.props.attractions[this.props.locationName];
-    let restaurants = this.props.restaurants[this.props.locationName];
-    let nightlife = this.props.nightlife[this.props.locationName];
+    // let restaurants = this.props.restaurants[this.props.locationName];
+    // let nightlives = this.props.nightlife[this.props.locationName];
 
-    if (this.props.loading) return (<Loader/>);
+    // if (this.props.loading) return (<Loader/>);
 
     if (!attractions) {
       return null;
     }
     
-    if (!restaurants) {
-      return null;
-    } 
+    // if (!restaurants) {
+    //   return null;
+    // } 
 
-    if (!nightlife) {
-      return null;
-    }
+    // if (!nightlives) {
+    //   return null;
+    // }
     // data -> photo -> images -> url: "img src"
 
     // let newRestaurants = restaurants.filter(res => res.name)
@@ -114,7 +114,7 @@ class Attraction extends React.Component{
           >
             {this.props.locationName}
           </div>
-          {myTrips.length === 0 && this.props.loggedIn ? (
+          {/* {myTrips.length === 0 && this.props.loggedIn ? (
             <li
               className="add-city"
               onClick={() =>
@@ -128,7 +128,7 @@ class Attraction extends React.Component{
             </li>
           ) : (
             ""
-          )}
+          )} */}
           <div className="gallery">
             {/* <div >
                   <button 
@@ -138,18 +138,37 @@ class Attraction extends React.Component{
                   >Trippt Me</button>
                   <Modal show={this.state.show} closeModal={this.closeModal}/>
                 </div> */}
-            <div className="gallery-top">
+            <div className="gallery-att">
               {/* < AttractionSlider/> */}
-
               <p className="category">Attractions</p>
-              {console.log(this.props.tripId)}
-              <AttractionSlider attractions={attractions} tripId={this.props.tripId}/>
+              <AttractionSlider
+                attractions={attractions}
+                tripId={this.props.tripId}
+                activeIndex={0}
+              />
+            </div>
+
+            <div className="gallery-night">
               <p className="category">Nightlife</p>
-              <NightlifeSlider nightlife={nightlife} properties={this.props}/>
-              {/* <p className="category">Restaurants</p>
+              {/* <NightlifeSlider
+                nightlives={nightlives}
+                tripId={this.props.tripId}
+                activeIndex={0}
+              /> */}
+            </div>
+
+            <div className="gallery-food">
+              <p className="category">Restaurants</p>
+              {/* <NightlifeSlider
+                nightlives={nightlives}
+                tripId={this.props.tripId}
+                activeIndex={0}
+              /> */}
+            </div>
+            {/* <p className="category">Restaurants</p>
                 <RestaurantSlider restaurant={restaurants} properties={this.props}/> */}
 
-              {/* {attractions.map((place, idx) => {
+            {/* {attractions.map((place, idx) => {
                 if (place.name) {
                   return (
                     <div key={idx} className="gallery-image">
@@ -174,7 +193,6 @@ class Attraction extends React.Component{
                   )
                 }
                 })} */}
-            </div>
 
             {/* {restaurants.map((place, idx) => {
 

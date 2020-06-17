@@ -6,70 +6,98 @@ import '../test/carry.css'
 import { LOCATIONS } from '../../assets/locations'
 
 class AttractionSlider extends Component {
-    constructor(props) {
-        super(props)
+  constructor(props) {
+    super(props);
 
-        this.state = {
-            attractions: this.props.attractions
-        }
+    this.state = {
+      attractions: this.props.attractions,
+      attraction: this.props.attractions[0],
+      activeIndex: this.props.activeIndex,
+    };
 
-        this.slideLeft = this.slideLeft.bind(this)
-        this.slideRight = this.slideRight.bind(this)
+    this.slideLeft = this.slideLeft.bind(this);
+    this.slideRight = this.slideRight.bind(this);
+  }
+
+  slideRight = () => {
+    // const newIndex = this.props.activeIndex + 1;
+    if (this.state.activeIndex === this.state.attractions.length - 1) {
+             this.setState({activeIndex: 0})
+
+    } else {
+        this.setState({
+          activeIndex: this.state.activeIndex + 1,
+          attraction: this.state.attractions[this.props.activeIndex],
+        });
+
     }
+  };
 
-
-    slideLeft() {
-        let last = this.state.attractions.slice(-1)[0]
-        let rest = this.state.attractions.slice(0, -1)
-        let attractions = [last, ...rest]
-        this.setState({ attractions: attractions });
+  slideLeft = () => {
+    // const newIndex = this.state.location.index - 1;
+    if (this.state.activeIndex === 0) {
+      this.setState({ activeIndex: this.state.attractions.length - 1 });
+    } else {
+      this.setState({
+        activeIndex: this.state.activeIndex - 1,
+        attraction: this.state.attractions[this.props.activeIndex],
+      });
     }
-
-    slideRight() {
-        let [first, ...rest] = this.state.attractions;
-        let attractions = [...rest, first];
-        this.setState({ attractions: attractions });
-    }
-
-    renderSlides() {
-        const attractions = this.state.attractions;
-        return (
-            <div className="slider-cards" style={{
-
-            }}>
-                {
-                    attractions.map((attraction, index) => {
-                        return (
-                            <div card-contains>
-                                <Link to={this.props.tripId ? `/attraction/${attraction.location_id}/${attraction.name}/${this.props.tripId}` : `/attraction/${attraction.location_id}/${attraction.name}`}>
-                                <Card attraction={attraction} key={index} /></Link>
-
-                            </div>
-                        )
-                    })
-                }
-            </div>
-        )
-    }
+  };
 
 
 
+  render() {
+    console.log(this.state.activeIndex);
+    console.log(this.state.attractions);
+    let sliderStyle = {
+      transform: `translateX(${
+        (this.state.activeIndex * -100) / this.state.attractions.length
+      }%)`,
+      transition: "1s",
+    };
+    // console.log(this.state.location.index)
+    const { attractions, attraction,activeIndex } = this.state;
+    // console.log(location.index)
+    return (
+      <div className="test-all">
+        <div className="carry-controls">
+          <button
+            onClick={() => this.slideLeft()}
+            // disabled={this.state.activeIndex === 0}
+          >
+            Prev
+          </button>
+          <button
+            onClick={() => this.slideRight()}
+            // disabled={this.state.activeIndex === attractions.length - 1}
+          >
+            Next
+          </button>
+        </div>
 
-    render() {
-        return (
-            <div className="carry-all">
-                <div className="carry-controls">
-                    <button className="slide-btn" onClick={this.slideLeft}>{"<"}</button>
-                    <button className="slide-btn" onClick={this.slideRight}>{">"}</button>
-
+        <div className="test-slider">
+          <div className="test-slider-wrapper" style={sliderStyle}>
+            {attractions.map((attraction, index) => {
+              return (
+                <div>
+                  <Link
+                    to={
+                      this.props.tripId
+                        ? `/attraction/${attraction.location_id}/${attraction.name}/${this.props.tripId}`
+                        : `/attraction/${attraction.location_id}/${attraction.name}`
+                    }
+                  >
+                    <Card attraction={attraction} key={index} activeIndex={activeIndex} />
+                  </Link>
                 </div>
-                <div className="carry-container">
-                    {this.renderSlides()}
-                </div>
-
-            </div>
-        )
-    }
+              );
+            })}
+          </div>
+        </div>
+      </div>
+    );
+  }
 }
 
 export default AttractionSlider;

@@ -1,7 +1,7 @@
 
 .test-all {
     /* background-color: burlywood; */
-    height: 100vh;
+    height: 100%;
     width: 100%;
     display: flex;
     justify-content: center;
@@ -13,12 +13,15 @@
 }
 
 .test-slider {
-    height: 50%;
-    width: 50%;
+    height: 100%;
+    width: 80%;
     background-color: teal;
     display: flex;
     flex-direction: row;
-    overflow-x: hidden;
+    overflow: scroll;
+    /* z-index: 1; */
+    /* justify-content: center; */
+    align-items: center;
 
 
 
@@ -30,6 +33,12 @@
 .test-slider-wrapper {
     display: flex;
     position: absolute;
+    width: fit-content;
+    overflow-x: hidden;
+    flex-direction: row;
+    
+    background-color: lawngreen;
+
 
 }
 /* 
@@ -52,12 +61,15 @@
 .test-card-all {
     height: 100%;
     width: 100%;
+    display: flex;
     overflow-x: hidden;
+    flex-direction: row;
 
 }
+
 .test-image {
-    height: 300px;
-    width: 300px;
+    min-height: 4em;
+    min-width: 4em;
     margin-right: 1em;
 }
 
