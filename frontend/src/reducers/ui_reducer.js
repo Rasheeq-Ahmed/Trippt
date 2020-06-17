@@ -4,6 +4,7 @@ import { RECEIVE_ATTRACTION,
          LOADING_ATTRACTION,
          LOADING_ATTRACTIONS
         } from "../actions/attraction_actions"
+import { RECEIVE_USER_TRIPS } from "../actions/trip_actions";
 
 const initialState = {
     loading: false
@@ -20,6 +21,8 @@ const UIReducer = (state = initialState, action) => {
             return Object.assign({}, state, { loading: false });
         case LOADING_ATTRACTION:
             return Object.assign({}, state, { loading: true });
+        case RECEIVE_USER_TRIPS:
+            return Object.assign({}, state, { loading: false});
         default:
             return state;
     }
