@@ -50,7 +50,7 @@ class Destination extends React.Component {
 
   render(){
     let {trips, show} = this.state
-    console.log(this.state.trips)
+    let locations = LOCATIONS
     return(
       <div className= 'dest-all'>
         
@@ -74,8 +74,10 @@ class Destination extends React.Component {
             <div className="dest-title">
               <h1>Discover Your Next Adventure</h1>
               </div>
-              <div className="dest-slides">
-              <Slide data={ LOCATIONS }/>
+              <div className="slides">
+                {locations.map((location, idx) => (
+                    <Slide data={ location } key={idx}/>
+                ))}
               </div>
           </div>
           <div className="body-right">

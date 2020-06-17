@@ -249,20 +249,26 @@
 .dropdown-content {
     display: none;
     position: absolute;
-    background-color: white;
-    min-height: 10em;
-    min-width: 120%;
+    background-color: rgba(255, 255, 255, 0.897);
+    height: 12.5em;
+    width: 10em;
+    overflow-y: auto;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     padding: 12px 16px;
     cursor: pointer;
     z-index: 200;
 }
 
+.dropdown li {
+    padding: 0.25em;
+    border-bottom: 1px solid rgba(177, 177, 177, 0.479);
+}
+
 .dropdown:hover .dropdown-content {
     display: block;
 }
 
-.dropdown-content li:hover {background-color: #f1f1f1}
+.dropdown-content li:hover {background-color: rgba(73, 201, 206, 0.493)}
 
 
 /* Add Trip Dropdown*/
@@ -333,31 +339,30 @@
 }
 
 #remove-btn {
-    color: white;
+    color: rgba(255, 255, 255, 0.5);
     cursor: pointer;
     position: absolute;
     text-align: center;
-    /* text-shadow: 2px 2px 5px black; */
-    top: 0;
-    right: 0;
+    top: 0.25em;
+    right: 0.25em;
     display: flex;
     justify-content: center;
-    /* right: 0.4em; */
     font-size: 1em;
-    /* width: 100%; */
-    background-color: rgb(26, 194, 180);
-    /* z-index: 1; */
-    /* pointer-events: none; */
-    height: 10%;
-    /* width: 90%; */
+    background-color: rgba(128, 128, 128, 0);
+    height: 3%;
+    width: 3%;
     align-items: center;
-    /* border-radius: 50%; */
-    padding: 1em;
+    border-radius: 50%;
+    padding: 0.75em;
+    outline: none;
+    transition: 0.3s;
 
 }
 
+
 #remove-btn:hover {
-    color: tomato;
+    background-color: rgba(255, 255, 255, 0.600);
+    color: rgba(255, 255, 255, 0.774);
 }
 
 .rest {
@@ -394,9 +399,8 @@
     position: relative;
     background-color:white;
     border: 1px solid rgb(59, 57, 57);
-    top: 3em;
-    width: 35em;
-    max-height: 30em;
+    max-width: 100%;
+    max-height: 25em;
     padding: 0.5em;
     border-radius: 0.25em;
     box-shadow: 3px 3px 10px #888888;
@@ -447,7 +451,7 @@
 
 .attrac-ul {
     display: flex;
-    max-height: 18em;
+    max-height: 16em;
     overflow-y: auto;
 }
 
@@ -462,6 +466,7 @@
     display: flex;
     align-items: flex-start;
     justify-content: space-between;
+    width: 35em;
 }
 
 
