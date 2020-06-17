@@ -26,10 +26,17 @@ export const AttractionModal = (props) => {
                         <ul id="trip" className='attrac-ul'>
                             {trip.attractions ? trip.attractions.map((att, idx) => (
                                 <div key={idx} className='attrac-container'>
+                                    <Link
+                                        to={`/attraction/${att.location_id}/${att.name}/${trip._id}`}>
                                     <img src={`${att.photo.images.small.url}`}
                                         alt="" />
+                                        </Link>
+
                                     <div className='attrac-details'>
+                                         <Link
+                                        to={`/attraction/${att.location_id}/${att.name}/${trip._id}`}>
                                         <h2 id ='attrac-name'>{att.name}</h2>
+                                        </Link>
                                         <p id='attrac-ranking'>{att.ranking}</p> 
                                         <p id='attrac-address'>Address: {att.address_obj.street1}</p>
                                         <p id='attrac-description'>Description: {att.description}</p>

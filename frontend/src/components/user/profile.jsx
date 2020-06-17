@@ -97,7 +97,6 @@ class ProfilePage extends React.Component {
                 </div>
               </div>
               <div className="prof-body">
-             
                 <div className="prof-right">
                   <div className="prof-right-header">
                     <div className="prof-tabs">
@@ -106,67 +105,85 @@ class ProfilePage extends React.Component {
                       </Link> */}
                       <div className="tablinks dropdown">
                         <button>Add Trips</button>
-                          <ul className='dropdown-content-1'>
-                            {LOCATIONS.map((loc, idx) => (
-                              <li
-                                onClick={() => this.props.createTrip({ location: loc.location, locationId: loc.locationId })}
-                                key={idx}
-                              >{loc.location}</li>
-                            ))}
-                          </ul>
-                        </div>
-                      <div className="tablinks dropdown">
-                        <button>Destinations</button>
-                        <ul className='dropdown-content-2'>
+                        <ul className="dropdown-content-1">
                           {LOCATIONS.map((loc, idx) => (
-                            <Link to={`/attractions/${loc.locationId}/${loc.location}`}><li>{loc.location}</li></Link>
+                            <li
+                              onClick={() =>
+                                this.props.createTrip({
+                                  location: loc.location,
+                                  locationId: loc.locationId,
+                                })
+                              }
+                              key={idx}
+                            >
+                              {loc.location}
+                            </li>
                           ))}
                         </ul>
                       </div>
-                      <button className="tablinks" onClick={()=>this.randomTrip()}>Surprise Me!</button>
+                      <button
+                        className="tablinks"
+                        onClick={() => this.randomTrip()}
+                      >
+                        Surprise Me!
+                      </button>
+                      <div className="tablinks dropdown">
+                        <button>Destinations</button>
+                        <ul className="dropdown-content-2">
+                          {LOCATIONS.map((loc, idx) => (
+                            <Link
+                              to={`/attractions/${loc.locationId}/${loc.location}`}
+                            >
+                              <li>{loc.location}</li>
+                            </Link>
+                          ))}
+                        </ul>
+                      </div>
                     </div>
                   </div>
                   <div className="prof-right-body">
                     <div className="trips">
-                      <h1 className='myTrips'>My Trips</h1>
+                      <h1 className="myTrips">My Trips</h1>
                       <ConfirmDelete
                         closeConfirmDelete={this.closeConfirmDelete}
                         removeTrip={this.props.removeTrip}
                         tripId={this.state.current}
                         confirmDelete={this.state.confirmDelete}
                       />
-                      <div className="trips-container"> 
+                      <div className="trips-container">
                         {/* <div className="top-trips">
                           <Board id='board-1' className="board">
                           </Board> 
                         </div> */}
-                      <Board id='board-2' className="board"></Board>
-                        <Board className="all-trips">
-                        {Object.keys(this.props.trips).map((tripId, idx) => (
-                          <div className="card-con" key={idx}>
-                            
-                            <TripIcon id={idx} className='carD' draggable='true'
-                              getLocation={this.getLocation}
-                              tripId={tripId}
-                              category="all"
-                              trip={this.props.trips[tripId]}
-                              LOCATIONS={LOCATIONS}
-                              showTrip={this.showTrip}
-                              showConfirmDelete={this.showConfirmDelete}
-                            />
-                            <AttractionModal 
-                              removeAttrac={this.props.removeAttrac}
-                              tripId={tripId} 
-                              trip={this.props.trips[tripId]}
-                              show={this.state.show}
-                              closeTrip={this.closeTrip}
-                              outsideClose={this.outsideClose}
-                              current={this.state.current}
+                        {/* <Board id="board-2" className="board"></Board>
+                        <Board className="all-trips"> */}
+                          {Object.keys(this.props.trips).map((tripId, idx) => (
+                            <div className="card-con" key={idx}>
+                              <TripIcon
+                                id={idx}
+                                className="carD"
+                                draggable="true"
+                                getLocation={this.getLocation}
+                                tripId={tripId}
+                                category="all"
+                                trip={this.props.trips[tripId]}
+                                LOCATIONS={LOCATIONS}
+                                showTrip={this.showTrip}
+                                showConfirmDelete={this.showConfirmDelete}
                               />
-                          </div>
-                        ))}
-                        </Board>
-                      </div> 
+                              <AttractionModal
+                                removeAttrac={this.props.removeAttrac}
+                                tripId={tripId}
+                                trip={this.props.trips[tripId]}
+                                show={this.state.show}
+                                closeTrip={this.closeTrip}
+                                outsideClose={this.outsideClose}
+                                current={this.state.current}
+                              />
+                            </div>
+                          ))}
+                        {/* </Board> */}
+                      </div>
                     </div>
                   </div>
                 </div>
