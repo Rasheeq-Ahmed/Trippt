@@ -11,12 +11,13 @@ const mapStateToProps = (state, ownProps) => {
       restaurants: state.restaurants || {},
       nightlife: state.nightlife || {},
       locationId: ownProps.match.params.locationId,
+      locationImage: ownProps.match.params.url,
       locationName: ownProps.match.params.locationName,
       tripId: ownProps.match.params.tripId,
       loggedIn: state.session.isAuthenticated,
       userTrips: state.trips || {},
-      user: state.session.user,   
-      loading: state.ui.loading
+      user: state.session.user,
+      loading: state.ui.loading,
     };
 };
 
