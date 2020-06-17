@@ -11,11 +11,13 @@
     
 };
 
-.loader {
-    top: 50%;
-    left: 50%;
-    z-index: 99;
+.loader-navbar {
     position: absolute;
+}
+
+.loader {
+    position: absolute;
+    z-index: 99;
 }
 
 

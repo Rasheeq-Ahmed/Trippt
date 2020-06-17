@@ -10,7 +10,7 @@ class Loader extends React.Component {
 
         return (
             <div className='loader-container'>
-                <NavBar/>
+                <NavBar className='loader-navbar'/>
                 <div className='loader'>
                     <img className='load-img'
                         src={LoaderGif} 
