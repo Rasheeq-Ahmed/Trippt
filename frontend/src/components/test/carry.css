@@ -49,12 +49,7 @@
 
 }
 
-.slider-cards {
-    display: flex;
-    z-index: 99;
-    height: 100%;
-    width: 90%;
-}
+
 
 .card-link{
     width: 100%;
@@ -81,7 +76,7 @@
     width: 20rem;
     height: 20rem;
     background-size: cover;
-    margin-right: 2em;
+    /* margin-right: 2em; */
     /* background-repeat: no-repeat; */
     display: flex;
     justify-content: center;

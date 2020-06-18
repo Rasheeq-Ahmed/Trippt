@@ -15,14 +15,14 @@
 .test-slider {
     position: relative;
     height: 100%;
-    /* max-width: 80%; */
-    width: 80%;
+    max-width: 80%;
+    width: fit-content;
     background-color: teal;
     display: flex;
     flex-direction: row;
-    /* overflow: hidden; */
+    overflow: hidden;
     /* z-index: 1; */
-    /* justify-content: center; */
+    justify-content: center;
     align-items: center;
 
 
@@ -35,12 +35,13 @@
 .test-slider-wrapper {
     display: flex;
     height: fit-content;
-    width: 90%;
+    width: fit-content;
+    /* width: 45em; */
     /* position: absolute; */
     /* width: fit-content; */
-    overflow-x: hidden;
+    /* overflow-x: hidden; */
     /* flex-direction: row; */
-    align-items: center;
+    /* align-items: center; */
     background-color: lawngreen;
 
 

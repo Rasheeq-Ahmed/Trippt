@@ -79,21 +79,20 @@ class AttractionSlider extends Component {
           <div className="test-slider-wrapper" style={sliderStyle}>
             {attractions.map((attraction, index) => {
               return (
-                <div className="inner-slide">
-                  {/* <Link
+                <div>
+                  <Link
                     to={
                       this.props.tripId
                         ? `/attraction/${attraction.location_id}/${attraction.name}/${this.props.tripId}`
                         : `/attraction/${attraction.location_id}/${attraction.name}`
                     }
-                  > */}
+                  >
                     <Card
                       attraction={attraction}
                       key={index}
                       activeIndex={activeIndex}
-                      tripId={this.props.tripId}
                     />
-                  {/* </Link> */}
+                  </Link>
                 </div>
               );
             })}

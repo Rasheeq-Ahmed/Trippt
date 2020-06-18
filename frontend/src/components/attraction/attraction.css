@@ -75,16 +75,6 @@
   /* overflow-x: hidden; */
   
 }
-  .inner-slide {
-    /* margin-right: 2em; */
-    background-color: lightgreen;
-    display: flex;
-  }
-
-/* .card-link {
-  width: fit-content;
-} */
-
 .gallery-night{
   background-color: rgb(71, 255, 169);
   width: 100%;
