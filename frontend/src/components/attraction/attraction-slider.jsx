@@ -87,7 +87,7 @@ class AttractionSlider extends Component {
           <div className="test-slider-wrapper" style={sliderStyle}>
             {attractions.map((attraction, index) => {
               return (
-                <div clas>
+                <div className="card-contain">
                   {/* <Link
                     to={
                       this.props.tripId
