@@ -17,7 +17,7 @@
     height: 100%;
     max-width: 80%;
     width: fit-content;
-    background-color: teal;
+    /* background-color: teal; */
     display: flex;
     flex-direction: row;
     overflow: hidden;
@@ -42,7 +42,7 @@
     /* overflow-x: hidden; */
     /* flex-direction: row; */
     /* align-items: center; */
-    background-color: lawngreen;
+    /* background-color: lawngreen; */
     /* pointer-events: none; */
     z-index: 1;
 

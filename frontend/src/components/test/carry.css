@@ -1,3 +1,6 @@
+
+
+
 .carry-all {
     /* background-color: white; */
     width: 100%;
@@ -45,7 +48,7 @@
 
 
 .slide-btn:hover {
-    background-color: rgba(255, 253, 253, 0.795);
+    background-color: rgba(182, 182, 182, 0.301);
     /* color: rgba(255, 255, 255, 0.774); */
     /* transition: 1s; */
     transition: ease 1s;
@@ -96,7 +99,7 @@
 .card-contain {
     height: 100%;
     width: fit-content;
-    background-color: yellow;
+    /* background-color: yellow; */
 }
 
 

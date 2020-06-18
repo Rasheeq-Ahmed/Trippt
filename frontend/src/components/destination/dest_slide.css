@@ -77,7 +77,7 @@
 
 .city-link:hover .slide-city {
   display: flex;
-  opacity: 0.7;
+  opacity: 1;
 }
 
 
