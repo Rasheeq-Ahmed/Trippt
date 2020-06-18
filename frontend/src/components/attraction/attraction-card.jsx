@@ -21,21 +21,28 @@ class Card extends React.Component {
         {console.log(this.props.tripId)}
         let {key, activeIndex, attraction} = this.props
         return (
-            
-            <div className='card' style={{
-                backgroundImage: `url(${this.props.attraction.photo.images.small.url})`
-            }}>
-                <Link  className='card-link' to={
-                      this.props.tripId
-                        ? `/attraction/${attraction.location_id}/${attraction.name}/${this.props.tripId}`
-                        : `/attraction/${attraction.location_id}/${attraction.name}`
-                    }>
-                <p>{this.props.attraction.name}</p>
-                
-                {/* <Link to={`/attraction/${this.props.attraction.location_id}/${this.props.attraction.name}`}>Click</Link> */}
+          <div
+            className="card"
+            style={{
+              backgroundImage: `url(${this.props.attraction.photo.images.large.url})`,
+            }}
+          >
+            <Link
+              to={
+                this.props.tripId
+                  ? `/attraction/${attraction.location_id}/${attraction.name}/${this.props.tripId}`
+                  : `/attraction/${attraction.location_id}/${attraction.name}`
+              }
+            >
+              <div className="card-link ">
+              <p className='card-att-name'>{this.props.attraction.name}</p>
+
+              </div>
+
+              {/* <Link to={`/attraction/${this.props.attraction.location_id}/${this.props.attraction.name}`}>Click</Link> */}
             </Link>
-            </div>
-        )
+          </div>
+        );
     }
 }
 

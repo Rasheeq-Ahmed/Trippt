@@ -61,38 +61,43 @@ class AttractionSlider extends Component {
     // console.log(location.index)
     return (
       <div className="test-all">
+        <div className="control-cont">
+
+        <div className="carry-controls">
+          <button
+            className="slide-btn"
+            onClick={() => this.slideLeft()}
+            // disabled={this.state.activeIndex === 0}
+            >
+            &lt;
+          </button>
+          <button
+            className="slide-btn"
+            onClick={() => this.slideRight()}
+            // disabled={this.state.activeIndex === attractions.length - 1}
+            >
+            &gt;
+          </button>
+        </div>
+        </div>
         <div className="test-slider">
-          <div className="carry-controls">
-            <button
-              onClick={() => this.slideLeft()}
-              // disabled={this.state.activeIndex === 0}
-            >
-              Prev
-            </button>
-            <button
-              onClick={() => this.slideRight()}
-              // disabled={this.state.activeIndex === attractions.length - 1}
-            >
-              Next
-            </button>
-          </div>
           <div className="test-slider-wrapper" style={sliderStyle}>
             {attractions.map((attraction, index) => {
               return (
-                <div>
-                  <Link
+                <div className='card-contain'>
+                  {/* <Link
                     to={
                       this.props.tripId
                         ? `/attraction/${attraction.location_id}/${attraction.name}/${this.props.tripId}`
                         : `/attraction/${attraction.location_id}/${attraction.name}`
                     }
-                  >
+                  > */}
                     <Card
                       attraction={attraction}
                       key={index}
                       activeIndex={activeIndex}
                     />
-                  </Link>
+                  {/* </Link> */}
                 </div>
               );
             })}

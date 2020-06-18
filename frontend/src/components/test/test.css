@@ -7,13 +7,13 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    
     /* overflow: hidden; */
     /* overflow-x: hidden; */
 
 }
 
 .test-slider {
-    position: relative;
     height: 100%;
     max-width: 80%;
     width: fit-content;
@@ -22,7 +22,7 @@
     flex-direction: row;
     overflow: hidden;
     /* z-index: 1; */
-    justify-content: center;
+    /* justify-content: center; */
     align-items: center;
 
 
@@ -43,6 +43,8 @@
     /* flex-direction: row; */
     /* align-items: center; */
     background-color: lawngreen;
+    /* pointer-events: none; */
+    z-index: 1;
 
 
 }

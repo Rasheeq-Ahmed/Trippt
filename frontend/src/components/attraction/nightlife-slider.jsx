@@ -56,26 +56,29 @@ class NightlifeSlider extends Component {
     // console.log(location.index)
     return (
       <div className="test-all">
-        <div className="carry-controls">
-          <button
-            onClick={() => this.slideLeft()}
-            // disabled={this.state.activeIndex === 0}
-          >
-            Prev
-          </button>
-          <button
-            onClick={() => this.slideRight()}
-            // disabled={this.state.activeIndex === nightlives.length - 1}
-          >
-            Next
-          </button>
+        <div className="control-cont">
+          <div className="carry-controls">
+            <button
+              className="slide-btn"
+              onClick={() => this.slideLeft()}
+              // disabled={this.state.activeIndex === 0}
+            >
+              &lt;
+            </button>
+            <button
+              className="slide-btn"
+              onClick={() => this.slideRight()}
+              // disabled={this.state.activeIndex === attractions.length - 1}
+            >
+              &gt;
+            </button>
+          </div>
         </div>
-
         <div className="test-slider">
           <div className="test-slider-wrapper" style={sliderStyle}>
             {nightlives.map((nightlife, index) => {
               return (
-                <div>
+                <div className="card-contain">
                   <Link
                     to={
                       this.props.tripId
