@@ -1,5 +1,9 @@
 
-
+* { 
+    -moz-box-sizing: border-box; 
+    -webkit-box-sizing: border-box; 
+     box-sizing: border-box; 
+}
 
 .carry-all {
     /* background-color: white; */
@@ -24,7 +28,7 @@
 }
 
 .carry-controls {
-    position: absolute;
+    /* position: absolute; */
     width: 100%;
     display: flex;
     justify-content: space-between;
@@ -55,18 +59,7 @@
 }
 
 
-.carry-container {
-    height: fit-content;
-    width: 98%;
-    display: flex;
-    /* justify-content: center; */
-    align-items: center;
-    /* background-color: indianred; */
-    overflow: hidden;
-    justify-content: center;
-    
 
-}
 
 /* .card a {
     position: absolute;
@@ -98,7 +91,7 @@
 
 .card-contain {
     height: 100%;
-    width: fit-content;
+    /* width: fit-content; */
     background-color: rgb(255, 255, 255);
     border-radius: 1em;
 }
