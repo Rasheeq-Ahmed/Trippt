@@ -83,7 +83,7 @@ class Attraction extends React.Component{
     // let myTrips = this.findTripId(this.props.userTrips, this.props.locationId) // array of tripIds
     let attractions = this.props.attractions[this.props.locationName];
     // let restaurants = this.props.restaurants[this.props.locationName];
-    // let nightlives = this.props.nightlife[this.props.locationName];
+    let nightlives = this.props.nightlife[this.props.locationName];
 
     // if (this.props.loading) return (<Loader/>);
 
@@ -148,7 +148,7 @@ class Attraction extends React.Component{
               />
             </div>
 
-            {/* <div className="gallery-night">
+            <div className="gallery-night">
               <p className="category">Nightlife</p>
               <NightlifeSlider
                 nightlives={nightlives}
@@ -164,7 +164,7 @@ class Attraction extends React.Component{
                 tripId={this.props.tripId}
                 activeIndex={0}
               />
-            </div> */}
+            </div>
             {/* <p className="category">Restaurants</p>
                 <RestaurantSlider restaurant={restaurants} properties={this.props}/> */}
 

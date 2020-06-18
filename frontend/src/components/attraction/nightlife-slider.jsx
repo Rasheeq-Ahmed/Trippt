@@ -79,19 +79,19 @@ class NightlifeSlider extends Component {
             {nightlives.map((nightlife, index) => {
               return (
                 <div className="card-contain">
-                  <Link
+                  {/* <Link
                     to={
                       this.props.tripId
                         ? `/attraction/${nightlife.location_id}/${nightlife.name}/${this.props.tripId}`
                         : `/attraction/${nightlife.location_id}/${nightlife.name}`
-                    }
-                  >
+                    } */}
+                  
                     <Card
                       attraction={nightlife}
                       key={index}
                       activeIndex={activeIndex}
                     />
-                  </Link>
+                  {/* </Link> */}
                 </div>
               );
             })}

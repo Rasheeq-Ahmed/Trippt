@@ -22,9 +22,10 @@
 
 .prof-container {
     /* min-height: 100; */
-    width: 99%;
-    max-width: 100em;
+    width: 100%;
+    /* max-width: 100em; */
     height: 90%;
+    overflow-y: scroll;
     /* max-height: fit-content; */
     /* background-color: yellow; */
     display: flex;
