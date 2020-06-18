@@ -99,7 +99,8 @@
 .card-contain {
     height: 100%;
     width: fit-content;
-    /* background-color: yellow; */
+    background-color: rgb(255, 255, 255);
+    border-radius: 1em;
 }
 
 

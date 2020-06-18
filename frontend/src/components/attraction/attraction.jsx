@@ -113,7 +113,6 @@ class Attraction extends React.Component{
             // style={{ backgroundImage: `url(${location.url})` }}
           >
             {this.props.locationName}
-          </div>
           {myTrips.length === 0 && this.props.loggedIn ? (
             <li
               className="add-city"
@@ -129,6 +128,7 @@ class Attraction extends React.Component{
           ) : (
             ""
           )}
+          </div>
           <div className="gallery">
             {/* <div >
                   <button 

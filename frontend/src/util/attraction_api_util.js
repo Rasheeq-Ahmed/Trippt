@@ -15,7 +15,7 @@ export const getAttractions = (locationId) => {
             }, 
         "params": {
             "lang": "en_US",
-            "limit": "2",
+            "limit": "5",
             "currency": "USD",
             "sort": "recommended",
             "lunit": "km",

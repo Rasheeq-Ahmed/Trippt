@@ -43,13 +43,14 @@ height: 100vh;
 .page-title {
   display: flex;
   justify-content: center;
-  min-height: 10%;
+  align-items: center;
+  /* min-height: 10%; */
   width: 100%;
   /* background-color: blue; */
   height: fit-content;
   font-size: 7vh;
   /* background-color: rgba(26, 194, 180, 0.301); */
-
+  flex-direction: column;
   border-bottom: 2px solid rgb(26, 194, 180);
 
   /* background-size: cover; */
@@ -175,7 +176,7 @@ height: fit-content;
 }
 
 
-/* .add-city{
+.add-city{
   background-color: rgb(26, 194, 180);
   padding: 10px 20px;
   font-size: 18px;
@@ -184,9 +185,9 @@ height: fit-content;
   color: white;
   cursor: pointer;
   align-self: center;
-  margin-top: 40px;
-  border: 2px solid black;
-} */
+  /* margin-top: 40px; */
+  /* border: 2px solid black; */
+}
 
 .add-city:hover{
   background-color: rgb(45, 154, 158);
@@ -202,5 +203,5 @@ height: fit-content;
   font-size: 40px;
   /* color: rgb(35, 187, 187); */
   padding: .25em;
-  background-color: rgba(255, 255, 255, 0.74);
+  background-color: rgba(190, 190, 190, 0.137);
 }

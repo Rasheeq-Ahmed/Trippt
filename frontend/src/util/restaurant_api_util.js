@@ -20,6 +20,4 @@ export const getRestaurants = (locationId) => {
       "location_id": `${locationId}`
       }
     })
-
-
-};
+  }
