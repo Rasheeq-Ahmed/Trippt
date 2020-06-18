@@ -159,11 +159,6 @@ class Attraction extends React.Component{
 
             <div className="gallery-night">
               <p className="category">Nightlife</p>
-                <NightlifeSlider nightlife={nightlife} properties={this.props}/>
-              { <p className="category">Restaurants</p> }
-                <RestaurantSlider restaurant={restaurants} properties={this.props}/> 
-                
-                {/* {attractions.map((place, idx) => {
               <NightlifeSlider
                 nightlives={nightlives}
                 tripId={this.props.tripId}
