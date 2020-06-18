@@ -9,8 +9,10 @@ class Loader extends React.Component {
     render () {
 
         return (
-            <div className='loader-container'>
+            <div className='loader-all'>
+                <div className="loader-header">
                 <NavBar/>
+                </div>
                 <div className='loader'>
                     <img className='load-img'
                         src={LoaderGif} 

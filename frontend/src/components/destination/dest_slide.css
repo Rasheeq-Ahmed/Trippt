@@ -61,6 +61,7 @@
 .city-link:hover {
   background-color: rgba(0, 0, 0, 0.562);
   transition: ease 1.0s;
+  color: white;
 }
 
 
@@ -77,7 +78,8 @@
 
 .city-link:hover .slide-city {
   display: flex;
-  opacity: 0.7;
+  opacity: 1;
+  /* color: white; */
 }
 
 
