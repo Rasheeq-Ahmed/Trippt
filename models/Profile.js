@@ -7,12 +7,21 @@ const ProfileSchema = new Schema({
         ref: 'users'
     },
 
+    handle: {
+        type: String,
+        ref: 'users'
+    },
+
     firstName: {
         type: String,
     },
 
     lastName: {
         type: String,
+    },
+
+    about: {
+        type: String
     },
 
     date: {

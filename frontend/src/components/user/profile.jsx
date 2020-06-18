@@ -27,7 +27,8 @@ class ProfilePage extends React.Component {
     }
 
   componentDidMount() {
-    this.props.getUserTrips(this.props.user.id)
+    this.props.getUserTrips(this.props.user.id);
+    this.props.getUserProfile(this.props.user.id);
   };
 
   showTrip(tripId) {
@@ -90,9 +91,9 @@ class ProfilePage extends React.Component {
                 </div>
                 <div className="prof-details">
                   <ul>
-                    <li>Full Name</li>
-                    <li>@Username</li>
-                    <li>San Franciso, CA</li>
+                    <li>{this.props.profile.firstName} {this.props.profile.lastName}</li>
+                    <li>{this.props.profile.handle}</li>
+                    <li>{this.props.profile.about}</li>
                   </ul>
                 </div>
               </div>

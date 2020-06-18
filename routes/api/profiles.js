@@ -6,20 +6,33 @@ const Profile = require("../../models/Profile");
 router.get("/:user_id", (req, res) => {
     Profile
         .findOne({ user: req.params.user_id })
-        .then(profile => res.status(200).json(profile))
+        .then(profile => {
+            if (profile) {
+                res.status(200).json(profile)
+            } 
+        }) 
         .catch(err => res.status(400).json(err));
 });
 
 router.post("/",
-    passport.authenticate("jwt", { session: false }),
-    (req, res) => {
-        const newProfile = new Profile({
-            user: req.user.id,
-            firstName: req.body.firstName,
-            lastName: req.body.lastName
-        });
-
-        newProfile.save().then(profile => res.json(profile))
+    passport.authenticate("jwt", { session: false }), (req, res) => {
+        Profile
+            .findOne({user: req.user.id})
+            .then( profile => {
+                if (profile) {
+                    return res.status(400).json("You already created a profile")
+                } else {
+                    
+                    const newProfile = new Profile({
+                        user: req.user.id,
+                        handle: req.user.handle,
+                        firstName: req.body.firstName,
+                        lastName: req.body.lastName,
+                        about: req.body.about
+                    })
+                    newProfile.save().then(profile => res.json(profile))
+                }           
+    });
 }); 
 
 router.patch("/:user_id", (req, res) => {
