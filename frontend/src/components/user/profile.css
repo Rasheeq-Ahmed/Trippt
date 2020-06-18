@@ -736,3 +736,25 @@
 
 
 /******************************************************/
+
+/************* Update Profile Modal *******************/
+
+.update-profile-container {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(128, 128, 128, 0.267);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+}
+
+.update-profile-form {
+    width: 15em;
+    height: 15em;
+    background-color: white;
+    border: 1px solid black;
+}
+
+/******************************************************/

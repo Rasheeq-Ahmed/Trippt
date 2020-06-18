@@ -28,7 +28,7 @@ router.post("/",
                         handle: req.user.handle,
                         firstName: req.body.firstName,
                         lastName: req.body.lastName,
-                        about: req.body.about
+                        location: req.body.location
                     })
                     newProfile.save().then(profile => res.json(profile))
                 }           
@@ -37,7 +37,7 @@ router.post("/",
 
 router.patch("/:user_id", (req, res) => {
     Profile
-        .findOneAndUpdate({ user: req.params.user_id }, {$set: { firstName: req.body.firstName, lastName: req.body.lastName}})
+        .findOneAndUpdate({ user: req.params.user_id }, {$set: { firstName: req.body.firstName, lastName: req.body.lastName, location: req.body.location}})
         .then((profile) => res.status(200).json(profile))
         .catch(err => res.status(400).json(err))
 });

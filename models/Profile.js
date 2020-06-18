@@ -20,7 +20,7 @@ const ProfileSchema = new Schema({
         type: String,
     },
 
-    about: {
+    location: {
         type: String
     },
 

@@ -7,6 +7,7 @@ import { LOCATIONS } from '../../assets/locations';
 import {AttractionModal} from './attraction_modal';
 import { TripIcon, ConfirmDelete } from './trip_icon';
 import Board from './boards';
+import MyProfile from './update_profile'
 
 
 
@@ -79,6 +80,7 @@ class ProfilePage extends React.Component {
             <div className="prof-header">
               <NavBar />
             </div>
+            <MyProfile/>
             <div className="prof-container">
               <div className="prof-banner">
                 {/* <img src="https://i.imgur.com/jA0jVwf.jpg" alt="" /> */}
@@ -93,7 +95,7 @@ class ProfilePage extends React.Component {
                   <ul>
                     <li>{this.props.profile.firstName} {this.props.profile.lastName}</li>
                     <li>{this.props.profile.handle}</li>
-                    <li>{this.props.profile.about}</li>
+                    <li>{this.props.profile.location}</li>
                   </ul>
                 </div>
               </div>
@@ -140,6 +142,7 @@ class ProfilePage extends React.Component {
                           ))}
                         </ul>
                       </div>
+                      <button>My Profile</button>
                     </div>
                   </div>
                   <div className="prof-right-body">
