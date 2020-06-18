@@ -4,6 +4,8 @@ import Root from './components/root';
 import configureStore from './store/store';
 import jwt_decode from 'jwt-decode';
 import './reset.css'
+import "font-awesome/css/font-awesome.css";
+
 
 import { setAuthToken } from './util/session_api_util';
 import { logout } from './actions/session_actions';

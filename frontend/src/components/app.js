@@ -22,6 +22,7 @@ import Carousel from './test/carousel';
 import Testing from './test/attractions-test';
 import Test from './nav/test';
 import Carry from './test/carry';
+import Loader from './loader/loader';
 
 const App = () => (
   <div>
@@ -35,6 +36,7 @@ const App = () => (
       
       <Route exact path="/tests" component={Test} />
       <Route exact path="/testing" component={Carry} />
+      <Route exact path="/loading" component={Loader} />
 
       <AuthRoute exact path="/signup" component={SignupFormContainer} />
       {/* <ProtectedRoute exact path="/trips" component={Trip} /> */}

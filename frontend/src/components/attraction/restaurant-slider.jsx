@@ -6,70 +6,102 @@ import { Link } from 'react-router-dom';
 
 class RestaurantSlider extends Component {
   constructor(props) {
-    super(props)
+    super(props);
 
     this.state = {
-      restaurant: this.props.restaurant
+      restaurants: this.props.restaurants,
+      restaurant: this.props.restaurants[0],
+      activeIndex: this.props.activeIndex,
+    };
+
+    this.slideLeft = this.slideLeft.bind(this);
+    this.slideRight = this.slideRight.bind(this);
+  }
+
+  slideRight = () => {
+    // const newIndex = this.props.activeIndex + 1;
+    if (this.state.activeIndex === this.state.restaurants.length - 1) {
+      this.setState({ activeIndex: 0 });
+    } else {
+      this.setState({
+        activeIndex: this.state.activeIndex + 1,
+        restaurant: this.state.restaurants[this.props.activeIndex],
+      });
     }
+  };
 
-    this.slideLeft = this.slideLeft.bind(this)
-    this.slideRight = this.slideRight.bind(this)
-  }
-
-  slideLeft() {
-    let last = this.state.restaurant.slice(-1)[0]
-    let rest = this.state.restaurant.slice(0, -1)
-    let restaurant = [last, ...rest]
-    this.setState({ restaurant: restaurant });
-  }
-
-  slideRight() {
-    let [first, ...rest] = this.state.restaurant;
-    let restaurant = [...rest, first];
-    this.setState({ restaurant: restaurant });
-  }
-
-  renderSlides() {
-    const restaurant = this.state.restaurant;
-    return (
-      <div className="slider-cards" style={{
-
-      }}>
-        {
-          restaurant.map((attraction, index) => {
-            return (
-              <div>
-                <Link to={this.props.properties.userTrips ? `/attraction/${attraction.location_id}/${attraction.name}/${Object.keys(this.props.properties.userTrips)[0]}` : `/attraction/${attraction.location_id}/${attraction.name}`}>
-                  <Card attraction={attraction} key={index} /></Link>
-
-              </div>
-            )
-          })
-        }
-      </div>
-    )
-  }
-
-
-
+  slideLeft = () => {
+    // const newIndex = this.state.location.index - 1;
+    if (this.state.activeIndex === 0) {
+      this.setState({ activeIndex: this.state.restaurants.length - 1 });
+    } else {
+      this.setState({
+        activeIndex: this.state.activeIndex - 1,
+        restaurant: this.state.restaurants[this.props.activeIndex],
+      });
+    }
+  };
 
   render() {
+    console.log(this.state.activeIndex);
+    console.log(this.state.restaurants);
+    let sliderStyle = {
+      transform: `translateX(${
+        (this.state.activeIndex * -100) / this.state.restaurants.length
+      }%)`,
+      transition: "1s",
+    };
+    // console.log(this.state.location.index)
+    const { restaurants, restaurant, activeIndex } = this.state;
+    // console.log(location.index)
     return (
-      <div className="carry-all">
-        <div className="carry-controls">
-          <button className="slide-btn" onClick={this.slideLeft}>{"<"}</button>
-          <button className="slide-btn" onClick={this.slideRight}>{">"}</button>
-
+      <div className="test-all">
+        <div className="control-cont">
+          <div className="carry-controls">
+            <button
+              className="slide-btn"
+              onClick={() => this.slideLeft()}
+              // disabled={this.state.activeIndex === 0}
+            >
+              &lt;
+            </button>
+            <button
+              className="slide-btn"
+              onClick={() => this.slideRight()}
+              // disabled={this.state.activeIndex === restaurants.length - 1}
+            >
+              &gt;
+            </button>
+          </div>
         </div>
-        <div className="carry-container">
-          {this.renderSlides()}
-          {/* {console.log(this.state.restaurant)} */}
+        <div className="test-slider">
+          <div className="test-slider-wrapper" style={sliderStyle}>
+            {restaurants.map((restaurant, index) => {
+              return (
+                <div className="card-contain">
+                  {/* <Link
+                    to={
+                      this.props.tripId
+                        ? `/attraction/${attraction.location_id}/${attraction.name}/${this.props.tripId}`
+                        : `/attraction/${attraction.location_id}/${attraction.name}`
+                    }
+                  > */}
+                  <Card
+                    attraction={restaurant}
+                    key={index}
+                    activeIndex={activeIndex}
+                  />
+                  {/* </Link> */}
+                </div>
+              );
+            })}
+          </div>
         </div>
-
       </div>
-    )
+    );
   }
 }
+
 
 export default RestaurantSlider;
 
