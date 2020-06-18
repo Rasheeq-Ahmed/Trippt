@@ -49,10 +49,11 @@
 } */
 
 .gallery {
-  /* display: flex; */
-  flex-wrap: wrap;
-  flex-direction: row;
+  display: flex;
+  /* flex-wrap: wrap; */
+  flex-direction: column;
   justify-content: center;
+  align-items: center;
   width: 100%;
   height: 90%;
   /* height: 100%; */
@@ -62,13 +63,31 @@
 
 .gallery-att{
   background-color: khaki;
-  height: 33.33333%;
+  /* max-width: 20em; */
+  /* width: 20em; */
+  /* height: 33.33333%; */
+  height: fit-content;
+  width: 100%;
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /* overflow-x: hidden; */
   
 }
+  .inner-slide {
+    /* margin-right: 2em; */
+    background-color: lightgreen;
+    display: flex;
+  }
+
+/* .card-link {
+  width: fit-content;
+} */
+
 .gallery-night{
   background-color: rgb(71, 255, 169);
+  width: 100%;
   height: 33.33333%;
 }
 .gallery-food{
@@ -165,11 +184,12 @@
 .category{
   display: flex;
   justify-content: center;
+  height: fit-content;
   width: 100%;
   height: fit-content;
   /* background-color: blue; */
   /* height: 20px; */
   font-size: 40px;
-  color: darkcyan;
+  color: rgb(98, 138, 138);
   background-color: rgb(224, 153, 125);
 }

@@ -1,24 +1,26 @@
 
 .test-all {
     /* background-color: burlywood; */
-    height: 100%;
+    height: 90%;
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     /* overflow: hidden; */
-    overflow-x: hidden;
+    /* overflow-x: hidden; */
 
 }
 
 .test-slider {
+    position: relative;
     height: 100%;
+    /* max-width: 80%; */
     width: 80%;
     background-color: teal;
     display: flex;
     flex-direction: row;
-    overflow: scroll;
+    /* overflow: hidden; */
     /* z-index: 1; */
     /* justify-content: center; */
     align-items: center;
@@ -32,11 +34,13 @@
 
 .test-slider-wrapper {
     display: flex;
-    position: absolute;
-    width: fit-content;
+    height: fit-content;
+    width: 90%;
+    /* position: absolute; */
+    /* width: fit-content; */
     overflow-x: hidden;
-    flex-direction: row;
-    
+    /* flex-direction: row; */
+    align-items: center;
     background-color: lawngreen;
 
 
@@ -59,74 +63,19 @@
 
 
 .test-card-all {
+    background-color: lightcoral;
     height: 100%;
     width: 100%;
     display: flex;
-    overflow-x: hidden;
+    /* overflow-x: hidden; */
     flex-direction: row;
+    background-color: lightblue;
 
 }
 
 .test-image {
-    min-height: 4em;
-    min-width: 4em;
-    margin-right: 1em;
+    /* height: 6em;
+    width: 6em; */
+    /* margin-right: 1em; */
 }
 
-
-
-
-
-
-/* 
-
-
-
-
-
-.slick-list {
-    z-index: 1;
-    width: fit-content;
-    height: fit-content;
-}
- .test-card-all {
-    height: 300px;
-    width: 300px;
- }
-
-.test-image {
-    height: 300px;
-
-}
-
-.test-slides {
-    height: 500px;
-    height: 500px;
-}
-
-.test-slides .slick-prev,
-.test-slides .slick-next {
-  position: absolute;
-  top: 0;
-  z-index: 1;
-}
-
-
-.test-slides {
-  position: relative;
-}
-
-.test-slides .slick-prev,
-.test-slides .slick-next {
-  position: absolute;
-  top: 50%;
-  z-index:1;
-}
-
-.test-slides .slick-prev {
-  left: 5%;
-}
-
-.test-slides .slick-next {
-  right: 5%;
-} */

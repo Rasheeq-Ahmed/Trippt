@@ -148,23 +148,23 @@ class Attraction extends React.Component{
               />
             </div>
 
-            <div className="gallery-night">
+            {/* <div className="gallery-night">
               <p className="category">Nightlife</p>
-              {/* <NightlifeSlider
+              <NightlifeSlider
                 nightlives={nightlives}
                 tripId={this.props.tripId}
                 activeIndex={0}
-              /> */}
+              />
             </div>
 
             <div className="gallery-food">
               <p className="category">Restaurants</p>
-              {/* <NightlifeSlider
+              <NightlifeSlider
                 nightlives={nightlives}
                 tripId={this.props.tripId}
                 activeIndex={0}
-              /> */}
-            </div>
+              />
+            </div> */}
             {/* <p className="category">Restaurants</p>
                 <RestaurantSlider restaurant={restaurants} properties={this.props}/> */}
 
