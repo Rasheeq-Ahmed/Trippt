@@ -13,7 +13,7 @@ export const getRestaurants = (locationId) => {
       },"params":{
       "lunit":"km",
       "sort": "ranking",
-      "limit": "3",
+      "limit": "2",
       "min_rating":"5",
       "currency":"USD",
       "lang":"en_US",

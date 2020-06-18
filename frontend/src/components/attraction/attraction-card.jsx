@@ -27,16 +27,15 @@ class Card extends React.Component {
               backgroundImage: `url(${this.props.attraction.photo.images.large.url})`,
             }}
           >
-            <Link
+            <Link className="city-link "
               to={
                 this.props.tripId
                   ? `/attraction/${attraction.location_id}/${attraction.name}/${this.props.tripId}`
                   : `/attraction/${attraction.location_id}/${attraction.name}`
               }
             >
-              <div className="card-link ">
-              <p className='card-att-name'>{this.props.attraction.name}</p>
-
+              <div className='slide-city'>
+              <h1 className="card-att-name" >{this.props.attraction.name}</h1>
               </div>
 
               {/* <Link to={`/attraction/${this.props.attraction.location_id}/${this.props.attraction.name}`}>Click</Link> */}

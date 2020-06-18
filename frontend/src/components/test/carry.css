@@ -81,7 +81,7 @@
     /* border: 2px solid black; */
     background-size: cover;
     /* padding-right: 2em; */
-    margin-right: 2rem;
+    margin: 2rem;
     background-repeat: no-repeat;
     display: flex;
     justify-content: center;
@@ -91,9 +91,9 @@
       /* transition: translate(20em) 300ms cubic-bezier(0.455, 0.03, 0.515, 0.955); */
     z-index: 1;
     /* overflow: scroll; */
-    resize: both;
+    /* resize: both; */
     /* justify-content: center; */
-    
+    border-radius: 0.5em;
 }
 
 .card-contain {
@@ -106,26 +106,30 @@
 .card-link{
     min-width: 100%;
     min-height: 50%;
-    /* font-size: 2em; */
+    font-size: 2em;
     color: white;
     text-shadow: 2px 2px 5px black;
-    /* display: flex; */
-    /* flex-direction: column; */
-    /* justify-content: center; */
-    /* align-items: center; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     text-overflow: ellipsis;
     display: flex;
     align-items: center;
     justify-content: center;
-    /* flex-direction: column; */
+    flex-direction: column;
 }
 
 .card-att-name {
     width: fit-content;
+    height: fit-content;
     display: flex;
-    max-height: 10%;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    /* max-height: 10%; */
     flex-direction: row;
-    text-overflow: ellipsis;
+    /* text-overflow: ellipsis; */
     /* background-color: turquoise; */
     font-size: x-large;
 }
