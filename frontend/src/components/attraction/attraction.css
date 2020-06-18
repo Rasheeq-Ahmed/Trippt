@@ -54,7 +54,7 @@ height: 100vh;
   /* background-color: rgba(26, 194, 180, 0.301); */
   flex-direction: column;
   border-bottom: 2px solid rgb(26, 194, 180);
-
+  padding: .25em;
   /* background-size: cover; */
   /* align-items: center; */
   /* z-index: 1; */
@@ -201,6 +201,6 @@ height: fit-content;
   /* height: 20px; */
   font-size: 40px;
   /* color: rgb(35, 187, 187); */
-  /* padding: .25em; */
+  padding: .4em;
   background-color: rgba(190, 190, 190, 0.137);
 }

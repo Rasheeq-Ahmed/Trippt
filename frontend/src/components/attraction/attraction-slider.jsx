@@ -22,7 +22,10 @@ class AttractionSlider extends Component {
   slideRight = () => {
     // const newIndex = this.props.activeIndex + 1;
     if (this.state.activeIndex === this.state.attractions.length - 1) {
-             this.setState({activeIndex: 0})
+             this.setState({activeIndex: 0,
+            
+})
+             
 
     } else {
         this.setState({
@@ -74,7 +77,7 @@ class AttractionSlider extends Component {
           <button
             className="slide-btn"
             onClick={() => this.slideRight()}
-            // disabled={this.state.activeIndex === attractions.length - 1}
+            // disabled={this.state.activeIndex === attractions.length - 2}
             >
             &gt;
           </button>
@@ -84,7 +87,7 @@ class AttractionSlider extends Component {
           <div className="test-slider-wrapper" style={sliderStyle}>
             {attractions.map((attraction, index) => {
               return (
-                <div clas>
+                <div className="card-contain">
                   {/* <Link
                     to={
                       this.props.tripId
