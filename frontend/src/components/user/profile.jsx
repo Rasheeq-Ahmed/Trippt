@@ -80,7 +80,7 @@ class ProfilePage extends React.Component {
             <div className="prof-header">
               <NavBar />
             </div>
-            <MyProfile/>
+            {/* <MyProfile/> */}
             <div className="prof-container">
               <div className="prof-banner">
                 {/* <img src="https://i.imgur.com/jA0jVwf.jpg" alt="" /> */}
