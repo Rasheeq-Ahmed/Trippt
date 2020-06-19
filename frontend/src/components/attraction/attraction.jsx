@@ -32,9 +32,9 @@ class Attraction extends React.Component{
       this.props.getAttractions(locationId, locationName)
     }
 
-    // if (!restaurants[locationName]) {
-    //   this.props.getRestaurants(locationId, locationName)
-    // }
+    if (!restaurants[locationName]) {
+      this.props.getRestaurants(locationId, locationName)
+    }
     
     if (!nightlife[locationName]) {
       this.props.getNightlife(locationId,locationName)
@@ -83,7 +83,7 @@ class Attraction extends React.Component{
   render(){
     // let myTrips = this.findTripId(this.props.userTrips, this.props.locationId) // array of tripIds
     let attractions = this.props.attractions[this.props.locationName];
-    // let restaurants = this.props.restaurants[this.props.locationName];
+    let restaurants = this.props.restaurants[this.props.locationName];
     let nightlives = this.props.nightlife[this.props.locationName];
 
     if (this.props.loading) return (<Loader/>);
@@ -92,16 +92,17 @@ class Attraction extends React.Component{
       return null;
     }
     
-    // if (!restaurants) {
-    //   return null;
-    // } 
+    if (!restaurants) {
+      return null;
+    } 
 
     if (!nightlives) {
       return null;
     }
     // data -> photo -> images -> url: "img src"
 
-    // let newRestaurants = restaurants.filter(res => res.name)
+    let newRestaurants = restaurants.filter(res => res.name)
+    console.log(newRestaurants)
     
     return (
       <div className="att-all">
@@ -149,14 +150,14 @@ class Attraction extends React.Component{
               />
             </div>
 
-            {/* <div className="gallery-food">
+            <div className="gallery-food">
               <p className="category">Restaurants</p>
-              <RestaurantSlider
-                restaurants={restaurants}
+              <Deck
+                locations={newRestaurants}
                 tripId={this.props.tripId}
                 activeIndex={0}
               />
-            </div> */}
+            </div>
 
             <div className="gallery-night">
               <p className="category">Nightlife</p>

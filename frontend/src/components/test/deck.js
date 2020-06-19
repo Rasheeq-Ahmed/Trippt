@@ -36,7 +36,7 @@ class Deck extends Component {
             //left side of deck
             //order cards
             //400 is the distance between cards
-            new_x = center.x - 400 * (middle_card_by_index - i);
+            new_x = center.x - 350 * (middle_card_by_index - i);
             new_y = center.y;
 
             //cascade the cards
@@ -50,7 +50,7 @@ class Deck extends Component {
           } else {
             //right side of deck
             //order cards
-            new_x = center.x + 400 * (i - middle_card_by_index);
+            new_x = center.x + 350 * (i - middle_card_by_index);
             new_y = center.y;
 
             //cascade the cards
@@ -64,7 +64,7 @@ class Deck extends Component {
           }
           new_cards.push(
             <CARD
-              location={this.state.locations[i]}
+              location={this.props.locations[i]}
               color={colors[i]}
               x={new_x}
               y={new_y}
@@ -177,14 +177,18 @@ class Deck extends Component {
         // {console.log(this.state)}
 
         return (
-          <div className='deck-all'>
-            <div className='deck-cont'>
-
-            </div>
+          <div className="deck-all">
+            {/* <div className='deck-cont'> */}
             <div className="carry-controls">
-            <button onClick={this.handle_previous}>Previous</button>
-            <button onClick={this.handle_next}>Next</button>
+              <button className="slide-btn" onClick={this.handle_previous}>
+                &lt;
+              </button>
+              <button className="slide-btn" onClick={this.handle_next}>
+                &gt;
+              </button>
             </div>
+
+            {/* </div> */}
             <div ref={(ref_id) => (this.deck = ref_id)} style={styles.deck}>
               {this.state.cards}
             </div>
@@ -208,15 +212,17 @@ class Deck extends Component {
 
     const styles = {
       deck: {
-        position: "fixed",
+        position: "relative",
         // top: "10",
-        left: "50%",
+        left: "0.5%",
         // transform: "translate(-50%, -50%)",
         height: "300px",
-        width: "50%",
-        backgroundColor: "green",
+        width: "1%",
+        // backgroundColor: "green",
         // marginRight: "20em"
         // overflow: "hidden"
+        display: 'flex',
+        justifyContent: 'center'
       },
     };
 

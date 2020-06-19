@@ -28,13 +28,17 @@
 }
 
 .carry-controls {
-    position: fixed;
-    width: 100%;
+    position: absolute;
+    width: 99%;
     /* height: 100%; */
     display: flex;
     justify-content: space-between;
     align-items: center;
     z-index: 1;
+    pointer-events: none; 
+    /* cursor: pointer; */
+    
+
      
     /* background-color: khaki; */
 }
@@ -46,6 +50,8 @@
     background-color: rgba(255, 255, 255, 0.315);
     outline: none;
     cursor: pointer;
+    pointer-events: all;
+    border: 1px solid rgba(0, 0, 0, 0.308);
     /* margin-right: 1em; */
     
 }
@@ -53,7 +59,7 @@
 
 
 .slide-btn:hover {
-    background-color: rgba(182, 182, 182, 0.301);
+    background-color: rgb(255, 255, 255);
     /* color: rgba(255, 255, 255, 0.774); */
     /* transition: 1s; */
     transition: ease 1s;

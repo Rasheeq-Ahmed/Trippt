@@ -10,8 +10,8 @@ body {
 
 .deck-all {
     width: 100%;
-    height: 33.3333vh;
-    background-color: thistle;
+    height: 100%;
+    background-color: rgba(216, 191, 216, 0);
     display: flex;
     justify-content: center;
     /* align-items: center; */
@@ -29,16 +29,16 @@ body {
     
 } */
 
-.deck-cont {
-    width: 60%;
-    /* height: 80%; */
+/* .deck-cont {
+    width: 80%;
+    height: 80%;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background-color: rgba(255, 248, 184, 0);
+    background-color: rgba(240, 230, 140, 0);
     z-index: 1;
-    /* overflow: hidden; */
-}
+    overflow: hidden;
+} */
 
 
 
