@@ -1,31 +1,26 @@
 import React, { Component } from 'react'
 import NavBar from '../nav/navbar_container';
-import Carry from './carry'
+import Deck from './deck'
 // import './test.css'
+import { LOCATIONS } from "../../assets/locations";
+
 
 class Testing extends React.Component {
     constructor(props) {
         super(props)
     
         this.state = {
-             
         }
     }
     
     render() {
+        let locations = LOCATIONS;
+        console.log(locations)
         return (
-            <div className="att-all">
-                <div className="att-header">
-                    <NavBar/>
-                </div>
-                <div className="att-body">
-                {/* <Carry/> */}
-                </div>
-                <div className="att-footer">
-
-                </div>
-
-
+            <div className="testing-all">
+                    <Deck locations={locations}/>
+                    {/* <Deck locations={locations}/>
+                    <Deck locations={locations}/> */}
             </div>
         )
     }

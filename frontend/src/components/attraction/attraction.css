@@ -13,6 +13,8 @@ height: 100vh;
     justify-content: center;
     align-items: center;
     flex-direction: column;
+      /* overflow: scroll; */
+
 }
 
 /* .att-container {
@@ -78,19 +80,19 @@ height: 100vh;
 }
 
 .gallery-att{
-   background-color: whitesmoke;
-  height: fit-content;
+   /* background-color: rgb(255, 102, 102); */
+  /* height: 33.3333%; */
   width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  /* overflow-x: hidden; */
+  /* overflow: hidden; */
   
 }
 .gallery-night{
-  background-color: whitesmoke;
-  height: fit-content;
+  /* background-color: rgb(186, 228, 72); */
+  /* height: 33.3333%; */
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -99,7 +101,7 @@ height: 100vh;
 }
 .gallery-food{
   background-color: whitesmoke;
-height: fit-content;
+/* height: fit-content; */
   width: 100%;
   display: flex;
   flex-direction: column;

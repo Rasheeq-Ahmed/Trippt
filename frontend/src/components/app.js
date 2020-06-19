@@ -24,6 +24,7 @@ import Testing from './test/attractions-test';
 import Test from './nav/test';
 import Carry from './test/carry';
 import Loader from './loader/loader';
+import Deck from './test/deck';
 
 const App = () => (
   <div>
@@ -36,16 +37,14 @@ const App = () => (
       <Route exact path="/about" component={About} />
       
       <Route exact path="/tests" component={Test} />
-      <Route exact path="/testing" component={Carry} />
+      <Route exact path="/testing" component={Testing} />
       <Route exact path="/loading" component={Loader} />
 
       <AuthRoute exact path="/signup" component={SignupFormContainer} />
-      {/* <ProtectedRoute exact path="/trips" component={Trip} /> */}
       <ProtectedRoute exact path={`/create`} component={CreateTrip} />
       <ProtectedRoute exact path="/profile" component={ProfilePage} />
       <ProtectedRoute exact path="/profile/update" component={MyProfile} />
       <Route exact path="/destination" component={Destination} />
-      {/* <Route exact path="/attractions" component={Attraction} /> */}
       <Route exact path="/attractions/:locationId/:locationName" component={Attraction} />
       <Route exact path="/attraction/:locationId/:locationName" component={AttractionShow} />
       <ProtectedRoute exact path="/attractions/:locationId/:locationName/:tripId" component={Attraction}/>
@@ -54,7 +53,6 @@ const App = () => (
       <Route exact path="/restaurants/:locationId" component={RestaurantShow} />
       <Route exact path="/nightlife/" component={NightLife} />
       <Route exact path="/nightlife/:locationId" component={NightlifeShow} />
-      {/* <Route path="/show" component={AttractionShow}/> */}
     </Switch>
   </div>
 );

@@ -18,7 +18,6 @@ class Card extends React.Component {
         if (!this.props.attraction || !this.props.attraction.photo) {
             return null;
         }
-        {console.log(this.props.tripId)}
         let {key, activeIndex, attraction} = this.props
         return (
           <div
@@ -46,4 +45,4 @@ class Card extends React.Component {
 }
 
 
-export default Card;
+export default React.memo(Card);
