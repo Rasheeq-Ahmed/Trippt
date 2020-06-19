@@ -38,7 +38,7 @@ export const AttractionModal = (props) => {
                                         <h2 id ='attrac-name'>{att.name}</h2>
                                         </Link>
                                         <p id='attrac-ranking'>{att.ranking}</p> 
-                                        <p id='attrac-address'>Address: {att.address_obj.street1}</p>
+                                        <p id='attrac-address'>Address: {att.address_obj.street1 ? att.address_obj.street1 : att.address}</p>
                                         <p id='attrac-description'>Description: {att.description}</p>
                                         <div className="attrac-actions">
                                             <Link

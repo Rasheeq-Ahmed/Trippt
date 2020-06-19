@@ -34,3 +34,7 @@ a:-webkit-any-link {
 html {
 	background-color: whitesmoke;
 }
+
+button {
+	outline: none
+}

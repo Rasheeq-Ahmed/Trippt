@@ -7,6 +7,7 @@ import { LOCATIONS } from '../../assets/locations';
 import {AttractionModal} from './attraction_modal';
 import { TripIcon, ConfirmDelete } from './trip_icon';
 import Board from './boards';
+import MyProfile from './update_profile'
 
 
 
@@ -17,17 +18,20 @@ class ProfilePage extends React.Component {
           current: null,
           show: false,
           // trips: this.props.trips
-          confirmDelete: false
+          confirmDelete: false,
+          showProfile: false
         }
         this.showTrip = this.showTrip.bind(this);
         this.closeTrip = this.closeTrip.bind(this);
         this.outsideClose = this.outsideClose.bind(this);
         this.showConfirmDelete = this.showConfirmDelete.bind(this);
         this.closeConfirmDelete = this.closeConfirmDelete.bind(this);
+        
     }
 
   componentDidMount() {
-    this.props.getUserTrips(this.props.user.id)
+    this.props.getUserTrips(this.props.user.id);
+    this.props.getUserProfile(this.props.user.id);
   };
 
   showTrip(tripId) {
@@ -51,6 +55,10 @@ class ProfilePage extends React.Component {
 
   closeConfirmDelete() {
     this.setState({confirmDelete: false, current: null})
+  }
+
+  showProfile() {
+    this.setState({showProfile: !this.state.showProfile})
   }
 
   randomTrip() {
@@ -78,6 +86,9 @@ class ProfilePage extends React.Component {
             <div className="prof-header">
               <NavBar />
             </div>
+            <MyProfile show ={this.state.showProfile}
+                       showProfile = {this.showProfile.bind(this)}          
+            />
             <div className="prof-container">
               <div className="prof-banner">
                 {/* <img src="https://i.imgur.com/jA0jVwf.jpg" alt="" /> */}
@@ -90,9 +101,9 @@ class ProfilePage extends React.Component {
                 </div>
                 <div className="prof-details">
                   <ul>
-                    <li>Full Name</li>
-                    <li>@Username</li>
-                    <li>San Franciso, CA</li>
+                    <li>{this.props.profile.firstName} {this.props.profile.lastName}</li>
+                    <li>{this.props.profile.handle}</li>
+                    <li>{this.props.profile.location}</li>
                   </ul>
                 </div>
               </div>
@@ -131,14 +142,15 @@ class ProfilePage extends React.Component {
                         <button>Destinations</button>
                         <ul className="dropdown-content-2">
                           {LOCATIONS.map((loc, idx) => (
-                            <Link
-                              to={`/attractions/${loc.locationId}/${loc.location}`}
-                            >
-                              <li>{loc.location}</li>
+                            <Link 
+                              key={idx}
+                              to={`/attractions/${loc.locationId}/${loc.location}`}>
+                                <li>{loc.location}</li>
                             </Link>
                           ))}
                         </ul>
                       </div>
+                      <button onClick={()=> this.showProfile()}>My Profile</button>
                     </div>
                   </div>
                   <div className="prof-right-body">
