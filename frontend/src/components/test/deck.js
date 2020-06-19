@@ -46,7 +46,7 @@ class Deck extends Component {
             newzIndex = i;
 
             //SCALE Cards
-            new_scale = Math.pow(0.95, middle_card_by_index - i);
+            new_scale = Math.pow(0.90, middle_card_by_index - i);
           } else {
             //right side of deck
             //order cards
@@ -60,7 +60,7 @@ class Deck extends Component {
             newzIndex = i * -1.0;
 
             //SCALE Cards
-            new_scale = Math.pow(0.95, i - middle_card_by_index);
+            new_scale = Math.pow(0.90, i - middle_card_by_index);
           }
           new_cards.push(
             <CARD
@@ -180,10 +180,10 @@ class Deck extends Component {
           <div className='deck-all'>
             <div className='deck-cont'>
 
+            </div>
             <div className="carry-controls">
             <button onClick={this.handle_previous}>Previous</button>
             <button onClick={this.handle_next}>Next</button>
-            </div>
             </div>
             <div ref={(ref_id) => (this.deck = ref_id)} style={styles.deck}>
               {this.state.cards}
@@ -208,13 +208,14 @@ class Deck extends Component {
 
     const styles = {
       deck: {
-        position: "absolute",
-        top: "0",
-        // left: "100%",
+        position: "fixed",
+        // top: "10",
+        left: "50%",
         // transform: "translate(-50%, -50%)",
         height: "300px",
-        width: "300px",
+        width: "50%",
         backgroundColor: "green",
+        // marginRight: "20em"
         // overflow: "hidden"
       },
     };

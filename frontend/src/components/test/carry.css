@@ -28,14 +28,13 @@
 }
 
 .carry-controls {
-    /* position: absolute; */
+    position: fixed;
     width: 100%;
-    height: fit-content;
+    /* height: 100%; */
     display: flex;
     justify-content: space-between;
     align-items: center;
     z-index: 1;
-    
      
     /* background-color: khaki; */
 }
