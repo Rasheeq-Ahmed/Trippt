@@ -5,6 +5,7 @@ import trips from "./trip_reducer"
 import attractions from "./attraction_reducer"
 import restaurants from "./restaurant_reducer"
 import nightlife from "./nightlife_reducer"
+import profile from './profile_reducer'
 import ui from "./ui_reducer"
 
 const RootReducer = combineReducers({
@@ -14,6 +15,7 @@ const RootReducer = combineReducers({
   attractions,
   restaurants,
   nightlife,
+  profile,
   ui
 });
 

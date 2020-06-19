@@ -6,7 +6,12 @@ const ProfileSchema = new Schema({
         type: Schema.Types.ObjectId,
         ref: 'users'
     },
-    
+
+    handle: {
+        type: String,
+        ref: 'users'
+    },
+
     firstName: {
         type: String,
     },
@@ -15,11 +20,7 @@ const ProfileSchema = new Schema({
         type: String,
     },
 
-    about: {
-        type: Text,
-    },
-
-    picture: {
+    location: {
         type: String
     },
 
@@ -29,5 +30,5 @@ const ProfileSchema = new Schema({
     }
 });
 
-const Profile = mongoose.model('users', ProfileSchema);
+const Profile = mongoose.model('profiles', ProfileSchema);
 module.exports = Profile

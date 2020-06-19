@@ -6,6 +6,7 @@ export const RECEIVE_SESSION_ERRORS = "RECEIVE_SESSION_ERRORS";
 export const RECEIVE_USER_LOGOUT = "RECEIVE_USER_LOGOUT";
 export const RECEIVE_USER_SIGN_IN = "RECEIVE_USER_SIGN_IN";
 export const CLEAR_SESSION_ERRORS = 'CLEAR_SESSION_ERRORS';
+export const RECEIVE_USER_INFO = 'RECEIVE_USER_INFO';
 
 
 export const receiveCurrentUser = currentUser => ({
@@ -58,3 +59,4 @@ export const logout = () => dispatch => {
   APIUtil.setAuthToken(false)
   dispatch(logoutUser())
 };
+
