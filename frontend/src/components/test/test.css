@@ -1,84 +1,62 @@
+/* TESTING PAGE */
 
-.test-all {
-    /* background-color: burlywood; */
-    height: 90%;
+body {
+    overflow: hidden;
+}
+
+
+/* DECK STYLING */
+
+
+.deck-all {
     width: 100%;
+    height: 100vh;
+    background-color: thistle;
     display: flex;
     justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    
-    /* overflow: hidden; */
-    /* overflow-x: hidden; */
-
-}
-
-.test-slider {
-    height: 100%;
-    max-width: 80%;
-    width: fit-content;
-    /* background-color: teal; */
-    display: flex;
-    flex-direction: row;
-    overflow: hidden;
-    /* z-index: 1; */
-    /* justify-content: center; */
-    align-items: center;
-
-
-
-}
-
-
-
-
-.test-slider-wrapper {
-    display: flex;
-    height: fit-content;
-    width: fit-content;
-    /* width: 45em; */
-    /* position: absolute; */
-    /* width: fit-content; */
-    /* overflow-x: hidden; */
-    /* flex-direction: row; */
     /* align-items: center; */
-    /* background-color: lawngreen; */
-    /* pointer-events: none; */
-    z-index: 1;
-
-
 }
-/* 
-.test-slider {
-    position: relative;
-    max-width: 226px;
-    margin: 0 auto;
-}  */
 
-
-
-
-
-
-
-
-/* CARD */
-
-
-.test-card-all {
-    background-color: lightcoral;
-    height: 100%;
-    width: 100%;
+.deck {
     display: flex;
-    /* overflow-x: hidden; */
     flex-direction: row;
-    background-color: lightblue;
+    transition-duration: 5s;
 
+    /* height: fit-content; */
+    /* width: 50%; */
+    /* min-width: fit-content; */
 }
 
-.test-image {
-    /* height: 6em;
-    width: 6em; */
-    /* margin-right: 1em; */
-}
 
+
+/* .deck {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 300px;
+    width: 300px;
+    background-color: green;
+} */
+
+
+/* CARD STYLING */
+/* .CARD {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 200px;
+    width: 300px;
+    background-color: red;
+} */
+
+.testCard {
+    background-size: cover;
+    /* margin: 1em; */
+    /* width: 10em;
+    height: 10em; */
+    /* transform: translate(-50%, -50%); */
+
+    transition-duration: 5s;
+}

@@ -20,21 +20,27 @@ class AttractionSlider extends Component {
   }
 
   slideRight = () => {
-    // const newIndex = this.props.activeIndex + 1;
-    if (this.state.activeIndex === this.state.attractions.length - 1) {
-             this.setState({activeIndex: 0,
-            
-})
-             
-
-    } else {
-        this.setState({
-          activeIndex: this.state.activeIndex + 1,
-          attraction: this.state.attractions[this.props.activeIndex],
-        });
-
-    }
+    let [first, ...rest] = this.state.attractions;
+    // console.log(first);
+    // console.log(rest);
+    let attractions = [...rest, first];
+    this.setState({
+      attractions: attractions,
+      activeIndex: this.state.activeIndex + 1,
+    });
   };
+    // const newIndex = this.props.activeIndex + 1;
+  //    let [first, ...rest] = this.state.attractions;
+  //    let attractions = [...rest, first];
+
+  //       this.setState({
+  //         activeIndex: this.state.activeIndex + 1,
+  //         attraction: this.state.attractions[this.props.activeIndex],
+  //         attractions: this.state.attractions
+  //       });
+
+  
+  // };
 
   slideLeft = () => {
     // const newIndex = this.state.location.index - 1;
@@ -52,7 +58,7 @@ class AttractionSlider extends Component {
 
   render() {
     console.log(this.state.activeIndex);
-    console.log(this.state.attractions);
+    // console.log(this.state.attractions);
     let sliderStyle = {
       transform: `translateX(${
         (this.state.activeIndex * -100) / this.state.attractions.length
