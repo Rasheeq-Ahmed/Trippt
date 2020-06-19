@@ -43,8 +43,6 @@ class NightlifeSlider extends Component {
   };
 
   render() {
-    console.log(this.state.activeIndex);
-    console.log(this.state.nightlives);
     let sliderStyle = {
       transform: `translateX(${
         (this.state.activeIndex * -100) / this.state.nightlives.length

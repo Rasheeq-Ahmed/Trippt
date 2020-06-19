@@ -1,6 +1,9 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { createUserProfile, updateUserProfile } from '../../actions/profile_actions'
+import { createUserProfile, updateUserProfile, getUserProfile } from '../../actions/profile_actions'
+import { Link } from 'react-router-dom';
+import NavBar from '../nav/navbar_container'
+
 
 class MyProfile extends React.Component {
     constructor(props) {
@@ -10,7 +13,15 @@ class MyProfile extends React.Component {
             lastName: '',
             location: ''
         }
+
+        this.handleSubmit = this.handleSubmit.bind(this)
+
     }
+
+    componentDidMount() {
+        this.props.getUserProfile(this.props.user.id)
+    }
+
 
     componentDidUpdate(prevProps) {
         if (prevProps.profile !== this.props.profile) {
@@ -18,41 +29,47 @@ class MyProfile extends React.Component {
                 firstName: this.props.profile.firstName,
                 lastName: this.props.profile.lastName,
                 location: this.props.profile.location
-            })
+            });
         }
     };
+
+
+    handleSubmit(e) {
+        e.preventDefault();
+        if(!Object.values(this.props.profile).length) {
+            this.props.createUserProfile(this.state)
+                .then(this.props.history.goBack())
+        } else {
+            this.props.updateUserProfile(this.props.user.id, this.state)
+                .then(this.props.history.goBack())
+        }
+    } 
 
     update(field) {
         return (e) => this.setState({ [field]: e.currentTarget.value })
-    };
-
-    outsideClose(e) {
-        let profile = document.getElementById("my-profile");
-        if (e.target === profile) {
-            this.props.showProfile()
-        }
-    }
-    
+    };    
 
     render() {
-        if(!this.props.show) return null
         return (
-            <div id ='my-profile' className="update-profile-container" onClick={(e)=>this.outsideClose(e)}>
-                <form className='update-profile-form'>
-                    <label> First Name:
+            <div id ='my-profile' className="update-profile-container">
+                <NavBar/>
+                <form className='update-profile-form' onSubmit={this.handleSubmit}>
+                    <h1 className='form-header'>
+                        {!Object.values(this.props.profile).length ? 'Create Profile' : 'Update Profile'}</h1>
+                    
+                    <label className='profile-name'> First Name:
                         <input type="text"
-                               value={`${this.state.firstName}`}
+                               value={this.state.firstName}
                                onChange={this.update('firstName')}
                                />
                     </label>
-                    <label> Last Name: 
+                    <label className='profile-name'> Last Name: 
                         <input type="text"
                                value={this.state.lastName} 
                                onChange={this.update('lastName')}
                                />
                     </label>
-                    <label> Location: 
-                        <br/>
+                    <label> 
                         <label> San Francisco
                             <input value="San Francisco" 
                                    name='location' 
@@ -60,7 +77,7 @@ class MyProfile extends React.Component {
                                    checked={ this.state.location === 'San Francisco' ? true : false} 
                                    onChange={this.update('location')}/>
                         </label>
-                        <br/>
+                     
                         <label> New York
                             <input value="New York" 
                                    name='location' 
@@ -69,18 +86,17 @@ class MyProfile extends React.Component {
                                    onChange={this.update('location')}/>
                         </label>
                     </label>
-                    <br/>
+                    <div className='form-btn'>
+                        {!Object.values(this.props.profile).length ? 
+                            <button
+                                type='submit'>
+                                    Create Profile</button> : 
+                            <button
+                                type='submit'> 
+                                    Update Profile</button>}
 
-                    {!this.props.profile.firstName && !this.props.profile.lastName ? 
-                        <button 
-                            onClick={()=> {this.props.createUserProfile(this.state);
-                                           this.props.showProfile()}}>
-                                Create Profile</button> : 
-                        <button 
-                            onClick={()=> this.props.updateUserProfile(this.props.user.id, this.state)}> 
-                                Update Profile </button>}
-
-                        <button onClick={()=> this.props.showProfile()}>Close</button>
+                            <Link to='/profile'><button>Cancel</button></Link>
+                    </div>
                 </form>
             </div>
         )
@@ -97,7 +113,8 @@ const mSTP = state => {
 const mDTP = dispatch => {
     return {
         createUserProfile: (data) => dispatch(createUserProfile(data)),
-        updateUserProfile: (userId, data) => dispatch(updateUserProfile(userId, data))
+        updateUserProfile: (userId, data) => dispatch(updateUserProfile(userId, data)),
+        getUserProfile: (userId) => dispatch(getUserProfile(userId))
     }
 };
 

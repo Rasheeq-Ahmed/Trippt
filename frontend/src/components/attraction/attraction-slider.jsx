@@ -92,23 +92,26 @@ class AttractionSlider extends Component {
         <div className="test-slider">
           <div className="test-slider-wrapper" style={sliderStyle}>
             {attractions.map((attraction, index) => {
-              return (
-                <div className="card-contain">
-                  {/* <Link
-                    to={
-                      this.props.tripId
-                        ? `/attraction/${attraction.location_id}/${attraction.name}/${this.props.tripId}`
-                        : `/attraction/${attraction.location_id}/${attraction.name}`
-                    }
-                  > */}
-                    <Card
-                      attraction={attraction}
-                      key={index}
-                      activeIndex={activeIndex}
-                    />
-                  {/* </Link> */}
-                </div>
-              );
+
+              if(attraction.name) {
+                return (
+                  <div className="card-contain">
+                    {/* <Link
+                      to={
+                        this.props.tripId
+                          ? `/attraction/${attraction.location_id}/${attraction.name}/${this.props.tripId}`
+                          : `/attraction/${attraction.location_id}/${attraction.name}`
+                      }
+                    > */}
+                      <Card
+                        attraction={attraction}
+                        key={index}
+                        activeIndex={activeIndex}
+                      />
+                    {/* </Link> */}
+                  </div>
+                );
+              }
             })}
           </div>
         </div>

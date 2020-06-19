@@ -15,6 +15,7 @@ class ProfilePage extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
+          profile: '',
           current: null,
           show: false,
           // trips: this.props.trips
@@ -57,9 +58,6 @@ class ProfilePage extends React.Component {
     this.setState({confirmDelete: false, current: null})
   }
 
-  showProfile() {
-    this.setState({showProfile: !this.state.showProfile})
-  }
 
   randomTrip() {
     let randLocation = Math.floor(Math.random() * LOCATIONS.length)
@@ -86,9 +84,6 @@ class ProfilePage extends React.Component {
             <div className="prof-header">
               <NavBar />
             </div>
-            <MyProfile show ={this.state.showProfile}
-                       showProfile = {this.showProfile.bind(this)}          
-            />
             <div className="prof-container">
               <div className="prof-banner">
                 {/* <img src="https://i.imgur.com/jA0jVwf.jpg" alt="" /> */}
@@ -150,7 +145,7 @@ class ProfilePage extends React.Component {
                           ))}
                         </ul>
                       </div>
-                      <button onClick={()=> this.showProfile()}>My Profile</button>
+                      <Link to='/profile/update'><button>Profile Info</button></Link>
                     </div>
                   </div>
                   <div className="prof-right-body">
