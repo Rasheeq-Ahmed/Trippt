@@ -43,8 +43,6 @@ class RestaurantSlider extends Component {
   };
 
   render() {
-    console.log(this.state.activeIndex);
-    console.log(this.state.restaurants);
     let sliderStyle = {
       transform: `translateX(${
         (this.state.activeIndex * -100) / this.state.restaurants.length
@@ -77,23 +75,25 @@ class RestaurantSlider extends Component {
         <div className="test-slider">
           <div className="test-slider-wrapper" style={sliderStyle}>
             {restaurants.map((restaurant, index) => {
-              return (
-                <div className="card-contain">
-                  {/* <Link
-                    to={
-                      this.props.tripId
-                        ? `/attraction/${attraction.location_id}/${attraction.name}/${this.props.tripId}`
-                        : `/attraction/${attraction.location_id}/${attraction.name}`
-                    }
-                  > */}
-                  <Card
-                    attraction={restaurant}
-                    key={index}
-                    activeIndex={activeIndex}
-                  />
-                  {/* </Link> */}
-                </div>
-              );
+              if(restaurant.name) {
+                return (
+                  <div className="card-contain">
+                    {/* <Link
+                      to={
+                        this.props.tripId
+                          ? `/attraction/${attraction.location_id}/${attraction.name}/${this.props.tripId}`
+                          : `/attraction/${attraction.location_id}/${attraction.name}`
+                      }
+                    > */}
+                    <Card
+                      attraction={restaurant}
+                      key={index}
+                      activeIndex={activeIndex}
+                    />
+                    {/* </Link> */}
+                  </div>
+                );
+              }
             })}
           </div>
         </div>

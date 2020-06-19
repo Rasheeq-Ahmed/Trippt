@@ -1,6 +1,9 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { createUserProfile, updateUserProfile } from '../../actions/profile_actions'
+import { createUserProfile, updateUserProfile, getUserProfile } from '../../actions/profile_actions'
+import { Link } from 'react-router-dom';
+import NavBar from '../nav/navbar_container'
+
 
 class MyProfile extends React.Component {
     constructor(props) {
@@ -13,6 +16,10 @@ class MyProfile extends React.Component {
 
         this.handleSubmit = this.handleSubmit.bind(this)
 
+    }
+
+    componentDidMount() {
+        this.props.getUserProfile(this.props.user.id)
     }
 
 
@@ -31,8 +38,10 @@ class MyProfile extends React.Component {
         e.preventDefault();
         if(!Object.values(this.props.profile).length) {
             this.props.createUserProfile(this.state)
+                .then(this.props.history.goBack())
         } else {
             this.props.updateUserProfile(this.props.user.id, this.state)
+                .then(this.props.history.goBack())
         }
     } 
 
@@ -49,9 +58,9 @@ class MyProfile extends React.Component {
     
 
     render() {
-        if(!this.props.show) return null
         return (
-            <div id ='my-profile' className="update-profile-container" onClick={(e)=>this.outsideClose(e)}>
+            <div id ='my-profile' className="update-profile-container">
+                <NavBar/>
                 <form className='update-profile-form' onSubmit={this.handleSubmit}>
                     <label> First Name:
                         <input type="text"
@@ -91,9 +100,9 @@ class MyProfile extends React.Component {
                                 Create Profile</button> : 
                         <button
                             type='submit'> 
-                                Update Profile </button>}
+                                Update Profile</button>}
 
-                        <button onClick={()=> this.props.showProfile()}>Close</button>
+                        <Link to='/profile'><button>Cancel</button></Link>
                 </form>
             </div>
         )
@@ -110,7 +119,8 @@ const mSTP = state => {
 const mDTP = dispatch => {
     return {
         createUserProfile: (data) => dispatch(createUserProfile(data)),
-        updateUserProfile: (userId, data) => dispatch(updateUserProfile(userId, data))
+        updateUserProfile: (userId, data) => dispatch(updateUserProfile(userId, data)),
+        getUserProfile: (userId) => dispatch(getUserProfile(userId))
     }
 };
 

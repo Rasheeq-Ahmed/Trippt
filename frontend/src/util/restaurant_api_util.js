@@ -12,12 +12,12 @@ export const getRestaurants = (locationId) => {
       "useQueryString":true
       },"params":{
       "lunit":"km",
-      "sort": "ranking",
-      "limit": "2",
-      "min_rating":"5",
+      "limit": "3",
       "currency":"USD",
       "lang":"en_US",
       "location_id": `${locationId}`
       }
     })
-  }
+
+}
+

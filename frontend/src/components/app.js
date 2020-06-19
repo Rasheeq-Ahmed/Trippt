@@ -17,6 +17,7 @@ import NightLife from './nightlife/nightlife_container';
 import AttractionShow from './attraction/attraction_show_container'
 import NightlifeShow from './nightlife/nightlife_show_container'
 import RestaurantShow from './restaurant/restaurant_show_container'
+import MyProfile from '../components/user/update_profile'
 import About from './main/about';
 import Carousel from './test/carousel';
 import Testing from './test/attractions-test';
@@ -42,6 +43,7 @@ const App = () => (
       {/* <ProtectedRoute exact path="/trips" component={Trip} /> */}
       <ProtectedRoute exact path={`/create`} component={CreateTrip} />
       <ProtectedRoute exact path="/profile" component={ProfilePage} />
+      <ProtectedRoute exact path="/profile/update" component={MyProfile} />
       <Route exact path="/destination" component={Destination} />
       {/* <Route exact path="/attractions" component={Attraction} /> */}
       <Route exact path="/attractions/:locationId/:locationName" component={Attraction} />
