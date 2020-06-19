@@ -145,7 +145,7 @@ class ProfilePage extends React.Component {
                           ))}
                         </ul>
                       </div>
-                      <Link to='/profile/update'><button>My Profile</button></Link>
+                      <Link to='/profile/update'><button>Profile Info</button></Link>
                     </div>
                   </div>
                   <div className="prof-right-body">

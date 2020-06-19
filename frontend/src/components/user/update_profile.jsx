@@ -47,35 +47,29 @@ class MyProfile extends React.Component {
 
     update(field) {
         return (e) => this.setState({ [field]: e.currentTarget.value })
-    };
-
-    outsideClose(e) {
-        let profile = document.getElementById("my-profile");
-        if (e.target === profile) {
-            this.props.showProfile()
-        }
-    }
-    
+    };    
 
     render() {
         return (
             <div id ='my-profile' className="update-profile-container">
                 <NavBar/>
                 <form className='update-profile-form' onSubmit={this.handleSubmit}>
-                    <label> First Name:
+                    <h1 className='form-header'>
+                        {!Object.values(this.props.profile).length ? 'Create Profile' : 'Update Profile'}</h1>
+                    
+                    <label className='profile-name'> First Name:
                         <input type="text"
                                value={this.state.firstName}
                                onChange={this.update('firstName')}
                                />
                     </label>
-                    <label> Last Name: 
+                    <label className='profile-name'> Last Name: 
                         <input type="text"
                                value={this.state.lastName} 
                                onChange={this.update('lastName')}
                                />
                     </label>
-                    <label> Location: 
-                        <br/>
+                    <label> 
                         <label> San Francisco
                             <input value="San Francisco" 
                                    name='location' 
@@ -83,7 +77,7 @@ class MyProfile extends React.Component {
                                    checked={ this.state.location === 'San Francisco' ? true : false} 
                                    onChange={this.update('location')}/>
                         </label>
-                        <br/>
+                     
                         <label> New York
                             <input value="New York" 
                                    name='location' 
@@ -92,17 +86,17 @@ class MyProfile extends React.Component {
                                    onChange={this.update('location')}/>
                         </label>
                     </label>
-                    <br/>
+                    <div className='form-btn'>
+                        {!Object.values(this.props.profile).length ? 
+                            <button
+                                type='submit'>
+                                    Create Profile</button> : 
+                            <button
+                                type='submit'> 
+                                    Update Profile</button>}
 
-                    {!Object.values(this.props.profile).length ? 
-                        <button
-                            type='submit'>
-                                Create Profile</button> : 
-                        <button
-                            type='submit'> 
-                                Update Profile</button>}
-
-                        <Link to='/profile'><button>Cancel</button></Link>
+                            <Link to='/profile'><button>Cancel</button></Link>
+                    </div>
                 </form>
             </div>
         )
