@@ -8,6 +8,7 @@ import {AttractionModal} from './attraction_modal';
 import { TripIcon, ConfirmDelete } from './trip_icon';
 import Board from './boards';
 import MyProfile from './update_profile'
+import { getUserProfile } from '../../util/profile_api_util';
 
 
 
@@ -15,6 +16,7 @@ class ProfilePage extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
+          profile: '',
           current: null,
           show: false,
           // trips: this.props.trips
@@ -87,7 +89,8 @@ class ProfilePage extends React.Component {
               <NavBar />
             </div>
             <MyProfile show ={this.state.showProfile}
-                       showProfile = {this.showProfile.bind(this)}          
+                       showProfile = {this.showProfile.bind(this)}
+                       getUserProfile = {this.props.getUserProfile}        
             />
             <div className="prof-container">
               <div className="prof-banner">

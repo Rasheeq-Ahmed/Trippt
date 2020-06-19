@@ -757,4 +757,8 @@
     border: 1px solid black;
 }
 
+.update-profile-container button {
+    cursor: pointer;
+}
+
 /******************************************************/
