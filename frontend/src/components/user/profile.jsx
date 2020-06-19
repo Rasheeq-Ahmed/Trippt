@@ -18,13 +18,15 @@ class ProfilePage extends React.Component {
           current: null,
           show: false,
           // trips: this.props.trips
-          confirmDelete: false
+          confirmDelete: false,
+          showProfile: false
         }
         this.showTrip = this.showTrip.bind(this);
         this.closeTrip = this.closeTrip.bind(this);
         this.outsideClose = this.outsideClose.bind(this);
         this.showConfirmDelete = this.showConfirmDelete.bind(this);
         this.closeConfirmDelete = this.closeConfirmDelete.bind(this);
+        
     }
 
   componentDidMount() {
@@ -55,6 +57,10 @@ class ProfilePage extends React.Component {
     this.setState({confirmDelete: false, current: null})
   }
 
+  showProfile() {
+    this.setState({showProfile: !this.state.showProfile})
+  }
+
   randomTrip() {
     let randLocation = Math.floor(Math.random() * LOCATIONS.length)
     let location = LOCATIONS[randLocation]
@@ -80,7 +86,9 @@ class ProfilePage extends React.Component {
             <div className="prof-header">
               <NavBar />
             </div>
-            {/* <MyProfile/> */}
+            <MyProfile show ={this.state.showProfile}
+                       showProfile = {this.showProfile.bind(this)}          
+            />
             <div className="prof-container">
               <div className="prof-banner">
                 {/* <img src="https://i.imgur.com/jA0jVwf.jpg" alt="" /> */}
@@ -142,7 +150,7 @@ class ProfilePage extends React.Component {
                           ))}
                         </ul>
                       </div>
-                      <button>My Profile</button>
+                      <button onClick={()=> this.showProfile()}>My Profile</button>
                     </div>
                   </div>
                   <div className="prof-right-body">

@@ -6,53 +6,75 @@ class MyProfile extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            firstName: this.props.profile.firstName,
+            firstName: '',
             lastName: '',
             location: ''
         }
     }
 
+    componentDidUpdate(prevProps) {
+        if (prevProps.profile !== this.props.profile) {
+            this.setState({
+                firstName: this.props.profile.firstName,
+                lastName: this.props.profile.lastName,
+                location: this.props.profile.location
+            })
+        }
+    };
 
     update(field) {
         return (e) => this.setState({ [field]: e.currentTarget.value })
     };
 
-
-
-
+    outsideClose(e) {
+        let profile = document.getElementById("my-profile");
+        if (e.target === profile) {
+            this.props.showProfile()
+        }
+    }
+    
 
     render() {
-        console.log(this.state)
+        if(!this.props.show) return null
         return (
-            <div className="update-profile-container">
+            <div id ='my-profile' className="update-profile-container" onClick={(e)=>this.outsideClose(e)}>
                 <form className='update-profile-form'>
                     <label> First Name:
                         <input type="text"
+                               value={`${this.state.firstName}`}
                                onChange={this.update('firstName')}
-                               required
                                />
                     </label>
                     <label> Last Name: 
-                        <input type="text" 
+                        <input type="text"
+                               value={this.state.lastName} 
                                onChange={this.update('lastName')}
-                               required
                                />
                     </label>
                     <label> Location: 
                         <br/>
                         <label> San Francisco
-                            <input value="San Francisco" name='location' type="radio" onChange={this.update('location')}/>
+                            <input value="San Francisco" 
+                                   name='location' 
+                                   type="radio"
+                                   checked={ this.state.location === 'San Francisco' ? true : false} 
+                                   onChange={this.update('location')}/>
                         </label>
                         <br/>
                         <label> New York
-                            <input value="New York" name='location' type="radio" onChange={this.update('location')}/>
+                            <input value="New York" 
+                                   name='location' 
+                                   type="radio"
+                                   checked={this.state.location === 'New York' ? true : false} 
+                                   onChange={this.update('location')}/>
                         </label>
                     </label>
                     <br/>
 
-                    {!Object.values(this.props.profile) ? 
+                    {!this.props.profile.firstName ? 
                         <button onClick={()=> this.props.createUserProfile(this.state)}>Create Profile</button> : 
                         <button onClick={()=> this.props.updateUserProfile(this.props.user.id, this.state)}> Update Profile </button>}
+                        <button onClick={()=> this.props.showProfile()}>Close</button>
                 </form>
             </div>
         )
