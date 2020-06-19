@@ -178,9 +178,12 @@ class Deck extends Component {
 
         return (
           <div className='deck-all'>
+            <div className='deck-cont'>
+
             <div className="carry-controls">
             <button onClick={this.handle_previous}>Previous</button>
             <button onClick={this.handle_next}>Next</button>
+            </div>
             </div>
             <div ref={(ref_id) => (this.deck = ref_id)} style={styles.deck}>
               {this.state.cards}
