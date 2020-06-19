@@ -71,9 +71,15 @@ class MyProfile extends React.Component {
                     </label>
                     <br/>
 
-                    {!this.props.profile.firstName ? 
-                        <button onClick={()=> this.props.createUserProfile(this.state)}>Create Profile</button> : 
-                        <button onClick={()=> this.props.updateUserProfile(this.props.user.id, this.state)}> Update Profile </button>}
+                    {!this.props.profile.firstName && !this.props.profile.lastName ? 
+                        <button 
+                            onClick={()=> {this.props.createUserProfile(this.state);
+                                           this.props.showProfile()}}>
+                                Create Profile</button> : 
+                        <button 
+                            onClick={()=> this.props.updateUserProfile(this.props.user.id, this.state)}> 
+                                Update Profile </button>}
+
                         <button onClick={()=> this.props.showProfile()}>Close</button>
                 </form>
             </div>
