@@ -7,6 +7,7 @@ import { LOCATIONS } from '../../assets/locations';
 import {AttractionModal} from './attraction_modal';
 import { TripIcon, ConfirmDelete } from './trip_icon';
 import Board from './boards';
+import MyProfile from './update_profile'
 
 
 
@@ -14,20 +15,24 @@ class ProfilePage extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
+          profile: '',
           current: null,
           show: false,
           // trips: this.props.trips
-          confirmDelete: false
+          confirmDelete: false,
+          showProfile: false
         }
         this.showTrip = this.showTrip.bind(this);
         this.closeTrip = this.closeTrip.bind(this);
         this.outsideClose = this.outsideClose.bind(this);
         this.showConfirmDelete = this.showConfirmDelete.bind(this);
         this.closeConfirmDelete = this.closeConfirmDelete.bind(this);
+        
     }
 
   componentDidMount() {
-    this.props.getUserTrips(this.props.user.id)
+    this.props.getUserTrips(this.props.user.id);
+    this.props.getUserProfile(this.props.user.id);
   };
 
   showTrip(tripId) {
@@ -52,6 +57,7 @@ class ProfilePage extends React.Component {
   closeConfirmDelete() {
     this.setState({confirmDelete: false, current: null})
   }
+
 
   randomTrip() {
     let randLocation = Math.floor(Math.random() * LOCATIONS.length)
@@ -90,9 +96,9 @@ class ProfilePage extends React.Component {
                 </div>
                 <div className="prof-details">
                   <ul>
-                    <li>Full Name</li>
-                    <li>@Username</li>
-                    <li>San Franciso, CA</li>
+                    <li>{this.props.profile.firstName} {this.props.profile.lastName}</li>
+                    <li>{this.props.profile.handle}</li>
+                    <li>{this.props.profile.location}</li>
                   </ul>
                 </div>
               </div>
@@ -131,14 +137,15 @@ class ProfilePage extends React.Component {
                         <button>Destinations</button>
                         <ul className="dropdown-content-2">
                           {LOCATIONS.map((loc, idx) => (
-                            <Link
-                              to={`/attractions/${loc.locationId}/${loc.location}`}
-                            >
-                              <li>{loc.location}</li>
+                            <Link 
+                              key={idx}
+                              to={`/attractions/${loc.locationId}/${loc.location}`}>
+                                <li>{loc.location}</li>
                             </Link>
                           ))}
                         </ul>
                       </div>
+                      <Link to='/profile/update'><button>Profile Info</button></Link>
                     </div>
                   </div>
                   <div className="prof-right-body">

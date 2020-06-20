@@ -8,7 +8,8 @@ class Carousel extends Component {
         super(props)
     
         this.state = {
-            // locations: LOCATIONS
+            locations: LOCATIONS,
+            location: LOCATIONS[0]
         }
 
         this.slideLeft = this.slideLeft.bind(this)
@@ -35,9 +36,7 @@ class Carousel extends Component {
     renderSlides() {
         const locations = this.state.locations;
         return (
-            <div className="slider-cards" style ={{
-                
-            }}>
+            <div className="slider-cards">
                 {
                     locations.map((location, index) => {
                         return (
@@ -53,9 +52,17 @@ class Carousel extends Component {
 
     
     render() {
+         let sliderStyle = {
+           transform: `translateX(${
+             (this.state.location.index * -100) / this.state.locations.length
+           }%)`,
+           transition: "1s",
+         };
+
         // {console.log(this.state.locations)}
         // {console.log(LOCATIONS)}
         return (
+
             <div className="carry-all">
                 <div className="carry-controls">
                     <button className="slide-btn" onClick={this.slideLeft}>{"<"}</button>
@@ -63,7 +70,7 @@ class Carousel extends Component {
 
                         {/* {console.log(this.state.locations[0])} */}
                  </div>
-                <div className="carry-container">
+                <div className="carry-container" style={sliderStyle}>
                 {this.renderSlides()}
 
                 </div>

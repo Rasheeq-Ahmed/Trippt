@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import {LOCATIONS} from "../../assets/locations"
 import Card from './card'
-import Slider from 'react-slick'
+// import Slider from 'react-slick'
 import './test.css'
 
 

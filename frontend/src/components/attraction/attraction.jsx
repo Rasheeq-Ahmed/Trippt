@@ -7,6 +7,7 @@ import Loader from '../loader/loader'
 import AttractionSlider from './attraction-slider'
 import NightlifeSlider from './nightlife-slider'
 import RestaurantSlider from './restaurant-slider'
+import Deck from '../test/deck'
 
 class Attraction extends React.Component{
   constructor(props){
@@ -80,7 +81,7 @@ class Attraction extends React.Component{
   
 
   render(){
-    let myTrips = this.findTripId(this.props.userTrips, this.props.locationId) // array of tripIds
+    // let myTrips = this.findTripId(this.props.userTrips, this.props.locationId) // array of tripIds
     let attractions = this.props.attractions[this.props.locationName];
     let restaurants = this.props.restaurants[this.props.locationName];
     let nightlives = this.props.nightlife[this.props.locationName];
@@ -100,7 +101,8 @@ class Attraction extends React.Component{
     }
     // data -> photo -> images -> url: "img src"
 
-    // let newRestaurants = restaurants.filter(res => res.name)
+    let newRestaurants = restaurants.filter(res => res.name)
+    console.log(newRestaurants)
     
     return (
       <div className="att-all">
@@ -113,7 +115,7 @@ class Attraction extends React.Component{
             // style={{ backgroundImage: `url(${location.url})` }}
           >
             {this.props.locationName}
-          {myTrips.length === 0 && this.props.loggedIn ? (
+          {/* {myTrips.length === 0 && this.props.loggedIn ? (
             <li
               className="add-city"
               onClick={() =>
@@ -127,7 +129,7 @@ class Attraction extends React.Component{
             </li>
           ) : (
             ""
-          )}
+          )} */}
           </div>
           <div className="gallery">
             {/* <div >
@@ -141,8 +143,8 @@ class Attraction extends React.Component{
             <div className="gallery-att">
               {/* < AttractionSlider/> */}
               <p className="category">Attractions</p>
-              <AttractionSlider
-                attractions={attractions}
+              <Deck
+                locations={attractions}
                 tripId={this.props.tripId}
                 activeIndex={0}
               />
@@ -150,8 +152,8 @@ class Attraction extends React.Component{
 
             <div className="gallery-food">
               <p className="category">Restaurants</p>
-              <RestaurantSlider
-                restaurants={restaurants}
+              <Deck
+                locations={newRestaurants}
                 tripId={this.props.tripId}
                 activeIndex={0}
               />
@@ -159,8 +161,8 @@ class Attraction extends React.Component{
 
             <div className="gallery-night">
               <p className="category">Nightlife</p>
-              <NightlifeSlider
-                nightlives={nightlives}
+              <Deck
+                locations={nightlives}
                 tripId={this.props.tripId}
                 activeIndex={0}
               />
@@ -257,4 +259,4 @@ class Attraction extends React.Component{
   }
 }
 
-export default Attraction
+export default React.memo(Attraction)

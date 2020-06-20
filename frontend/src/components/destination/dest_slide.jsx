@@ -12,7 +12,7 @@ class Slide extends Component {
         }
     }
 
-
+    
 
     render() {
         let { location } = this.state

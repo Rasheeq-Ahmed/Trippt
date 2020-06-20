@@ -309,16 +309,16 @@
 
   /* Scroll bar */
 
-*::-webkit-scrollbar {
-  /* height: 100px; */
-  /* width: 50%; */
+/* *::-webkit-scrollbar {
+  height: 100px;
+  width: 50%;
   width: .5rem;
 }
 
  *::-webkit-scrollbar-thumb {
   background-color:  rgb(26, 194, 180);
-  /* outline: 1px solid slategrey; */
-}
+  outline: 1px solid slategrey;
+} */
 
 /******************* Trip Icon ***********************/
 /* .trips-container {
@@ -437,7 +437,7 @@
     max-width: 100%;
     width: 40em;
     /* height: fit-content; */
-    /* max-height: 40em; */
+    max-height: 40em;
     /* overflow-y: auto; */
     padding: 0.5em;
     border-radius: 0.25em;
@@ -477,11 +477,6 @@
     transition: ease 0.5s;
 }
 
-.trip-container ul {
-    /* margin: 0;
-    padding: 0; */
-    overflow-y: auto;
-}
 
 .trips img {
     width: 6em;
@@ -493,10 +488,8 @@
 
 .attrac-ul {
     display: flex;
-    height: fit-content;
-    max-height: 30em;
-    
-    /* overflow-y: auto; */
+    max-height: 15em;
+    overflow-y: auto;
 }
 
 .attrac-container {
@@ -504,9 +497,9 @@
     border: none;
     position: relative;
     height: auto;
-    padding: 1em;
-    margin-bottom: 1em;
-        background-color: rgba(245, 245, 245, 0.226);
+    padding: 0.5em;
+    margin-bottom: 0.5em;
+    background-color: rgba(245, 245, 245, 0.226);
     /* border: 1px solid black; */
 
 }
@@ -544,6 +537,8 @@
     padding-left: 0.5em;
 }
 
+
+
 #attrac-name {
     font-size: large;
     padding-bottom: 2.5px;
@@ -571,12 +566,12 @@
     font-size: small;
     text-overflow: ellipsis;
     display: block;
-    width: 30em;
+    width: 35em;
     overflow: hidden;     
     white-space: nowrap;
-    padding: 2.5px;
-    line-height: 1.5;
+    padding: 0.25em;
 }
+
 
 .attrac-actions {
     display: flex;
@@ -739,5 +734,102 @@
     background-color:  rgb(21, 146, 136);
 }
 
+
+/******************************************************/
+
+/************* Update Profile Modal *******************/
+
+.update-profile-container {
+    position: fixed;
+    background-image: url(https://assets-global.website-files.com/56e9debf633486e330198479/57505d3a8fe0fab60e2e0d06_under30experiences-blog-science-of-travel-and-happiness-research.jpg);
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0.75;
+}
+
+.update-profile-form {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 20em;
+    height: 15em;
+    border-radius: 0.5em;
+    background-color: rgba(255, 255, 255, 0.842);
+    border: 1px solid rgba(88, 86, 86, 0.534);
+    box-shadow: 0 0 10px;
+    padding-top: 0.75em;
+}
+
+.form-header {
+    font-size: large;
+    text-decoration: underline;
+    margin-bottom: 0.5em;
+}
+
+.profile-name {
+    font-size: small;
+    flex-direction: column;
+}
+
+.profile-name input {
+    margin-top: 0.25em;
+    width: 20em;
+}
+
+.update-profile-form label {
+    padding: 0.5em;
+    display: flex;
+}
+
+.update-profile-form input[type= 'radio'] {
+    cursor: pointer;
+}
+
+.update-profile-form input[type= 'text'] {
+    outline-style: none;
+    box-sizing: border-box;
+    box-shadow: none;
+    outline: none;
+    border: 1px solid black;
+}
+
+.update-profile-form input[type= 'text']:focus {
+    box-sizing: border-box;
+    outline-style:none;
+    box-shadow:none;
+    border-color:transparent;
+    box-shadow: none;
+    border: 1px solid rgb(66, 207, 160);
+}
+
+.update-profile-container button  {
+    cursor: pointer;
+    background: none;
+    outline: none;
+}
+
+.form-btn {
+    position: absolute;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    padding-bottom: 0.5em;
+    bottom: 0;
+}
+
+
+
+.form-btn button:hover {
+    color: white;
+    background-color:rgb(26, 194, 180);
+    border-radius: 1em;
+    transition: 0.3s;
+}
 
 /******************************************************/
