@@ -309,7 +309,7 @@
 
   /* Scroll bar */
 
-/* *::-webkit-scrollbar {
+*::-webkit-scrollbar {
   height: 100px;
   width: 50%;
   width: .5rem;
@@ -318,7 +318,7 @@
  *::-webkit-scrollbar-thumb {
   background-color:  rgb(26, 194, 180);
   outline: 1px solid slategrey;
-} */
+}
 
 /******************* Trip Icon ***********************/
 /* .trips-container {
