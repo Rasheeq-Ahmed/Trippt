@@ -52,6 +52,7 @@ class MyProfile extends React.Component {
     render() {
         return (
             <div id ='my-profile' className="update-profile-container">
+
                 <NavBar/>
                 <form className='update-profile-form' onSubmit={this.handleSubmit}>
                     <h1 className='form-header'>
@@ -70,32 +71,34 @@ class MyProfile extends React.Component {
                                />
                     </label>
                     <label> 
-                        <label> San Francisco
-                            <input value="San Francisco" 
+                        <label className='form-location'> San Francisco, CA
+                            <input value="San Francisco, CA"                          
                                    name='location' 
                                    type="radio"
-                                   checked={ this.state.location === 'San Francisco' ? true : false} 
+                                   checked={ this.state.location === 'San Francisco, CA' ? true : false} 
                                    onChange={this.update('location')}/>
                         </label>
                      
-                        <label> New York
-                            <input value="New York" 
+                        <label className='form-location' id='new-york'> New York, NY
+                            <input value="New York, NY"      
                                    name='location' 
                                    type="radio"
-                                   checked={this.state.location === 'New York' ? true : false} 
+                                   checked={this.state.location === 'New York, NY' ? true : false} 
                                    onChange={this.update('location')}/>
                         </label>
                     </label>
-                    <div className='form-btn'>
+                    <div className='form-btn-container'>
                         {!Object.values(this.props.profile).length ? 
                             <button
+                                className='form-btn'
                                 type='submit'>
                                     Create Profile</button> : 
                             <button
+                                className='form-btn'
                                 type='submit'> 
                                     Update Profile</button>}
 
-                            <Link to='/profile'><button>Cancel</button></Link>
+                            <Link to='/profile'><button className='form-btn'>Cancel</button></Link>
                     </div>
                 </form>
             </div>

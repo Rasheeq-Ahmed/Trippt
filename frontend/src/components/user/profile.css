@@ -766,9 +766,13 @@
 }
 
 .form-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     font-size: large;
-    text-decoration: underline;
     margin-bottom: 0.5em;
+    border-bottom: 2px solid grey;
+    width: 95%;
 }
 
 .profile-name {
@@ -786,34 +790,55 @@
     display: flex;
 }
 
-.update-profile-form input[type= 'radio'] {
-    cursor: pointer;
-}
+
 
 .update-profile-form input[type= 'text'] {
     outline-style: none;
     box-sizing: border-box;
     box-shadow: none;
     outline: none;
-    border: 1px solid black;
+    border: 1px solid rgb(201, 201, 201);
 }
 
+.form-location {
+    font-size: small;
+    position: relative;
+    width: 11.5em;
+
+}
+
+#new-york {
+    width: 9em;
+    border: none;
+    margin-left: 1em;
+}
+
+.form-location input[type= 'radio'] {
+    background-color: rgb(195, 254, 255);
+    position: absolute;
+    cursor: pointer;
+    bottom: 25%;
+    right: 0.5em;
+}
+
+
 .update-profile-form input[type= 'text']:focus {
+    background-color: rgb(227, 255, 255);
     box-sizing: border-box;
     outline-style:none;
     box-shadow:none;
     border-color:transparent;
     box-shadow: none;
-    border: 1px solid rgb(66, 207, 160);
+    border: 1px solid rgb(195, 255, 235);
 }
 
-.update-profile-container button  {
+.form-btn {
     cursor: pointer;
     background: none;
     outline: none;
 }
 
-.form-btn {
+.form-btn-container {
     position: absolute;
     display: flex;
     justify-content: space-around;
@@ -825,10 +850,10 @@
 
 
 
-.form-btn button:hover {
+.form-btn:hover {
     color: white;
     background-color:rgb(26, 194, 180);
-    border-radius: 1em;
+    border-radius: 0.25em;
     transition: 0.3s;
 }
 
