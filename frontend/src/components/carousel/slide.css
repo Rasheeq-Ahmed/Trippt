@@ -39,7 +39,9 @@
 
   justify-content: center;
 }
-
+.slide:hover{
+  height: 20em;
+}
 
 .slide {
     position: relative;
