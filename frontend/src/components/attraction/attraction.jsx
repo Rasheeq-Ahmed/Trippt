@@ -114,6 +114,7 @@ class Attraction extends React.Component{
             className="page-title"
             // style={{ backgroundImage: `url(${location.url})` }}
           >
+            
             {this.props.locationName}
           {myTrips.length === 0 && this.props.loggedIn ? (
             <li
