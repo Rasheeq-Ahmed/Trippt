@@ -51,55 +51,84 @@ class MyProfile extends React.Component {
 
     render() {
         return (
-            <div id ='my-profile' className="update-profile-container">
-                <NavBar/>
-                <form className='update-profile-form' onSubmit={this.handleSubmit}>
-                    <h1 className='form-header'>
-                        {!Object.values(this.props.profile).length ? 'Create Profile' : 'Update Profile'}</h1>
-                    
-                    <label className='profile-name'> First Name:
-                        <input type="text"
-                               value={this.state.firstName}
-                               onChange={this.update('firstName')}
-                               />
-                    </label>
-                    <label className='profile-name'> Last Name: 
-                        <input type="text"
-                               value={this.state.lastName} 
-                               onChange={this.update('lastName')}
-                               />
-                    </label>
-                    <label> 
-                        <label> San Francisco
-                            <input value="San Francisco" 
-                                   name='location' 
-                                   type="radio"
-                                   checked={ this.state.location === 'San Francisco' ? true : false} 
-                                   onChange={this.update('location')}/>
-                        </label>
-                     
-                        <label> New York
-                            <input value="New York" 
-                                   name='location' 
-                                   type="radio"
-                                   checked={this.state.location === 'New York' ? true : false} 
-                                   onChange={this.update('location')}/>
-                        </label>
-                    </label>
-                    <div className='form-btn'>
-                        {!Object.values(this.props.profile).length ? 
-                            <button
-                                type='submit'>
-                                    Create Profile</button> : 
-                            <button
-                                type='submit'> 
-                                    Update Profile</button>}
-
-                            <Link to='/profile'><button>Cancel</button></Link>
-                    </div>
-                </form>
+          <div id="my-profile" className="update-profile-container">
+            <div className="prof-header">
+              <NavBar />
             </div>
-        )
+
+            <div className="update-profile-form-cont">
+              <form
+                className="update-profile-form"
+                onSubmit={this.handleSubmit}
+              >
+                <h1 className="form-header">
+                  {!Object.values(this.props.profile).length
+                    ? "Create Profile"
+                    : "Update Profile"}
+                </h1>
+
+                <label className="profile-name">
+                  {" "}
+                  First Name:
+                  <input
+                    type="text"
+                    value={this.state.firstName}
+                    onChange={this.update("firstName")}
+                  />
+                </label>
+                <label className="profile-name">
+                  {" "}
+                  Last Name:
+                  <input
+                    type="text"
+                    value={this.state.lastName}
+                    onChange={this.update("lastName")}
+                  />
+                </label>
+                <label>
+                  <label>
+                    {" "}
+                    San Francisco
+                    <input
+                      value="San Francisco"
+                      name="location"
+                      type="radio"
+                      checked={
+                        this.state.location === "San Francisco" ? true : false
+                      }
+                      onChange={this.update("location")}
+                    />
+                  </label>
+
+                  <label>
+                    {" "}
+                    New York
+                    <input
+                      value="New York"
+                      name="location"
+                      type="radio"
+                      checked={
+                        this.state.location === "New York" ? true : false
+                      }
+                      onChange={this.update("location")}
+                    />
+                  </label>
+                </label>
+                <div className="form-btn">
+                  {!Object.values(this.props.profile).length ? (
+                    <button type="submit">Create Profile</button>
+                  ) : (
+                    <button type="submit">Update Profile</button>
+                  )}
+
+                  <Link to="/profile">
+                    <button>Cancel</button>
+                  </Link>
+                </div>
+              </form>
+            </div>
+          </div>
+        );
     }
 };
 

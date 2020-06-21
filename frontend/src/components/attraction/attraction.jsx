@@ -81,7 +81,7 @@ class Attraction extends React.Component{
   
 
   render(){
-    // let myTrips = this.findTripId(this.props.userTrips, this.props.locationId) // array of tripIds
+    let myTrips = this.findTripId(this.props.userTrips, this.props.locationId) // array of tripIds
     let attractions = this.props.attractions[this.props.locationName];
     let restaurants = this.props.restaurants[this.props.locationName];
     let nightlives = this.props.nightlife[this.props.locationName];
@@ -115,7 +115,7 @@ class Attraction extends React.Component{
             // style={{ backgroundImage: `url(${location.url})` }}
           >
             {this.props.locationName}
-          {/* {myTrips.length === 0 && this.props.loggedIn ? (
+          {myTrips.length === 0 && this.props.loggedIn ? (
             <li
               className="add-city"
               onClick={() =>
@@ -129,7 +129,7 @@ class Attraction extends React.Component{
             </li>
           ) : (
             ""
-          )} */}
+          )}
           </div>
           <div className="gallery">
             {/* <div >

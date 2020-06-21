@@ -740,19 +740,26 @@
 /************* Update Profile Modal *******************/
 
 .update-profile-container {
-    position: fixed;
+    /* position: fixed; */
     background-image: url(https://assets-global.website-files.com/56e9debf633486e330198479/57505d3a8fe0fab60e2e0d06_under30experiences-blog-science-of-travel-and-happiness-research.jpg);
     background-size: cover;
     width: 100%;
-    height: 100%;
+    height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
     opacity: 0.75;
 }
 
+.update-profile-form-cont {
+    height: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 .update-profile-form {
-    position: relative;
+    /* position: relative; */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -814,13 +821,13 @@
 }
 
 .form-btn {
-    position: absolute;
+    /* position: absolute; */
     display: flex;
     justify-content: space-around;
     align-items: center;
     width: 100%;
     padding-bottom: 0.5em;
-    bottom: 0;
+    /* bottom: 0; */
 }
 
 
