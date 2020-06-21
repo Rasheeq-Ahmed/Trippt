@@ -102,7 +102,6 @@ class Attraction extends React.Component{
     // data -> photo -> images -> url: "img src"
 
     let newRestaurants = restaurants.filter(res => res.name)
-    console.log(newRestaurants)
     
     return (
       <div className="att-all">
