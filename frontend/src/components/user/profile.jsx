@@ -85,7 +85,7 @@ class ProfilePage extends React.Component {
               <NavBar />
             </div>
             <div className="prof-container">
-              <div className="prof-banner">
+              <div className={this.props.profile.location === 'New York, NY' ? 'prof-banner-ny' : 'prof-banner-sf'}>
                 {/* <img src="https://i.imgur.com/jA0jVwf.jpg" alt="" /> */}
                 <div className="prof-pic">
                   <img

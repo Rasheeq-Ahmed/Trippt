@@ -39,7 +39,7 @@
 }
 
 
-.prof-banner{
+.prof-banner-sf{
     width: 90%;
     /* max-width: 1000px; */
     /* background-color: grey; */
@@ -47,6 +47,24 @@
     /* justify-content: center; */
     /* max-width: 1000px; */
     background-image: url(https://i.imgur.com/EFtDLws.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    /* border-bottom: 1px solid gray; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+}
+
+.prof-banner-ny{
+    width: 90%;
+    /* max-width: 1000px; */
+    /* background-color: grey; */
+    height: 30%;
+    /* justify-content: center; */
+    /* max-width: 1000px; */
+    background-image: url(https://images2.minutemediacdn.com/image/upload/c_crop,h_1389,w_2063,x_48,y_0/v1554926278/shape/mentalfloss/31841-istock-868507586.jpg?itok=gkVJB-dK);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
