@@ -53,7 +53,6 @@ class MyProfile extends React.Component {
         return (
             <div>
                 <NavBar/>
-
                 <div id ='my-profile' className="update-profile-container">
 
                     <form className='update-profile-form' onSubmit={this.handleSubmit}>
