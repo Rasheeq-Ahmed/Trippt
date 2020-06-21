@@ -1,11 +1,11 @@
 .about-all {
-    width: 100;
+    width: 100%;
     height: 100vh;
     display: flex;
     background-color: whitesmoke;
     flex-direction: column;
     box-sizing: border-box;
-    margin: 0;
+    /* margin: 0; */
     /* overflow: auto; */
     justify-content: center;
     align-items: center;
@@ -13,10 +13,12 @@
 
 
 .about-header {
- height: 10%; 
- /* background-color: blue;  */
+ min-height: 10%; 
+ width: 100%;
+ background-color: white; 
  display: flex;
- justify-content: center; 
+ justify-content: center;
+align-items: center;
 }
 
 

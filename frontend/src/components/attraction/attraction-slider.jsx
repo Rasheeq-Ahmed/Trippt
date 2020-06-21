@@ -57,7 +57,7 @@ class AttractionSlider extends Component {
 
 
   render() {
-    console.log(this.state.activeIndex);
+    // console.log(this.state.activeIndex);
     // console.log(this.state.attractions);
     let sliderStyle = {
       transform: `translateX(${

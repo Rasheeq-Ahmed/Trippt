@@ -15,7 +15,7 @@ class Testing extends React.Component {
     
     render() {
         let locations = LOCATIONS;
-        console.log(locations)
+        // console.log(locations)
         return (
             <div className="testing-all">
                     <Deck locations={locations}/>

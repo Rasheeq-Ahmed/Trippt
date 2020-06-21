@@ -19,16 +19,16 @@ class Carousel extends Component {
     slideLeft() {
         let last = this.state.locations.slice(-1)[0]
         let rest = this.state.locations.slice(0, -1)
-        console.log(last)
-        console.log(rest)
+        // console.log(last)
+        // console.log(rest)
         let locations = [last, ...rest]
         this.setState({ locations: locations });
     }
 
     slideRight() {
         let [first, ...rest] = this.state.locations;
-        console.log(first)
-        console.log(rest)
+        // console.log(first)
+        // console.log(rest)
         let locations = [...rest, first];
         this.setState({ locations: locations });
     }
