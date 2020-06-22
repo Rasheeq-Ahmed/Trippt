@@ -120,8 +120,9 @@ class AttractionShow extends React.Component{
                 <button id='trip-btn'
                     onClick={() => { this.props.updateTrip(tripId, attraction); this.disableButton() }
                   }
-                  className={(!this.props.tripId || foundAttraction) ? "btn-hide" : ""}
-                >{foundAttraction ? "" : "Add to my Trip"}</button>
+                  disabled={foundAttraction ? true : false}
+                  className={(!this.props.tripId) ? "btn-hide" : ""}
+                >{foundAttraction ? "Added to Trip" : "Add to my Trip"}</button>
               </div>
         
             </div>
