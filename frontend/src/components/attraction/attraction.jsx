@@ -40,7 +40,7 @@ class Attraction extends React.Component{
       this.props.getNightlife(locationId,locationName)
     }
 
-    if(this.props.user){
+    if(this.props.user.id){
       this.props.getUserTrips(this.props.user.id)
     }
   };

@@ -117,8 +117,8 @@ class AttractionShow extends React.Component{
               </div>
               <div className='attraction-action'>
                 <button id="back-btn" onClick={()=>this.goBack()}>Back</button>
-                <button id='trip-btn'
-                    onClick={() => { this.props.updateTrip(tripId, attraction); this.disableButton() }
+                <button id={!foundAttraction ? 'trip-btn' : 'no-cursor'}
+                  onClick={() => { this.props.updateTrip(tripId, attraction); this.disableButton() }
                   }
                   disabled={foundAttraction ? true : false}
                   className={(!this.props.tripId) ? "btn-hide" : ""}

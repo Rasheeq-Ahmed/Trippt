@@ -4,6 +4,7 @@ import NotFound from '../../assets/image-not-found.png'
 
 import './test.css'
 function CARD(props) {
+  if(!props.location) return null;
     return (
       <div
         className="testCard"
