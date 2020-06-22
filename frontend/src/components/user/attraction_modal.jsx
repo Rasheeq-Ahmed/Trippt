@@ -1,5 +1,6 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom';
+import NotFound from '../../assets/image-not-found.png'
 
 
 export const AttractionModal = (props) => {
@@ -28,7 +29,9 @@ export const AttractionModal = (props) => {
                                 <div key={idx} className='attrac-container'>
                                     <Link
                                         to={`/attraction/${att.location_id}/${att.name}/${trip._id}`}>
-                                    <img src={`${att.photo.images.small.url}`}
+                                    <img
+                                        className='attrac-photo' 
+                                        src={`${att.photo ? att.photo.images.small.url : NotFound}`}
                                         alt="" />
                                         </Link>
 

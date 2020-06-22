@@ -2,7 +2,8 @@ import React from 'react';
 import { Link, Redirect } from 'react-router-dom';
 import './attraction_show.css'
 import NavBar from '../nav/navbar_container';
-import Loader from '../loader/loader'
+import Loader from '../loader/loader';
+import NotFound from '../../assets/image-not-found.png'
 
 
 class AttractionShow extends React.Component{
@@ -128,7 +129,7 @@ class AttractionShow extends React.Component{
             <div className="show-right">
               <div className="show-photo">
                 <img className='photo'
-                  src={`${attraction.photo.images.large.url}`}
+                  src={`${attraction.photo ? attraction.photo.images.large.url : NotFound}`}
                   alt=""
                 />
               </div>

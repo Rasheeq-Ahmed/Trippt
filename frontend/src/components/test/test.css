@@ -66,6 +66,7 @@ body {
 
 .testCard {
     background-size: cover;
+    background-position: center;
     /* margin: 1em; */
     /* width: 10em;
     height: 10em; */

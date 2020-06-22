@@ -71,6 +71,7 @@ class Deck extends Component {
               zIndex={i === middle_card_by_index ? 100 : newzIndex}
               scale={new_scale}
               tripId={this.props.tripId}
+              key={i}
             />
           );
         }
