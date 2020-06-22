@@ -108,7 +108,7 @@ class Attraction extends React.Component{
     // data -> photo -> images -> url: "img src"
 
     let newRestaurants = restaurants.filter(res => res.name)
-    
+    console.log(this.props.tripId)
     return (
       <div className="att-all">
         <div className="att-header">
