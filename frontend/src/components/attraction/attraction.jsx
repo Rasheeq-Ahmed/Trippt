@@ -45,6 +45,15 @@ class Attraction extends React.Component{
     }
   };
 
+  componentDidUpdate(prevProps) {
+    if (!this.props.tripId && prevProps.userTrips !== this.props.userTrips) {
+      let tripId = this.findTripId(this.props.userTrips, this.props.locationId)[0]
+      if (tripId) {
+        this.props.history.push(`/attractions/${this.props.locationId}/${this.props.locationName}/${tripId}`)
+      }
+    }
+  }
+
   showModal() {
     this.setState({ show: true })
   };
