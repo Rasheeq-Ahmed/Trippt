@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from "react-router-dom";
+import NotFound from '../../assets/image-not-found.png'
 
 import './test.css'
 function CARD(props) {
@@ -13,7 +14,7 @@ function CARD(props) {
           top: `${props.y}px`,
         //   zIndex: props.zIndex,
           transform: `translate(-50%, -50%) scale(${props.scale})`,
-          backgroundImage: `url(${props.location.photo.images.medium.url})`,
+          backgroundImage: `url(${props.location.photo ? props.location.photo.images.medium.url : NotFound})`,
         }}
       >
         {/* {console.log(props)} */}

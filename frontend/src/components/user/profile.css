@@ -118,17 +118,20 @@
     max-width: 40em;
     max-height: 50%;
     display: flex;
-    justify-content: space-evenly;
-    margin-left: 4em;
+    justify-content: space-between;
+    /* margin-left: 4em; */
     /* padding: 1rem; */
 
     /* background-color: ivory; */
 
 }
 .prof-details li {
+    display: flex;
+    justify-content: center;
     background-color: rgba(128, 128, 128, 0);
     color: white;
     font-size: larger;
+    width: 33%;
 }
 
 .prof-body {
@@ -502,6 +505,8 @@
     margin-right: 0.5em;
     border-radius: 0.25em;
     box-shadow: 3px 3px 10px #888888;
+    background-size: cover;
+    background-position: center;
 }
 
 .attrac-ul {

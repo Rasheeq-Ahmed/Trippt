@@ -17,7 +17,7 @@ export const getAttractions = (locationId) => {
             "lang": "en_US",
             "limit": "5",
             "currency": "USD",
-            "sort": "recommended",
+            // "sort": "recommended",
             "lunit": "km",
             "location_id": `${locationId}`
             }

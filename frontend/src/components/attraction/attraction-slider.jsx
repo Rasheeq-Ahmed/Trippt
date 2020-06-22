@@ -107,6 +107,7 @@ class AttractionSlider extends Component {
                         attraction={attraction}
                         key={index}
                         activeIndex={activeIndex}
+                        tripId={this.props.tripId}
                       />
                     {/* </Link> */}
                   </div>

@@ -2,7 +2,8 @@ import React from 'react';
 import { Link, Redirect } from 'react-router-dom';
 import './attraction_show.css'
 import NavBar from '../nav/navbar_container';
-import Loader from '../loader/loader'
+import Loader from '../loader/loader';
+import NotFound from '../../assets/image-not-found.png'
 
 
 class AttractionShow extends React.Component{
@@ -119,8 +120,9 @@ class AttractionShow extends React.Component{
                 <button id='trip-btn'
                     onClick={() => { this.props.updateTrip(tripId, attraction); this.disableButton() }
                   }
-                  className={(!this.props.tripId || foundAttraction) ? "btn-hide" : ""}
-                >{foundAttraction ? "" : "Add to my Trip"}</button>
+                  disabled={foundAttraction ? true : false}
+                  className={(!this.props.tripId) ? "btn-hide" : ""}
+                >{foundAttraction ? "Added to Trip" : "Add to my Trip"}</button>
               </div>
         
             </div>
@@ -128,7 +130,7 @@ class AttractionShow extends React.Component{
             <div className="show-right">
               <div className="show-photo">
                 <img className='photo'
-                  src={`${attraction.photo.images.large.url}`}
+                  src={`${attraction.photo ? attraction.photo.images.large.url : NotFound}`}
                   alt=""
                 />
               </div>

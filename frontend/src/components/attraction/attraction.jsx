@@ -45,6 +45,15 @@ class Attraction extends React.Component{
     }
   };
 
+  componentDidUpdate(prevProps) {
+    if (!this.props.tripId && prevProps.userTrips !== this.props.userTrips) {
+      let tripId = this.findTripId(this.props.userTrips, this.props.locationId)[0]
+      if (tripId) {
+        this.props.history.push(`/attractions/${this.props.locationId}/${this.props.locationName}/${tripId}`)
+      }
+    }
+  }
+
   showModal() {
     this.setState({ show: true })
   };
@@ -102,7 +111,6 @@ class Attraction extends React.Component{
     // data -> photo -> images -> url: "img src"
 
     let newRestaurants = restaurants.filter(res => res.name)
-    
     return (
       <div className="att-all">
         <div className="att-header">
@@ -141,7 +149,6 @@ class Attraction extends React.Component{
                   <Modal show={this.state.show} closeModal={this.closeModal}/>
                 </div> */}
             <div className="gallery-att">
-              {/* < AttractionSlider/> */}
               <p className="category">Attractions</p>
               <Deck
                 locations={attractions}
