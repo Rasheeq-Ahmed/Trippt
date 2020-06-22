@@ -6,8 +6,8 @@ import "../nav/navbar.css";
 import { LOCATIONS } from '../../assets/locations';
 import {AttractionModal} from './attraction_modal';
 import { TripIcon, ConfirmDelete } from './trip_icon';
-import Board from './boards';
-import MyProfile from './update_profile'
+// import Board from './boards';
+// import MyProfile from './update_profile'
 
 
 
