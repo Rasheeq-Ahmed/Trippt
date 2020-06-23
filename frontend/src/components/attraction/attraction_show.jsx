@@ -10,25 +10,33 @@ class AttractionShow extends React.Component{
   constructor(props){
     super(props);
 
+    this.state = {
+      foundAttraction: false
+    }
+
     this.findAttraction = this.findAttraction.bind(this)
     this.goBack = this.goBack.bind(this)
   }
 
   componentDidMount(){
-    let {tripAttractions, tripId, locationId, user, getUserTrips} = this.props
+    let {tripAttractions, tripId, locationId, user, getUserTrips, getAttraction} = this.props
 
     if (user.id) {
       getUserTrips(user.id)
     }
 
-    let foundAttraction = tripAttractions[tripId] ? this.findAttraction(tripAttractions[tripId].attractions, locationId) : null
+    let foundAttraction = tripAttractions[tripId] ? 
+      this.findAttraction(tripAttractions[tripId].attractions, locationId) : null
+
     if (!tripAttractions || !foundAttraction) {
-      this.props.getAttraction(this.props.locationId)
+      getAttraction(locationId)
     }
 
+    if (foundAttraction) {
+      this.setState({foundAttraction: true})
+    }
+    
   };
-
-
 
   findAttraction(attractions, attractionId) {
     if (!attractions) return null
@@ -45,7 +53,7 @@ class AttractionShow extends React.Component{
     let addBtn = document.getElementById('trip-btn')
     if (addBtn) {
       addBtn.disabled = true
-      addBtn.innerText = "Added to my Trips"
+      addBtn.innerText = "Added to Trip"
     } 
   }
 
@@ -64,7 +72,6 @@ class AttractionShow extends React.Component{
     let attraction;
     let attractions = tripAttractions[tripId]
     let foundAttraction = tripAttractions[tripId] ? this.findAttraction(tripAttractions[tripId].attractions, locationId) : null
-
 
     if (!attractions || !foundAttraction) {
       attractions = this.props.attractions
@@ -117,8 +124,8 @@ class AttractionShow extends React.Component{
               </div>
               <div className='attraction-action'>
                 <button id="back-btn" onClick={()=>this.goBack()}>Back</button>
-                <button id={!foundAttraction ? 'trip-btn' : 'no-cursor'}
-                  onClick={() => { this.props.updateTrip(tripId, attraction); this.disableButton() }
+                <button id={this.state.foundAttraction || foundAttraction  ? 'no-cursor' : 'trip-btn' }
+                  onClick={() => { this.props.updateTrip(tripId, attraction); this.disableButton(); this.setState({foundAttraction: true}) }
                   }
                   disabled={foundAttraction ? true : false}
                   className={(!this.props.tripId) ? "btn-hide" : ""}

@@ -73,6 +73,15 @@ class Attraction extends React.Component{
     })
   }
 
+  disableButton() {
+    let surpriseBtn = document.getElementById('surprise-btn')
+    if (surpriseBtn) {
+      surpriseBtn.disabled = true
+      surpriseBtn.innerText = "Added activities to your trip"
+      surpriseBtn.className = 'surprise-btn'
+    }
+  }
+
   findTripId(userTrips, locationId){
     if (!userTrips) {
       userTrips = this.props.createTrip({location: this.props.locationName, locationId: this.props.locationId})
@@ -136,18 +145,23 @@ class Attraction extends React.Component{
               Add {this.props.locationName} to my Trips!
             </li>
           ) : (
-            ""
+                <div >
+                  <button
+                    id='surprise-btn'
+                    onClick={() => {this.tripptMe(this.props.tripId, attractions, newRestaurants, nightlives); this.disableButton()}}
+                    className={this.props.tripId && !this.props.userTrips[this.props.tripId].attractions.length ? "add-city" : "btn-hide"}
+                  >Surprise Me!</button>
+                </div>
           )}
           </div>
           <div className="gallery">
             {/* <div >
-                  <button 
-                      onClick={()=> {this.tripptMe(this.props.tripId, attractions,newRestaurants,nightlife);
-                                    this.showModal()}}
-                      className={!this.props.tripId ? "btn-hide" : ""} 
-                  >Trippt Me</button>
-                  <Modal show={this.state.show} closeModal={this.closeModal}/>
-                </div> */}
+                <button 
+                    onClick={()=> {this.tripptMe(this.props.tripId, attractions,newRestaurants,nightlives)}}
+                    className={!this.props.tripId ? "btn-hide" : ""} 
+                >Surprise Me!</button>
+                  
+              </div> */}
             <div className="gallery-att">
               <p className="category">Attractions</p>
               <Deck
