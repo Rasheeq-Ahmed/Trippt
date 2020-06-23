@@ -110,6 +110,15 @@
 
 .att-web {
   border-bottom: 1px solid black;
+  color: rgb(26, 194, 180);
+        transition: ease 0.5s;
+}
+
+
+.att-web:hover {
+  border-bottom: 1px solid black;
+  color: rgb(4, 133, 122);
+        transition: ease 0.5s;
 }
 
 .att-des {
