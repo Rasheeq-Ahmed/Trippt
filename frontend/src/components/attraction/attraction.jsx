@@ -141,8 +141,7 @@ class Attraction extends React.Component{
                   locationId: this.props.locationId,
                 })
               }
-            >
-              Add {this.props.locationName} to my Trips!
+            > Add {this.props.locationName} to my Trips!
             </li>
           ) : (
                 <div >
