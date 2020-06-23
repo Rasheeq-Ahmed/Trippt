@@ -44,6 +44,29 @@ Users can select from three different categories. They can choose from Attractio
 	<li>Fetching and connecting data from MongoDB to our Frontend</li>
 </ul>
 
+# Dynamic Experience
+
+Users can experience our explore tab without logging in.  They can checkout the locations and the attractions that place has to offer, but they are not able to save the trips and attractions for future use.  Once a user signs up and logs in, they also have multiple portals to add or remove locations and attractions to their trips.  A logged in user also has the option of adding a location to their trips if the location isn't already added to their trips.
+
+<img src='frontend/src/assets/dynamic_exp_1.PNG' width='600' height='250' >
+<img src='frontend/src/assets/dynamic_exp_2.PNG' width='600' height='250' >
+
+# Surprise Me!
+
+Feeling adventurous? A logged in user can click the Surprise Me! button to have a location selected for them. Still can't decide what activities to do?  Click on the Surprise Me! button on the explore page to have attractions selected for that trip.
+
+<img src='frontend/src/assets/surprise_me.gif' width='600' height='350' >
+
+# Limited API 
+
+One of the challenges we had is working with a limited API, therefore we wanted to always check to see if the information is already in local state or already added to your trips in the backend and if so we wanted to use that information instead.  This way, the site loads faster and we save making unecessary API calls.
+
+<img src='frontend/src/assets/limit_api_1.PNG' width='600' height='250' >
+<img src='frontend/src/assets/limit_api_2.PNG' width='600' height='250' >
+
+
+
+
 
 
 # Contributors
