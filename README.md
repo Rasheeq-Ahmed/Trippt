@@ -33,7 +33,7 @@
 
 Users can select from three different categories. They can choose from Attractions, Restaurants, and Nightlife. After a user selects one of these categories they are then shown the top recommended experiences. 
 
-<img src='frontend/src/assets/carousel.gif' width='1000' >
+<img src='frontend/src/assets/TheCarouselGif.gif' width='1000' >
 
 # Technical Challenges
 
