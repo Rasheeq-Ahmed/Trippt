@@ -203,9 +203,23 @@ height: 100vh;
   /* border: 2px solid black; */
 }
 
+.surprise-btn {
+  background-color: rgb(209, 209, 209);
+  padding: 10px 20px;
+  font-size: 18px;
+  line-height: 20px;
+  text-align: center;
+  color: rgb(107, 107, 107);
+  cursor: auto;
+  align-self: center;
+  margin-top: 1em;
+}
+
 .add-city:hover{
   background-color: rgb(45, 154, 158);
 }
+
+
 
 .category{
   display: flex;
