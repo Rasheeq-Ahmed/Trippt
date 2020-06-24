@@ -150,11 +150,13 @@ class Attraction extends React.Component{
                 </div> */}
             <div className="gallery-att">
               <p className="category">Attractions</p>
+              <div className="deck-contain">
               <Deck
                 locations={attractions}
                 tripId={this.props.tripId}
                 activeIndex={0}
               />
+              </div>
             </div>
 
             <div className="gallery-food">

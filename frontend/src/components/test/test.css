@@ -9,9 +9,9 @@ body {
 
 
 .deck-all {
-    width: 100%;
+    width: 10%;
     height: 100%;
-    background-color: rgba(216, 191, 216, 0);
+    background-color: rgb(245, 102, 245);
     display: flex;
     justify-content: center;
     /* align-items: center; */
@@ -20,6 +20,14 @@ body {
     justify-content: center;
     align-items: center;
 }
+
+
+.slider {
+    background-color: blue;
+
+
+}
+
 /* 
 .deck {
     display: flex;
@@ -28,6 +36,8 @@ body {
     width: 100%;
     
 } */
+
+
 
 /* .deck-cont {
     width: 80%;
@@ -68,8 +78,8 @@ body {
     background-size: cover;
     background-position: center;
     /* margin: 1em; */
-    /* width: 10em;
-    height: 10em; */
+    width: 20vw;
+    height: 20vh;
     /* transform: translate(-50%, -50%); */
     box-shadow: 0 0 10px;
 }

@@ -95,6 +95,14 @@ height: 100vh;
   /* overflow: hidden; */
   
 }
+.deck-contain {
+  width: 90%;
+  background-color: blue;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+}
+
 .gallery-night{
   /* background-color: rgb(186, 228, 72); */
   /* height: 33.3333%; */
