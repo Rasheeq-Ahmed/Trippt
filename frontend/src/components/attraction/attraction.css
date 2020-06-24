@@ -97,7 +97,7 @@ height: 100vh;
 }
 .deck-contain {
   width: 90%;
-  background-color: blue;
+  background-color: rgba(0, 0, 255, 0);
   overflow: hidden;
   display: flex;
   justify-content: center;

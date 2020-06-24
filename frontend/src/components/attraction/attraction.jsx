@@ -174,20 +174,26 @@ class Attraction extends React.Component{
 
             <div className="gallery-food">
               <p className="category">Restaurants</p>
+              <div className="deck-contain">
+
               <Deck
                 locations={newRestaurants}
                 tripId={this.props.tripId}
                 activeIndex={0}
-              />
+                />
+            </div>
             </div>
 
             <div className="gallery-night">
               <p className="category">Nightlife</p>
+              <div className="deck-contain">
+
               <Deck
                 locations={nightlives}
                 tripId={this.props.tripId}
                 activeIndex={0}
-              />
+                />
+            </div>
             </div>
 
             {/* <p className="category">Restaurants</p>

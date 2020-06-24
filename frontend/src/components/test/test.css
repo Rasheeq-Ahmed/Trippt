@@ -9,9 +9,9 @@ body {
 
 
 .deck-all {
-    width: 10%;
+    /* width: 10%; */
     height: 100%;
-    background-color: rgb(245, 102, 245);
+    /* background-color: rgb(245, 102, 245); */
     display: flex;
     justify-content: center;
     /* align-items: center; */
@@ -22,11 +22,7 @@ body {
 }
 
 
-.slider {
-    background-color: blue;
 
-
-}
 
 /* 
 .deck {
