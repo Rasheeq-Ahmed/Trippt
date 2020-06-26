@@ -7,6 +7,12 @@
 <a href="https://trippt.herokuapp.com/#/" target="_blank"><strong>Live Demo</strong></a>
 
 # Features
+<ul>
+	<li>Responsive single page app for finding new places to explore and activities to do</li>
+	<li>New users are able explore the site without signing up or logging in </li>
+	<li>Users are able to sign up for an account and log in securely for core features such as creating, updating and deleting trips</li>
+	<li>Logged in users can create and update their profile</li>
+</ul>	
 
 # Technologies
 
