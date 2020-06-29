@@ -158,6 +158,20 @@ Users can experience our explore tab without logging in.  They can checkout the 
 
 <img src='frontend/src/assets/dynamic_exp_2.PNG' >
 
+```
+{myTrips.length === 0 && this.props.loggedIn ? (
+            <li
+              className="add-city"
+              onClick={() =>
+                this.props.createTrip({
+                  location: this.props.locationName,
+                  locationId: this.props.locationId,
+                })
+              }
+            > Add {this.props.locationName} to my Trips!
+            </li>
+```
+
 
 ## Surprise Me!
 
