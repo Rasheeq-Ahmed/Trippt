@@ -93,7 +93,7 @@ componentDidMount(){
 
 
 
-### Experiences
+## Experiences
 
 <img src='frontend/src/assets/trippt-experiences.PNG' width='1000' >
 
@@ -102,7 +102,7 @@ Users can select from three different categories. They can choose from Attractio
 <img src='frontend/src/assets/TheCarouselGif.gif' width='1000' >
 
 
-### Login
+## Login
 <img src='frontend/src/assets/trippt-login.PNG' width='1000' >
 
 ```
@@ -142,44 +142,24 @@ Users can select from three different categories. They can choose from Attractio
 
 ```
 
-### Trips
+## Trips
 <img src='frontend/src/assets/trippt-trips.PNG' width='1000' >
 
-### User Profile
+## User Profile
 <img src='frontend/src/assets/trippt-userprofile.PNG' width='1000'  >
 
 
 
-# Dynamic Experience
+## Dynamic Experience
 
 Users can experience our explore tab without logging in.  They can checkout the locations and the attractions that place has to offer, but they are not able to save the trips and attractions for future use.  Once a user signs up and logs in, they also have multiple portals to add or remove locations and attractions to their trips.  A logged in user also has the option of adding a location to their trips if the location isn't already added to their trips.
 
 <img src='frontend/src/assets/dynamic_exp_1.PNG'>
-```
- {myTrips.length === 0 && this.props.loggedIn ? (
-            <li
-              className="add-city"
-              onClick={() =>
-                this.props.createTrip({
-                  location: this.props.locationName,
-                  locationId: this.props.locationId,
-                })
-              }
-            > Add {this.props.locationName} to my Trips!
-            </li>
-          ) : (
-                <div >
-                  <button
-                    id='surprise-btn'
-                    onClick={() => {this.tripptMe(this.props.tripId, attractions, newRestaurants, nightlives); this.disableButton()}}
-                    className={this.props.tripId && !this.props.userTrips[this.props.tripId].attractions.length ? "add-city" : "btn-hide"}
-                  >Surprise Me!</button>
-                </div>
-          )}
-```
+
 <img src='frontend/src/assets/dynamic_exp_2.PNG' >
 
-# Surprise Me!
+
+## Surprise Me!
 
 Feeling adventurous? A logged in user can click the Surprise Me! button to have a location selected for them. Still can't decide what activities to do?  Click on the Surprise Me! button on the explore page to have attractions selected for that trip.
 
