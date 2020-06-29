@@ -6,13 +6,6 @@
 
 <a href="https://trippt.herokuapp.com/#/" target="_blank"><strong>Live Demo</strong></a>
 
-# Features
-<ul>
-	<li>Responsive single page app for finding new places to explore and activities to do</li>
-	<li>New users are able explore the site without signing up or logging in </li>
-	<li>Users are able to sign up for an account and log in securely for core features such as creating, updating and deleting trips</li>
-	<li>Logged in users can create and update their profile</li>
-</ul>	
 
 # Technologies
 
@@ -32,6 +25,33 @@
 	<a href="https://nodejs.org/en/" target="_blank"><li>Node.js</li></a>
 </ul>
 
+# Technical Challenges
+
+<ul>
+	<li>Incorporating Tripadvisor API</li>
+	<li>Manipulating data from API axios calls</li>
+	<li>Working with Express server and backend routes</li>
+	<li>Fetching and connecting data from MongoDB to our Frontend</li>
+</ul>
+
+
+# Limited API 
+
+One of the challenges we had is working with a limited API, therefore we wanted to always check to see if the information is already in local state or already added to your trips in the backend and if so we wanted to use that information instead.  This way, the site loads faster and we save making unecessary API calls.
+
+<img src='frontend/src/assets/limit_api_1.PNG' width='600' height='250' >
+<img src='frontend/src/assets/limit_api_2.png' width='600' height='250' >
+
+
+# Features
+<ul>
+	<li>Responsive single page app for finding new places to explore and activities to do</li>
+	<li>New users are able explore the site without signing up or logging in </li>
+	<li>Users are able to sign up for an account and log in securely for core features such as creating, updating and deleting trips</li>
+	<li>Logged in users can create and update their profile</li>
+</ul>	
+
+
 
 # Experiences
 
@@ -41,14 +61,17 @@ Users can select from three different categories. They can choose from Attractio
 
 <img src='frontend/src/assets/TheCarouselGif.gif' width='1000' >
 
-# Technical Challenges
 
-<ul>
-	<li>Incorporating Tripadvisor API</li>
-	<li>Manipulating data from API axios calls</li>
-	<li>Working with Express server and backend routes</li>
-	<li>Fetching and connecting data from MongoDB to our Frontend</li>
-</ul>
+### Login
+<img src='frontend/src/assets/trippt-login.PNG' width='1000' >
+
+### Trips
+<img src='frontend/src/assets/trippt-trips.PNG' width='1000' >
+
+### User Profile
+<img src='frontend/src/assets/trippt-userprofile.PNG' width='1000'  >
+
+
 
 # Dynamic Experience
 
@@ -63,17 +86,6 @@ Feeling adventurous? A logged in user can click the Surprise Me! button to have 
 
 <img src='frontend/src/assets/surprise_me.gif' width='1000' >
 
-# Limited API 
-
-One of the challenges we had is working with a limited API, therefore we wanted to always check to see if the information is already in local state or already added to your trips in the backend and if so we wanted to use that information instead.  This way, the site loads faster and we save making unecessary API calls.
-
-<img src='frontend/src/assets/limit_api_1.PNG' width='600' height='250' >
-<img src='frontend/src/assets/limit_api_2.png' width='600' height='250' >
-
-
-
-
-
 
 # Contributors
 
@@ -82,12 +94,3 @@ One of the challenges we had is working with a limited API, therefore we wanted 
 	<a href="https://github.com/echen831" target="_blank"><li>Eric Chen</li></a>
 	<a href="https://github.com/hsachdeva01" target="_blank"><li>Hari Sachdeva</li></a>
 </ul>
-
-### Login
-<img src='frontend/src/assets/trippt-login.PNG' width='1000' >
-
-### Trips
-<img src='frontend/src/assets/trippt-trips.PNG' width='1000' >
-
-### User Profile
-<img src='frontend/src/assets/trippt-userprofile.PNG' width='1000'  >
