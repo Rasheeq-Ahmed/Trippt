@@ -146,17 +146,33 @@ Users can select from three different categories. They can choose from Attractio
 <img src='frontend/src/assets/trippt-trips.PNG' width='1000' >
 
 ## User Profile
+
+A user a can further customize their profile by adding their full name and the location they are from.  A new user will have the option is the create the profile, after that the user's information is will be saved onto the form and the user can update it as they wish afterwards.
+
 <img src='frontend/src/assets/trippt-userprofile.PNG' width='1000'  >
 
+```
 
+<div className='form-btn-container'>
+    {!Object.values(this.props.profile).length ? 
+         <button
+           className='form-btn'
+           type='submit'>
+           Create Profile</button> : 
+         <button
+           className='form-btn'
+           type='submit'> 
+           Update Profile</button>}
+   <Link to='/profile'><button className='form-btn'>Cancel</button></Link>
+</div>
+
+```
 
 ## Dynamic Experience
 
 Users can experience our explore tab without logging in.  They can checkout the locations and the attractions that place has to offer, but they are not able to save the trips and attractions for future use.  Once a user signs up and logs in, they also have multiple portals to add or remove locations and attractions to their trips.  A logged in user also has the option of adding a location to their trips if the location isn't already added to their trips.
 
 <img src='frontend/src/assets/dynamic_exp_1.PNG'>
-
-<img src='frontend/src/assets/dynamic_exp_2.PNG' >
 
 ```
 {myTrips.length === 0 && this.props.loggedIn ? (
