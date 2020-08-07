@@ -4,6 +4,7 @@ import './attraction_show.css'
 import NavBar from '../nav/navbar_container';
 import Loader from '../loader/loader';
 import NotFound from '../../assets/image-not-found.png'
+// import Map from '../map/map'
 
 
 class AttractionShow extends React.Component{
@@ -136,10 +137,11 @@ class AttractionShow extends React.Component{
             </div>
             <div className="show-right">
               <div className="show-photo">
-                <img className='photo'
+                {/* <Map lat={attraction.latitude} lng={attraction.longitude}/> */}
+                {/* <img className='photo'
                   src={`${attraction.photo ? attraction.photo.images.large.url : NotFound}`}
                   alt=""
-                />
+                /> */}
               </div>
             </div>
           </div>
