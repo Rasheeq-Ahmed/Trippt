@@ -14,7 +14,7 @@ class Map extends React.Component {
             zoom: 13
         }
         const map = this.refs.map
-        this.map = new google.maps.Map(map, mapOptions )
+        this.map = new google.maps.Map(map, mapOptions)
     }
 
     render() {
