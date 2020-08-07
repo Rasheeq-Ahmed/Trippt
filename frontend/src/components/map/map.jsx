@@ -5,40 +5,13 @@ import { GoogleMap, withScriptjs, withGoogleMap, Marker } from 'react-google-map
 import './map.css'
 
 
-export const WrappedMap = withScriptjs(withGoogleMap((props) => 
+export const Map = withScriptjs(withGoogleMap((props) => 
 
     <GoogleMap
-        defaultZoom={9}
+        defaultZoom={13}
         defaultCenter={{ lat: props.lat, lng: props.lng }}> 
 
         <Marker position={{ lat: props.lat, lng: props.lng }}/>
     </GoogleMap>
-))
+));
 
-
-
-// class Map extends React.Component {
-
-//     componentDidMount() {
-//         let mapOptions = {
-//             center: {
-//                 lat: this.props.lat,
-//                 lng: this.props.lng
-//             },
-//             zoom: 13
-//         }
-//         const map = this.refs.map
-//         this.map = new google.maps.Map(map, mapOptions)
-//     }
-
-//     render() {
-//         return (
-//             <div className='map' ref='map'>
-
-//             </div>
-//         )
-//     }
-
-// }
-
-// export default withRouter(Map)

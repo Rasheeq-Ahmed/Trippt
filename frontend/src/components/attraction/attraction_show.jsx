@@ -5,7 +5,7 @@ import NavBar from '../nav/navbar_container';
 import Loader from '../loader/loader';
 import NotFound from '../../assets/image-not-found.png'
 
-import {WrappedMap} from '../map/map'
+import { Map } from '../map/map'
 
 
 class AttractionShow extends React.Component{
@@ -143,7 +143,7 @@ class AttractionShow extends React.Component{
                   src={`${attraction.photo ? attraction.photo.images.large.url : NotFound}`}
                   alt=""
                 /> */}
-                <WrappedMap 
+                <Map 
                   googleMapURL={`https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places&key=${process.env.REACT_APP_GOOGLE_API_KEY}`}
                   loadingElement={<div style={{height: "100%"}}/>}
                   containerElement={<div style={{ height: "100%" }} />}

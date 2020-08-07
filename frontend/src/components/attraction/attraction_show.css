@@ -164,6 +164,10 @@
   
 }
 
+.map  {
+  border-radius: 0.25em;
+}
+
 
 .photo {
   height: 100%;
