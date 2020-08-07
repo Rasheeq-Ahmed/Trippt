@@ -38,6 +38,7 @@
     "normalize.css": "^8.0.1",
     "passport": "^0.4.1",
     "passport-jwt": "^4.0.0",
+    "react-google-maps": "^9.4.5",
     "react-slick": "^0.26.1",
     "sass": "^1.26.10",
     "slick-carousel": "^1.8.1",
