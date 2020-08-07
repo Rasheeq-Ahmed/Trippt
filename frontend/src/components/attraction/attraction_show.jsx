@@ -4,6 +4,7 @@ import './attraction_show.css'
 import NavBar from '../nav/navbar_container';
 import Loader from '../loader/loader';
 import NotFound from '../../assets/image-not-found.png'
+
 import {WrappedMap} from '../map/map'
 
 
@@ -147,7 +148,8 @@ class AttractionShow extends React.Component{
                   loadingElement={<div style={{height: "100%"}}/>}
                   containerElement={<div style={{ height: "100%" }} />}
                   mapElement={<div style={{ height: "100%" }} />}
-
+                  lat={Number(attraction.latitude)}
+                  lng={Number(attraction.longitude)}
                 />
               </div>
             </div>

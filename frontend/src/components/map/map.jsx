@@ -1,15 +1,19 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { withRouter } from 'react-router-dom';
-import { GoogleMap, withScriptjs, withGoogleMap } from 'react-google-maps'
+import { GoogleMap, withScriptjs, withGoogleMap, Marker } from 'react-google-maps'
 import './map.css'
 
-function Map() {
-    return <GoogleMap defaultZoom={10} 
-        defaultCenter={{ lat: 37.773972, lng: -122.431297}}/>
-}
 
-export const WrappedMap = withScriptjs(withGoogleMap(Map))
+export const WrappedMap = withScriptjs(withGoogleMap((props) => 
+
+    <GoogleMap
+        defaultZoom={9}
+        defaultCenter={{ lat: props.lat, lng: props.lng }}> 
+
+        <Marker position={{ lat: props.lat, lng: props.lng }}/>
+    </GoogleMap>
+))
 
 
 
