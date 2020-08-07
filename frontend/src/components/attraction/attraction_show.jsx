@@ -5,6 +5,8 @@ import NavBar from '../nav/navbar_container';
 import Loader from '../loader/loader';
 import NotFound from '../../assets/image-not-found.png'
 
+import { Map } from '../map/map'
+
 
 class AttractionShow extends React.Component{
   constructor(props){
@@ -136,9 +138,18 @@ class AttractionShow extends React.Component{
             </div>
             <div className="show-right">
               <div className="show-photo">
-                <img className='photo'
+                {/* <Map lat={parseInt(attraction.latitude)} lng={parseInt(attraction.longitude)}/> */}
+                {/* <img className='photo'
                   src={`${attraction.photo ? attraction.photo.images.large.url : NotFound}`}
                   alt=""
+                /> */}
+                <Map 
+                  googleMapURL={`https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places&key=${process.env.REACT_APP_GOOGLE_API_KEY}`}
+                  loadingElement={<div style={{height: "100%"}}/>}
+                  containerElement={<div style={{ height: "100%" }} />}
+                  mapElement={<div style={{ height: "100%" }} />}
+                  lat={Number(attraction.latitude)}
+                  lng={Number(attraction.longitude)}
                 />
               </div>
             </div>
