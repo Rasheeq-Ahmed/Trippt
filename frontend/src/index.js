@@ -51,6 +51,7 @@ document.addEventListener('DOMContentLoaded', () => {
   window.createUserProfile = createUserProfile
   window.getUserProfile = getUserProfile
   window.updateUserProfile = updateUserProfile
+  window.getPhotos = AttAPIUtil.getPhotos
   // window.getAttractions = getAttractions
   //Window Testing Only//
 

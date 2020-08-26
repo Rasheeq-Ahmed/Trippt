@@ -8,7 +8,7 @@ import './map.css'
 export const Map = withScriptjs(withGoogleMap((props) => 
 
     <GoogleMap
-        defaultZoom={13}
+        defaultZoom={15}
         defaultCenter={{ lat: props.lat, lng: props.lng }}> 
 
         <Marker position={{ lat: props.lat, lng: props.lng }}/>
