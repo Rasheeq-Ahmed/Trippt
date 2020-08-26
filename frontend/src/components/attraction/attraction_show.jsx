@@ -98,23 +98,23 @@ class AttractionShow extends React.Component{
           <div className="show-content">
             <div className="show-left">
               <div className="left-top">
-              <div className="att-details">
+                <div className="att-details">
 
-              <span className="att-name">{attraction.name} </span>
-              <span className="att-add">
-                {" "}
-                Address: {attraction.address}
-              </span>
-              <span>Ranking: {attraction.ranking}</span>
-              <span>Rating: {attraction.rating}</span>
-              <span>
-                Recommended Visit Length:{" "}
-                {attraction.recommended_visit_length}
-              </span>
-              <a className='att-web'
-                href={attraction.website}
-                target="_blank"
-                >{`Visit ${attraction.name}'s website`}</a>
+                <span className="att-name">{attraction.name} </span>
+                <span className="att-add">
+                  {" "}
+                  Address: {attraction.address}
+                </span>
+                <span>Ranking: {attraction.ranking}</span>
+                <span>Rating: {attraction.rating}</span>
+                <span>
+                  Recommended Visit Length:{" "}
+                  {attraction.recommended_visit_length}
+                </span>
+                <a className='att-web'
+                  href={attraction.website}
+                  target="_blank"
+                  >{`Visit ${attraction.name}'s website`}</a>
 
                 </div>
               </div>
@@ -137,12 +137,14 @@ class AttractionShow extends React.Component{
             </div>
             </div>
             <div className="show-right">
-              <div className="show-photo">
-                {/* <Map lat={parseInt(attraction.latitude)} lng={parseInt(attraction.longitude)}/> */}
-                {/* <img className='photo'
-                  src={`${attraction.photo ? attraction.photo.images.large.url : NotFound}`}
+              <div className='show-photo'>
+                  <img className='photo'
+                  src={`${attraction.photo ? attraction.photo.images.medium.url : NotFound}`}
                   alt=""
-                /> */}
+                />
+              </div>
+              <div className="show-map">
+
                 <Map 
                   googleMapURL={`https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places&key=${process.env.REACT_APP_GOOGLE_API_KEY}`}
                   loadingElement={<div style={{height: "100%"}}/>}
@@ -154,9 +156,6 @@ class AttractionShow extends React.Component{
               </div>
             </div>
           </div>
-        </div>
-        <div className="show-footer">
-
         </div>
       </div>
     );
