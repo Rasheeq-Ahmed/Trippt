@@ -2,20 +2,20 @@ import React, { useState, useEffect } from 'react'
 import './photo_slider.css'
 
 export const PhotoSlider = (props) => {
-    let { photoUrl } = props
+    let { photoUrl, photos } = props
 
     const [idx, setIdx] = useState(0)
 
     const shiftLeft = () => {
         if (idx === 0) {
-            setIdx(2)
+            setIdx(3)
         } else {
             setIdx(idx-1)
         }
     }
 
     const shiftRight = () => {
-        if (idx === 2) {
+        if (idx === 3) {
             setIdx(0)
         } else {
             setIdx(idx+1)
@@ -30,7 +30,17 @@ export const PhotoSlider = (props) => {
                     <i className="arrow left"></i>
                 </span>
             </div>
+            {photos ? photos.map((photo,i) => (
+                <img 
+                    key={i}
+                    className='s-photo'
+                    id={idx === i+1 ? 'show' : 'hide'}
+                    src={`${photo.images.medium.url}`}
+                    alt=""
+                /> 
+            )) : null }
             <img className='photo'
+                id={idx === 0 ? 'show' : 'hide'}
                 src={`${photoUrl}`}
                 alt=""
             />
@@ -42,7 +52,7 @@ export const PhotoSlider = (props) => {
             </div>
             <div className='dot-container'>
                 <div>
-                    {[...Array(3).keys()].map((i) => {
+                    {[...Array(4).keys()].map((i) => {
                         return (
                             <span
                                 key={i}

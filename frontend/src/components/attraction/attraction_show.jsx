@@ -22,7 +22,7 @@ class AttractionShow extends React.Component{
   }
 
   componentDidMount(){
-    let {tripAttractions, tripId, locationId, user, getUserTrips, getAttraction} = this.props
+    let {tripAttractions, tripId, locationId, user, getUserTrips, getAttraction, photos, getPhotos} = this.props
 
     if (user.id) {
       getUserTrips(user.id)
@@ -37,6 +37,10 @@ class AttractionShow extends React.Component{
 
     if (foundAttraction) {
       this.setState({foundAttraction: true})
+    }
+
+    if(!photos) {
+      getPhotos(locationId)
     }
     
   };
@@ -66,7 +70,7 @@ class AttractionShow extends React.Component{
 
   render(){
     
-    let {tripAttractions, tripId, locationId, locationName, loading} = this.props
+    let {tripAttractions, tripId, locationId, locationName, loading, photos} = this.props
 
     if(loading) return(<Loader/>);
 
@@ -138,7 +142,9 @@ class AttractionShow extends React.Component{
             </div>
             </div>
             <div className="show-right">
-              <PhotoSlider photoUrl={attraction.photo ? attraction.photo.images.medium.url : NotFound}/>
+              <PhotoSlider photoUrl={attraction.photo ? attraction.photo.images.medium.url : NotFound}
+                           photos={photos}
+              />
               {/* <div className='show-photo'>
                   <img className='photo'
                   src={`${attraction.photo ? attraction.photo.images.medium.url : NotFound}`}

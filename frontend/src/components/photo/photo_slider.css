@@ -8,10 +8,21 @@ show-photo class in attraction_show.css
   height: 40%;  
 } */
 
+.s-photo{ 
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+  top: 0;
+  left: 0;
+}
+
 .left_arrow {
   position: absolute;
   width: 10%;
   height: 100%;
+  z-index: 1;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -25,6 +36,7 @@ show-photo class in attraction_show.css
   position: absolute;
   width: 10%;
   height: 100%;
+  z-index: 1;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -83,4 +95,8 @@ show-photo class in attraction_show.css
 
 #selected-dot {
   background-color: rgb(255, 255, 255);  
+}
+
+#hide {
+    display: none;
 }
