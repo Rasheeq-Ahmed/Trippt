@@ -27,7 +27,7 @@ export const PhotoSlider = (props) => {
             <div className='left_arrow'
                  onClick={() => shiftLeft()}>
                 <span >
-                    <i class="arrow left"></i>
+                    <i className="arrow left"></i>
                 </span>
             </div>
             <img className='photo'
@@ -37,7 +37,7 @@ export const PhotoSlider = (props) => {
             <div className='right_arrow'
                 onClick={()=>shiftRight()}>
                 <span>
-                    <i id='la'class="arrow right"></i>
+                    <i id='la'className="arrow right"></i>
                 </span>
             </div>
             <div className='dot-container'>
@@ -47,7 +47,7 @@ export const PhotoSlider = (props) => {
                             <span
                                 key={i}
                                 id={idx === i ? 'selected-dot' : ''}
-                                class="dot"
+                                className="dot"
                                 onClick={() => setIdx(i)}></span>                          
                         )
                     })}
