@@ -4,7 +4,17 @@ import * as SAttAPIUtil from '../util/single_attraction_api_util';
 export const RECEIVE_ATTRACTIONS = 'RECEIVE_ATTRACTIONS';
 export const RECEIVE_ATTRACTION = 'RECEIVE_ATTRACTION';
 export const LOADING_ATTRACTIONS = 'LOADING_ATTRACTIONS';
-export const LOADING_ATTRACTION = 'LOADING_ATTRACTION'
+export const LOADING_ATTRACTION = 'LOADING_ATTRACTION';
+
+export const RECEIVE_PHOTOS = 'RECEIVE_PHOTOS'
+
+const receivePhotos = (photos, locationId) => {
+    return {
+        type: RECEIVE_PHOTOS,
+        photos,
+        locationId
+    }
+}
 
 const receiveAttractions = (attractions, city) => {
     return {
@@ -47,3 +57,8 @@ export const getAttraction = (locationId) => dispatch => {
         .then((attraction) => dispatch(receiveAttraction(attraction)))
         .catch(error => console.log(error))
 };
+
+export const getPhotos = (locationId) => dispatch => {
+    return AttAPIUtil.getPhotos(locationId)
+        .then((photos) => dispatch(receivePhotos(photos, locationId)))
+}

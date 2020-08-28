@@ -6,7 +6,8 @@ import attractions from "./attraction_reducer"
 import restaurants from "./restaurant_reducer"
 import nightlife from "./nightlife_reducer"
 import profile from './profile_reducer'
-import ui from "./ui_reducer"
+import ui from "./ui_reducer";
+import photos from "./photos_reducer"
 
 const RootReducer = combineReducers({
   errors,
@@ -16,6 +17,7 @@ const RootReducer = combineReducers({
   restaurants,
   nightlife,
   profile,
+  photos,
   ui
 });
 

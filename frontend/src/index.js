@@ -13,6 +13,7 @@ import { logout } from './actions/session_actions';
 //Window Testing Only//
 import * as AttAPIUtil from './util/attraction_api_util';
 import * as TripAPIUtil from './util/trip_api_util';
+import * as Attraction from './actions/attraction_actions'
 import {createUserProfile, getUserProfile, updateUserProfile} from './actions/profile_actions';
 //Window Testing Only//
 
@@ -51,7 +52,8 @@ document.addEventListener('DOMContentLoaded', () => {
   window.createUserProfile = createUserProfile
   window.getUserProfile = getUserProfile
   window.updateUserProfile = updateUserProfile
-  window.getPhotos = AttAPIUtil.getPhotos
+  window.getPhotos = Attraction.getPhotos
+
   // window.getAttractions = getAttractions
   //Window Testing Only//
 

@@ -4,6 +4,7 @@ import './attraction_show.css'
 import NavBar from '../nav/navbar_container';
 import Loader from '../loader/loader';
 import NotFound from '../../assets/image-not-found.png'
+import { PhotoSlider } from '../photo/photo_slider'
 
 import { Map } from '../map/map'
 
@@ -21,7 +22,7 @@ class AttractionShow extends React.Component{
   }
 
   componentDidMount(){
-    let {tripAttractions, tripId, locationId, user, getUserTrips, getAttraction} = this.props
+    let {tripAttractions, tripId, locationId, user, getUserTrips, getAttraction, photos, getPhotos} = this.props
 
     if (user.id) {
       getUserTrips(user.id)
@@ -36,6 +37,10 @@ class AttractionShow extends React.Component{
 
     if (foundAttraction) {
       this.setState({foundAttraction: true})
+    }
+
+    if(!photos) {
+      getPhotos(locationId)
     }
     
   };
@@ -65,7 +70,7 @@ class AttractionShow extends React.Component{
 
   render(){
     
-    let {tripAttractions, tripId, locationId, locationName, loading} = this.props
+    let {tripAttractions, tripId, locationId, locationName, loading, photos} = this.props
 
     if(loading) return(<Loader/>);
 
@@ -137,14 +142,16 @@ class AttractionShow extends React.Component{
             </div>
             </div>
             <div className="show-right">
-              <div className='show-photo'>
+              <PhotoSlider photoUrl={attraction.photo ? attraction.photo.images.medium.url : NotFound}
+                           photos={photos}
+              />
+              {/* <div className='show-photo'>
                   <img className='photo'
                   src={`${attraction.photo ? attraction.photo.images.medium.url : NotFound}`}
                   alt=""
                 />
-              </div>
+              </div> */}
               <div className="show-map">
-
                 <Map 
                   googleMapURL={`https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places&key=${process.env.REACT_APP_GOOGLE_API_KEY}`}
                   loadingElement={<div style={{height: "100%"}}/>}

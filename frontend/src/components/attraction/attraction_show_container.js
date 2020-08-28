@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { getAttraction } from '../../actions/attraction_actions';
+import { getAttraction, getPhotos } from '../../actions/attraction_actions';
 import { updateTrip, removeAttrac } from '../../actions/trip_actions';
 import { getUserTrips } from '../../actions/trip_actions'
 import AttractionShow from './attraction_show';
@@ -16,7 +16,8 @@ const mapStateToProps = (state, ownProps) => {
       locationId,
       locationName,
       tripId,
-      loading: state.ui.loading
+      loading: state.ui.loading,
+      photos: state.photos[locationId]
     };
 };
 
@@ -26,6 +27,7 @@ const mapDispatchToProps = dispatch => {
         updateTrip: (tripId, data) => dispatch(updateTrip(tripId, data)),
         removeAttrac: (tripId, attracId) => dispatch(removeAttrac(tripId, attracId)),
         getUserTrips: (userId) => dispatch(getUserTrips(userId)),
+        getPhotos: (locationId) => dispatch(getPhotos(locationId))
     };
 };
 
