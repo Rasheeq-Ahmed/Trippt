@@ -30,6 +30,11 @@ export const PhotoSlider = (props) => {
                     <i className="arrow left"></i>
                 </span>
             </div>
+            <img className='photo'
+                id={idx === 0 ? 'show' : 'hide'}
+                src={`${photoUrl}`}
+                alt=""
+            />
             {photos ? photos.map((photo,i) => (
                 <img 
                     key={i}
@@ -39,11 +44,6 @@ export const PhotoSlider = (props) => {
                     alt=""
                 /> 
             )) : null }
-            <img className='photo'
-                id={idx === 0 ? 'show' : 'hide'}
-                src={`${photoUrl}`}
-                alt=""
-            />
             <div className='right_arrow'
                 onClick={()=>shiftRight()}>
                 <span>
