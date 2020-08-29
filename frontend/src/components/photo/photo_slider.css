@@ -14,6 +14,7 @@ show-photo class in attraction_show.css
   width: 100%;
   background-size: cover;
   background-position: center;
+  transition: 0.3s;
   top: 0;
   left: 0;
 }
@@ -98,5 +99,6 @@ show-photo class in attraction_show.css
 }
 
 #hide {
-    display: none;
+  transition: 0.3s;
+  display: none;
 }

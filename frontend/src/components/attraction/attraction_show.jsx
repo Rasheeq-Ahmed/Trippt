@@ -39,7 +39,7 @@ class AttractionShow extends React.Component{
       this.setState({foundAttraction: true})
     }
 
-    if(!photos) {
+    if(!photos || !photos.length) {
       getPhotos(locationId)
     }
     
