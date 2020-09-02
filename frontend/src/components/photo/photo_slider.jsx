@@ -35,15 +35,15 @@ export const PhotoSlider = (props) => {
                 src={`${photoUrl}`}
                 alt=""
             />
-            {photos ? photos.map((photo,i) => (
-                <img 
+            {photos ? photos.map((photo,i) => {
+                return <img 
                     key={i}
                     className='s-photo'
                     id={idx === i+1 ? 'show' : 'hide'}
                     src={`${photo.images.medium.url}`}
                     alt=""
                 /> 
-            )) : null }
+            }) : null }
             <div className='right_arrow'
                 onClick={()=>shiftRight()}>
                 <span>

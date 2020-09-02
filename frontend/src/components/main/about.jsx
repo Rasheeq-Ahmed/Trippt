@@ -18,7 +18,7 @@ class About extends React.Component {
                             
                             <div className="person">
                                 <div className="person-pic">
-                                <img src="https://media-exp1.licdn.com/dms/image/C4E03AQE2m-9v0zZZ7g/profile-displayphoto-shrink_200_200/0?e=1596672000&v=beta&t=26U_5wEm_NYeTVPOTnf7Li4xhwEChQkDufXRPWjRfiw" alt=""/>
+                                    <img src="https://i.imgur.com/9TC4MxW.jpg" alt=""/>
                                 </div>
                                 <div className="person-name">Rasheeq Ahmed</div>
                                 <div className="person-links">
@@ -33,7 +33,7 @@ class About extends React.Component {
                             </div>
                             <div className="person">
                                 <div className="person-pic">
-                                    <img src="https://media-exp1.licdn.com/dms/image/C4E03AQHpVC12czSFEQ/profile-displayphoto-shrink_200_200/0?e=1596672000&v=beta&t=SO2qkkJTBvThCDwtZfibIyL7DOAafi0h2wDM93URLOU" alt="" />
+                                    <img src="https://i.imgur.com/vK31w0L.jpg" alt="" />
                                 </div>
                                 <div className="person-name">Eric Chen</div>
 
@@ -45,11 +45,10 @@ class About extends React.Component {
                                     <img id="git-icon" src="https://i.imgur.com/vwPks93.png" />
                                 </a>
                                 </div>
-
                             </div>
                             <div className="person">
                                 <div className="person-pic">
-                                    <img src="https://media-exp1.licdn.com/dms/image/C4E03AQEVs6CQE4ZB9Q/profile-displayphoto-shrink_200_200/0?e=1596672000&v=beta&t=rebACes7k0snBQ3UYxxYzh6QiFsn-1xK24aIRVCiYwU" alt="" />
+                                    <img src="https://i.imgur.com/mazuIha.png" alt="" />
                                 </div>
                                 <div className="person-name">Hari Sachdeva</div>
 

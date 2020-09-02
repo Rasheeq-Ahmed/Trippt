@@ -17,7 +17,7 @@ const mapStateToProps = (state, ownProps) => {
       locationName,
       tripId,
       loading: state.ui.loading,
-      photos: state.photos[locationId]
+      photos: state.photos[locationId] || []
     };
 };
 
