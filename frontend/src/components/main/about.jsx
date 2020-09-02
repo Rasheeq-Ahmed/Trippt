@@ -18,7 +18,7 @@ class About extends React.Component {
                             
                             <div className="person">
                                 <div className="person-pic">
-                                    <img src="https://media-exp1.licdn.com/dms/image/C4E03AQE2m-9v0zZZ7g/profile-displayphoto-shrink_800_800/0?e=1604534400&v=beta&t=kTrQKP9p38X9Mny3Nmfw2e7kCTDRdDtKJ4iRLeLI-84" alt=""/>
+                                    <img src="https://i.imgur.com/9TC4MxW.jpg" alt=""/>
                                 </div>
                                 <div className="person-name">Rasheeq Ahmed</div>
                                 <div className="person-links">
@@ -33,7 +33,7 @@ class About extends React.Component {
                             </div>
                             <div className="person">
                                 <div className="person-pic">
-                                    <img src="https://media-exp1.licdn.com/dms/image/C4E03AQHpVC12czSFEQ/profile-displayphoto-shrink_400_400/0?e=1604534400&v=beta&t=LZCCOIV9PXZBlznYV1igk5oSjbYodkH4QWiyvpBygoM" alt="" />
+                                    <img src="https://i.imgur.com/vK31w0L.jpg" alt="" />
                                 </div>
                                 <div className="person-name">Eric Chen</div>
 
