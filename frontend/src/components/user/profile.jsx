@@ -25,6 +25,8 @@ class ProfilePage extends React.Component {
         this.showTrip = this.showTrip.bind(this);
         this.closeTrip = this.closeTrip.bind(this);
         this.outsideClose = this.outsideClose.bind(this);
+
+        
         this.showConfirmDelete = this.showConfirmDelete.bind(this);
         this.closeConfirmDelete = this.closeConfirmDelete.bind(this);
         

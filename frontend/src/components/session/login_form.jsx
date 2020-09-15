@@ -78,7 +78,6 @@ class LoginForm extends React.Component {
       .then(() => this.props.history.push("/profile"))
   }
 
-
   // Render the session errors if there are any
 
   renderErrors() {
