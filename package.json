@@ -42,7 +42,7 @@
     "react-slick": "^0.26.1",
     "sass": "^1.26.10",
     "slick-carousel": "^1.8.1",
-    "validator": "^13.1.1"
+    "validator": "^13.7.0"
   },
   "devDependencies": {
     "nodemon": "^2.0.4"
